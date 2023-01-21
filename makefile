@@ -1,13 +1,8 @@
-menu : menu.c menu.h main.c
-	gcc -c menu.c
-	gcc -c main.c
-	gcc -o menu.out menu.o main.o
-	./menu.out
-
-mae : menu_mae.c menu_mae.h main.c
+mae : menu_mae.c menu_mae.h main.c Configuration/configuration.c
 	gcc -c menu_mae.c
 	gcc -c main.c
-	gcc -o menu_mae.out menu_mae.o main.o
+	gcc -c Configuration/configuration.c
+	gcc -o menu_mae.out menu_mae.o main.o configuration.o
 	./menu_mae.out
 
 clean :

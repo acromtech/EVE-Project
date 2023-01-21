@@ -5,29 +5,42 @@ int selection;
 
 int autentification()
 {
-    int ok = 1, mot_de_passe, repeat = 3;
+    int ok = 1, mot_de_passe, repeat = 3, cle=config("motdePasse");
 
-    printf("\tEntrez votre mot de passe : (nombre d'essais restant : %d) \n: ", repeat);
+    //printf("\tmot de passe : %d\n",cle);
+    printf("\tEntrez votre mot de passe (nombre d'essais restant %d) \n\t: ", repeat);
     scanf("%d", &mot_de_passe);
 
-    if (mot_de_passe != MDP)
+    if (mot_de_passe != cle)
     {
         repeat--;
-        while (repeat > 0 && mot_de_passe != MDP)
+        while (repeat > 0 && mot_de_passe != cle)
         {
-            printf("\tMot de passe invalide. Veuillez rééssayer (nombre d'essais restant : %d) : ", repeat);
+            printf("\tMot de passe invalide. \n\tVeuillez rééssayer (nombre d'essais restant %d) \n\t: ", repeat);
             scanf("%d", &mot_de_passe);
             repeat--;
         }
     }
 
-    repeat--;
     if (repeat < 0)
     {
-        printf("\tMot de passe invalide plus d'essais restant. \n");
+        printf("\t\e[1;31m| Mot de passe invalide plus d'essais restant. |\e[0m\n");//Texte en gras rouge
         ok = 0;
     }
     return ok;
+}
+
+int modifMotDePasse()//A MODIFIER !!!!!
+{
+    int test=0;
+    printf("\r\n1 vrai sinon faux : ");
+    scanf("%d", &test);
+    if(test==1)
+    {
+        printf("\r\nMot de passe modifié !!!\n\n");
+        return 1;
+    }
+    return -1;
 }
 
 void evolution_mae(unsigned char *etat_mae)
@@ -44,6 +57,9 @@ void evolution_mae(unsigned char *etat_mae)
         case 2:
             *etat_mae = ETAT_ADMISTRATEUR;
             break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
         }
         break;
     case ETAT_UTILISATEUR:
@@ -51,13 +67,16 @@ void evolution_mae(unsigned char *etat_mae)
         switch (selection)
         {
         case 1:
-            *etat_mae = ETAT_RECHERCHE;
+            *etat_mae = ETAT_PRINCIPAL;
             break;
         case 2:
-            *etat_mae = ETAT_COMPARAISON;
+            *etat_mae = ETAT_TEXTE;
             break;
         case 3:
-            *etat_mae = ETAT_PRINCIPAL;
+            *etat_mae = ETAT_IMAGE;
+            break;
+        case 4:
+            *etat_mae = ETAT_AUDIO;
             break;
         }
         break;
@@ -67,7 +86,7 @@ void evolution_mae(unsigned char *etat_mae)
         switch (selection)
         {
         case 1:
-            *etat_mae = ETAT_UTILISATEUR;
+            *etat_mae = ETAT_PRINCIPAL;
             break;
         case 2:
             *etat_mae = ETAT_MDP;
@@ -79,38 +98,150 @@ void evolution_mae(unsigned char *etat_mae)
             *etat_mae = ETAT_INDEXER_BASE;
             break;
         case 5:
-            *etat_mae = ETAT_INDEXER_UN_FICHIER;
+            *etat_mae = ETAT_CONFIG;
             break;
         case 6:
-            *etat_mae = ETAT_AFFICHER_BASE;
-            break;
-        case 7:
-            *etat_mae = ETAT_PRINCIPAL;
+            *etat_mae = ETAT_UTILISATEUR;
             break;
         }
         break;
 
     case ETAT_MDP:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_ADMISTRATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| Changement de mot de passe |");
+            int modif=modifMotDePasse();
+            if(modif==-1)
+            {
+                printf("\r\n\n\e[1;31m| ECHEC ! |\e[0m\n\n");//Texte en gras rouge
+                sleep(2);
+            }
+            break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
     case ETAT_SUPPRIME_BASE_INDEX:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_ADMISTRATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| Suppression de la base Indexée |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
     case ETAT_INDEXER_BASE:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_ADMISTRATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| Indexation lancée ... |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
-    case ETAT_INDEXER_UN_FICHIER:
+    case ETAT_CONFIG:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_ADMISTRATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| Lancement de la modification du fichier config ... |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
-    case ETAT_AFFICHER_BASE:
+    case ETAT_TEXTE:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_UTILISATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| 1ere méthode de recherche ??? |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            printf("\r\n\n| 2eme méthode de recherche ??? |\n\n");
+            sleep(2);
+            break;
+        case 4:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
-    case ETAT_COMPARAISON:
+    case ETAT_IMAGE:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_UTILISATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| 1ere méthode de recherche Noir et Blanc |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            printf("\r\n\n| 2eme méthode de recherche Couleur |\n\n");
+            sleep(2);
+            break;
+        case 4:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
-    case ETAT_RECHERCHE:
+    case ETAT_AUDIO:
+        scanf("%d", &selection);
+        switch (selection)
+        {
+        case 1:
+            *etat_mae = ETAT_UTILISATEUR;
+            break;
+        case 2:
+            printf("\r\n\n| Recherche de la correspondance lancée ... |\n\n");
+            sleep(2);
+            break;
+        case 3:
+            *etat_mae = ETAT_FERME_APPLI;
+            break;
+        }
         break;
 
+    case ETAT_FERME_APPLI:
+        printf("\r\n\e[1;31m| Fermeture de l'application ... |\e[0m\n\n");
+        exit(0);
+        break;
     default:
         *etat_mae = ETAT_PRINCIPAL;
         break;
@@ -134,9 +265,10 @@ void action_mae(unsigned char *etat_mae)
         printf("==============   MENU PRINCIPAL   ======================\n");
         printf("========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
+        printf("\tSelectionez l'opération à réaliser.\n\n");
         printf("\t\t1.  Menu utilisateur.\n");
         printf("\t\t2.  Menu d'Administration.\n");
+        printf("\t\t3.  Fermer l'application.\n");
         break;
 
     case ETAT_UTILISATEUR:
@@ -144,10 +276,11 @@ void action_mae(unsigned char *etat_mae)
         printf("================   MENU UTILISATEUR   =====================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Rechercher dans la base de fichier.\n");
-        printf("\t\t2.  Comparer des fichiers\n");
-        printf("\t\t3.  Retour.\n");
+        printf("\tSelectionez l'opération à réaliser.\n\n");
+        printf("\t\t2.  TEXTE.\n");
+        printf("\t\t3.  IMAGE.\n");
+        printf("\t\t4.  AUDIO.\n");
+        printf("\n\t\t1.  Retour.\n");
         break;
 
     case ETAT_ADMISTRATEUR:
@@ -155,127 +288,94 @@ void action_mae(unsigned char *etat_mae)
         printf("===========================================================\n");
         printf("=================   ADMINISTRATION   ======================\n");
         printf("===========================================================\n");
-        printf("\tVeuillez vous authentifier : \n");
+        printf("\tVeuillez vous authentifier \n");
         ok = autentification();
         if (ok)
         {
             puts("\n");
-            printf("\tSelectionez l'opération à réaliser.\n");
-            printf("\t\t1.  Vue utilisateur.\n");
+            printf("\tSelectionez l'opération à réaliser.\n\n");
             printf("\t\t2.  Modifier le mot de passe.\n");
-            printf("\t\t3.  Supprimer la base d'indexation.\n");
-            printf("\t\t4.  Indexer la base de fichiers.\n");
-            printf("\t\t5.  Indexer un fichier.\n");
-            printf("\t\t6.  Afficher la base d'indexation.\n");
+            printf("\t\t3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).\n");
+            printf("\t\t4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).\n");
+            printf("\t\t5.  Modifer les paramètres d'indexation.\n");
+            printf("\t\t6.  Vue utilisateur.\n");
+            printf("\n\t\t1.  Retour.\n");
+        }
+        else{
+            *etat_mae = ETAT_FERME_APPLI;
         }
         break;
 
     case ETAT_MDP:
-        printf("\r\nmodif mdp\r\n");
         printf("===========================================================\n");
-        printf("=================   ADMINISTRATION   ======================\n");
+        printf("==============   MODIFICATION MOT DE PASSE   ==============\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Vue utilisateur.\n");
-        printf("\t\t2.  Modifier le mot de passe.\n");
-        printf("\t\t3.  Supprimer la base d'indexation.\n");
-        printf("\t\t4.  Indexer la base de fichiers.\n");
-        printf("\t\t5.  Indexer un fichier.\n");
-        printf("\t\t6.  Afficher la base d'indexation.\n");
-
-        *etat_mae = ETAT_ADMISTRATEUR;
+        printf("\t\t2.  Modifer.\n");
+        printf("\t\t3.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour (Vous demandera de vous identifier à nouveau).\n");
         break;
 
     case ETAT_SUPPRIME_BASE_INDEX:
-        printf("\r\nEtat supprimer base indexer\r\n");
-
         printf("===========================================================\n");
-        printf("=================   ADMINISTRATION   ======================\n");
+        printf("============   SUPPRIMER LA BASE D'INDEXATION   ===========\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Vue utilisateur.\n");
-        printf("\t\t2.  Modifier le mot de passe.\n");
-        printf("\t\t3.  Supprimer la base d'indexation.\n");
-        printf("\t\t4.  Indexer la base de fichiers.\n");
-        printf("\t\t5.  Indexer un fichier.\n");
-        printf("\t\t6.  Afficher la base d'indexation.\n");
-        *etat_mae = ETAT_ADMISTRATEUR;
+        printf("\t\t2.  Supprimer.\n");
+        printf("\t\t3.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour (Vous demandera de vous identifier à nouveau).\n");
         break;
 
     case ETAT_INDEXER_BASE:
-        printf("\r\nEtat indexer base\r\n");
         printf("===========================================================\n");
-        printf("=================   ADMINISTRATION   ======================\n");
+        printf("=============   INDEXER LA BASE DE FICHIERS   =============\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Vue utilisateur.\n");
-        printf("\t\t2.  Modifier le mot de passe.\n");
-        printf("\t\t3.  Supprimer la base d'indexation.\n");
-        printf("\t\t4.  Indexer la base de fichiers.\n");
-        printf("\t\t5.  Indexer un fichier.\n");
-        printf("\t\t6.  Afficher la base d'indexation.\n");
-        *etat_mae = ETAT_ADMISTRATEUR;
+        printf("\t\t2.  Indexer.\n");
+        printf("\t\t3.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour (Vous demandera de vous identifier à nouveau).\n");
         break;
 
-    case ETAT_INDEXER_UN_FICHIER:
-        printf("\r\nEtat indexer un fichier\r\n");
+    case ETAT_CONFIG:
         printf("===========================================================\n");
-        printf("=================   ADMINISTRATION   ======================\n");
+        printf("===============   MODIFICATION PARAMETRES   ===============\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Vue utilisateur.\n");
-        printf("\t\t2.  Modifier le mot de passe.\n");
-        printf("\t\t3.  Supprimer la base d'indexation.\n");
-        printf("\t\t4.  Indexer la base de fichiers.\n");
-        printf("\t\t5.  Indexer un fichier.\n");
-        printf("\t\t6.  Afficher la base d'indexation.\n");
-        *etat_mae = ETAT_ADMISTRATEUR;
+        printf("\t\t2.  Lancer la modification.\n");
+        printf("\t\t3.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour (Vous demandera de vous identifier à nouveau).\n");
         break;
 
-    case ETAT_AFFICHER_BASE:
-        printf("\r\nAfficher base\r\n");
+    case ETAT_TEXTE:
         printf("===========================================================\n");
-        printf("=================   ADMINISTRATION   ======================\n");
+        printf("======================     TEXTE     ======================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Vue utilisateur.\n");
-        printf("\t\t2.  Modifier le mot de passe.\n");
-        printf("\t\t3.  Supprimer la base d'indexation.\n");
-        printf("\t\t4.  Indexer la base de fichiers.\n");
-        printf("\t\t5.  Indexer un fichier.\n");
-        printf("\t\t6.  Afficher la base d'indexation.\n");
-        *etat_mae = ETAT_ADMISTRATEUR;
+        printf("\t\t2.  1ere méthode.\n");
+        printf("\t\t3.  2eme méthode.\n");
+        printf("\t\t4.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour.\n");
         break;
 
-    case ETAT_COMPARAISON:
-        printf("\r\nEtat comparaison\r\n\n\n");
+    case ETAT_IMAGE:
         printf("===========================================================\n");
-        printf("================   MENU UTILISATEUR   =====================\n");
+        printf("======================     IMAGE     ======================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Rechercher dans la base de fichier.\n");
-        printf("\t\t2.  Comparer des fichiers\n");
-        printf("\t\t3.  Retour.\n");
-        *etat_mae = ETAT_UTILISATEUR;
+        printf("\t\t2.  1ere méthode.\n");
+        printf("\t\t3.  2eme méthode.\n");
+        printf("\t\t4.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour.\n");
         break;
 
-    case ETAT_RECHERCHE:
-        printf("\r\n Etat recherche\r\n\n\n");
+    case ETAT_AUDIO:
         printf("===========================================================\n");
-        printf("================   MENU UTILISATEUR   =====================\n");
+        printf("======================     AUDIO     ======================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\tSelectionez l'opération à réaliser.\n");
-        printf("\t\t1.  Rechercher dans la base de fichier.\n");
-        printf("\t\t2.  Comparer des fichiers\n");
-        printf("\t\t3.  Retour.\n");
-        *etat_mae = ETAT_UTILISATEUR;
+        printf("\t\t2.  Recherche Jingle.\n");
+        printf("\t\t3.  Fermer l'application.\n");
+        printf("\n\t\t1.  Retour.\n");
         break;
     }
 }
