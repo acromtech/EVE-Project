@@ -706,6 +706,9 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     saveDescripteur(outputPath, baseDescriptr, bd, (*bd)->taille, tb, tb_liste);
     lienDescripteur(listeDescripteur, id, inputpath, listeDesc);
     printf("fin indexation : %s\n", inputpath);
+    fclose(baseDescriptr);
+    fclose(listeDescripteur);
+    fclose(tb);
     free(outputPath);
     return (*bd)->tete->idDesc;
 }
