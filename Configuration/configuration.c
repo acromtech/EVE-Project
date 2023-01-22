@@ -178,7 +178,7 @@ int config(char nom[]){
     // création de pointeur pour accéder au fichier
     FILE *ptrFichier1;
     
-    char fichierConfig[] = "Configuration/.config";
+    char fichierConfig[] = "../Configuration/.config";
 
     // ouverture du fichier en lecture seul
     ptrFichier1 = fopen(fichierConfig, "r");
