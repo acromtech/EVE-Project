@@ -1,5 +1,7 @@
 #include "menu_mae.h"
 
+
+
 int fin = 1;
 int selection;
 
@@ -58,11 +60,13 @@ int modifMotDePasse()
 
 void supprimerDescripteur()
 {
+    
     printf("\r\n| Suppression de la base Indexée |\n");
     // supprime les descripteurs audios
     rmDescripteurs("../BaseDescripteursAudios/");
     // supprime la liste descripteur audio
     remove("../ListeDescripteursAudios/ListeDescripteursAudios.txt");
+    suprimerBaseMenu(); // suppression du contenu des fichiers de description texte
     printf("\r\n| Suppression terminée ! |\n");
 }
 
@@ -70,6 +74,7 @@ void indexerDescripteur()
 {
     printf("\r\n| Indexation lancée. Veuillez patienter ... |\n");
     autoIndexationAudio();
+    indexationBaseMenu(); // indexation base texte
     printf("\r\n| Indexation terminée ! |\n");
 }
 
@@ -240,12 +245,14 @@ void evolution_mae(unsigned char *etat_mae)
             *etat_mae = ETAT_UTILISATEUR;
             break;
         case 2:
-            printf("\r\n\n| 1ere méthode de recherche ??? |\n\n");
-            sleep(2);
+            printf("\r\n\n| Rechercher des fichiers texte par mot clé |\n\n");
+            rechercheMotCleMenu();
+            sleep(10);
             break;
         case 3:
-            printf("\r\n\n| 2eme méthode de recherche ??? |\n\n");
-            sleep(2);
+            printf("\r\n\n| Comparer un fichier texte à la base |\n\n");
+            comparaisonTexteMenu();
+            sleep(10);
             break;
         case 4:
             *etat_mae = ETAT_FERME_APPLI;
@@ -311,6 +318,7 @@ void evolution_mae(unsigned char *etat_mae)
 
 void action_mae(unsigned char *etat_mae)
 {
+    int ok;
     switch (*etat_mae)
     {
     case ETAT_PRINCIPAL:
@@ -337,7 +345,7 @@ void action_mae(unsigned char *etat_mae)
         break;
 
     case ETAT_ADMISTRATEUR:
-        int ok;
+            
         printf("===========================================================\n");
         printf("=================   ADMINISTRATION   ======================\n");
         printf("===========================================================\n");
@@ -405,8 +413,8 @@ void action_mae(unsigned char *etat_mae)
         printf("======================     TEXTE     ======================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\t\t2.  1ere méthode.\n");
-        printf("\t\t3.  2eme méthode.\n");
+        printf("\t\t2.  Recherche par mot clé.\n");
+        printf("\t\t3.  Comparaison d'un fichier à la base.\n");
         printf("\t\t4.  Fermer l'application.\n");
         printf("\n\t\t1.  Retour.\n");
         break;

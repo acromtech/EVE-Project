@@ -7,6 +7,7 @@
 #include "../Configuration/configuration.h"
 #include "../RechercheAudio/recherche_Audio.h"
 #include "../IndexationAudio/indexation_Audio.h"
+#include "../IndexationRechercheTexte/indexationTexte.h"
 
 //#define MDP 1234
 

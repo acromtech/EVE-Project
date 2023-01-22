@@ -49,8 +49,7 @@ float comparaisonDeuxFichiers(char* Nomfichier1 , char* Nomfichier2){
 	
 	//Renvoie le temps trouvé		
 	return resultTime;
-	}
-	 
+	}	 
 }
 
 
