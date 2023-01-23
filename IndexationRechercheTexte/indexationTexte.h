@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "../Configuration/configuration.h"
 
 #define TAILLE_TOKEN_MAX 90
 #define SEUIL_MOT_SIGNIFICATIF 5

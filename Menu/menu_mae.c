@@ -83,20 +83,23 @@ void modificationConfig()
     printf("\r\n\n| Lancement de la modification du fichier config ... |\n");
     saisieConfig();
     
-    char choix;
+    char choix = 'O';
 
-    do{
-        printf("\r\n\n| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : ");
-        scanf("%c",&choix);
-    }while((choix != 'O') && (choix != 'n'));
-
-    if(choix == 'O')
+    
+    printf("\r\n\n| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : ");
+    scanf("%c",&choix);
+    switch (choix) 
     {
-        supprimerDescripteur();
-        sleep(2);
-        indexerDescripteur();
-        sleep(5);
+        case 'n':
+            break;
+        default: 
+            supprimerDescripteur();
+            sleep(2);
+            indexerDescripteur();
+            sleep(5);
+            break;
     }
+
 }
 
 void evolution_mae(unsigned char *etat_mae)

@@ -602,6 +602,7 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
     PILE tmp;
     FILE *input, *cpy;
     cpy = fopen("cpy.txt", "r");
+    int seuil_mot_significatif = config("seuilMotSignificatif");
     if(cpy == NULL){
         fprintf(stderr, "cpy : impossible d'ouvrir cpy.\n");
         exit(0);
@@ -620,7 +621,7 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
             }
             count = countOccurence(input, token);
             fclose(input);
-            if(count >= SEUIL_MOT_SIGNIFICATIF ){
+            if(count >=  seuil_mot_significatif){
                 tmp = d->listeELMENT;
                 while(tmp != NULL){
                     if(strcmp(((ELEMENT*)tmp->element)->mot, token) == 0){

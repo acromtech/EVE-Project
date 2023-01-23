@@ -156,6 +156,7 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     //system("clear");
     printf("Veuillez saisir le chemin du fichier à comparer\n");
     int ok = saisiePath(chemin);
+    int nbListe = config("nbListe");
 
     if(ok == 1)
     {
@@ -170,7 +171,7 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                 temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
                 //system("clear");
                 printf("Résultat(s) en %f secondes\n\n",temps);
-                afficheNbScore(s,NBLISTE,liste);
+                afficheNbScore(s, nbListe,liste);
                 ouvreFichier(choixFichier(s),liste);
             }
         }
