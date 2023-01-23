@@ -35,6 +35,32 @@ void rechercheCouleur(const volatile baseDescripteurImage pileImage,listeDescrip
     else printf("Aucune image ne correspond a la couleur spécifiée : Essayez d'autres couleurs\n");
 }
 
+void supprimerBaseImage()
+{
+    system("echo > ../IndexationImage/liste_descripteur_image.csv");
+    system("echo > ../IndexationImage/base_descripteur_image.csv");
+
+}
+
+void rechercheImageHisto()
+{
+    baseDescripteurImage bd = initBaseDescripteurImage();
+    listeDescripteurImage liste = initListeDescripteurImage();
+    supprimerBaseImage();
+    indexerBaseImage(&bd,&liste);
+    rechercheHisto(bd,liste);
+}
+
+void rechercheImageCouleur()
+{
+    baseDescripteurImage bd = initBaseDescripteurImage();
+    listeDescripteurImage liste = initListeDescripteurImage();
+    supprimerBaseImage();
+    indexerBaseImage(&bd,&liste);
+    rechercheCouleur(bd,liste);
+}
+
+
 void rechercheHisto(const volatile baseDescripteurImage pileImage,listeDescripteurImage liste){
     setlocale(LC_ALL,"");
     descImage image;
@@ -78,9 +104,9 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage,listeDescripte
     }
 }
 
-Score choixFichier(Src pileScore,int tailleTabScore){
+ScoreImage choixFichierImage(Src pileScore,int tailleTabScore){
     int index;
-    Score scoreImage;
+    ScoreImage scoreImage;
     printf("Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\n");
     while(1){
         scanf("%d",&index);
@@ -103,7 +129,7 @@ Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage,descIm
     int sommeMinimum=0;
     descripteurImage tmp;
     tmp=pileImage->tete;
-    Src pileScore=(Src)calloc(100,sizeof(Score));
+    Src pileScore=(Src)calloc(100,sizeof(ScoreImage));
     for(int j=0;j<pileImage->taillle;j++,tmp=tmp->next){
         nbTotalVal=0;
         sommeMinimum=0;
@@ -126,7 +152,7 @@ Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage,descIm
 Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char requete[20],int* nbScore){
     descripteurImage tmp=(descripteurImage)calloc(1,sizeof(descImage));
     tmp=pileImage->tete;
-    Src pileScore=(Src)calloc(100,sizeof(Score));
+    Src pileScore=(Src)calloc(100,sizeof(ScoreImage));
     int val=-1;
     for(int i=0;i<sizeof(tabVal)/sizeof(int);i++){
         if(strcoll(tabCouleur[i],requete)==0){
@@ -147,12 +173,12 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
     return pileScore;
 }
 
-void afficheNbScore(Src pileScore,int nbMaxResultat,int tailleTabScore){
+void afficheNbScoreImage(Src pileScore,int nbMaxResultat,int tailleTabScore){
     for(int i=0;i<nbMaxResultat&&i<tailleTabScore;i++)printf("(%d)\t%d\t%f%%\n",i+1,pileScore[i].id,pileScore[i].score);
     printf("\n\r");
 }
 
-void ouvreFichier(Score s,listeDescripteurImage liste){
+void ouvreFichierImage(ScoreImage s,listeDescripteurImage liste){
     char* cmd=(char*)calloc(100,sizeof(char));
     char* cheminTXT=trouveChemin(s.id,liste);
     if(cheminTXT==NULL){
@@ -171,7 +197,7 @@ void ouvreFichier(Score s,listeDescripteurImage liste){
     free(cmd);
 }
 
-char* trouveChemin(int idDesc,listeDescripteurImage liste){
+char* trouveCheminImage(int idDesc,listeDescripteurImage liste){
     elementlitsetDescripteurImage tmp;
     tmp=liste->tete;
     while(tmp->next!=NULL){
@@ -181,7 +207,7 @@ char* trouveChemin(int idDesc,listeDescripteurImage liste){
     return NULL;
 }
 
-int trouveIDDescripteur(char* chemin,listeDescripteurImage liste){
+int trouveIDDescripteurImage(char* chemin,listeDescripteurImage liste){
     elementlitsetDescripteurImage tmp;
     tmp=liste->tete;
     for(int i=0;i<liste->taille;i++,tmp=tmp->next)
@@ -191,7 +217,7 @@ int trouveIDDescripteur(char* chemin,listeDescripteurImage liste){
 
 void insertionSort(Src tab, int size){
     int i, j;
-    Score tmp;
+    ScoreImage tmp;
     for (i=0;i<size-1;i++){
         for (j=0;j<size-i-1;j++){
             if (tab[j].score<tab[j+1].score){

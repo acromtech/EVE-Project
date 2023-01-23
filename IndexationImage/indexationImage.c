@@ -178,7 +178,7 @@ void savelisteDescripteurImage(listeDescripteurImage* liste, FILE* listeDescript
     free(tmp);
 }
 
-int isIndexer(char* path)
+int isIndexerI(char* path)
 {
     FILE *f = fopen("liste_descripteur_image.csv", "r");
     char *command = calloc(1024, sizeof(char));
@@ -209,9 +209,9 @@ void indexationImage(char* path, baseDescripteurImage* bd, listeDescripteurImage
     int histogramSize =1; 
     struct descripteur_image d;
 
-    if(isIndexer(path) == 0)
-    {
-        printf("Indexation de %s :\n",path);
+    
+    
+        
         d.histogramme  = quantification(path, NB_BITS,&nbComposantes);
     
         if(nbComposantes != 1)
@@ -223,11 +223,8 @@ void indexationImage(char* path, baseDescripteurImage* bd, listeDescripteurImage
         for(int i=0; i<d.taille; i++)
             printf("%d ", d.histogramme[i]);
         saveDescripteurImage(bd, baseDescripteur, d);
-        savelisteDescripteurImage(liste, listeDescripteur, path, id);
-        printf("Fin de l'indexation de %s.\n",path);
-    }
-    else
-        printf("Fichier déjà indexer.\n");
+    savelisteDescripteurImage(liste, listeDescripteur, path, id);
+
     fclose(baseDescripteur);
     fclose(listeDescripteur);
 }

@@ -271,11 +271,13 @@ void evolution_mae(unsigned char *etat_mae)
             *etat_mae = ETAT_UTILISATEUR;
             break;
         case 2:
-            printf("\r\n\n| 1ere méthode de recherche Noir et Blanc |\n\n");
+            printf("\r\n\n| Recherche par comparaison |\n\n");
+            //rechercheImageHisto();
             sleep(2);
             break;
         case 3:
-            printf("\r\n\n| 2eme méthode de recherche Couleur |\n\n");
+            printf("\r\n\n| Recherche Couleur |\n\n");
+            //rechercheImageCouleur();
             sleep(2);
             break;
         case 4:
@@ -427,8 +429,8 @@ void action_mae(unsigned char *etat_mae)
         printf("======================     IMAGE     ======================\n");
         printf("===========================================================\n");
         puts("\n");
-        printf("\t\t2.  1ere méthode.\n");
-        printf("\t\t3.  2eme méthode.\n");
+        printf("\t\t2.  Recherche Histo.\n");
+        printf("\t\t3.  Recherche Couleur.\n");
         printf("\t\t4.  Fermer l'application.\n");
         printf("\n\t\t1.  Retour.\n");
         break;

@@ -46,15 +46,15 @@ void saveDescripteurImage(baseDescripteurImage*,FILE*, struct descripteur_image)
 void savelisteDescripteurImage(listeDescripteurImage*, FILE*, char*, int id);
 void indexationImage(char*, baseDescripteurImage*, listeDescripteurImage*, int, int);
 void indexerBaseImage(baseDescripteurImage *bd, listeDescripteurImage *listeDescripteur);
-void recharger_base_indexation(char *path, baseDescripteurImage*);
+
 
 typedef struct score{
     float score;
     int id;
     struct score* next;
-}Score;
+}ScoreImage;
 
-typedef Score* Src;
+typedef ScoreImage* Src;
 
 typedef struct base_score{
     int taille;
@@ -67,14 +67,17 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage,char[20],int*);
 void rechercheHisto(const volatile baseDescripteurImage,listeDescripteurImage);
 Src calculeScoreComparaison(const volatile baseDescripteurImage,descImage,int*);
 
-char* trouveChemin(int,listeDescripteurImage);
-int trouveIDDescripteur(char*,listeDescripteurImage);
+char* trouveCheminImage(int,listeDescripteurImage);
+int trouveIDDescripteurImage(char*,listeDescripteurImage);
 
-void afficheNbScore(Src,int,int);
-Score choixFichier(Src,int);
-void ouvreFichier(Score,listeDescripteurImage);
+void afficheNbScoreImage(Src,int,int);
+ScoreImage choixFichierImage(Src,int);
+void ouvreFichierImage(ScoreImage,listeDescripteurImage);
 
 void insertionSort(Src,int);
 char *findJpegFile(char*);
+
+void rechercheImageHisto(void);
+void rechercheImageCouleur(void);
 
 #endif // !INDEXATION_IMAGE_IN
