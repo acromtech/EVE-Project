@@ -99,12 +99,13 @@ void saisieConfig(){
 
     fscanf(ptrFichier1, "%d %s %d", &numLigne, texte, &nbrLigne);
 	
+    // récuperation du numéro de la ligne
     do{
 
         rewind(ptrFichier1);
         __fpurge(stdin);
         printf("\n\nEntrez le numéro du paramètre qui doit être modifié : ");
-        fgets(test_numLigne, sizeof test_numLigne, stdin);
+        fgets(test_numLigne, sizeof (test_numLigne), stdin);
         
         // purge le stdin si la saisie est trop longue
         __fpurge(stdin);
@@ -114,15 +115,96 @@ void saisieConfig(){
     int nouvNumLigne = atoi(test_numLigne);
     fclose(ptrFichier1);
     
+    // récuperation de la valeur
     do{
 
         printf("Entrez la nouvelle valeur pour le paramètre n° %d : ",nouvNumLigne);
-        fgets(nouvVal, sizeof nouvVal, stdin);
-
+        fgets(nouvVal, sizeof (nouvVal), stdin);
+    
     }while(atoi(nouvVal) == atoi("n"));
-	
-	editConfig(nouvNumLigne,atoi(nouvVal));
 
+    // protection des valeurs 
+    switch (nouvNumLigne){
+        case 2: if (atoi(nouvVal)<0){
+                 
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+          
+        case 3: if (atoi(nouvVal)< 0){
+                   
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+        
+        case 4: if (atoi(nouvVal) < 0){
+            
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+        
+        case 5: if (atoi(nouvVal)<0 || atoi(nouvVal) > 100){
+                   
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+        
+        case 6: if (atoi(nouvVal)<0){
+                   
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+        
+        case 7: if (atoi(nouvVal)<0){
+                   
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+        
+        case 8: if (atoi(nouvVal)<3 || atoi(nouvVal)>= 10){
+            
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            
+        }else{
+
+            editConfig(nouvNumLigne,atoi(nouvVal));
+
+        }
+        break;
+            
+    }
+
+    // affichage du .config
 	affichConfig();
 }
 

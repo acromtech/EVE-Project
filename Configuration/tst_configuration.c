@@ -8,10 +8,10 @@
 
 int main(){
  
-    editConfig(2,1024);
+    editConfig(3,1024);
     int parametre = config("indexationAudioN");
 
-    editConfig(3,100);
+    editConfig(4,100);
     int parametre1 = config("indexationAudioM");
 
     printf("la valeur est: %d\n", parametre);

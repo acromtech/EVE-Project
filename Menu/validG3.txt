@@ -1,0 +1,1318 @@
+Script started on 2023-01-23 14:34:09+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+#gcc -c ../IndexationImage/indexationImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o 
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3 1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... |
+debut indexation ficher : ../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml. 
+fin indexation : ../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+debut indexation ficher : ../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml. 
+fin indexation : ../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml. 
+fin indexation : ../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Edition___les_mots_et.xml. 
+fin indexation : ../BaseFichiersTexte/05-Edition___les_mots_et.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml. 
+fin indexation : ../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+debut indexation ficher : ../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml. 
+fin indexation : ../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+debut indexation ficher : ../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml. 
+fin indexation : ../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml. 
+fin indexation : ../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml. 
+fin indexation : ../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml. 
+fin indexation : ../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Photographie___Philip_Blenkinsop_a.xml. 
+fin indexation : ../BaseFichiersTexte/05-Photographie___Philip_Blenkinsop_a.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Prague_inaugure_les_JournΘes_europΘennes.xml. 
+fin indexation : ../BaseFichiersTexte/05-Prague_inaugure_les_JournΘes_europΘennes.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Rock___l_Illinois_magique_de.xml. 
+fin indexation : ../BaseFichiersTexte/05-Rock___l_Illinois_magique_de.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Tours_d_honneur_pour_les_athlΦtes.xml. 
+fin indexation : ../BaseFichiersTexte/05-Tours_d_honneur_pour_les_athlΦtes.xml
+debut indexation ficher : ../BaseFichiersTexte/06-La_contamination_du_ma∩s_par.xml. 
+fin indexation : ../BaseFichiersTexte/06-La_contamination_du_ma∩s_par.xml
+debut indexation ficher : ../BaseFichiersTexte/06-Les_mauvais_comptes_d_une_Θlimination.xml. 
+fin indexation : ../BaseFichiersTexte/06-Les_mauvais_comptes_d_une_Θlimination.xml
+debut indexation ficher : ../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml. 
+fin indexation : ../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml
+debut indexation ficher : ../BaseFichiersTexte/06-US_Open___Mauresmo_et.xml. 
+fin indexation : ../BaseFichiersTexte/06-US_Open___Mauresmo_et.xml
+debut indexation ficher : ../BaseFichiersTexte/07-Un_dΘputΘ_UMP_lance_une.xml. 
+fin indexation : ../BaseFichiersTexte/07-Un_dΘputΘ_UMP_lance_une.xml
+debut indexation ficher : ../BaseFichiersTexte/08-Carlos_do_Carmo____Le.xml. 
+fin indexation : ../BaseFichiersTexte/08-Carlos_do_Carmo____Le.xml
+debut indexation ficher : ../BaseFichiersTexte/08-La_mission_Deep_Impact_permet.xml. 
+fin indexation : ../BaseFichiersTexte/08-La_mission_Deep_Impact_permet.xml
+debut indexation ficher : ../BaseFichiersTexte/08-L_Θquipe_de_France_victime_d_un.xml. 
+fin indexation : ../BaseFichiersTexte/08-L_Θquipe_de_France_victime_d_un.xml
+debut indexation ficher : ../BaseFichiersTexte/08-PavΘ,_tour_ou_silo,_cinq.xml. 
+fin indexation : ../BaseFichiersTexte/08-PavΘ,_tour_ou_silo,_cinq.xml
+debut indexation ficher : ../BaseFichiersTexte/08-Sous_l_effet_du_rΘchauffement,_les.xml. 
+fin indexation : ../BaseFichiersTexte/08-Sous_l_effet_du_rΘchauffement,_les.xml
+debut indexation ficher : ../BaseFichiersTexte/08-ThΘΓtre___l_ΘchappΘe_belle,_peu.xml. 
+fin indexation : ../BaseFichiersTexte/08-ThΘΓtre___l_ΘchappΘe_belle,_peu.xml
+debut indexation ficher : ../BaseFichiersTexte/08-US_Open___Pierce_Θlimine.xml. 
+fin indexation : ../BaseFichiersTexte/08-US_Open___Pierce_Θlimine.xml
+debut indexation ficher : ../BaseFichiersTexte/09-Miracle___le_cricket_est.xml. 
+fin indexation : ../BaseFichiersTexte/09-Miracle___le_cricket_est.xml
+debut indexation ficher : ../BaseFichiersTexte/10-La_rΘalitΘ_virtuelle_et_l_informatique.xml. 
+fin indexation : ../BaseFichiersTexte/10-La_rΘalitΘ_virtuelle_et_l_informatique.xml
+debut indexation ficher : ../BaseFichiersTexte/10-Le_cyclone_Katrina_complique_le.xml. 
+fin indexation : ../BaseFichiersTexte/10-Le_cyclone_Katrina_complique_le.xml
+debut indexation ficher : ../BaseFichiersTexte/11-La_troposphΦre_paie,_au_prix.xml. 
+fin indexation : ../BaseFichiersTexte/11-La_troposphΦre_paie,_au_prix.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Agassi_plie_face_au_meilleur.xml. 
+fin indexation : ../BaseFichiersTexte/12-Agassi_plie_face_au_meilleur.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Fernando_Alonso_n_est_plus_qu_α.xml. 
+fin indexation : ../BaseFichiersTexte/12-Fernando_Alonso_n_est_plus_qu_α.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Jean-Marie_Sevestre,_libraire_et_PDG.xml. 
+fin indexation : ../BaseFichiersTexte/12-Jean-Marie_Sevestre,_libraire_et_PDG.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Musique_classique___un__Oberon_.xml. 
+fin indexation : ../BaseFichiersTexte/12-Musique_classique___un__Oberon_.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Musiques_du_monde___les.xml. 
+fin indexation : ../BaseFichiersTexte/12-Musiques_du_monde___les.xml
+debut indexation ficher : ../BaseFichiersTexte/12-SuccΦs_sur_les_tatamis,_polΘmique.xml. 
+fin indexation : ../BaseFichiersTexte/12-SuccΦs_sur_les_tatamis,_polΘmique.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Des_astronomes_dΘtectent_l_explosion_cosmique.xml. 
+fin indexation : ../BaseFichiersTexte/13-Des_astronomes_dΘtectent_l_explosion_cosmique.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Les_accidents_vasculaires_cΘrΘbraux,_α.xml. 
+fin indexation : ../BaseFichiersTexte/13-Les_accidents_vasculaires_cΘrΘbraux,_α.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Ligue_des_champions____Si.xml. 
+fin indexation : ../BaseFichiersTexte/13-Ligue_des_champions____Si.xml
+debut indexation ficher : ../BaseFichiersTexte/13-L_inattendue_lΘvitation_de_la_goutte.xml. 
+fin indexation : ../BaseFichiersTexte/13-L_inattendue_lΘvitation_de_la_goutte.xml
+debut indexation ficher : ../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml. 
+fin indexation : ../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml. 
+fin indexation : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml. 
+fin indexation : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Danse___Preljocaj_emmΦne_l_OpΘra.xml. 
+fin indexation : ../BaseFichiersTexte/15-Danse___Preljocaj_emmΦne_l_OpΘra.xml
+debut indexation ficher : ../BaseFichiersTexte/15-La_mort_de_Robert_Wise,.xml. 
+fin indexation : ../BaseFichiersTexte/15-La_mort_de_Robert_Wise,.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Le_ThΘΓtre_des_Champs-ElysΘes_s_offre.xml. 
+fin indexation : ../BaseFichiersTexte/15-Le_ThΘΓtre_des_Champs-ElysΘes_s_offre.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Lille_s_incline_dans_les.xml. 
+fin indexation : ../BaseFichiersTexte/15-Lille_s_incline_dans_les.xml
+debut indexation ficher : ../BaseFichiersTexte/15-_Si_on_veut_aller_trop.xml. 
+fin indexation : ../BaseFichiersTexte/15-_Si_on_veut_aller_trop.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Un_quasar_solitaire_bouleverse_les.xml. 
+fin indexation : ../BaseFichiersTexte/15-Un_quasar_solitaire_bouleverse_les.xml
+debut indexation ficher : ../BaseFichiersTexte/16-Une_sonde_japonaise_va_tenter.xml. 
+fin indexation : ../BaseFichiersTexte/16-Une_sonde_japonaise_va_tenter.xml
+debut indexation ficher : ../BaseFichiersTexte/17-Anouk_AimΘe_et_Philippe_Noiret.xml. 
+fin indexation : ../BaseFichiersTexte/17-Anouk_AimΘe_et_Philippe_Noiret.xml
+debut indexation ficher : ../BaseFichiersTexte/17-De_la_difficultΘ_d_anticiper_les.xml. 
+fin indexation : ../BaseFichiersTexte/17-De_la_difficultΘ_d_anticiper_les.xml
+debut indexation ficher : ../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml. 
+fin indexation : ../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml
+debut indexation ficher : ../BaseFichiersTexte/17-Une_Θquipe_franτaise_a_rΘussi.xml. 
+fin indexation : ../BaseFichiersTexte/17-Une_Θquipe_franτaise_a_rΘussi.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Battue_par_la_SlovΘnie,_l_Θquipe.xml. 
+fin indexation : ../BaseFichiersTexte/18-Battue_par_la_SlovΘnie,_l_Θquipe.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Les_22e_JournΘes_du_Patrimoine.xml. 
+fin indexation : ../BaseFichiersTexte/18-Les_22e_JournΘes_du_Patrimoine.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Ligue_1___Lyon_a.xml. 
+fin indexation : ../BaseFichiersTexte/18-Ligue_1___Lyon_a.xml
+debut indexation ficher : ../BaseFichiersTexte/18-L_Θquipe_de_France_de_tennis.xml. 
+fin indexation : ../BaseFichiersTexte/18-L_Θquipe_de_France_de_tennis.xml
+debut indexation ficher : ../BaseFichiersTexte/21-La_France_se_rΘveille_pour.xml. 
+fin indexation : ../BaseFichiersTexte/21-La_France_se_rΘveille_pour.xml
+debut indexation ficher : ../BaseFichiersTexte/21-MatiΦres_plastiques_et_pesticides_pourraient.xml. 
+fin indexation : ../BaseFichiersTexte/21-MatiΦres_plastiques_et_pesticides_pourraient.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Danse___quarante_jeunes_de.xml. 
+fin indexation : ../BaseFichiersTexte/22-Danse___quarante_jeunes_de.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Des_laboureurs,_des_OGM..._et.xml. 
+fin indexation : ../BaseFichiersTexte/22-Des_laboureurs,_des_OGM..._et.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Dominique_Noδl____Les_architectes.xml. 
+fin indexation : ../BaseFichiersTexte/22-Dominique_Noδl____Les_architectes.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Exposition___les_mΘtamorphoses_picturales.xml. 
+fin indexation : ../BaseFichiersTexte/22-Exposition___les_mΘtamorphoses_picturales.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml. 
+fin indexation : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Les_clubs_de_football_anglais.xml. 
+fin indexation : ../BaseFichiersTexte/22-Les_clubs_de_football_anglais.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Sursaut_des_MonΘgasques_aprΦs_le.xml. 
+fin indexation : ../BaseFichiersTexte/22-Sursaut_des_MonΘgasques_aprΦs_le.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Ted_Stanger,_l_AmΘricain_de_service.xml. 
+fin indexation : ../BaseFichiersTexte/22-Ted_Stanger,_l_AmΘricain_de_service.xml
+debut indexation ficher : ../BaseFichiersTexte/23-Les_Bleus,_tombeurs_de_la.xml. 
+fin indexation : ../BaseFichiersTexte/23-Les_Bleus,_tombeurs_de_la.xml
+debut indexation ficher : ../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml. 
+fin indexation : ../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml. 
+fin indexation : ../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml. 
+fin indexation : ../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml. 
+fin indexation : ../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml. 
+fin indexation : ../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml
+debut indexation ficher : ../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml. 
+fin indexation : ../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml. 
+fin indexation : ../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml. 
+fin indexation : ../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml. 
+fin indexation : ../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml
+debut indexation ficher : ../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml. 
+fin indexation : ../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml
+debut indexation ficher : ../BaseFichiersTexte/28-Danse___Robyn_Orlin_et.xml. 
+fin indexation : ../BaseFichiersTexte/28-Danse___Robyn_Orlin_et.xml
+debut indexation ficher : ../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml. 
+fin indexation : ../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml
+debut indexation ficher : ../BaseFichiersTexte/28-_îdipe_α_Colone_,_la_rage.xml. 
+fin indexation : ../BaseFichiersTexte/28-_îdipe_α_Colone_,_la_rage.xml
+debut indexation ficher : ../BaseFichiersTexte/29-Forte_rΘduction_de_la_calotte.xml. 
+fin indexation : ../BaseFichiersTexte/29-Forte_rΘduction_de_la_calotte.xml
+debut indexation ficher : ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml. 
+fin indexation : ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+
+
+| Affichage du fichier de configuration |
+
+
+2 motdePasse 1234
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 90
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 1505
+
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 1505
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+
+
+| Affichage du fichier de configuration |
+
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 90
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1234
+	Mot de passe invalide. 
+	Veuillez rééssayer (nombre d'essais restant 2) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+| Rechercher des fichiers texte par mot clé |
+
+Veuillez saisir le mot qui servira à la comparaison : 
+stockage
+Résultat(s) en 0,000029 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "stockage" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml : 5
+	../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml : 5
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+Résultat(s) en 0,045581 secondes
+
+(1)	100,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(2)	100,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(3)	100,000000%	../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+(4)	100,000000%	../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+(5)	100,000000%	../BaseFichiersTexte/05-Edition___les_mots_et.xml
+(6)	100,000000%	../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+(7)	100,000000%	../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+(8)	100,000000%	../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+(9)	100,000000%	../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+(10)	100,000000%	../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+Résultat(s) en 0,048789 secondes
+
+(1)	100,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(2)	100,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(3)	100,000000%	../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+(4)	100,000000%	../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+(5)	100,000000%	../BaseFichiersTexte/05-Edition___les_mots_et.xml
+(6)	100,000000%	../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+(7)	100,000000%	../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+(8)	100,000000%	../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+(9)	100,000000%	../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+(10)	100,000000%	../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+Résultat(s) en 6,362893 secondes
+
+(1)	-nan%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(2)	-nan%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+(3)	-nan%	../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+(4)	-nan%	../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+(5)	-nan%	../BaseFichiersTexte/05-Edition___les_mots_et.xml
+(6)	-nan%	../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+(7)	-nan%	../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+(8)	-nan%	../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+(9)	-nan%	../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+(10)	-nan%	../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+Résultat(s) en 5,416414 secondes
+
+(1)	100,000000%	../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+(2)	100,000000%	../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml
+(3)	99,963593%	../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml
+(4)	99,831825%	../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml
+(5)	99,712372%	../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml
+(6)	99,571709%	../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml
+(7)	99,280266%	../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml
+(8)	99,280266%	../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml
+(9)	99,134636%	../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml
+(10)	99,134636%	../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 90
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+Entrez le numéro du paramètre qui doit être modifié : 8
+Entrez la nouvelle valeur pour le paramètre n° 8 : 5
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 90
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : O
+
+| Suppression de la base Indexée |
+
+| Suppression terminée ! |
+
+| Indexation lancée. Veuillez patienter ... |
+debut indexation ficher : ../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml. 
+fin indexation : ../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+debut indexation ficher : ../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml. 
+fin indexation : ../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml. 
+fin indexation : ../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Edition___les_mots_et.xml. 
+fin indexation : ../BaseFichiersTexte/05-Edition___les_mots_et.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml. 
+fin indexation : ../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+debut indexation ficher : ../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml. 
+fin indexation : ../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+debut indexation ficher : ../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml. 
+fin indexation : ../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml. 
+fin indexation : ../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml. 
+fin indexation : ../BaseFichiersTexte/05-Le_thΘΓtre_de_texte_confrontΘ.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml. 
+fin indexation : ../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Photographie___Philip_Blenkinsop_a.xml. 
+fin indexation : ../BaseFichiersTexte/05-Photographie___Philip_Blenkinsop_a.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Prague_inaugure_les_JournΘes_europΘennes.xml. 
+fin indexation : ../BaseFichiersTexte/05-Prague_inaugure_les_JournΘes_europΘennes.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Rock___l_Illinois_magique_de.xml. 
+fin indexation : ../BaseFichiersTexte/05-Rock___l_Illinois_magique_de.xml
+debut indexation ficher : ../BaseFichiersTexte/05-Tours_d_honneur_pour_les_athlΦtes.xml. 
+fin indexation : ../BaseFichiersTexte/05-Tours_d_honneur_pour_les_athlΦtes.xml
+debut indexation ficher : ../BaseFichiersTexte/06-La_contamination_du_ma∩s_par.xml. 
+fin indexation : ../BaseFichiersTexte/06-La_contamination_du_ma∩s_par.xml
+debut indexation ficher : ../BaseFichiersTexte/06-Les_mauvais_comptes_d_une_Θlimination.xml. 
+fin indexation : ../BaseFichiersTexte/06-Les_mauvais_comptes_d_une_Θlimination.xml
+debut indexation ficher : ../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml. 
+fin indexation : ../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml
+debut indexation ficher : ../BaseFichiersTexte/06-US_Open___Mauresmo_et.xml. 
+fin indexation : ../BaseFichiersTexte/06-US_Open___Mauresmo_et.xml
+debut indexation ficher : ../BaseFichiersTexte/07-Un_dΘputΘ_UMP_lance_une.xml. 
+fin indexation : ../BaseFichiersTexte/07-Un_dΘputΘ_UMP_lance_une.xml
+debut indexation ficher : ../BaseFichiersTexte/08-Carlos_do_Carmo____Le.xml. 
+fin indexation : ../BaseFichiersTexte/08-Carlos_do_Carmo____Le.xml
+debut indexation ficher : ../BaseFichiersTexte/08-La_mission_Deep_Impact_permet.xml. 
+fin indexation : ../BaseFichiersTexte/08-La_mission_Deep_Impact_permet.xml
+debut indexation ficher : ../BaseFichiersTexte/08-L_Θquipe_de_France_victime_d_un.xml. 
+fin indexation : ../BaseFichiersTexte/08-L_Θquipe_de_France_victime_d_un.xml
+debut indexation ficher : ../BaseFichiersTexte/08-PavΘ,_tour_ou_silo,_cinq.xml. 
+fin indexation : ../BaseFichiersTexte/08-PavΘ,_tour_ou_silo,_cinq.xml
+debut indexation ficher : ../BaseFichiersTexte/08-Sous_l_effet_du_rΘchauffement,_les.xml. 
+fin indexation : ../BaseFichiersTexte/08-Sous_l_effet_du_rΘchauffement,_les.xml
+debut indexation ficher : ../BaseFichiersTexte/08-ThΘΓtre___l_ΘchappΘe_belle,_peu.xml. 
+fin indexation : ../BaseFichiersTexte/08-ThΘΓtre___l_ΘchappΘe_belle,_peu.xml
+debut indexation ficher : ../BaseFichiersTexte/08-US_Open___Pierce_Θlimine.xml. 
+fin indexation : ../BaseFichiersTexte/08-US_Open___Pierce_Θlimine.xml
+debut indexation ficher : ../BaseFichiersTexte/09-Miracle___le_cricket_est.xml. 
+fin indexation : ../BaseFichiersTexte/09-Miracle___le_cricket_est.xml
+debut indexation ficher : ../BaseFichiersTexte/10-La_rΘalitΘ_virtuelle_et_l_informatique.xml. 
+fin indexation : ../BaseFichiersTexte/10-La_rΘalitΘ_virtuelle_et_l_informatique.xml
+debut indexation ficher : ../BaseFichiersTexte/10-Le_cyclone_Katrina_complique_le.xml. 
+fin indexation : ../BaseFichiersTexte/10-Le_cyclone_Katrina_complique_le.xml
+debut indexation ficher : ../BaseFichiersTexte/11-La_troposphΦre_paie,_au_prix.xml. 
+fin indexation : ../BaseFichiersTexte/11-La_troposphΦre_paie,_au_prix.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Agassi_plie_face_au_meilleur.xml. 
+fin indexation : ../BaseFichiersTexte/12-Agassi_plie_face_au_meilleur.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Fernando_Alonso_n_est_plus_qu_α.xml. 
+fin indexation : ../BaseFichiersTexte/12-Fernando_Alonso_n_est_plus_qu_α.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Jean-Marie_Sevestre,_libraire_et_PDG.xml. 
+fin indexation : ../BaseFichiersTexte/12-Jean-Marie_Sevestre,_libraire_et_PDG.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Musique_classique___un__Oberon_.xml. 
+fin indexation : ../BaseFichiersTexte/12-Musique_classique___un__Oberon_.xml
+debut indexation ficher : ../BaseFichiersTexte/12-Musiques_du_monde___les.xml. 
+fin indexation : ../BaseFichiersTexte/12-Musiques_du_monde___les.xml
+debut indexation ficher : ../BaseFichiersTexte/12-SuccΦs_sur_les_tatamis,_polΘmique.xml. 
+fin indexation : ../BaseFichiersTexte/12-SuccΦs_sur_les_tatamis,_polΘmique.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Des_astronomes_dΘtectent_l_explosion_cosmique.xml. 
+fin indexation : ../BaseFichiersTexte/13-Des_astronomes_dΘtectent_l_explosion_cosmique.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Les_accidents_vasculaires_cΘrΘbraux,_α.xml. 
+fin indexation : ../BaseFichiersTexte/13-Les_accidents_vasculaires_cΘrΘbraux,_α.xml
+debut indexation ficher : ../BaseFichiersTexte/13-Ligue_des_champions____Si.xml. 
+fin indexation : ../BaseFichiersTexte/13-Ligue_des_champions____Si.xml
+debut indexation ficher : ../BaseFichiersTexte/13-L_inattendue_lΘvitation_de_la_goutte.xml. 
+fin indexation : ../BaseFichiersTexte/13-L_inattendue_lΘvitation_de_la_goutte.xml
+debut indexation ficher : ../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml. 
+fin indexation : ../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml. 
+fin indexation : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml. 
+fin indexation : ../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Danse___Preljocaj_emmΦne_l_OpΘra.xml. 
+fin indexation : ../BaseFichiersTexte/15-Danse___Preljocaj_emmΦne_l_OpΘra.xml
+debut indexation ficher : ../BaseFichiersTexte/15-La_mort_de_Robert_Wise,.xml. 
+fin indexation : ../BaseFichiersTexte/15-La_mort_de_Robert_Wise,.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Le_ThΘΓtre_des_Champs-ElysΘes_s_offre.xml. 
+fin indexation : ../BaseFichiersTexte/15-Le_ThΘΓtre_des_Champs-ElysΘes_s_offre.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Lille_s_incline_dans_les.xml. 
+fin indexation : ../BaseFichiersTexte/15-Lille_s_incline_dans_les.xml
+debut indexation ficher : ../BaseFichiersTexte/15-_Si_on_veut_aller_trop.xml. 
+fin indexation : ../BaseFichiersTexte/15-_Si_on_veut_aller_trop.xml
+debut indexation ficher : ../BaseFichiersTexte/15-Un_quasar_solitaire_bouleverse_les.xml. 
+fin indexation : ../BaseFichiersTexte/15-Un_quasar_solitaire_bouleverse_les.xml
+debut indexation ficher : ../BaseFichiersTexte/16-Une_sonde_japonaise_va_tenter.xml. 
+fin indexation : ../BaseFichiersTexte/16-Une_sonde_japonaise_va_tenter.xml
+debut indexation ficher : ../BaseFichiersTexte/17-Anouk_AimΘe_et_Philippe_Noiret.xml. 
+fin indexation : ../BaseFichiersTexte/17-Anouk_AimΘe_et_Philippe_Noiret.xml
+debut indexation ficher : ../BaseFichiersTexte/17-De_la_difficultΘ_d_anticiper_les.xml. 
+fin indexation : ../BaseFichiersTexte/17-De_la_difficultΘ_d_anticiper_les.xml
+debut indexation ficher : ../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml. 
+fin indexation : ../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml
+debut indexation ficher : ../BaseFichiersTexte/17-Une_Θquipe_franτaise_a_rΘussi.xml. 
+fin indexation : ../BaseFichiersTexte/17-Une_Θquipe_franτaise_a_rΘussi.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Battue_par_la_SlovΘnie,_l_Θquipe.xml. 
+fin indexation : ../BaseFichiersTexte/18-Battue_par_la_SlovΘnie,_l_Θquipe.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Les_22e_JournΘes_du_Patrimoine.xml. 
+fin indexation : ../BaseFichiersTexte/18-Les_22e_JournΘes_du_Patrimoine.xml
+debut indexation ficher : ../BaseFichiersTexte/18-Ligue_1___Lyon_a.xml. 
+fin indexation : ../BaseFichiersTexte/18-Ligue_1___Lyon_a.xml
+debut indexation ficher : ../BaseFichiersTexte/18-L_Θquipe_de_France_de_tennis.xml. 
+fin indexation : ../BaseFichiersTexte/18-L_Θquipe_de_France_de_tennis.xml
+debut indexation ficher : ../BaseFichiersTexte/21-La_France_se_rΘveille_pour.xml. 
+fin indexation : ../BaseFichiersTexte/21-La_France_se_rΘveille_pour.xml
+debut indexation ficher : ../BaseFichiersTexte/21-MatiΦres_plastiques_et_pesticides_pourraient.xml. 
+fin indexation : ../BaseFichiersTexte/21-MatiΦres_plastiques_et_pesticides_pourraient.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Danse___quarante_jeunes_de.xml. 
+fin indexation : ../BaseFichiersTexte/22-Danse___quarante_jeunes_de.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Des_laboureurs,_des_OGM..._et.xml. 
+fin indexation : ../BaseFichiersTexte/22-Des_laboureurs,_des_OGM..._et.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Dominique_Noδl____Les_architectes.xml. 
+fin indexation : ../BaseFichiersTexte/22-Dominique_Noδl____Les_architectes.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Exposition___les_mΘtamorphoses_picturales.xml. 
+fin indexation : ../BaseFichiersTexte/22-Exposition___les_mΘtamorphoses_picturales.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml. 
+fin indexation : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Les_clubs_de_football_anglais.xml. 
+fin indexation : ../BaseFichiersTexte/22-Les_clubs_de_football_anglais.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Sursaut_des_MonΘgasques_aprΦs_le.xml. 
+fin indexation : ../BaseFichiersTexte/22-Sursaut_des_MonΘgasques_aprΦs_le.xml
+debut indexation ficher : ../BaseFichiersTexte/22-Ted_Stanger,_l_AmΘricain_de_service.xml. 
+fin indexation : ../BaseFichiersTexte/22-Ted_Stanger,_l_AmΘricain_de_service.xml
+debut indexation ficher : ../BaseFichiersTexte/23-Les_Bleus,_tombeurs_de_la.xml. 
+fin indexation : ../BaseFichiersTexte/23-Les_Bleus,_tombeurs_de_la.xml
+debut indexation ficher : ../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml. 
+fin indexation : ../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml. 
+fin indexation : ../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml. 
+fin indexation : ../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml. 
+fin indexation : ../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml
+debut indexation ficher : ../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml. 
+fin indexation : ../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml
+debut indexation ficher : ../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml. 
+fin indexation : ../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml. 
+fin indexation : ../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml. 
+fin indexation : ../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml
+debut indexation ficher : ../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml. 
+fin indexation : ../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml
+debut indexation ficher : ../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml. 
+fin indexation : ../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml
+debut indexation ficher : ../BaseFichiersTexte/28-Danse___Robyn_Orlin_et.xml. 
+fin indexation : ../BaseFichiersTexte/28-Danse___Robyn_Orlin_et.xml
+debut indexation ficher : ../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml. 
+fin indexation : ../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml
+debut indexation ficher : ../BaseFichiersTexte/28-_îdipe_α_Colone_,_la_rage.xml. 
+fin indexation : ../BaseFichiersTexte/28-_îdipe_α_Colone_,_la_rage.xml
+debut indexation ficher : ../BaseFichiersTexte/29-Forte_rΘduction_de_la_calotte.xml. 
+fin indexation : ../BaseFichiersTexte/29-Forte_rΘduction_de_la_calotte.xml
+debut indexation ficher : ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml. 
+fin indexation : ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+Résultat(s) en 0,477764 secondes
+
+(1)	100,000000%	../BaseFichiersTexte/24-Canicules_et_sΘcheresses_menacent_de.xml
+(2)	100,000000%	../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+(3)	100,000000%	../BaseFichiersTexte/26-Jazz___Manu_KatchΘ,_haut.xml
+(4)	100,000000%	../BaseFichiersTexte/26-Lyon_prend_ses_aises_en.xml
+(5)	100,000000%	../BaseFichiersTexte/26-Tom_Boonen_sacrΘ_champion_du.xml
+(6)	99,766121%	../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml
+(7)	99,518898%	../BaseFichiersTexte/22-Ted_Stanger,_l_AmΘricain_de_service.xml
+(8)	99,518898%	../BaseFichiersTexte/23-Les_Bleus,_tombeurs_de_la.xml
+(9)	99,259148%	../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml
+(10)	99,259148%	../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+| Rechercher des fichiers texte par mot clé |
+
+Veuillez saisir le mot qui servira à la comparaison : 
+musique
+Résultat(s) en 0,000042 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "musique" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml : 5
+	../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml : 5
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+| Rechercher des fichiers texte par mot clé |
+
+Veuillez saisir le mot qui servira à la comparaison : 
+grippe
+Résultat(s) en 0,000008 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "grippe" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml : 9
+	../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml : 7
+	../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml : 5
+	../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml : 5
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+======================     AUDIO     ======================
+===========================================================
+
+
+		2.  Recherche Jingle.
+		3.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+| Recherche de la correspondance lancée ... |
+
+| Entrez le nom de votre fichier : jingle_fi.wav
+
+
+| Veuillez patienter | 
+
+
+| Correspondance trouvé à 90,92% ... | 
+
+
+| Voici le résultat | 
+
+Le jingle demarre à environ 29 sec du corpus
+
+Appuyez sur entrée pour lancer l'audio... (3 sec avant) 
+vlc --play-and-exit --start-time 26 ../TestSon/corpus_fi.wav 
+
+VLC media player 3.0.18 Vetinari (revision 3.0.18-0-ge9eceaed4d)
+[[32;1m000055754a836a00[0m] main libvlc: [0;1mLancement de vlc avec l'interface par défaut. Utiliser « cvlc » pour démarrer VLC sans interface.[0m
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+Qt: Session management error: Could not open network socket
+[[32;1m000055754a8e08e0[0m] main playlist: [0;1mend of playlist, exiting[0m
+QObject::~QObject: Timers cannot be stopped from another thread
+[H[2J[3J===========================================================
+======================     AUDIO     ======================
+===========================================================
+
+
+		2.  Recherche Jingle.
+		3.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 90
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+
+
+Entrez le numéro du paramètre qui doit être modifié : 5
+Entrez la nouvelle valeur pour le paramètre n° 5 : 185
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 185
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : n
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1 2 1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+13
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+3
+[H[2J[3J
+[1;31m| Fermeture de l'application ... |[0m
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/PFR/Menu[00m$ exit
+[?2004lexit
+
+Script done on 2023-01-23 14:58:54+01:00 [COMMAND_EXIT_CODE="0"]
