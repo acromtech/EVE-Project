@@ -45,7 +45,7 @@ void insertionSort(idDescOccu tab, int size)
     {
         for (j=0 ; j < size-i-1; j++)
         {
-            if (tab[j].occ > tab[j+1].occ) 
+            if (tab[j].occ < tab[j+1].occ) 
             {
                 tmp = tab[j];
                 tab[j] = tab[j+1];
