@@ -140,7 +140,7 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
     else
     {
         printf("Aucun fichier ne contient \"%s\" comme mot significatif.\n", mot);
-        sleep(2);
+        sleep(4);
     }
         
 }
@@ -185,14 +185,14 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
         else 
         {
             printf("\tIl semblerait que ce fichier n'a pas été indexer\n\tVeuillez vérifier le chemin saisie\n");
-            sleep(2);
+            sleep(4);
         }
         
     }
     else
     {
         printf("Le fichier \"%s\" n'existe pas\n", chemin);
-        sleep(2);
+        sleep(4);
     }
         
     libereScore(s);
