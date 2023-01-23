@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
+#include <unistd.h>
 
 #include "indexationTexte.h"
 
@@ -134,9 +135,14 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
             }
             tmp = liste_desc->tete;
         }
+        sleep(15);
     }
     else
+    {
         printf("Aucun fichier ne contient \"%s\" comme mot significatif.\n", mot);
+        sleep(2);
+    }
+        
 }
 
 void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){     //PROGRAMME PRINCIPAL DE RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
@@ -174,11 +180,21 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                 afficheNbScore(s, nbListe,liste);
                 ouvreFichier(choixFichier(s),liste);
             }
+            sleep(12);
         }
-        else printf("\tIl semblerait que ce descripteur n'existe pas\n\tVeuillez vérifier le chemin saisie\n");
+        else 
+        {
+            printf("\tIl semblerait que ce fichier n'a pas été indexer\n\tVeuillez vérifier le chemin saisie\n");
+            sleep(2);
+        }
+        
     }
     else
+    {
         printf("Le fichier \"%s\" n'existe pas\n", chemin);
+        sleep(2);
+    }
+        
     libereScore(s);
     liberePILE(d->listeELMENT);
     free(d);
@@ -362,6 +378,5 @@ void comparaisonTexteMenu()
     recharger_base_indexation("../BaseFichiersTexte/FichiersDeDescription/base_descripteur.csv",&bd);
     recharger_liste_indexation("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
 
-    printf("END : %d %d", bd->taille, liste->taille);
     rechercheTexteCompare(bd, liste);
 }

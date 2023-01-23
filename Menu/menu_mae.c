@@ -250,12 +250,12 @@ void evolution_mae(unsigned char *etat_mae)
         case 2:
             printf("\r\n\n| Rechercher des fichiers texte par mot clé |\n\n");
             rechercheMotCleMenu();
-            sleep(10);
+            
             break;
         case 3:
             printf("\r\n\n| Comparer un fichier texte à la base |\n\n");
             comparaisonTexteMenu();
-            sleep(10);
+            
             break;
         case 4:
             *etat_mae = ETAT_FERME_APPLI;

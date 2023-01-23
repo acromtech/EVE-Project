@@ -860,7 +860,7 @@ void recharger_liste_indexation(char *path, pathIdDesc* tb_liste){
         //printf("%s, %d\n", p->path, p->id);
         *tb_liste = empiler_listedescripteur(*tb_liste, p);
     }
-    printf("%d\n", (*tb_liste)->taille); 
+    //printf("%d\n", (*tb_liste)->taille); 
     //affiche_listedescripteur(*tb_liste);
     free(p);
     fclose(fp);
@@ -892,7 +892,7 @@ void recharger_table_indexation(char *path, tableDescript* tb_desc){
         *tb_desc = empile_tableDescElement(*tb_desc, p->mot, p->idDescripteur->idDesc, p->idDescripteur->occ);
         j++;
     }
-    printf("%d\n", j);
+    //printf("%d\n", j);
     fclose(fp);
     free(p);
 }
