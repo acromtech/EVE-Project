@@ -27,9 +27,8 @@ void rechercheCouleur(const volatile baseDescripteurImage pileImage,listeDescrip
     if(nbScore>0){
         fin=clock();
         temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-        system("clear");
         printf("\nRésultat(s) en %f secondes\n\n",temps);
-        afficheNbScore(pileScore,NBLISTE,nbScore);
+        afficheNbScore(pileScore,NBLISTE,nbScore,liste);
         ouvreFichier(choixFichier(pileScore,nbScore),liste);
     }
     else printf("Aucune image ne correspond a la couleur spécifiée : Essayez d'autres couleurs\n");
@@ -69,9 +68,8 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage,listeDescripte
         if(nbScore>0){
             fin=clock();
             temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-            system("clear");
             printf("\nRésultat(s) en %f secondes\n\n",temps);
-            afficheNbScore(pileScore,NBLISTE,nbScore);
+            afficheNbScore(pileScore,NBLISTE,nbScore,liste);
             ouvreFichier(choixFichier(pileScore,nbScore),liste);
         }
         else printf("Aucun document ne correspond au descripteur spécifié : Essayez d'autres descripteurs\n");
@@ -84,10 +82,10 @@ Score choixFichier(Src pileScore,int tailleTabScore){
     printf("Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\n");
     while(1){
         scanf("%d",&index);
-        if(index>NBLISTE||index<0) printf("Rentrez un chiffre compris entre 1 et %d\n",NBLISTE);
+        if(index>tailleTabScore||index<1) printf("Rentrez un chiffre compris entre 1 et %d\n",tailleTabScore);
         else break;
     }
-    for(int i=0;i<index&&i<tailleTabScore;i++,pileScore[i]=pileScore[i+1]){
+    for(int i=0;i<index-1&&i<tailleTabScore;i++,pileScore[i]=pileScore[i+1]){
         if(i<index&&i==tailleTabScore) printf("Cette valeur ne peut pas être lue\n");
         else{
             scoreImage.score=pileScore[i].score;
@@ -147,8 +145,8 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
     return pileScore;
 }
 
-void afficheNbScore(Src pileScore,int nbMaxResultat,int tailleTabScore){
-    for(int i=0;i<nbMaxResultat&&i<tailleTabScore;i++)printf("(%d)\t%d\t%f%%\n",i+1,pileScore[i].id,pileScore[i].score);
+void afficheNbScore(Src pileScore,int nbMaxResultat,int tailleTabScore,listeDescripteurImage liste){
+    for(int i=0;i<nbMaxResultat&&i<tailleTabScore;i++)printf("(%d)\t%f%%\t%s\n",i+1,pileScore[i].score,trouveChemin(pileScore[i].id,liste));
     printf("\n\r");
 }
 
@@ -159,14 +157,7 @@ void ouvreFichier(Score s,listeDescripteurImage liste){
         printf("Erreur : le fichier n'a pas de correspondance dans la liste\n");
         return;
     }
-    /*
-    char* cheminJPG=findJpegFile(cheminTXT);
-    if(cheminJPG==NULL){
-        printf("Erreur : le fichier JPG n'as pas été trouvé\n");
-        return;
-    }*/
-    printf("%s\n",cheminTXT);
-    sprintf(cmd,"xdg-open ./%s",cheminTXT);
+    sprintf(cmd,"xdg-open ./%s",findJpegFile(cheminTXT));
     if(system(cmd)!=0) printf("Impossible de lancer la commande, %s\n",cmd);
     free(cmd);
 }
@@ -177,6 +168,7 @@ char* trouveChemin(int idDesc,listeDescripteurImage liste){
     while(tmp->next!=NULL){
         if(idDesc==tmp->id)
             return tmp->path;
+        tmp=tmp->next;
     }
     return NULL;
 }
@@ -193,12 +185,47 @@ void insertionSort(Src tab, int size){
     int i, j;
     Score tmp;
     for (i=0;i<size-1;i++){
-        for (j=0;j<size-i-1;j++){
-            if (tab[j].score<tab[j+1].score){
-                tmp = tab[j];
-                tab[j] = tab[j+1];
-                tab[j+1] = tmp;
+        for(j=0;j<size-i-1;j++){
+            if(tab[j].score<tab[j+1].score){
+                tmp=tab[j];
+                tab[j]=tab[j+1];
+                tab[j+1]=tmp;
             }
         }
     }
+}
+
+char* findJpegFile(char* filename){
+    system("ls JPG/*.jpg > files.txt");
+    char *path = calloc(1024,sizeof(char));
+    char *tmp = calloc(1024,sizeof(char));
+    char *ttmp = calloc(1024,sizeof(char));
+    FILE *f = fopen("files.txt", "r");
+    int found = 0;
+    if(f == NULL || path == NULL || tmp == NULL || ttmp == NULL){
+        fprintf(stderr, "Error : FindJpegFile : Could not open file.\n");
+        exit(0);
+    }
+    while(fgets(path, 1024, f) != NULL){
+        strcpy(tmp, path);
+        for(int i = strlen(tmp)-1; i >= 0; i--){
+            if(tmp[i] == '.'){
+                tmp[i] = '\0';
+                break;
+            }
+        }
+        int i;
+        for( i = strlen(tmp)-1; i >= 0; i--){
+            if(tmp[i] == '/')
+                break;
+        }
+        tmp = tmp + i;
+        if(strstr(filename, tmp) != NULL){
+            strcpy(tmp, filename);
+            found = 1;
+            break;
+        }   
+    }
+    if(found == 1) return path;
+    else return NULL;
 }

@@ -17,11 +17,8 @@ void afficheBase(baseDescripteurImage pileImage){
 int main(){
     baseDescripteurImage bd = initBaseDescripteurImage();
     listeDescripteurImage liste = initListeDescripteurImage();
-    //recharger_base_indexation("base_descripteur_image.csv", &bd);
-    //indexationImage("TXT/01.txt", &bd, &liste, bd->taillle, NB_BITS);
     indexerBaseImage(&bd,&liste);
     //rechercheCouleur(bd,liste);
     rechercheHisto(bd,liste);
-	
     return 0;
 }

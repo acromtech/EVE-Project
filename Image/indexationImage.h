@@ -70,11 +70,11 @@ Src calculeScoreComparaison(const volatile baseDescripteurImage,descImage,int*);
 char* trouveChemin(int,listeDescripteurImage);
 int trouveIDDescripteur(char*,listeDescripteurImage);
 
-void afficheNbScore(Src,int,int);
+void afficheNbScore(Src,int,int,listeDescripteurImage);
 Score choixFichier(Src,int);
 void ouvreFichier(Score,listeDescripteurImage);
 
 void insertionSort(Src,int);
-char *findJpegFile(char*);
+char* findJpegFile(char*);
 
 #endif // !INDEXATION_IMAGE_IN
