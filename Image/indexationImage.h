@@ -7,6 +7,8 @@
 #define NB_BITS 2
 #define NBLISTE 10
 
+#define min(a,b)(((a)<(b))?(a):(b))        //Macro permettant de déterminer le minimum entre deux valeurs a et b
+
 typedef enum {N ='N',C ='C'}type;
 
 typedef struct descripteur_image{
@@ -50,6 +52,7 @@ void recharger_base_indexation(char *path, baseDescripteurImage*);
 
 typedef struct score{
     float score;
+    char type;
     int id;
     struct score* next;
 }Score;
@@ -62,19 +65,19 @@ typedef struct base_score{
 }*baseScore;
 
 void rechercheCouleur(const volatile baseDescripteurImage,listeDescripteurImage);
-Src calculeScoreCouleur(const volatile baseDescripteurImage,char[20],int*);
+Src calculeScoreCouleur(const volatile baseDescripteurImage,char*,int*);
 
 void rechercheHisto(const volatile baseDescripteurImage,listeDescripteurImage);
 Src calculeScoreComparaison(const volatile baseDescripteurImage,descImage,int*);
 
 char* trouveChemin(int,listeDescripteurImage);
-int trouveIDDescripteur(char*,listeDescripteurImage);
+int trouveIDDescripteur(char*,listeDescripteurImage,int*);
 
-void afficheNbScore(Src,int,int,listeDescripteurImage);
+int afficheResultatsRecherche(Src,int,listeDescripteurImage);
 Score choixFichier(Src,int);
-void ouvreFichier(Score,listeDescripteurImage);
+int ouvreFichierImage(Score,listeDescripteurImage);
 
-void insertionSort(Src,int);
-char* findJpegFile(char*);
+char* getNomFichierImage(char*);
+int compareScore(const void*,const void*);
 
 #endif // !INDEXATION_IMAGE_IN

@@ -9,223 +9,142 @@
 const int tabVal[]={59,51,56,57,48,12,3,53,60,62,40,8,9,15,10,31,2,1,32,63,0,5};
 const char* tabCouleur[]={"violet","fushia","orange","saumon","rouge","vert","bleu","corail","jaune","kaki","olive","vertForet","bleuMer","eau","cyan","turquoise","bleuMarine","bleuNuit","marron","blanc","noir","ardoise"};
 
-void rechercheCouleur(const volatile baseDescripteurImage pileImage,listeDescripteurImage liste){
+void rechercheCouleur(const volatile baseDescripteurImage pileImage, listeDescripteurImage liste) {
     setlocale(LC_ALL,"");
-    char requete[20];
-    Src pileScore=NULL;
+    char* requete=calloc(1,sizeof(char));
     int nbScore=0;
-    clock_t debut;
-    clock_t fin;
-    double temps=0.0;
-    system("clear");
+    Src pileScore;
     printf("\nCouleurs disponibles :\t");
-    for(int i=0;i<sizeof(tabVal)/sizeof(int);i++)printf("%s ",tabCouleur[i]);
-    printf("\n\nFormulez une requete de couleur\n");
-    scanf("%s",requete);
-    debut=clock();
-    pileScore=calculeScoreCouleur(pileImage,requete,&nbScore);
-    if(nbScore>0){
-        fin=clock();
-        temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-        printf("\nRésultat(s) en %f secondes\n\n",temps);
-        afficheNbScore(pileScore,NBLISTE,nbScore,liste);
-        ouvreFichier(choixFichier(pileScore,nbScore),liste);
-    }
-    else printf("Aucune image ne correspond a la couleur spécifiée : Essayez d'autres couleurs\n");
+    for(int i=0;i<sizeof(tabVal)/sizeof(int);i++) printf("%s ",tabCouleur[i]);
+    do{
+        printf("\n\n\e[1;37mFormulez une requete de couleur\e[0m\n");
+        scanf("%s",requete);
+        pileScore=calculeScoreCouleur(pileImage,requete,&nbScore);
+        if(nbScore==0) printf("\n\e[1;35mAttention\e[0;35m : Aucune image ne correspond à la couleur spécifiée : Essayez d'autres couleurs\e[0m\n");
+    }while(nbScore==0);
+    free(requete);
+    if(afficheResultatsRecherche(pileScore,nbScore,liste)){
+        if(ouvreFichierImage(choixFichier(pileScore,nbScore),liste)) printf("\n\e[1;32m-----------Recherche réalisée avec succès------------\e[0m\n\n");
+        else printf("\e[1;31mErreur\e[0;31m : Impossible de lancer l'ouverture du résultat sélectionné\e[0m\n"); return;
+    }else printf("\e[1;31mErreur\e[0;31m : Type d'image inconnu\e[0m\n"); return;
 }
 
-void rechercheHisto(const volatile baseDescripteurImage pileImage,listeDescripteurImage liste){
+void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescripteurImage liste) {
     setlocale(LC_ALL,"");
-    descImage image;
-    Src pileScore=NULL;
-    clock_t debut;
-    clock_t fin;
-    double temps=0.0;
-    char requete[20];
+    char* requete=calloc(1,sizeof(char));
+    char* requeteTraite=calloc(1,sizeof(char));
     int nbScore=0;
-    system("clear");
-    printf("\nVeuillez saisir le chemin du fichier à comparer\n");
-    scanf("%s",requete);
-    int id=trouveIDDescripteur(requete,liste);
-    if(id==-1){
-        printf("Veuillez rentrer un chemin de descripteur valide\n");
-        return;
-    }
-    else{
-        debut=clock();
-        descripteurImage tmp;
-        tmp=pileImage->tete;
-        for(int i=0;i<pileImage->taillle;i++,tmp=tmp->next){
-            if(tmp->id==id){
-                image.id=tmp->id;
-                image.type=tmp->type;
-                image.taille=tmp->taille;
-                image.histogramme=tmp->histogramme;
-                break;
-            }
-        }
-        pileScore=calculeScoreComparaison(pileImage,image,&nbScore);
+    elementlitsetDescripteurImage tmp1;
+    int id=-1;
+    do{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+        tmp1=liste->tete;
+        printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer\e[0m\n");
+        scanf("%s",requete);
+        snprintf(requeteTraite,100,"TXT/%s.txt",getNomFichierImage(requete));
+        for(;tmp1->next!=NULL;tmp1=tmp1->next) if(strcoll(requeteTraite,tmp1->path)==0) id=tmp1->id;
+        if(id==-1)printf("\e[1;35mAttention\e[0;35m : Aucune image ne correspond au chemin spécifiée\e[0m\n");
+    }while(id==-1);
+    free(requete);
+    descImage *tmp=pileImage->tete;
+    while(tmp!=NULL&&tmp->id!=id) tmp=tmp->next;
+    if(tmp!=NULL){
+        Src pileScore=calculeScoreComparaison(pileImage,*tmp,&nbScore);
         if(nbScore>0){
-            fin=clock();
-            temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-            printf("\nRésultat(s) en %f secondes\n\n",temps);
-            afficheNbScore(pileScore,NBLISTE,nbScore,liste);
-            ouvreFichier(choixFichier(pileScore,nbScore),liste);
-        }
-        else printf("Aucun document ne correspond au descripteur spécifié : Essayez d'autres descripteurs\n");
+            if(afficheResultatsRecherche(pileScore,nbScore,liste)){
+                if(ouvreFichierImage(choixFichier(pileScore,nbScore),liste)) printf("\n\e[1;32m-----------Recherche réalisée avec succès------------\e[0m\n\n");
+                else printf("\e[1;31mErreur\e[0;31m : Impossible de lancer l'ouverture du résultat sélectionné\e[0m\n"); return;
+            }else printf("\e[1;31mErreur\e[0;31m : Type d'image inconnu\e[0m\n"); return;
+        }else printf("\e[1;31mErreur\e[0;31m : Aucune image ne correspond à l'image spécifiée\nEssayez d'autres images\e[0m\n"); return;
     }
 }
 
-Score choixFichier(Src pileScore,int tailleTabScore){
+Score choixFichier(Src pileScore,int tailleTabScore) {
     int index;
     Score scoreImage;
-    printf("Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\n");
-    while(1){
+    printf("\e[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\e[0m\n");
+    do{
         scanf("%d",&index);
-        if(index>tailleTabScore||index<1) printf("Rentrez un chiffre compris entre 1 et %d\n",tailleTabScore);
-        else break;
-    }
-    for(int i=0;i<index-1&&i<tailleTabScore;i++,pileScore[i]=pileScore[i+1]){
-        if(i<index&&i==tailleTabScore) printf("Cette valeur ne peut pas être lue\n");
-        else{
-            scoreImage.score=pileScore[i].score;
-            scoreImage.id=pileScore[i].id;
-        }
-    }
+        if(index>min(tailleTabScore,NBLISTE)||index<1) printf("\e[1;35mAttention\e[0;35m : Vous ne pouvez rentrer qu'un chiffre compris entre 1 et %d\e[0m\n",min(tailleTabScore,NBLISTE));
+        else scoreImage=pileScore[index-1];
+    }while(index>min(tailleTabScore,NBLISTE)||index<1);
     return scoreImage;
 }
 
-Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage,descImage image,int* nbScore){
-    float score=0;
-    int nbTotalVal=0;
-    int sommeMinimum=0;
-    descripteurImage tmp;
-    tmp=pileImage->tete;
+Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage, descImage image, int* nbScore) {
+    float score;
+    int nbTotalVal,sommeMinimum;
+    descripteurImage tmp=pileImage->tete;
     Src pileScore=(Src)calloc(100,sizeof(Score));
     for(int j=0;j<pileImage->taillle;j++,tmp=tmp->next){
-        nbTotalVal=0;
-        sommeMinimum=0;
+        nbTotalVal=sommeMinimum=0;
         for(int i=0;i<64;i++){
             nbTotalVal+=image.histogramme[i];
-            if(tmp->histogramme[i]<image.histogramme[i]) sommeMinimum+=tmp->histogramme[i];
-            else sommeMinimum+=image.histogramme[i];
+            sommeMinimum+=min(tmp->histogramme[i],image.histogramme[i]);
         }
-        score=((float)sommeMinimum/(float)nbTotalVal)*100;
+        score=sommeMinimum/(float)nbTotalVal*100;
         if(score>0){
-            pileScore[*nbScore].score=score;
-            pileScore[*nbScore].id=tmp->id;
+            pileScore[*nbScore]=(Score){score,tmp->type,tmp->id};
             (*nbScore)++;
         }
     }
-    insertionSort(pileScore,*nbScore);
+    qsort(pileScore,*nbScore,sizeof(Score),compareScore);
     return pileScore;
 }
 
-Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char requete[20],int* nbScore){
-    descripteurImage tmp=(descripteurImage)calloc(1,sizeof(descImage));
-    tmp=pileImage->tete;
-    Src pileScore=(Src)calloc(100,sizeof(Score));
+int compareScore(const void* a,const void* b){
+    return((Score*)b)->score-((Score*)a)->score;
+}
+
+Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char requete[20],int* nbScore) {
     int val=-1;
-    for(int i=0;i<sizeof(tabVal)/sizeof(int);i++){
-        if(strcoll(tabCouleur[i],requete)==0){
-            val=tabVal[i];
-            break;
-        }
-    }
+    for(int i=0;i<sizeof(tabVal)/sizeof(int);i++) if(strcoll(tabCouleur[i],requete)==0) val=tabVal[i];
+    Src pileScore=(Src)calloc(100,sizeof(Score));
     if(val>-1){
+        descripteurImage tmp=pileImage->tete;
         for(int i=0;i<pileImage->taillle;i++,tmp=tmp->next){
             if(tmp->histogramme[val]>0){
-                pileScore[*nbScore].score=tmp->histogramme[val];
-                pileScore[*nbScore].id=tmp->id;
+                pileScore[*nbScore]=(Score){tmp->histogramme[val],tmp->type,tmp->id};
                 (*nbScore)++;
             }
         }
-        insertionSort(pileScore,*nbScore);
+        qsort(pileScore,*nbScore,sizeof(Score),compareScore);
     }
     return pileScore;
 }
 
-void afficheNbScore(Src pileScore,int nbMaxResultat,int tailleTabScore,listeDescripteurImage liste){
-    for(int i=0;i<nbMaxResultat&&i<tailleTabScore;i++)printf("(%d)\t%f%%\t%s\n",i+1,pileScore[i].score,trouveChemin(pileScore[i].id,liste));
+int afficheResultatsRecherche(Src pileScore,int nbScore,listeDescripteurImage liste){
+    for(int i=0;i<min(nbScore,NBLISTE);i++){
+        char *chemin=trouveChemin(pileScore[i].id,liste);
+        char *nomFichier=getNomFichierImage(chemin);
+        if(pileScore[i].type=='N') printf("(%d)\t%f%%\t%s.bmp\tImage noir et blanc\n",i+1,pileScore[i].score,nomFichier);
+        else if(pileScore[i].type=='C') printf("(%d)\t%f%%\t%s.jpg\tImage couleur\n",i+1,pileScore[i].score,nomFichier);
+        else return 0;
+    }
     printf("\n\r");
+    return 1;
 }
 
-void ouvreFichier(Score s,listeDescripteurImage liste){
+int ouvreFichierImage(Score s,listeDescripteurImage liste){
     char* cmd=(char*)calloc(100,sizeof(char));
-    char* cheminTXT=trouveChemin(s.id,liste);
-    if(cheminTXT==NULL){
-        printf("Erreur : le fichier n'a pas de correspondance dans la liste\n");
-        return;
-    }
-    sprintf(cmd,"xdg-open ./%s",findJpegFile(cheminTXT));
-    if(system(cmd)!=0) printf("Impossible de lancer la commande, %s\n",cmd);
-    free(cmd);
+    if(s.type=='N') sprintf(cmd,"xdg-open ./BMP/%s.bmp",getNomFichierImage(trouveChemin(s.id,liste)));
+    else sprintf(cmd,"xdg-open ./JPG/%s.jpg",getNomFichierImage(trouveChemin(s.id,liste)));
+    if(system(cmd)!=0) return 0;
+    return 1;
 }
 
 char* trouveChemin(int idDesc,listeDescripteurImage liste){
     elementlitsetDescripteurImage tmp;
     tmp=liste->tete;
-    while(tmp->next!=NULL){
-        if(idDesc==tmp->id)
-            return tmp->path;
-        tmp=tmp->next;
-    }
+    for(;tmp->next!=NULL;tmp=tmp->next) if(idDesc==tmp->id) return tmp->path;
     return NULL;
-}
+}   
 
-int trouveIDDescripteur(char* chemin,listeDescripteurImage liste){
-    elementlitsetDescripteurImage tmp;
-    tmp=liste->tete;
-    for(int i=0;i<liste->taille;i++,tmp=tmp->next)
-        if(strcoll(chemin,tmp->path)==0) return tmp->id;
-    return -1;
-}
-
-void insertionSort(Src tab, int size){
-    int i, j;
-    Score tmp;
-    for (i=0;i<size-1;i++){
-        for(j=0;j<size-i-1;j++){
-            if(tab[j].score<tab[j+1].score){
-                tmp=tab[j];
-                tab[j]=tab[j+1];
-                tab[j+1]=tmp;
-            }
-        }
-    }
-}
-
-char* findJpegFile(char* filename){
-    system("ls JPG/*.jpg > files.txt");
-    char *path = calloc(1024,sizeof(char));
-    char *tmp = calloc(1024,sizeof(char));
-    char *ttmp = calloc(1024,sizeof(char));
-    FILE *f = fopen("files.txt", "r");
-    int found = 0;
-    if(f == NULL || path == NULL || tmp == NULL || ttmp == NULL){
-        fprintf(stderr, "Error : FindJpegFile : Could not open file.\n");
-        exit(0);
-    }
-    while(fgets(path, 1024, f) != NULL){
-        strcpy(tmp, path);
-        for(int i = strlen(tmp)-1; i >= 0; i--){
-            if(tmp[i] == '.'){
-                tmp[i] = '\0';
-                break;
-            }
-        }
-        int i;
-        for( i = strlen(tmp)-1; i >= 0; i--){
-            if(tmp[i] == '/')
-                break;
-        }
-        tmp = tmp + i;
-        if(strstr(filename, tmp) != NULL){
-            strcpy(tmp, filename);
-            found = 1;
-            break;
-        }   
-    }
-    if(found == 1) return path;
-    else return NULL;
+char* getNomFichierImage(char* filename){
+    char* new_filename;
+    char* token=strrchr(filename,'/');
+    if(token!=NULL)new_filename=token+1;
+    else new_filename=filename;
+    token=strrchr(new_filename,'.');
+    if(token!=NULL)*token='\0';
+    return new_filename;
 }
