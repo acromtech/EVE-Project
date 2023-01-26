@@ -1,7 +1,7 @@
 # EVE : Le nouveau moteur de recherche polyvalent
 
 *EVE est un moteur de recherche capable de traiter des données textuelles, photographiques et sonores réalisé dans le cadre du Projet Fil Rouge (PFR) de 1ère année de formation à l’UPSSITECH de Toulouse. Fédéré par Isabelle FERRANE, Julien PINQUIER et Julien VANDERSTRAETEN. Celui-ci permet aux étudiants d’aborder de nombreux aspects techniques, organisationnels et professionnels à travers un projet transversal pour mettre en œuvre les différentes compétences scientifiques et techniques de la spécialité SRI telles que l’informatique, l’analyse de contenu (audio, image et texte), l’interaction, et enfin, la robotique.
-Il permet également de mettre en pratique différentes compétences de gestion de projet en mettant en relation un client (ici Julien PINQUIER) et notre équipe projet.
+Il permet également de mettre en pratique différentes compétences de gestion de projet en mettant en relation un client (ici Julien PINQUIER) et notre équipe projet.*
 
 ## L'équipe UPSSIWEB
 UPSSIWEB est une équipe de 5 membres dont la vision commune est de parfaire les moteurs de recherche de demain pour les rendre plus ergonomiques et plus intuitifs afin de les intégrer aux futurs équipements domotiques et robotiques.
