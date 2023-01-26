@@ -215,18 +215,13 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
 
 Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur* descRequete,Score s){
     float score=0;
-    if(descRequete == NULL)
-    {
-        s->score = 0;
-        s->id = descRequete->idDesc;
-        s->next = NULL;
-        return s;
-    }
-
+   
     while(descBase != NULL)
     {
         if(descBase->listeELMENT != NULL)
             score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->tailleListe);
+        else 
+            score = 0;
         if(score>0)
         {
             s=empilerScore(s,score,descBase->idDesc);
@@ -260,7 +255,7 @@ float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     
         if(strcoll(elmBase.mot,elmDesc.mot)==0)
         {
-            if(elmDesc.nbOccurence==(-1)) score+=elmBase.nbOccurence;
+            if(elmDesc.nbOccurence==-1) score+=elmBase.nbOccurence;
             else if(elmBase.nbOccurence<elmDesc.nbOccurence) score+=(((float)elmBase.nbOccurence)/((float)elmDesc.nbOccurence))*100;
             else score+=(((float)elmDesc.nbOccurence)/((float)elmBase.nbOccurence))*100;
             return score;        

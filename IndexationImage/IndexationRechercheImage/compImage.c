@@ -66,6 +66,14 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
     tmp1=liste->tete;
     printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer (numero_fichier ou chemin_vers_le_fichier)\e[0m\n");
     scanf("%s",requete);
+    if(strlen(requete)>= 2 && strlen(requete)<=10) 
+        if(atoi(requete)>63 || atoi(requete)< 1)
+        {
+            printf("\e[1;35mAttention\e[0;35m : Le nom de fichier entré est invalide. Veuillez rééssayer plus tard.\n\e[0m\n");
+            return;
+        }
+            
+
     sprintf(requeteTraite,"../IndexationImage/TXT/%s.txt",getNomFichierImage(requete));
     printf("%s\n",requeteTraite);
     while(tmp1 != NULL)
@@ -212,6 +220,6 @@ char* getNomFichierImage(char* filename){
     for(int i = 0; i<strlen(token)-1; i++)
         token[i] = token[i+1];
     token[strlen(token)-1] = '\0';
-    printf("%s\n", token);
+    
     return token;
 }
