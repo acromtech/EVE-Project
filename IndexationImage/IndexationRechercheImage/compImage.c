@@ -64,7 +64,7 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
     int id=-1;
                                                                                                                                                                                                                                                                                                                                                                                            
     tmp1=liste->tete;
-    printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer\e[0m\n");
+    printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer (numero_fichier ou chemin_vers_le_fichier)\e[0m\n");
     scanf("%s",requete);
     sprintf(requeteTraite,"../IndexationImage/TXT/%s.txt",getNomFichierImage(requete));
     printf("%s\n",requeteTraite);
@@ -77,11 +77,17 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
         }
         tmp1 = tmp1->next;
     }
-
+    
     if(id==-1)printf("\e[1;35mAttention\e[0;35m : Aucune image ne correspond au chemin spécifiée\e[0m\n");
     free(requete);
     descImage *tmp=pileImage->tete;
-    while(tmp!=NULL&&tmp->id!=id) tmp=tmp->next;
+    
+    while(tmp!=NULL)
+    {
+        if(tmp->id == id)
+            break;
+        tmp = tmp->next;
+    }
     if(tmp!=NULL){
         Src pileScore=calculeScoreComparaison(pileImage,*tmp,&nbScore);
         if(nbScore>0){
@@ -152,6 +158,7 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
 int afficheResultatsRecherche(Src pileScore,int nbScore,listeDescripteurImage liste){
     for(int i=0;i<min(nbScore,NBLISTE);i++){
         char *chemin=trouveCheminImage(pileScore[i].id,liste);
+        printf("hehe = %s\n",chemin);
         char *nomFichier=getNomFichierImage(chemin);
         if(pileScore[i].type=='N') printf("(%d)\t%f%%\t%s.bmp\tImage noir et blanc\n",i+1,pileScore[i].score,nomFichier);
         else if(pileScore[i].type=='C') printf("(%d)\t%f%%\t%s.jpg\tImage couleur\n",i+1,pileScore[i].score,nomFichier);
@@ -171,17 +178,40 @@ int ouvreFichierImage(ScoreImage s,listeDescripteurImage liste){
 
 char* trouveCheminImage(int idDesc,listeDescripteurImage liste){
     elementlitsetDescripteurImage tmp;
+    char *token = calloc(1024,sizeof(char));
     tmp=liste->tete;
-    for(;tmp->next!=NULL;tmp=tmp->next) if(idDesc==tmp->id) return tmp->path;
-    return NULL;
+    while(tmp != NULL)
+    {
+        if(tmp->id == idDesc)
+            strcpy(token,tmp->path);
+        tmp = tmp->next;
+    }
+    return token;
 }   
 
 char* getNomFichierImage(char* filename){
-    char* new_filename;
-    char* token=strrchr(filename,'/');
-    if(token!=NULL)new_filename=token+1;
-    else new_filename=filename;
-    token=strrchr(new_filename,'.');
-    if(token!=NULL)*token='\0';
-    return new_filename;
+    char* new_filename = calloc(strlen(filename), sizeof(char));
+    char* token;
+    if(strlen(filename) <=2)
+        return filename;
+    
+    for(int i=strlen(filename)-1; i>=0; i--)
+        if(filename[i] == '/')
+        {
+            new_filename = filename + i;
+            break;
+        }
+    token = calloc(strlen(new_filename), sizeof(char));
+    for(int i=0; i<strlen(new_filename); i++)
+    {
+        if(new_filename[i] == '.')
+            break;
+
+        token[i] = new_filename[i];
+    }
+    for(int i = 0; i<strlen(token)-1; i++)
+        token[i] = token[i+1];
+    token[strlen(token)-1] = '\0';
+    printf("%s\n", token);
+    return token;
 }

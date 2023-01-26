@@ -336,6 +336,7 @@ void action_mae(unsigned char *etat_mae)
         printf("\t\t1.  Menu utilisateur.\n");
         printf("\t\t2.  Menu d'Administration.\n");
         printf("\t\t3.  Fermer l'application.\n");
+        //printf("%s\n", getNomFichierImage("../IndexationImage/TXT/01.txt"));
         break;
 
     case ETAT_UTILISATEUR:
