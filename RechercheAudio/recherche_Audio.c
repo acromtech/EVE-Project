@@ -226,14 +226,13 @@ void saisieRechercheAudio(){
 	resultat = resultatRechercheAudio(souhait);
 	
 	if (resultat==-1){
-		printf("| document inconnu, arrêt du programme |\n");
+		printf("\e[1;35mAttention\e[0;35m : document inconnu\e[0m\n");
 		printf("\n");
-		exit(0);
 	} else {
 		if(resultat==-2){
 			printf("\n");
-			perror("| Pas de correspondance trouvé, arrêt du programme ");
-			exit(0);
+			perror("\e[1;35mAttention\e[0;35m : Pas de correspondance trouvé \e[0m");
+			printf("\n");
 		}
 		else{
 			printf("\n");
@@ -243,15 +242,17 @@ void saisieRechercheAudio(){
 		}
 	}
 
-	printf("\r\nAppuyez sur entrée pour lancer l'audio... (3 sec avant) ");
+	if(resultat!=-1 && resultat!=-2)
+	{
+		printf("\r\nAppuyez sur entrée pour lancer l'audio... (3 sec avant) ");
 
-	getchar();
-	// retour de chariot
-	while(getchar() != '\n');
-	char *fichierAudio = "../TestSon/corpus_fi.wav";
-
-	//Lance le fichier correspondant
-	lanceFichierAudio(&(*fichierAudio),resultat);
+		getchar();
+		// retour de chariot
+		while(getchar() != '\n');
+		char *fichierAudio = "../TestSon/corpus_fi.wav";
+		//Lance le fichier correspondant
+		lanceFichierAudio(&(*fichierAudio),resultat);
+	}
 }
 
 

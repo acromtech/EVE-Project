@@ -682,7 +682,7 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     strcpy(output, outputPath); 
     FILE *output_TOK, *baseDescriptr, *listeDescripteur, *cpy, *tb;
     int is_stopword = 0, nbMotFichierTok = 0, id = id_;
-    printf("debut indexation ficher : %s. \n", inputpath);
+    //printf("debut indexation ficher : %s. \n", inputpath);
     nettoyageToken(input, inputpath, output);
     fclose(input);
     sprintf(outputPath, "%s.clean", output);
@@ -706,7 +706,7 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     }
     saveDescripteur(outputPath, baseDescriptr, bd, (*bd)->taille, tb, tb_liste);
     lienDescripteur(listeDescripteur, id, inputpath, listeDesc);
-    printf("fin indexation : %s\n", inputpath);
+    //printf("fin indexation : %s\n", inputpath);
     sprintf(outputPath, "rm cpy.txt");
     fclose(baseDescriptr);
     fclose(listeDescripteur);

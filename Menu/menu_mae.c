@@ -10,7 +10,7 @@ int autentification()
     int ok = 1, mot_de_passe, repeat = 3, cle=config("motdePasse");
 
     //printf("\tmot de passe : %d\n",cle);
-    printf("\tEntrez votre mot de passe (nombre d'essais restant %d) \n\t: ", repeat);
+    printf("\tEntrez votre mot de passe (Nombre uniquement, nombre d'essais restant %d) \n\t: ", repeat);
     scanf("%d", &mot_de_passe);
 
     if (mot_de_passe != cle)
@@ -18,7 +18,7 @@ int autentification()
         repeat--;
         while (repeat > 0 && mot_de_passe != cle)
         {
-            printf("\tMot de passe invalide. \n\tVeuillez rééssayer (nombre d'essais restant %d) \n\t: ", repeat);
+            printf("\tMot de passe invalide. \n\tVeuillez rééssayer (Nombre uniquement, nombre d'essais restant %d) \n\t: ", repeat);
             scanf("%d", &mot_de_passe);
             repeat--;
         }
@@ -72,7 +72,7 @@ void supprimerDescripteur()
 
 void indexerDescripteur()
 {
-    printf("\r\n| Indexation lancée. Veuillez patienter ... |\n");
+    printf("\r\n| Indexation lancée. Veuillez patienter ... (20 sec)|\n");
     autoIndexationAudio();
     indexationBaseMenu(); // indexation base texte
     indexerBaseImageMenu();
@@ -297,6 +297,7 @@ void evolution_mae(unsigned char *etat_mae)
         case 2:
             printf("\r\n\n| Recherche de la correspondance lancée ... |\n\n");
             saisieRechercheAudio();
+            sleep(3);
             break;
         case 3:
             *etat_mae = ETAT_FERME_APPLI;
