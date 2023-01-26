@@ -7,7 +7,8 @@ mae : menu_mae.c menu_mae.h main.c ../Configuration/configuration.c ../Configura
 	gcc -c ../IndexationRechercheTexte/indexationTexte.c
 	gcc -c ../IndexationRechercheTexte/rechercheTexte.c
 	gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
-	gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o
+	gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+	gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o
 	./menu_mae.out
 
 clean :

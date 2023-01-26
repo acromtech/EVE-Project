@@ -3,11 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <time.h>
-#include <locale.h>
+#include "../../IndexationRechercheTexte/indexationTexte.h"
 
 #define NB_BITS 2
 #define NBLISTE 10
+
+#define min(a,b)(((a)<(b))?(a):(b))        //Macro permettant de déterminer le minimum entre deux valeurs a et b
 
 typedef enum {N ='N',C ='C'}type;
 
@@ -49,9 +50,9 @@ void savelisteDescripteurImage(listeDescripteurImage*, FILE*, char*, int id);
 void indexationImage(char*, baseDescripteurImage*, listeDescripteurImage*, int, int);
 void indexerBaseImage(baseDescripteurImage *bd, listeDescripteurImage *listeDescripteur);
 
-
 typedef struct score{
     float score;
+    char type;
     int id;
     struct score* next;
 }ScoreImage;
@@ -64,22 +65,21 @@ typedef struct base_score{
 }*baseScore;
 
 void rechercheCouleur(const volatile baseDescripteurImage,listeDescripteurImage);
-Src calculeScoreCouleur(const volatile baseDescripteurImage,char[20],int*);
+Src calculeScoreCouleur(const volatile baseDescripteurImage,char*,int*);
 
 void rechercheHisto(const volatile baseDescripteurImage,listeDescripteurImage);
 Src calculeScoreComparaison(const volatile baseDescripteurImage,descImage,int*);
 
 char* trouveCheminImage(int,listeDescripteurImage);
-int trouveIDDescripteurImage(char*,listeDescripteurImage);
+int trouveIDDescripteurImage(char*,listeDescripteurImage,int*);
 
-void afficheNbScoreImage(Src,int,int);
+int afficheResultatsRecherche(Src,int,listeDescripteurImage);
 ScoreImage choixFichierImage(Src,int);
-void ouvreFichierImage(ScoreImage,listeDescripteurImage);
+int ouvreFichierImage(ScoreImage,listeDescripteurImage);
+void rechercheImageHisto();
+void rechercheImageCouleur();
 
-void insertionSort(Src,int);
-char *findJpegFile(char*);
-
-void rechercheImageHisto(void);
-void rechercheImageCouleur(void);
+char* getNomFichierImage(char*);
+int compareScore(const void*,const void*);
 
 #endif // !INDEXATION_IMAGE_IN

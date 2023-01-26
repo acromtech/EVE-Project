@@ -392,7 +392,7 @@ int descripteurExiste(int idDesc,const volatile descripteur* b,descripteur* d){
 
 void ouvreFichier(DescripteurScore s,pathIdDesc liste){
     char* cmd=(char*)calloc(100,sizeof(char));
-    sprintf(cmd,"xdg-open %s",trouveChemin(s.id,liste->tete));
+    sprintf(cmd,"gedit %s",trouveChemin(s.id,liste->tete));
     if(system(cmd)!=0) printf("Impossible de lancer la commande, %s\n",cmd);
     free(cmd);
 }
