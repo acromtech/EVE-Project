@@ -49,6 +49,8 @@ void saveDescripteurImage(baseDescripteurImage*,FILE*, struct descripteur_image)
 void savelisteDescripteurImage(listeDescripteurImage*, FILE*, char*, int id);
 void indexationImage(char*, baseDescripteurImage*, listeDescripteurImage*, int, int);
 void indexerBaseImage(baseDescripteurImage *bd, listeDescripteurImage *listeDescripteur);
+void supprimerBaseImage();
+void indexerBaseImageMenu();
 
 typedef struct score{
     float score;

@@ -779,8 +779,6 @@ int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeD
             //printf("%s\n", command);
             indexation_texte(command, (*bd)->taille, bd, listeDesc, tb_liste);
         }
-        else
-            printf("Le fichier %s a déjà été indexé plus tôt.\n", command);
     }
     return 1;
 }

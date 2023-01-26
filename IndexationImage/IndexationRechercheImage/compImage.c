@@ -13,7 +13,6 @@ void supprimerBaseImage()
 {
     system("echo > ../IndexationImage/IndexationRechercheImage/FichierIndexation/liste_descripteur_image.csv");
     system("echo > ../IndexationImage/IndexationRechercheImage/FichierIndexation/base_descripteur_image.csv");
-
 }
 
 void rechercheImageHisto()

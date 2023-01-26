@@ -209,7 +209,6 @@ void indexerBaseImage(baseDescripteurImage *bd, listeDescripteurImage *listeDesc
 {
     FILE *f;
     char *command = calloc(1024, sizeof(char)), *tmp = calloc(1024, sizeof(char));
-    int isIndexer_;
     if(command == NULL || tmp == NULL)
     {
         fprintf(stderr, "Error : indexerBaseImage : out of memory\n");
@@ -222,4 +221,13 @@ void indexerBaseImage(baseDescripteurImage *bd, listeDescripteurImage *listeDesc
 
     while(fscanf(f, "%s[^\n]", command) != EOF)
         indexationImage(command, bd, listeDescripteur, (*bd)->taillle, NB_BITS);
+}
+
+void indexerBaseImageMenu()
+{
+    baseDescripteurImage bd = initBaseDescripteurImage();
+    listeDescripteurImage liste = initListeDescripteurImage();
+    supprimerBaseImage();
+
+    indexerBaseImage(&bd, &liste);
 }
