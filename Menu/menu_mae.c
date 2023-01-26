@@ -73,7 +73,7 @@ void supprimerDescripteur()
 void indexerDescripteur()
 {
     printf("\r\n| Indexation lancée. Veuillez patienter ... |\n");
-    //autoIndexationAudio();
+    autoIndexationAudio();
     indexationBaseMenu(); // indexation base texte
     indexerBaseImageMenu();
     printf("\r\n| Indexation terminée ! |\n");
