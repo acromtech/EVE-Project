@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <time.h>
+#include <locale.h>
 
 #define NB_BITS 2
 #define NBLISTE 10

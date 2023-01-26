@@ -8,7 +8,7 @@
 #include "../RechercheAudio/recherche_Audio.h"
 #include "../IndexationAudio/indexation_Audio.h"
 #include "../IndexationRechercheTexte/indexationTexte.h"
-//#include "../IndexationImage/indexationImage.h"
+#include "../IndexationImage/IndexationRechercheImage/indexationImage.h"
 
 //#define MDP 1234
 

@@ -272,12 +272,12 @@ void evolution_mae(unsigned char *etat_mae)
             break;
         case 2:
             printf("\r\n\n| Recherche par comparaison |\n\n");
-            //rechercheImageHisto();
+            rechercheImageHisto();
             sleep(2);
             break;
         case 3:
             printf("\r\n\n| Recherche Couleur |\n\n");
-            //rechercheImageCouleur();
+            rechercheImageCouleur();
             sleep(2);
             break;
         case 4:
