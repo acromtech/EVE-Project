@@ -157,8 +157,8 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     double temps=0.0;
     clock_t debut;
     clock_t fin;
-    Score s=NULL;
-    
+    Score s = NULL;
+
     //system("clear");
     printf("Veuillez saisir le chemin du fichier à comparer\n");
     int ok = saisiePath(chemin);
@@ -169,18 +169,31 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
         int id=trouveIDDescripteur(chemin,liste->tete);
         if(id==-1){   perror("Descripteur inconnu");      exit(0);}
         if(descripteurExiste(id,b->tete,d) == 1){
-            debut=clock();
-            s=calculeScoreBaseDescripteur(b->tete,*d,s);
-            if(s==NULL) printf("Aucun document ne correspond au fichier spécifié a part lui meme : Essayez avec d'autres fichiers.\n");
-            else{
-                fin=clock();
-                temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-                //system("clear");
-                printf("Résultat(s) en %f secondes\n\n",temps);
-                afficheNbScore(s, nbListe,liste);
+            if(d->tailleListe == 0)
+            {
+                s = calloc(1, sizeof(*s));
+                s->id = d->idDesc;
+                s->score = 100;
+                s->next = NULL;
+                afficheNbScore(s, 1,liste);
                 ouvreFichier(choixFichier(s),liste);
             }
-            sleep(12);
+            else
+            {
+                debut=clock();
+                s = calculeScoreBaseDescripteur(b->tete, d, s);
+                if(s==NULL) printf("Aucun document ne correspond au fichier spécifié a part lui meme : Essayez avec d'autres fichiers.\n");
+                else{
+                    fin=clock();
+                    temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
+                    //system("clear");
+                    printf("Résultat(s) en %f secondes\n\n",temps);
+                    afficheNbScore(s, nbListe,liste);
+                    ouvreFichier(choixFichier(s),liste);
+                }
+                    sleep(12);    
+            }
+            
         }
         else 
         {
@@ -200,12 +213,20 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     free(d);
 }
 
-Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur descRequete,Score s){
+Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur* descRequete,Score s){
     float score=0;
+    if(descRequete == NULL)
+    {
+        s->score = 0;
+        s->id = descRequete->idDesc;
+        s->next = NULL;
+        return s;
+    }
+
     while(descBase != NULL)
     {
-        if(descRequete.listeELMENT != NULL && descBase->listeELMENT != NULL)
-            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete.listeELMENT))/descRequete.tailleListe);
+        if(descBase->listeELMENT != NULL)
+            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->tailleListe);
         if(score>0)
         {
             s=empilerScore(s,score,descBase->idDesc);
@@ -231,7 +252,8 @@ float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
 
 float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     float score=0;
-    ELEMENT elmDesc;    affect_ELEMENT(&elmDesc, elementDescRequete);
+    ELEMENT elmDesc;    
+    affect_ELEMENT(&elmDesc, elementDescRequete);
     while(descBase != NULL)
     {
         ELEMENT elmBase;    affect_ELEMENT(&elmBase,*(ELEMENT*)descBase->element);
@@ -251,15 +273,45 @@ float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
 
 void afficheNbScore(Score s,int nb,pathIdDesc liste){
     float ms=s->score;
-    if(ms!=0) for(int i=0;i<nb&&s!=NULL;printf("(%d)\t%f%%\t%s\n",i+1,s->score/ms*100,trouveChemin(s->id,liste->tete)),i++,s=s->next);
-    printf("\n\r");
+    int i = 0;
+
+    if(ms != 0)
+    {
+        while(s != NULL)
+        {
+            printf("(%d)\t%f%%\t%s\n",i+1,s->score/ms*100,trouveChemin(s->id,liste->tete));
+            printf("\n\r");
+                if(nb == (i+1))
+                    break;
+            i++;
+            s = s->next;
+        }
+    }
+    else 
+    {
+        while(s != NULL)
+        {
+            printf("(%d)%f\t%s\n",i+1,s->score,trouveChemin(s->id,liste->tete));
+            printf("\n\r");
+                if(nb == (i+1))
+                    break;
+            i++;
+            s = s->next;
+        }
+    }
+    
 }
 
 Score empilerScore(Score s,float score,int idDesc){
-    Score tmp=(Score)calloc(1,sizeof(DescripteurScore));
-	tmp->id=idDesc;
-    tmp->score=score;
-	tmp->next=s;
+    Score tmp = calloc(1,sizeof(DescripteurScore));
+    if(tmp == NULL)
+    {   
+        fprintf(stderr,"Error \n");
+        exit(0);
+    }
+    tmp->id = idDesc;
+    tmp->score = score;
+    tmp->next = s;
     return tmp;
 }
 

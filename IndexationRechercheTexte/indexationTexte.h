@@ -206,7 +206,7 @@ void rechercheTexteCompare(const volatile baseDescripteur,pathIdDesc);
 
 int descripteurExiste(int,const volatile descripteur*,descripteur*);
 
-Score calculeScoreBaseDescripteur(const volatile descripteur*,descripteur,Score);
+Score calculeScoreBaseDescripteur(const volatile descripteur*,descripteur*,Score);
 float calculeScoreDescripteur(const volatile PILE,PILE);
 float calculeScoreUnitaire(const volatile PILE, ELEMENT);
 Score empilerScore(Score,float,int);
