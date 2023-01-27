@@ -17,6 +17,10 @@ Installer VLC
 
 ## Menu Utilisateur
 
+### Recherche Texte
+
+### Recherche Image
+
 ### Recherche Audio
 
 ## Menu Administrateur
