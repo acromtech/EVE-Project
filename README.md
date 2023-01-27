@@ -1,32 +1,33 @@
-#PFR-audio
-Dernière update : 30/12/2022
+# PFR-audio 
 
-Auteur : Emilien VESIN et Bastien LALANNE
+Dernière update : 27/01/2023
+
+Auteur : **Emilien VESIN, Bastien LALANNE, Flavie THIBAULT, Alexis GIBERT et Mouléro DEGBEGNI**
 
 module : Informatique
 
-#Information
+## Information
 
-#Prérequis
+## Prérequis
 Système d'exploitation : Linux
 
 Installer VLC
 
-#Utilisation
+## Utilisation
 
-##Menu Utilisateur
+## Menu Utilisateur
 
-###Recherche Audio
+### Recherche Audio
 
-##Menu Administrateur
+## Menu Administrateur
 
-###Configuration
+### Configuration
 
-###Indexation Texte
+### Indexation Texte
 
-###Indexation Image
+### Indexation Image
 
-###Indexation Audio
+### Indexation Audio
 
-###Suppresion des Bases et des Listes
+### Suppresion des Bases et des Listes
 
