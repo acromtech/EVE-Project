@@ -6,7 +6,6 @@ Auteur : Emilien VESIN et Bastien LALANNE
 module : Informatique
 
 #Information
-Cette partie a consisté à réaliser l'indexation d'une base de fichiers audio au format .bin et faire la comparaison de fichiers audios. Cette partie a été réalisé de façon collaborative par Emilien Vesin et Bastien Lalanne.
 
 #Prérequis
 Système d'exploitation : Linux
