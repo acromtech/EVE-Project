@@ -1,7 +1,6 @@
 #include "menu_mae.h"
 
 
-
 int fin = 1;
 int selection;
 
