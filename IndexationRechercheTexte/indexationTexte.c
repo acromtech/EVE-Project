@@ -5,8 +5,8 @@
 #include <strings.h>
 #include <unistd.h>
 
-//Role :
-//Auteur :
+//Role : banque de fonction d'indexation
+//Auteur : Andy
 
 int taille_base_descripteur = 0;
 int taille_liste_descripteur = 0;
