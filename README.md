@@ -15,7 +15,7 @@ module : Informatique
 
 ## Utilisation
 
-__1.1 Menu Utilisateur
+__1 Menu Utilisateur
 
 ### Recherche Texte
 
