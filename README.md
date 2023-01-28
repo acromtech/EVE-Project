@@ -39,9 +39,11 @@ Pour modifier les valeurs de ces variables on peut utiliser la fonction saisieCo
 > 
 > 5 dureeAudioCorpus 70
 > 
+> 
 > Entrez le numéro du paramètre qui doit être modifié : 3
 > 
 > Entrez la nouvelle valeur pour le paramètre n° 3 : 50
+> 
 > 
 > 2 indexationAudioN 1024
 > 
@@ -59,11 +61,13 @@ Pour lancer la recherche audio, il faut ouvrir un terminal et ce placer dans le 
 > ```
 >| Entrez le nom de votre fichier : jingle_fi.wav
 >
+>
 > | Veuillez patienter | 
 > 
 > | Correspondance trouvé à 90.32% ... | 
 > 
 > | Voici le résultat | 
+> 
 > 
 > Le jingle demarre à environ 29 sec du corpus
 > 
