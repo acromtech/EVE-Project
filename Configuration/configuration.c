@@ -127,7 +127,7 @@ void saisieConfig(){
     switch (nouvNumLigne){
         case 2: if (atoi(nouvVal)<0){
                  
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -138,7 +138,7 @@ void saisieConfig(){
           
         case 3: if (atoi(nouvVal)< 0){
                    
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -149,7 +149,7 @@ void saisieConfig(){
         
         case 4: if (atoi(nouvVal) < 0){
             
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -160,7 +160,7 @@ void saisieConfig(){
         
         case 5: if (atoi(nouvVal)<0 || atoi(nouvVal) > 100){
                    
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -171,7 +171,7 @@ void saisieConfig(){
         
         case 6: if (atoi(nouvVal)<0){
                    
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -182,7 +182,7 @@ void saisieConfig(){
         
         case 7: if (atoi(nouvVal)<0){
                    
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
@@ -193,7 +193,7 @@ void saisieConfig(){
         
         case 8: if (atoi(nouvVal)<3 || atoi(nouvVal)>= 10){
             
-            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");//Texte en gras rouge
+            printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
         }else{
 
