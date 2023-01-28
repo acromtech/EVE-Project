@@ -11,9 +11,9 @@ module : Informatique
 Cette partie a consisté à réaliser l'indexation d'une base de fichiers audio au format .bin et faire la comparaison de fichiers audios. Cette partie a été réalisé de façon collaborative par Emilien VESIN et Bastien LALANNE.
 
 ## Prérequis
-Système d'exploitation : Linux
+* Système d'exploitation : Linux
 
-Installer VLC
+* Installer VLC
 
 ## Utilisation
 
