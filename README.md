@@ -23,7 +23,6 @@ Pour lancer l'indexation audio, il faut ouvrir un terminal et ce placer dans le 
 
 > ```
 > 2 indexationAudioN 1024
-
 > 3 indexationAudioM 100
 > ```
 
