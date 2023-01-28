@@ -9,13 +9,13 @@ module : Informatique
 ## Information
 
 ## Prérequis
-Système d'exploitation : Linux
+* Système d'exploitation : Linux
 
-Installer VLC
+* Installer VLC
 
 ## Utilisation
 
-## Menu Utilisateur
+__1.1 Menu Utilisateur
 
 ### Recherche Texte
 
