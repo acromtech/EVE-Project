@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include "../Configuration/configuration.h"
 
-#define TAILLE_TOKEN_MAX 90
+#define TAILLE_TOKEN_MAX 100
 #define SEUIL_MOT_SIGNIFICATIF 5
 #define TAILLE_MALLOC 1024
 #define NBLISTE 10  //PARAMETRE A METTRE DANS LE POINT CONFIG POUR FAIRE VARIER LE NOMBRE DE RESULATS
