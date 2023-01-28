@@ -14,6 +14,22 @@ module : Informatique
 * Installer VLC
 
 ## Utilisation
+> ```
+> ========================================================
+>
+> ==============   MENU PRINCIPAL   ======================
+
+> ========================================================
+> 
+> Selectionez l'opération à réaliser.
+> 
+>
+>		1.  Menu utilisateur.
+>
+>		2.  Menu d'Administration.
+>
+>		3.  Fermer l'application.
+> ```
 
 ### Menu Utilisateur
 
