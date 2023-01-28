@@ -15,23 +15,23 @@ module : Informatique
 
 ## Utilisation
 
-___1 Menu Utilisateur
+### Menu Utilisateur
 
-### Recherche Texte
+#### Recherche Texte
 
-### Recherche Image
+#### Recherche Image
 
-### Recherche Audio
+#### Recherche Audio
 
-## Menu Administrateur
+### Menu Administrateur
 
-### Configuration
+#### Configuration
 
-### Indexation Texte
+#### Indexation Texte
 
-### Indexation Image
+#### Indexation Image
 
-### Indexation Audio
+#### Indexation Audio
 
-### Suppresion des Bases et des Listes
+#### Suppresion des Bases et des Listes
 
