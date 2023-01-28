@@ -603,6 +603,7 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
     FILE *input, *cpy;
     cpy = fopen("cpy.txt", "r");
     int seuil_mot_significatif = config("seuilMotSignificatif");
+       
     if(cpy == NULL){
         fprintf(stderr, "cpy : impossible d'ouvrir cpy.\n");
         exit(0);

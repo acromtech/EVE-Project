@@ -219,7 +219,7 @@ Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripte
     while(descBase != NULL)
     {
         if(descBase->listeELMENT != NULL)
-            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->tailleListe);
+            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->nbToken);
         else 
             score = 0;
         if(score>0)

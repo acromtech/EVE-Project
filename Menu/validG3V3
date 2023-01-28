@@ -1,0 +1,1594 @@
+Script started on 2023-01-28 15:55:20+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ historygit checkout Menumenulone https://github.com/acromtech/PFR.git[A]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ history[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript validG3[4Pmake clean[4Pscriptmake clean
+[?2004lrm -f *.o*
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make clean[3Phistorygit checkout Menumenulone https://github.com/acromtech/PFR.git[A]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ history[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript validG3[4Pmake clean[4Pscriptmake clean[K[K[K[K[K[K
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+ERREUR : impossible d'indexer le document
+make: *** [makefile:12: mae] Erreur de segmentation (core dump créé)
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ [K]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ [K]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+^[[A    2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+[H[2J[3J
+[1;31m| Fermeture de l'application ... |[0m
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2 2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+2 3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+^[[A    2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+^[[2~     2
+
+| Suppression de la base Indexée |
+rm: impossible de supprimer '../BaseFichiersTexte/*.clean': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/*.tok': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../BaseFichiersTexte/files.txt': Aucun fichier ou dossier de ce type
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+[H[2J[3J
+[1;31m| Fermeture de l'application ... |[0m
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+ERREUR : impossible d'indexer le document
+make: *** [makefile:12: mae] Erreur de segmentation (core dump créé)
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2 2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2 1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+(1)	100,000000%	../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1 1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+^[5
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+^[[A[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+    [H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+2
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+12[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+3   1
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+m[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+
+
+| Changement de mot de passe |
+	Entrez le nouveau mot de passe (Nombre uniquement): 
+
+
+Mot de passe a été modifié !
+
+
+Le nouveau mot de passe est : 0
+ak   ^Cmake: *** [makefile:12: mae] Interrompre
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ 
+[?2004l[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 0
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+	Mot de passe invalide. 
+	Veuillez rééssayer (Nombre uniquement, nombre d'essais restant 2) 
+	: 0
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 0
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+
+
+Entrez le numéro du paramètre qui doit être modifié : 8
+Entrez la nouvelle valeur pour le paramètre n° 8 : 3
+
+2 motdePasse 0
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : n
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 0
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+Entrez le numéro du paramètre qui doit être modifié : 2
+Entrez la nouvelle valeur pour le paramètre n° 2 : 1234
+
+2 motdePasse 1234
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : n
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+(1)	100,000000%	../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1233 4
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+(1)	100,000000%	../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+^Cmake: *** [makefile:12: mae] Interrompre
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 122 44  34
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+
+| Suppression terminée ! |
+1
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 12344 
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+make: *** [makefile:12: mae] Erreur de segmentation (core dump créé)
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ 1
+[?2004l1 : commande introuvable
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ 1make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Suppression de la base Indexée |
+
+| Suppression terminée ! |
+1
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+   int seuil_mot_significatif = config("seuilMotSignificatif");                                                               ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+^[[A^[[B        
+
+
+
+^Cmake: *** [makefile:12: mae] Interrompre
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+Résultat(s) en 39,956137 secondes
+
+(1)	100,000000%	../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+
+(2)	99,991898%	../BaseFichiersTexte/29-Forte_rΘduction_de_la_calotte.xml
+
+(3)	99,327614%	../BaseFichiersTexte/28-_îdipe_α_Colone_,_la_rage.xml
+
+(4)	98,597610%	../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml
+
+(5)	97,728935%	../BaseFichiersTexte/28-Danse___Robyn_Orlin_et.xml
+
+(6)	97,047615%	../BaseFichiersTexte/28-A_Hossegor,_Kelly_Slater_peut.xml
+
+(7)	96,317612%	../BaseFichiersTexte/27-Voyager_1_s_aventure_dans_l_au-delα.xml
+
+(8)	94,631340%	../BaseFichiersTexte/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml
+
+(9)	94,092789%	../BaseFichiersTexte/27-Le_Stade_de_France_s_ouvre.xml
+
+(10)	92,625557%	../BaseFichiersTexte/27-A_Lens,_le_Louvre_sera.xml
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+^C^[[Amake: *** [makefile:12: mae] Interrompre
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ make
+[?2004lgcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =================
