@@ -47,11 +47,11 @@ __3 Recherche Audio
 
 Pour lancer la recherche audio, il faut ouvrir un terminal et ce placer dans le dossier RechercheAudio puis faire un make. Cela va lancer le fichier tstRechercheAudio, le système va ensuite vous demandez de renseigner le nom du fichier que vous voulez comparer (ex: jingle_fi.wav), il va ensuite afficher le pourcentage de correspondance ainsi que la position temporelle de la correspondance. Le système vous demandera d'appuyer sur la touche "Entrer" afin de lancer la lecture du fichier à la position de la correspodance.
 
->'''
+> ```
 >| Entrez le nom de votre fichier : jingle_fi.wav
 > | Veuillez patienter | 
 > | Correspondance trouvé à 90.32% ... | 
 > | Voici le résultat | 
 > Le jingle demarre à environ 29 sec du corpus
 > Appuyez sur entrée pour lancer l'audio... (3 sec avant)
->'''
+> ```
