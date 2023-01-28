@@ -5,6 +5,8 @@
 #include <strings.h>
 #include <unistd.h>
 
+//Role :
+//Auteur :
 
 int taille_base_descripteur = 0;
 int taille_liste_descripteur = 0;
