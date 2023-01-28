@@ -104,10 +104,10 @@ typedef struct bDesc{
 
 int descripteur_NULL(descripteur);
 void affiche_DESCRIPTEUR(descripteur*);
-void compare_DESCRIPTEUR(descripteur, descripteur);
+float compareDESCRIPTEUR(descripteur, descripteur);
 void affect_DESCRIPTEUR(descripteur*, descripteur);
 void detruire_descripteur(descripteur*);
-char* descripteur_toString(descripteur*);
+char* descripteur_toString(descripteur);
 
 /***********************************************************/
 /******************BASE DESCRIPTEUR RELATED*****************/
@@ -116,7 +116,7 @@ char* descripteur_toString(descripteur*);
 baseDescripteur init_baseDescripteur();
 void affiche_baseDescripteur(baseDescripteur);
 int baseDescripteur_estVide(baseDescripteur);
-baseDescripteur empiler_baseDescripteur(baseDescripteur, descripteur*);
+baseDescripteur empiler_baseDescripteur(baseDescripteur, descripteur);
 baseDescripteur depilerbaseDescripteur(baseDescripteur, descripteur*);
 baseDescripteur saisir_baseDescripteur();
 char *baseDescripteur_toString(baseDescripteur);
@@ -204,7 +204,7 @@ idDescOccu rechercheTexteMot(tableDescript, char *, int *);
 void rechercheTexteMotCle(pathIdDesc, tableDescript);
 void rechercheTexteCompare(const volatile baseDescripteur,pathIdDesc);
 
-int descripteurExiste(int,const volatile descripteur*,descripteur*);
+int descripteurExiste(int, descripteur*,descripteur*);
 
 Score calculeScoreBaseDescripteur(const volatile descripteur*,descripteur*,Score);
 float calculeScoreDescripteur(const volatile PILE,PILE);

@@ -171,12 +171,9 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
         if(descripteurExiste(id,b->tete,d) == 1){
             if(d->tailleListe == 0)
             {
-                s = calloc(1, sizeof(*s));
-                s->id = d->idDesc;
-                s->score = 100;
-                s->next = NULL;
-                afficheNbScore(s, 1,liste);
-                ouvreFichier(choixFichier(s),liste);
+                printf("\e[1;35mResultat\e[0;35m : A l'issu traitement du fichier %s aucun mot n'apparaît plus de %d fois. \nCe fichier ne contient donc aucun mot significatif il est donc impossible de le comparer à la base de fichier.\n Veuillez changer le sueil de mot significatif et rééssayer. Merci.\n\e[0m\n", chemin, config("seuilMotSignificatif"));
+                sleep(5);
+                return;
             }
             else
             {
@@ -215,14 +212,15 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
 
 Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur* descRequete,Score s){
     float score=0;
-   
+
     while(descBase != NULL)
     {
-        if(descBase->listeELMENT != NULL)
-            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->nbToken);
-        else 
+        if(descBase->tailleListe == 0)
             score = 0;
-        if(score>0)
+        else
+            score = ((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->nbToken);
+    
+        if(score>=0)
         {
             s=empilerScore(s,score,descBase->idDesc);
             s=triScore(s);
@@ -367,7 +365,7 @@ DescripteurScore recupScore(Score s,int index,int i){
     return ds;
 }
 
-int descripteurExiste(int idDesc,const volatile descripteur* b,descripteur* d){
+int descripteurExiste(int idDesc, descripteur* b,descripteur* d){
     int existe=0;
     while(b != NULL)
     {
@@ -424,6 +422,6 @@ void comparaisonTexteMenu()
 
     recharger_base_indexation("../BaseFichiersTexte/FichiersDeDescription/base_descripteur.csv",&bd);
     recharger_liste_indexation("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
-
+    
     rechercheTexteCompare(bd, liste);
 }
