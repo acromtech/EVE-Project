@@ -873,7 +873,7 @@ void recharger_base_indexation(char *path, baseDescripteur* bd){
             fscanf(fp, "%d[^\n]", &(e->nbOccurence));
             d->listeELMENT = emPILE(d->listeELMENT, e);
         }
-        printf("%s\n", descripteur_toString(*d));
+        //printf("%s\n", descripteur_toString(*d));
         if(d->nbToken != 0) *(bd) = empiler_baseDescripteur(*bd, *d);
         d->listeELMENT = NULL;
     }
