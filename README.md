@@ -7,6 +7,7 @@ Auteur : **Emilien VESIN, Bastien LALANNE, Flavie THIBAULT, Alexis GIBERT et Mou
 module : Informatique
 
 ## Information
+Le menu regroupe toute les fonctionnalités de l'application (branches).
 
 ## Prérequis
 * Système d'exploitation : Linux
