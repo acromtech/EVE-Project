@@ -8,20 +8,15 @@
 //Role : banque de fonction d'indexation
 //Auteur : Andy
 
-int taille_base_descripteur = 0;
-int taille_liste_descripteur = 0;
-int id_ = 0;
-
-
 /***********************************************************/
 /*****************ELEMENT MOT DESCRIPTEUR*******************/
 /***********************************************************/
 
-void affiche_ELEMENT(ELEMENT e){
+void afficheELEMENT(ELEMENT e){
     printf("Mot = %s occurence = %d ", e.mot, e.nbOccurence);
 }
 
-void saisir_ELEMENT(ELEMENT * ptr_e){
+void saisirELEMENT(ELEMENT * ptr_e){
     int i;
     ptr_e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
     printf("Saisir le mot : ");
@@ -32,22 +27,22 @@ void saisir_ELEMENT(ELEMENT * ptr_e){
     scanf("%d", &(ptr_e->nbOccurence));
 }
 
-void affect_ELEMENT(ELEMENT *e, ELEMENT e_){
+void affectELEMENT(ELEMENT *e, ELEMENT e_){
     e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
     for(int i = 0; i < strlen(e_.mot); i++)
         e->mot[i] = e_.mot[i];
     e->nbOccurence = (e_.nbOccurence);
 }
 
-ELEMENT* create_EMENT(char *mot, int nbOccurence){
+ELEMENT* createELEMENT(char *mot, int nbOccurence){
     ELEMENT *e = calloc(1, sizeof(ELEMENT));
     if(e == NULL){
-        fprintf(stderr,"createELEMENT : Error: Failed to allocate : Out of memory\n");
+        fprintf(stderr,"createELEMENT : Erreur: Failed to allocate : Out of memory\n");
         exit(0);
     }
     e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
     if(e == NULL){
-        fprintf(stderr,"createELEMENT : Error: Failed to allocate : Out of memory\n");
+        fprintf(stderr,"createELEMENT : Erreur: Failed to allocate : Out of memory\n");
         exit(0);
     }
     strcpy(e->mot, mot);
@@ -55,11 +50,11 @@ ELEMENT* create_EMENT(char *mot, int nbOccurence){
     return e;
 }
 
-int compare_ELEMENT(ELEMENT a, ELEMENT b){ // renvoie 0 en cas d'égalité, 1 en cas de a>b et -1 si a est plus petit que b
+int compareELEMENT(ELEMENT a, ELEMENT b){ // renvoie 0 en cas d'égalité, 1 en cas de a>b et -1 si a est plus petit que b
     return (strcmp(a.mot, b.mot) == 0 && (a.nbOccurence == b.nbOccurence) == 1);
 }
 
-char* element_toString(ELEMENT e){
+char* elementtoString(ELEMENT e){
     char* result = malloc(sizeof(char) * 1000);
     sprintf(result, "%s %d", e.mot, e.nbOccurence);
     return result;
@@ -69,8 +64,8 @@ char* element_toString(ELEMENT e){
 /*******************ELEMENT  DESCRIPTION********************/
 /***********************************************************/
 
-void affiche_DESCRIPTEUR(descripteur* d){
-    printf("[ "); affiche_PILE(d->listeELMENT);
+void afficheDESCRIPTEUR(descripteur* d){
+    printf("[ "); affichePILE(d->listeELMENT);
     printf(" %d, ", d->tailleListe);
     printf(" %d", d->nbToken);
     printf(" ]\n");
@@ -108,7 +103,7 @@ float compareDESCRIPTEUR(descripteur d1, descripteur d2)
     }
     return egale;
 }
-void affect_DESCRIPTEUR(descripteur *desc_dest, descripteur desc){
+void affectDESCRIPTEUR(descripteur *desc_dest, descripteur desc){
     PILE tmp = desc.listeELMENT;
     while(tmp != NULL){
         desc_dest->listeELMENT = emPILE(desc_dest->listeELMENT, tmp->element);
@@ -119,38 +114,38 @@ void affect_DESCRIPTEUR(descripteur *desc_dest, descripteur desc){
     desc_dest->idDesc = desc.idDesc;
 }
 
-char* descripteur_toString(descripteur d){
+char* descripteurtoString(descripteur d){
     char* result = calloc(TAILLE_MALLOC, sizeof(char));
     if(result == NULL){
-        fprintf(stderr, "Error : descripteur_toString : malloc failed\n");
+        fprintf(stderr, "Erreur : descripteurtoString : malloc failed\n");
         exit(0);
     }
     sprintf(result, "%d %d %d %s",
-            d.idDesc, d.tailleListe, d.nbToken, pile_toString(d.listeELMENT));
+            d.idDesc, d.tailleListe, d.nbToken, pileToString(d.listeELMENT));
     return result;
 }
 
 /***********************************************************/
 /********************LISTE  DESCRIPTION*********************/
 /***********************************************************/
-pathIdDesc init_listeDescripteur(){
+pathIdDesc initListeDescripteur(){
     pathIdDesc p = calloc(1, sizeof(struct pathid));
     if(p != NULL) return p;
     else{
-        fprintf(stderr, "Error : init listeDescripteur failed\n");
+        fprintf(stderr, "Erreur : init listeDescripteur failed\n");
         exit(0);
     }
 }
 
-liste_descripteur* create_path_id_desc(char *path, int id){
+liste_descripteur* createPathIdDesc(char *path, int id){
     liste_descripteur* p = calloc(1, sizeof(struct pathid));
     if(p == NULL){
-        fprintf(stderr, "Error : impossible to create path id descriptor.\n");
+        fprintf(stderr, "Erreur : impossible to create path id descriptor.\n");
         exit(0);
     }
     p->path = calloc(strlen(path)+1, sizeof(char));
     if(p->path == NULL){
-        fprintf(stderr, "Error : impossible to create path part of path id descriptor.\n");
+        fprintf(stderr, "Erreur : impossible to create path part of path id descriptor.\n");
         exit(0);
     }
     strcpy(p->path, path);
@@ -158,11 +153,11 @@ liste_descripteur* create_path_id_desc(char *path, int id){
     return p;
 }
 
-pathIdDesc empiler_listedescripteur(pathIdDesc p, liste_descripteur* element){
+pathIdDesc empilerListeDescripteur(pathIdDesc p, liste_descripteur* element){
     liste_descripteur *tmp = calloc(1, sizeof(liste_descripteur));
     tmp->path = calloc(TAILLE_MALLOC, sizeof(char));
     if(element == NULL || tmp == NULL || tmp->path == NULL){
-        fprintf(stderr, "Error : impossible to stack the path id descriptor.\n");
+        fprintf(stderr, "Erreur : impossible to stack the path id descriptor.\n");
         exit(0);
     }
     else{
@@ -176,7 +171,7 @@ pathIdDesc empiler_listedescripteur(pathIdDesc p, liste_descripteur* element){
     }
 }
 
-pathIdDesc depile_listedescripteur(pathIdDesc p, liste_descripteur* element){
+pathIdDesc depileListeDescripteur(pathIdDesc p, liste_descripteur* element){
     liste_descripteur* tmp = NULL;    
     if(p != NULL){
         tmp = p->tete;
@@ -189,17 +184,17 @@ pathIdDesc depile_listedescripteur(pathIdDesc p, liste_descripteur* element){
     return p;
 }
 
-char* liste_toString(liste_descripteur* p){
+char* listeToString(liste_descripteur* p){
     char* result = calloc(TAILLE_MALLOC, sizeof(char));
     if(result == NULL){
-        fprintf(stderr, "Error : liste_toString : failed to allocate memory\n");
+        fprintf(stderr, "Erreur : listeToString : failed to allocate memory\n");
         exit(0);
     }
     sprintf(result, "%s %d", p->path, p->id);
     return result;
 }
 
-void affiche_listedescripteur(pathIdDesc lb){
+void afficheListeDescripteur(pathIdDesc lb){
     while(lb != NULL && lb->tete != NULL){
         printf("%s %d\n", lb->tete->path, lb->tete->id);
         lb->tete = lb->tete->next;
@@ -208,34 +203,34 @@ void affiche_listedescripteur(pathIdDesc lb){
 /***********************************************************/
 /***********************PILE RELATED************************/
 /***********************************************************/
-PILE init_PILE(){
+PILE initPILE(){
     return NULL;
 }
 
-int PILE_estVide(PILE p){ // Si la pile est vide alors p est a -1 alors on renvoit le resultat de l'expression booléen p == -1
+int PILEEstVide(PILE p){ // Si la pile est vide alors p est a -1 alors on renvoit le resultat de l'expression booléen p == -1
     return (p == NULL);
 }
 
-void affiche_PILE(PILE p){
+void affichePILE(PILE p){
     PILE tmp = p ;
     // Verifier si la pile est vide
-    if(PILE_estVide(p)) printf("[ ]\n");
+    if(PILEEstVide(p)) printf("[ ]\n");
     // Verifier si la pile n'est pas vide la parcourrir et afficher les elements du tableau en partant de la tete à l'indice 0
     else{
         printf("[ ");
         while(tmp !=NULL){
-            affiche_ELEMENT(*(ELEMENT*)tmp->element);
+            afficheELEMENT(*(ELEMENT*)tmp->element);
             tmp = tmp->next;
         }
         printf("]\n");
     }
 }
 
-char* pile_toString(PILE p){
+char* pileToString(PILE p){
     char* result = calloc(1024, sizeof(char));
     char* temp = calloc(1024, sizeof(char));
     if(result == NULL || temp == NULL){
-        fprintf(stderr, "Error : pile_toString : failed to allocate memory\n");
+        fprintf(stderr, "Erreur : pileToString : failed to allocate memory\n");
         exit(0);
     }
     while(p != NULL){
@@ -247,10 +242,10 @@ char* pile_toString(PILE p){
     return result;
 }
 
-int PILE_contient(PILE p, ELEMENT element){
+int PILEContient(PILE p, ELEMENT element){
     int contient = 0;
     while(p != NULL){
-        contient = compare_ELEMENT(*(ELEMENT*)p->element, element);
+        contient = compareELEMENT(*(ELEMENT*)p->element, element);
         if(contient == 1) break;
         p = p->next;
     }
@@ -260,16 +255,16 @@ int PILE_contient(PILE p, ELEMENT element){
 PILE emPILE(PILE p, void *x){
     Cellule *e = (Cellule*)calloc(1,sizeof(Cellule));
     if(!e){
-        fprintf(stderr,"emPILE : Error: Failed to allocate : Out of memory\n");
+        fprintf(stderr,"emPILE : Erreur: Failed to allocate : Out of memory\n");
         exit(0);
     }
     e->element = (ELEMENT*)calloc(1,sizeof(ELEMENT));
     if(!(e->element)){
-        fprintf(stderr,"emPILE : Error: Failed to allocate : Out of memory\n");
+        fprintf(stderr,"emPILE : Erreur: Failed to allocate : Out of memory\n");
         exit(0);
     }
-    affect_ELEMENT((ELEMENT*)e->element, *(ELEMENT*)x);
-    if(PILE_contient(p, *(ELEMENT*)x) == 1){
+    affectELEMENT((ELEMENT*)e->element, *(ELEMENT*)x);
+    if(PILEContient(p, *(ELEMENT*)x) == 1){
         free(e);
         return p;
     }
@@ -281,9 +276,9 @@ PILE emPILE(PILE p, void *x){
 
 PILE dePILE(PILE p, void *x){
     Cellule *d;
-    if(PILE_estVide(p)) fprintf(stderr, "La pile est vide. Il est impossible d'en depiler un element.\n");
+    if(PILEEstVide(p)) fprintf(stderr, "La pile est vide. Il est impossible d'en depiler un element.\n");
     else{
-        affect_ELEMENT(x, *(ELEMENT*)p->element);
+        affectELEMENT(x, *(ELEMENT*)p->element);
         d = p;
         p = p->next;
         free(d);
@@ -291,11 +286,11 @@ PILE dePILE(PILE p, void *x){
     return p;
 }
 
-PILE saisir_PILE(){
-    PILE p = init_PILE();
+PILE saisirPILE(){
+    PILE p = initPILE();
     int num, i;
     ELEMENT  number;
-    affiche_PILE(p);
+    affichePILE(p);
     printf("Combien d'élément voulez vous entrer ? \n");
     scanf("%d", &num);
     if(num< 0){
@@ -309,24 +304,24 @@ PILE saisir_PILE(){
         printf("Veillez saisir sucessivement les %d nombres à ajouter à la pile :\n ", num);
         for(i=0; i<num; i++){
             printf("L'élément numero %d : \n", i+1);
-            saisir_ELEMENT(&number);
+            saisirELEMENT(&number);
             p = emPILE(p, &number);
         }
     }
     return p;
 }
 
-void finir_PILE(PILE p){
+void finirPILE(PILE p){
     ELEMENT x;
-    if(!PILE_estVide(p)) while(p != NULL) p = dePILE(p, &x);
+    if(!PILEEstVide(p)) while(p != NULL) p = dePILE(p, &x);
     
 }
 
-int descripteur_NULL(descripteur d){
+int descripteurNULL(descripteur d){
     return (d.listeELMENT == NULL);
 }
 
-int PILE_taille_liste(PILE p){
+int PILETailleListe(PILE p){
     int cont = 0;
     while(p != NULL){
         cont++;
@@ -339,33 +334,33 @@ int PILE_taille_liste(PILE p){
 /******************BASE DESCRIPTEUR RELATED*****************/
 /***********************************************************/
 
-baseDescripteur init_baseDescripteur(){
+baseDescripteur initBaseDescripteur(){
     baseDescripteur desc = calloc(1, sizeof(struct bDesc));
     if(desc != NULL){
         desc->tete = calloc(1, sizeof(descripteur));
         if(desc->tete != NULL) return desc;
     }
-    fprintf(stderr, "Error : init_base_Descripteur : out of memory\n");
+    fprintf(stderr, "Erreur : initBaseDescripteur : out of memory\n");
     exit(0);
 }
 
-void affiche_baseDescripteur(baseDescripteur baseDesc){
+void afficheBaseDescripteur(baseDescripteur baseDesc){
     descripteur* tmp = baseDesc->tete;
-    if(baseDescripteur_estVide(baseDesc)) printf("{ }");
+    if(baseDescripteurEstVide(baseDesc)) printf("{ }");
     else{
         printf("{ ");
         while(tmp !=NULL){
-            affiche_DESCRIPTEUR(tmp);
+            afficheDESCRIPTEUR(tmp);
             tmp = tmp->next;
         }
         printf("}\n");
     }
 }
-int baseDescripteur_estVide(baseDescripteur baseDesc){
+int baseDescripteurEstVide(baseDescripteur baseDesc){
     return (baseDesc->tete == NULL);
 }
 
-int contient_descripteur(baseDescripteur baseDesc, descripteur desc){
+int contientDescripteur(baseDescripteur baseDesc, descripteur desc){
     int contient = 0;
     descripteur *d = baseDesc->tete;
     while(d != NULL){
@@ -375,18 +370,18 @@ int contient_descripteur(baseDescripteur baseDesc, descripteur desc){
     return contient;
 }
 
-baseDescripteur empiler_baseDescripteur(baseDescripteur baseDesc, descripteur d){
+baseDescripteur empilerBaseDescripteur(baseDescripteur baseDesc, descripteur d){
     descripteur *desc = (descripteur*)calloc(1, sizeof(descripteur));
     if(desc == NULL){
-        fprintf(stderr, "Error : empiler descripteur failed\n");
+        fprintf(stderr, "Erreur : empiler descripteur failed\n");
         exit(0);
     }
-    //printf("%s\n", descripteur_toString(d));
+    //printf("%s\n", descripteurtoString(d));
     desc->idDesc = d.idDesc;
     desc->nbToken = d.nbToken;
     desc->tailleListe = d.tailleListe;
     desc->listeELMENT = d.listeELMENT;
-    //printf("%s\n\n", descripteur_toString(*desc));
+    //printf("%s\n\n", descripteurtoString(*desc));
     desc->next = baseDesc->tete;
     baseDesc->tete = desc; 
     baseDesc->taille++;
@@ -395,36 +390,36 @@ baseDescripteur empiler_baseDescripteur(baseDescripteur baseDesc, descripteur d)
 
 baseDescripteur depilerbaseDescripteur(baseDescripteur baseDesc, descripteur* d){
     descripteur *desc_tmp;
-    if(baseDescripteur_estVide(baseDesc)) fprintf(stderr, "Error : impossible de retirer un descripteur : base vide.n");
+    if(baseDescripteurEstVide(baseDesc)) fprintf(stderr, "Erreur : impossible de retirer un descripteur : base vide.n");
     else{
-        affect_DESCRIPTEUR(desc_tmp, *(baseDesc->tete));
-        affect_DESCRIPTEUR(d, *desc_tmp);
+        affectDESCRIPTEUR(desc_tmp, *(baseDesc->tete));
+        affectDESCRIPTEUR(d, *desc_tmp);
         baseDesc->tete = baseDesc->tete->next;
-        detruire_descripteur(d);
+        detruireDescripteur(d);
         baseDesc->taille--;
     }
     return baseDesc;
 }
 
-void detruire_descripteur(descripteur* d){
-    finir_PILE(d->listeELMENT);
+void detruireDescripteur(descripteur* d){
+    finirPILE(d->listeELMENT);
     free(d);
 }
 
-void finir_baseDescripteur(baseDescripteur baseDesc){
+void finirBaseDescripteur(baseDescripteur baseDesc){
     descripteur *d;
     while(baseDesc != NULL){
-        affect_DESCRIPTEUR(d, *(baseDesc->tete));
+        affectDESCRIPTEUR(d, *(baseDesc->tete));
         baseDesc->tete = baseDesc->tete->next;
         free(d);
     }
     free(baseDesc);
 }
 
-char *baseDescripteur_toString(baseDescripteur bd){
+char *baseDescripteurtoString(baseDescripteur bd){
     char * s = calloc(2048, sizeof(char));
     while(bd->tete != NULL){
-        strcat(s, descripteur_toString(*(bd->tete)));
+        strcat(s, descripteurtoString(*(bd->tete)));
         strcat(s, "\n");
         bd->tete = bd->tete->next;
     }
@@ -435,7 +430,7 @@ char *baseDescripteur_toString(baseDescripteur bd){
 /*****************TABLE DESCRIPTEUR RELATED*****************/
 /***********************************************************/
 
-int is_in(idDescOccu p, int id){
+int isIn(idDescOccu p, int id){
     int contient = 0;
     while(p!=NULL){
         if(p->idDesc == id){   
@@ -447,7 +442,7 @@ int is_in(idDescOccu p, int id){
     return contient;
 }
 
-char *idDescOccu_toString(idDescOccu p){
+char *idDescOccuToString(idDescOccu p){
     char *result = calloc(1000, sizeof(char));
     char *tmp = calloc(1000, sizeof(char));
     while(p!=NULL){
@@ -460,29 +455,29 @@ char *idDescOccu_toString(idDescOccu p){
     return result;
 }
 
-idDescOccu empile_idDesc(idDescOccu p,int id, int occ){
-    idDescOccu tmp = create_idDesc(id, occ);
+idDescOccu empileIdDesc(idDescOccu p,int id, int occ){
+    idDescOccu tmp = createIdDesc(id, occ);
     idDescOccu tmp_p = p;
-    if(is_in(p, id) == 1) return p;
+    if(isIn(p, id) == 1) return p;
     else{
         tmp->next = p;
         return tmp;
     }
 }
-idDescOccu depile_idDesc(idDescOccu p, idDescOccu e){
+idDescOccu depileIdDesc(idDescOccu p, idDescOccu e){
     idDescOccu tmp = p;
     if(p != NULL){
-        e = create_idDesc(p->idDesc, p->occ);
+        e = createIdDesc(p->idDesc, p->occ);
         p = p->next;
         free(tmp);
     }
     return p;
 }
 
-idDescOccu create_idDesc(int id, int oc){
+idDescOccu createIdDesc(int id, int oc){
     idDescOccu tmp = calloc(1, sizeof(struct idDescOcc));
     if(tmp == NULL){
-        fprintf(stderr, "Error : can't create *idDescOcc element.\n ");
+        fprintf(stderr, "Erreur : can't create *idDescOcc element.\n ");
         exit(0);
     }
     tmp->idDesc = id;
@@ -490,72 +485,72 @@ idDescOccu create_idDesc(int id, int oc){
     return tmp;
 }
 
-void affect_tableDescElement(tableDescript p, struct tableDescripteur e){
+void affectTableDescElement(tableDescript p, struct tableDescripteur e){
     p->mot = calloc(strlen(e.mot), sizeof(char));
     if(p->mot == NULL){
-        fprintf(stderr, "Error : can't create mot de tableIndex.\n ");
+        fprintf(stderr, "Erreur : can't create mot de tableIndex.\n ");
         exit(0);
     }
     strncpy(p->mot, e.mot, strlen(e.mot));
-    p->idDescripteur = (create_idDesc(e.idDescripteur->idDesc, e.idDescripteur->occ));
+    p->idDescripteur = (createIdDesc(e.idDescripteur->idDesc, e.idDescripteur->occ));
 }
 
-tableDescript empile_tableDescElement(tableDescript p, char* mot, int id, int occ){
+tableDescript empileTableDescElement(tableDescript p, char* mot, int id, int occ){
     tableDescript tmp = calloc(1, sizeof(struct tableDescripteur));
     tableDescript tmp_p = p;
     int found = 0;
     if(!tmp){
-        fprintf(stderr, "Error : can't create element in empiler_tableDescript.\n ");
+        fprintf(stderr, "Erreur : can't create element in empiler_tableDescript.\n ");
         exit(0);
     }
     tmp->mot = calloc(strlen(mot)+1, sizeof(char));
     if(tmp->mot == NULL){
-        fprintf(stderr, "Error : can't create mot de tableIndex in empiler.\n ");
+        fprintf(stderr, "Erreur : can't create mot de tableIndex in empiler.\n ");
         exit(0);
     }
     strcpy(tmp->mot, mot);
-    tmp->idDescripteur = (create_idDesc(id, occ));
+    tmp->idDescripteur = (createIdDesc(id, occ));
     tmp->next = p;
     return tmp;
 }
 
-tableDescript creer_tableDescElement(tableDescript tb, char *token, idDescOccu id_ds){
+tableDescript creerTableDescElement(tableDescript tb, char *token, idDescOccu id_ds){
     tableDescript tmp = calloc(1, sizeof(struct tableDescripteur));
     if(!tmp){
-        fprintf(stderr, "Error : can't create element in empiler_tableDescript.\n ");
+        fprintf(stderr, "Erreur : can't create element in empiler_tableDescript.\n ");
         exit(0);
     }
     tmp->mot = calloc(strlen(token)+1, sizeof(char));
     if(tmp->mot == NULL){
-        fprintf(stderr, "Error : can't create mot de tableIndex in empiler.\n ");
+        fprintf(stderr, "Erreur : can't create mot de tableIndex in empiler.\n ");
         exit(0);
     }
     strcpy(tmp->mot, token);
-    tmp->idDescripteur = (create_idDesc(id_ds->idDesc, id_ds->occ));
+    tmp->idDescripteur = (createIdDesc(id_ds->idDesc, id_ds->occ));
     return tmp;
 }
 
-tableDescript depiler_tableDescElement(tableDescript p, tableDescript d){
+tableDescript depilerTableDescElement(tableDescript p, tableDescript d){
     tableDescript tmp = p;
     if(p != NULL){
-        affect_tableDescElement(d, *p);
+        affectTableDescElement(d, *p);
         p = p->next;
         free(tmp);
     }
     return p;
 }
 
-char *tableDescripteur_toString(tableDescript tb){
+char *tableDescripteurtoString(tableDescript tb){
     char *result = calloc(TAILLE_MALLOC, sizeof(char));
     if(result == NULL){
-        fprintf(stderr, "Error : pile_toString : failed to allocate memory\n");
+        fprintf(stderr, "Erreur : pileToString : failed to allocate memory\n");
         exit(0);
     }
     sprintf(result, "%s %d %d\n", tb->mot, tb->idDescripteur->idDesc, tb->idDescripteur->occ);
     return result;
 }
 
-void affiche_table_descripteur(tableDescript p){
+void afficheTableDescripteur(tableDescript p){
     while(p != NULL){
         printf("%s %d %d\n",p->mot, p->idDescripteur->idDesc, p->idDescripteur->occ);
         p = p->next;
@@ -566,7 +561,7 @@ void affiche_table_descripteur(tableDescript p){
 /*****************INDEX DESCRIPTEUR RELATED*****************/
 /***********************************************************/
 
-void clean_path(char *new_path, char *path){
+void cleanPath(char *new_path, char *path){
     int i, len = strlen(path);
     strncpy(new_path, path, len);
     for(i = len-1; i >= 0; i--)
@@ -595,7 +590,7 @@ FILE *filtrageToken(FILE *input, char *outputPath){
     char *stopwords[] = {"t'","lorsqu'", "ces", "ils","t", "sont" ,"n'", "s'", "m'","est", "une", "avec", "qui","à","ainsi","autre","aux", "au","avec", "d'","ce","ceci","cela","celle","celles","celui","ceux","chaque","ci","comme","comment","dans","de","des","du","elle","en","et","eu","eux","il","je","la","le","les","leur","lui","ma","mais","me","même","mes","moi","mon","ne","nos","notre","nous","on","ou","par","pas","pour","qu'","que","qui","sa","se","ses","son","sur","ta","te","tes","toi","ton","tu","un","une","vos","votre","vous","l'", "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "has", "he", "in", "is", "it", "its", "of", "on", "that", "the", "to", "was", "were", "will", "with"}; // Créer un tableau de stopwords
     int is_stopword = 0, i, buffer_smal = 0;
     FILE *cpy = fopen("../bin/temp/cpy.txt", "w");
-    int stopwordsBufferSize = buffer_size(stopwords);
+    int stopwordsBufferSize = bufferSize(stopwords);
     char *mot, *tmp;
     FILE *output_TOK = fopen(outputPath, "w");
     if (output_TOK == NULL || cpy == NULL){
@@ -645,10 +640,10 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
         exit(0);
     }
     if(d == NULL || e == NULL){
-        fprintf(stderr,"saveDescripteur : Error: Failed to allocate : Out of memory\n");
+        fprintf(stderr,"saveDescripteur : Erreur: Failed to allocate : Out of memory\n");
         exit(0);
     }
-    d->listeELMENT = init_PILE();
+    d->listeELMENT = initPILE();
     d->next = NULL;
         while(fscanf(cpy,"%s[^n]", token) != EOF){
             input = fopen(inputPath, "r");
@@ -672,18 +667,18 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
                     strcpy(e->mot, token);
                     e->nbOccurence = count;
                     d->listeELMENT = emPILE(d->listeELMENT, e);
-                    *tb = empile_tableDescElement(*tb, token, idDesc, count);
-                    fprintf(tableDescripteur, "%s", tableDescripteur_toString(*tb));
+                    *tb = empileTableDescElement(*tb, token, idDesc, count);
+                    fprintf(tableDescripteur, "%s", tableDescripteurtoString(*tb));
                 }
                 found = 0;
             }
             d->nbToken++;
         }
-    d->tailleListe = PILE_taille_liste(d->listeELMENT);
+    d->tailleListe = PILETailleListe(d->listeELMENT);
     d->idDesc = idDesc;
     if(d->nbToken != 0){
-        *bd = empiler_baseDescripteur(*bd, *d);
-        fprintf(baseDesct, "%s\n", descripteur_toString(*d));
+        *bd = empilerBaseDescripteur(*bd, *d);
+        fprintf(baseDesct, "%s\n", descripteurtoString(*d));
     }    
     free(d);
     free(e);
@@ -694,27 +689,27 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
 int lienDescripteur(FILE* listDesc, int idDesc, char* inputPath, pathIdDesc *listeDesc){
     liste_descripteur* tmp = calloc(1, sizeof(struct listeDesc));
     if(tmp == NULL){
-        fprintf(stderr, "Error : listeDesc : malloc failed\n");
+        fprintf(stderr, "Erreur : listeDesc : malloc failed\n");
         exit(0);
     }
-    tmp =  create_path_id_desc(inputPath, idDesc);
-    *listeDesc = empiler_listedescripteur(*listeDesc,tmp); 
-    fprintf(listDesc, "%s\n", liste_toString(tmp));
+    tmp =  createPathIdDesc(inputPath, idDesc);
+    *listeDesc = empilerListeDescripteur(*listeDesc,tmp); 
+    fprintf(listDesc, "%s\n", listeToString(tmp));
     return 1;
 }
 
-int buffer_size(char *buffer[]){
+int bufferSize(char *buffer[]){
     int i;
     for(i = 1; buffer[i] != NULL; i++);
     return --i;
 }
 
-int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *listeDesc, tableDescript *tb_liste){
+int indexationTexte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *listeDesc, tableDescript *tb_liste){
     FILE *input = fopen(inputpath, "r"); // Ouvrir le fichier en lecture
     char *stopwords[] = {"n'", "s'", "m'","est", "une", "avec", "qui","à","ainsi","autre","aux", "au","avec", "d'","ce","ceci","cela","celle","celles","celui","ceux","chaque","ci","comme","comment","dans","de","des","du","elle","en","et","eu","eux","il","je","la","le","les","leur","lui","ma","mais","me","même","mes","moi","mon","ne","nos","notre","nous","on","ou","par","pas","pour","qu'","que","qui","sa","se","ses","son","sur","ta","te","tes","toi","ton","tu","un","une","vos","votre","vous","l'", "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "has", "he", "in", "is", "it", "its", "of", "on", "that", "the", "to", "was", "were", "will", "with"}; // Créer un tableau de stopwords
-    int stopwordsBufferSize = buffer_size(stopwords);
+    int stopwordsBufferSize = bufferSize(stopwords);
     char *outputPath = calloc(TAILLE_MALLOC, sizeof(char));
-    clean_path(outputPath, inputpath);
+    cleanPath(outputPath, inputpath);
     char output[TAILLE_MALLOC];
     strcpy(output, outputPath); 
     FILE *output_TOK, *baseDescriptr, *listeDescripteur, *cpy, *tb;
@@ -725,12 +720,12 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     sprintf(outputPath, "%s.clean", output);
     input = fopen(outputPath, "r");
     if(input == NULL){
-        fprintf(stderr,"Error : indexationTexte could not open files for writing.\n");
+        fprintf(stderr,"Erreur : indexationTexte could not open files for writing.\n");
         exit(0);
     }
     sprintf(outputPath, "%s.tok", output);
     output_TOK = filtrageToken(input, outputPath);
-    clean_path(outputPath, inputpath);
+    cleanPath(outputPath, inputpath);
     fclose(input);
     fclose(output_TOK);
     sprintf(outputPath, "%s.tok", output);
@@ -738,7 +733,7 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     listeDescripteur = fopen("../bin/fichiersIndexation/liste_descripteur.csv", "a");
     tb = fopen("../bin/fichiersIndexation/table_descripteur.csv", "a");
     if(baseDescriptr == NULL  || listeDescripteur == NULL || tb == NULL){
-        fprintf(stderr,"Error : could not open files for writing.\n");
+        fprintf(stderr,"Erreur : could not open files for writing.\n");
         exit(0);
     }
     saveDescripteur(outputPath, baseDescriptr, bd, (*bd)->taille, tb, tb_liste);
@@ -760,7 +755,7 @@ int isIndexer(char *path)
 
     if(fp == NULL || command == NULL)
     {
-        fprintf(stderr, "Error : out of memory\n");
+        fprintf(stderr, "Erreur : out of memory\n");
         exit(0);
     }
 
@@ -780,23 +775,22 @@ void suprimerBaseMenu()
     system("echo > ../bin/fichiersIndexation/base_descripteur.csv");
     system("echo > ../bin/fichiersIndexation/liste_descripteur.csv");
     system("echo > ../bin/fichiersIndexation/table_descripteur.csv");
-    system("rm ../bin/data/*.clean ../bin/data/*.tok ../bin/data/files.txt");
 }
 void indexationBaseMenu()
 {
-    baseDescripteur bd = init_baseDescripteur();
-    pathIdDesc liste = init_listeDescripteur();
+    baseDescripteur bd = initBaseDescripteur();
+    pathIdDesc liste = initListeDescripteur();
     tableDescript tb_desc = NULL;
 
-    recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv",&bd);
-    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
-    recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv", &tb_desc);
+    rechargerBaseDescripteur("../bin/fichiersIndexation/base_descripteur.csv",&bd);
+    rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+    rechargerTableDescripteur("../bin/fichiersIndexation/table_descripteur.csv", &tb_desc);
 
-    indexation_base("../bin/data/", &bd, &liste, &tb_desc);
+    indexationBase("../bin/data/", &bd, &liste, &tb_desc);
     sleep(10);
 }
 
-int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeDesc, tableDescript *tb_liste){
+int indexationBase(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeDesc, tableDescript *tb_liste){
     char *command = calloc(1024, sizeof(char)), *path = calloc(1024, sizeof(char)), *mot; // Créer un tableau qui contiendra une commande pour les appels system
     FILE *deja_indexer, *files;
     int is_indexed = 0;
@@ -806,7 +800,7 @@ int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeD
     sprintf(command, "../bin/temp/files.txt");
     files = fopen(command, "r");
     if(files == NULL || path == NULL || command == NULL){
-        fprintf(stderr, "indexation_base_texte : ouveture impossible des fichiers.\n");
+        fprintf(stderr, "indexationBase_texte : ouveture impossible des fichiers.\n");
         exit(0);
     }
     while(fscanf(files,"%s[^n]", command) != EOF)
@@ -814,7 +808,7 @@ int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeD
         is_indexed = isIndexer(command);
         if(is_indexed == 0){
             //printf("%s\n", command);
-            indexation_texte(command, (*bd)->taille, bd, listeDesc, tb_liste);
+            indexationTexte(command, (*bd)->taille, bd, listeDesc, tb_liste);
         }
     }
     return 1;
@@ -823,7 +817,7 @@ int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeD
 /***********************************************************/
 /****************RECHARCHER BASE LISTE TABLE****************/
 /***********************************************************/
-int count_number_of_file_line(char *path){
+int countNumberOfLine(char *path){
     int count = 0;
     char *command = calloc(TAILLE_MALLOC, sizeof(char));
     if(command == NULL){
@@ -845,22 +839,22 @@ int count_number_of_file_line(char *path){
     return count;
 }
 
-void recharger_base_indexation(char *path, baseDescripteur* bd){
+void rechargerBaseDescripteur(char *path, baseDescripteur* bd){
     FILE *fp = fopen(path, "r");
     descripteur *d = calloc(1, sizeof(descripteur));
     ELEMENT *e = calloc(1, sizeof(ELEMENT));
     e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
     
     if( d == NULL || fp == NULL || e == NULL || e->mot == NULL){
-        fprintf(stderr, "Error : recharcher base indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher base indexation : failed memory allocation \n");
         exit(0);
     }
 
     if(e->mot == NULL){
-        fprintf(stderr, "Error : recharcher base indexation : failed memory allocation for e\n");
+        fprintf(stderr, "Erreur : recharcher base indexation : failed memory allocation for e\n");
         exit(0);
     }
-    int count = count_number_of_file_line(path);
+    int count = countNumberOfLine(path);
     
     for(int j = 1; j < count; j++)
     {
@@ -873,8 +867,8 @@ void recharger_base_indexation(char *path, baseDescripteur* bd){
             fscanf(fp, "%d[^\n]", &(e->nbOccurence));
             d->listeELMENT = emPILE(d->listeELMENT, e);
         }
-        //printf("%s\n", descripteur_toString(*d));
-        if(d->nbToken != 0) *(bd) = empiler_baseDescripteur(*bd, *d);
+        //printf("%s\n", descripteurtoString(*d));
+        if(d->nbToken != 0) *(bd) = empilerBaseDescripteur(*bd, *d);
         d->listeELMENT = NULL;
     }
     
@@ -882,17 +876,17 @@ void recharger_base_indexation(char *path, baseDescripteur* bd){
    fclose(fp);
 }
 
-void recharger_liste_indexation(char *path, pathIdDesc* tb_liste){
+void rechargerListeDescripteur(char *path, pathIdDesc* tb_liste){
     FILE *fp = fopen(path, "r");
     liste_descripteur* p = calloc(1, sizeof(struct listeDesc));
-    int count = count_number_of_file_line(path);
+    int count = countNumberOfLine(path);
     if(fp == NULL || p == NULL){
-        fprintf(stderr, "Error : recharcher liste indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher liste indexation : failed memory allocation \n");
         exit(0);
     }
     p->path = calloc(TAILLE_MALLOC, sizeof(char));
     if(p->path == NULL){
-        fprintf(stderr, "Error : recharcher liste indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher liste indexation : failed memory allocation \n");
         exit(0);
     }
     //fgets(token, sizeof(token), fp);
@@ -900,30 +894,30 @@ void recharger_liste_indexation(char *path, pathIdDesc* tb_liste){
         fscanf(fp, "%s[^\n]", p->path);
         fscanf(fp, "%d[^\n]", &(p->id));
         //printf("%s, %d\n", p->path, p->id);
-        *tb_liste = empiler_listedescripteur(*tb_liste, p);
+        *tb_liste = empilerListeDescripteur(*tb_liste, p);
     }
     //printf("%d\n", (*tb_liste)->taille); 
-    //affiche_listedescripteur(*tb_liste);
+    //afficheListeDescripteur(*tb_liste);
     free(p);
     fclose(fp);
 }
 
-void recharger_table_indexation(char *path, tableDescript* tb_desc){
+void rechargerTableDescripteur(char *path, tableDescript* tb_desc){
     FILE *fp = fopen(path, "r");
-    int count = count_number_of_file_line(path);
+    int count = countNumberOfLine(path);
     tableDescript p = calloc(1, sizeof(struct tableDescripteur));
     if(fp == NULL || p == NULL){
-        fprintf(stderr, "Error : recharcher table indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher table indexation : failed memory allocation \n");
         exit(0);
     }
     p->idDescripteur = calloc(1, sizeof(struct idDescOcc));
     if(p->idDescripteur == NULL){
-        fprintf(stderr, "Error : recharcher table indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher table indexation : failed memory allocation \n");
         exit(0);
     }
     p->mot = calloc(TAILLE_MALLOC, sizeof(char));
     if(p->mot == NULL){
-        fprintf(stderr, "Error : recharcher table indexation : failed memory allocation \n");
+        fprintf(stderr, "Erreur : recharcher table indexation : failed memory allocation \n");
         exit(0);
     }
     int j = 0;
@@ -931,7 +925,7 @@ void recharger_table_indexation(char *path, tableDescript* tb_desc){
         fscanf(fp, "%s[^\n]",p->mot);
         fscanf(fp, "%d[^\n]",&(p->idDescripteur->idDesc));
         fscanf(fp, "%d[^\n]",&(p->idDescripteur->occ));
-        *tb_desc = empile_tableDescElement(*tb_desc, p->mot, p->idDescripteur->idDesc, p->idDescripteur->occ);
+        *tb_desc = empileTableDescElement(*tb_desc, p->mot, p->idDescripteur->idDesc, p->idDescripteur->occ);
         j++;
     }
     //printf("%d\n", j);

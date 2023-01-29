@@ -20,8 +20,6 @@ suppIndexation : indexationTexte.c tst_supIndexationTexte.c indexationTexte.h
 	./test.out ../bin/data/
 
 clean :
-	rm -f ../bin/data/*.tok ../bin/data/*.clean
-	rm -f ../bin/temp/files.txt ../bin/temp/cpy.txt
 	echo > ../bin/fichiersIndexation/base_descripteur.csv
 	echo > ../bin/fichiersIndexation/liste_descripteur.csv
 	echo > ../bin/fichiersIndexation/table_descripteur.csv

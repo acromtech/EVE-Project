@@ -9,16 +9,10 @@
 
 
 #define TAILLE_TOKEN_MAX 100
-#define SEUIL_MOT_SIGNIFICATIF 2
+#define SEUIL_MOT_SIGNIFICATIF 2 // PARAMETRE PERMETTANT DE CREER LE DESCRIPTEUR TEXTE A PARTIR DES MOTS DU FICHIER TOK
 #define TAILLE_MALLOC 1024
 #define NB_LISTE 10  //PARAMETRE A METTRE DANS LE POINT CONFIG POUR FAIRE VARIER LE NOMBRE DE RESULATS
 
-
-struct conf{
-    int taille_max_token;
-    int seuil_mot_significatif;
-};
-extern int id_;
 
 /***********************************************************/
 /*****************ELEMENT MOT DESCRIPTEUR*******************/
@@ -29,12 +23,12 @@ typedef struct _ELEMENT_{
     int nbOccurence;
 }ELEMENT;
 
-void affiche_ELEMENT(ELEMENT);
-void saisir_ELEMENT(ELEMENT *);
-void affect_ELEMENT(ELEMENT*, ELEMENT);
-int compare_ELEMENT(ELEMENT, ELEMENT);
-ELEMENT *create_EMENT(char *, int);
-char* element_toString(ELEMENT);
+void afficheELEMENT(ELEMENT);
+void saisirELEMENT(ELEMENT *);
+void affectELEMENT(ELEMENT*, ELEMENT);
+int compareELEMENT(ELEMENT, ELEMENT);
+ELEMENT *createELEMENT(char *, int);
+char* elementtoString(ELEMENT);
 
 
 /***********************************************************/
@@ -48,17 +42,17 @@ typedef struct cellule{
 
 typedef Cellule* PILE;
 
-PILE init_PILE();
-void affiche_PILE(PILE);
-int PILE_estVide(PILE);
-int PILE_estPleine(PILE);
+PILE initPILE();
+void affichePILE(PILE);
+int PILEEstVide(PILE);
+int PILEEstPleine(PILE);
 PILE emPILE(PILE, void*);
 PILE dePILE(PILE, void*);
-PILE saisir_PILE();
-void finir_PILE(PILE);
-char* pile_toString(PILE);
-int PILE_contient(PILE, ELEMENT);
-int PILE_taille_liste(PILE);
+PILE saisirPILE();
+void finirPILE(PILE);
+char* pileToString(PILE);
+int PILEContient(PILE, ELEMENT);
+int PILETailleListe(PILE);
 
 /***********************************************************/
 /********************LISTE  DESCRIPTION*********************/
@@ -76,14 +70,14 @@ typedef struct pathid{
 }*pathIdDesc;
 
 
-void affiche_listedescripteur(pathIdDesc);
-int listedescripteur_estVide(pathIdDesc);
-pathIdDesc empiler_listedescripteur(pathIdDesc, liste_descripteur*);
-pathIdDesc depile_listedescripteur(pathIdDesc, liste_descripteur*);
-liste_descripteur* create_path_id_desc(char *, int);
-char* pathIdDesc_toString(pathIdDesc);
-char* liste_toString(liste_descripteur* p);
-pathIdDesc init_listeDescripteur();
+void afficheListeDescripteur(pathIdDesc);
+int listedescripteurEstVide(pathIdDesc);
+pathIdDesc empilerListeDescripteur(pathIdDesc, liste_descripteur*);
+pathIdDesc depileListeDescripteur(pathIdDesc, liste_descripteur*);
+liste_descripteur* createPathIdDesc(char *, int);
+char* pathIdDescToString(pathIdDesc);
+char* listeToString(liste_descripteur* p);
+pathIdDesc initListeDescripteur();
 
 /***********************************************************/
 /*******************ELEMENT  DESCRIPTION********************/
@@ -102,32 +96,31 @@ typedef struct bDesc{
     int taille;
 }*baseDescripteur;
 
-int descripteur_NULL(descripteur);
-void affiche_DESCRIPTEUR(descripteur*);
+int descripteurNULL(descripteur);
+void afficheDESCRIPTEUR(descripteur*);
 float compareDESCRIPTEUR(descripteur, descripteur);
-void affect_DESCRIPTEUR(descripteur*, descripteur);
-void detruire_descripteur(descripteur*);
-char* descripteur_toString(descripteur);
+void affectDESCRIPTEUR(descripteur*, descripteur);
+void detruireDescripteur(descripteur*);
+char* descripteurToString(descripteur);
 
 /***********************************************************/
 /******************BASE DESCRIPTEUR RELATED*****************/
 /***********************************************************/
 
-baseDescripteur init_baseDescripteur();
-void affiche_baseDescripteur(baseDescripteur);
-int baseDescripteur_estVide(baseDescripteur);
-baseDescripteur empiler_baseDescripteur(baseDescripteur, descripteur);
-baseDescripteur depilerbaseDescripteur(baseDescripteur, descripteur*);
-baseDescripteur saisir_baseDescripteur();
-char *baseDescripteur_toString(baseDescripteur);
-void finir_baseDescripteur(baseDescripteur);
+baseDescripteur initBaseDescripteur();
+void afficheBaseDescripteur(baseDescripteur);
+int baseDescripteurEstVide(baseDescripteur);
+baseDescripteur empilerBaseDescripteur(baseDescripteur, descripteur);
+baseDescripteur depilerBaseDescripteur(baseDescripteur, descripteur*);
+baseDescripteur saisirBaseDescripteur();
+char *baseDescripteurToString(baseDescripteur);
+void finirBaseDescripteur(baseDescripteur);
 
 
 
 /***********************************************************/
 /*****************TABLE DESCRIPTEUR RELATED*****************/
 /***********************************************************/
-char *strtok_(char* str, char delim);
 typedef struct idDescOcc{
     int idDesc;
     int occ;
@@ -140,15 +133,15 @@ typedef struct tableDescripteur{
     struct tableDescripteur *next;
 }*tableDescript;
 
-idDescOccu empile_idDesc(idDescOccu, int, int);
-idDescOccu depile_idDesc(idDescOccu, idDescOccu);
-idDescOccu create_idDesc(int, int);
-tableDescript init_tableDescripteur();
+idDescOccu empileIdDesc(idDescOccu, int, int);
+idDescOccu depileIdDesc(idDescOccu, idDescOccu);
+idDescOccu createIdDesc(int, int);
+tableDescript initTableDescripteur();
 
-void affect_tableDescElement(tableDescript, struct tableDescripteur);
-tableDescript empile_tableDescElement(tableDescript, char*, int, int);
-tableDescript depiler_tableDescElement(tableDescript, tableDescript);
-void affiche_table_descripteur(tableDescript);
+void affectTableDescElement(tableDescript, struct tableDescripteur);
+tableDescript empileTableDescElement(tableDescript, char*, int, int);
+tableDescript depilerTableDescElement(tableDescript, tableDescript);
+void afficheTableDescripteur(tableDescript);
 
 
 /***********************************************************/
@@ -158,28 +151,28 @@ void affiche_table_descripteur(tableDescript);
 extern baseDescripteur bd;
 extern pathIdDesc listeDesc;
 extern tableDescript tb_liste;
-int init_id_count(baseDescripteur);
-void clean_path(char* new_path, char *path);
-int buffer_size(char *buffer[]);
+int initIdCount(baseDescripteur);
+void cleanPath(char* new_path, char *path);
+int bufferSize(char *buffer[]);
 int countOccurence(FILE *file, char *word);
 void nettoyageToken(FILE *input,char *inputPath, char *outputPath);    
 FILE *filtrageToken(FILE *input, char *outputPath);
 int saveDescripteur(char *, FILE*, baseDescripteur*, int, FILE*, tableDescript*);
 int lienDescripteur(FILE*, int, char*, pathIdDesc*);
 void tableIndex(FILE*, baseDescripteur, tableDescript*);
-int indexation_texte(char *inputpath, int id_, baseDescripteur *, pathIdDesc *, tableDescript *);
-int indexation_base(char *base_fichiers, baseDescripteur *, pathIdDesc *, tableDescript *);
+int indexationTexte(char *inputpath, int id_, baseDescripteur *, pathIdDesc *, tableDescript *);
+int indexationBase(char *base_fichiers, baseDescripteur *, pathIdDesc *, tableDescript *);
 void indexationBaseMenu();
 
 
 /***********************************************************/
 /****************RECHARCHER BASE LISTE TABLE****************/
 /***********************************************************/
-int count_number_of_file_line(char *);
+int countNumberOfLine(char *);
 int isIndexer(char *);
-void recharger_base_indexation(char *path, baseDescripteur*);
-void recharger_liste_indexation(char *path, pathIdDesc*);
-void recharger_table_indexation(char *path, tableDescript*);
+void rechargerBaseDescripteur(char *path, baseDescripteur*);
+void rechargerListeDescripteur(char *path, pathIdDesc*);
+void rechargerTableDescripteur(char *path, tableDescript*);
 void suprimerBaseMenu();
 
 /***********************************************************/
@@ -220,10 +213,7 @@ void ouvreFichier(DescripteurScore,pathIdDesc);
 void liberePILE(PILE);
 void libereScore(Score);
 
-
 int cheminExiste(char *);
-
-
 
 void rechercheMotCleMenu();
 void comparaisonTexteMenu();

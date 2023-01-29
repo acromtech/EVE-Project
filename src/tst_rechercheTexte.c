@@ -65,16 +65,19 @@ int main(int argc, char *argv[]){
         */
         
         //INDEXATION AUTOMATIQUE
-        baseDescripteur bd = init_baseDescripteur();
-        pathIdDesc listeDesc = init_listeDescripteur();
+        baseDescripteur bd = initBaseDescripteur();
+        pathIdDesc listeDesc = initListeDescripteur();
         tableDescript tb_liste = NULL;
         int count = 0;
         if(SEUIL_MOT_SIGNIFICATIF <= 2)
             suprimerBaseMenu();
-        recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv", &bd);
-        recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &listeDesc);
-        recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv", &tb_liste);
-        indexation_base(argv[1], &bd, &listeDesc, &tb_liste);
+        
+        rechargerBaseDescripteur("../bin/fichiersIndexation/base_descripteur.csv", &bd);
+        //affiche_baseDescripteur(bd);
+        rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &listeDesc);
+        //affiche_listedescripteur(listeDesc);
+        rechargerTableDescripteur("../bin/fichiersIndexation/table_descripteur.csv", &tb_liste);
+        indexationBase(argv[1], &bd, &listeDesc, &tb_liste);
         tableDescript tmp = tb_liste;
         while(tmp != NULL){
             count++;

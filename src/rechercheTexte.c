@@ -30,7 +30,7 @@ PILE traitementSaisie(char saisie[100]){
     PILE p=NULL;
     char* pc=strtok(saisie," \n\t");
     while(pc!=NULL){
-        p=emPILE(p,create_EMENT(pc,-1));
+        p=emPILE(p,createELEMENT(pc,-1));
         pc=strtok(NULL," \n\t");
     }
     return p;
@@ -65,7 +65,7 @@ idDescOccu rechercheTexteMot(tableDescript tb_desc, char *mot, int *count)
         if(strcmp(tb_desc->mot, mot) == 0)
             if(tb_desc->idDescripteur != NULL)
             {
-                idOcc = empile_idDesc(idOcc, tb_desc->idDescripteur->idDesc, tb_desc->idDescripteur->occ);
+                idOcc = empileIdDesc(idOcc, tb_desc->idDescripteur->idDesc, tb_desc->idDescripteur->occ);
                 *count = *(count) + 1;
             }
                 
@@ -246,10 +246,10 @@ float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
 float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     float score=0;
     ELEMENT elmDesc;    
-    affect_ELEMENT(&elmDesc, elementDescRequete);
+    affectELEMENT(&elmDesc, elementDescRequete);
     while(descBase != NULL)
     {
-        ELEMENT elmBase;    affect_ELEMENT(&elmBase,*(ELEMENT*)descBase->element);
+        ELEMENT elmBase;    affectELEMENT(&elmBase,*(ELEMENT*)descBase->element);
     
         if(strcoll(elmBase.mot,elmDesc.mot)==0)
         {
@@ -407,21 +407,21 @@ int trouveIDDescripteur(char* chemin,liste_descripteur* liste){
 void rechercheMotCleMenu()
 {
     tableDescript tbDesc = NULL;
-    pathIdDesc liste = init_listeDescripteur();
+    pathIdDesc liste = initListeDescripteur();
 
-    recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv",&tbDesc);
-    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+    rechargerTableDescripteur("../bin/fichiersIndexation/table_descripteur.csv",&tbDesc);
+    rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
 
     rechercheTexteMotCle(liste, tbDesc);
 }
 
 void comparaisonTexteMenu()
 {
-    baseDescripteur bd = init_baseDescripteur();
-    pathIdDesc liste = init_listeDescripteur();
+    baseDescripteur bd = initBaseDescripteur();
+    pathIdDesc liste = initListeDescripteur();
 
-    recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv",&bd);
-    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+    rechargerBaseDescripteur("../bin/fichiersIndexation/base_descripteur.csv",&bd);
+    rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
     
     rechercheTexteCompare(bd, liste);
 }

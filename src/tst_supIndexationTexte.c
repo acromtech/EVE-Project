@@ -9,13 +9,13 @@ int main(int argc, char *argv[])
         printf("Veuillez spécifier un fichier en tant que paramètre.\n");
         return 1;
     }*/
-    baseDescripteur bd = init_baseDescripteur();
-    pathIdDesc listeDesc = init_listeDescripteur();
+    baseDescripteur bd = initBaseDescripteur();
+    pathIdDesc listeDesc = initListeDescripteur();
     tableDescript tb_liste = NULL;
     int count = 0;
 
     suprimerBaseMenu();
-    indexation_base(argv[1], &bd, &listeDesc, &tb_liste);
+    indexationBase(argv[1], &bd, &listeDesc, &tb_liste);
     //tableDescript tmp = tb_liste;
     //while(tmp != NULL)
     {
