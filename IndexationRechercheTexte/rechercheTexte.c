@@ -31,7 +31,7 @@ PILE traitementSaisie(char saisie[100]){
     PILE p=NULL;
     char* pc=strtok(saisie," \n\t");
     while(pc!=NULL){
-        p=emPILE(p,create_EMENT(pc,-1));
+        p=emPILE(p,createELEMENT(pc,-1));
         pc=strtok(NULL," \n\t");
     }
     return p;
@@ -66,7 +66,7 @@ idDescOccu rechercheTexteMot(tableDescript tb_desc, char *mot, int *count)
         if(strcmp(tb_desc->mot, mot) == 0)
             if(tb_desc->idDescripteur != NULL)
             {
-                idOcc = empile_idDesc(idOcc, tb_desc->idDescripteur->idDesc, tb_desc->idDescripteur->occ);
+                idOcc = empileIdDesc(idOcc, tb_desc->idDescripteur->idDesc, tb_desc->idDescripteur->occ);
                 *count = *(count) + 1;
             }
                 
@@ -185,6 +185,7 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                     temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
                     //system("clear");
                     printf("Résultat(s) en %f secondes\n\n",temps);
+                    s = s->next;
                     afficheNbScore(s, nbListe,liste);
                     ouvreFichier(choixFichier(s),liste);
                 }
@@ -246,10 +247,10 @@ float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
 float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     float score=0;
     ELEMENT elmDesc;    
-    affect_ELEMENT(&elmDesc, elementDescRequete);
+    affectELEMENT(&elmDesc, elementDescRequete);
     while(descBase != NULL)
     {
-        ELEMENT elmBase;    affect_ELEMENT(&elmBase,*(ELEMENT*)descBase->element);
+        ELEMENT elmBase;    affectELEMENT(&elmBase,*(ELEMENT*)descBase->element);
     
         if(strcoll(elmBase.mot,elmDesc.mot)==0)
         {
@@ -407,21 +408,38 @@ int trouveIDDescripteur(char* chemin,liste_descripteur* liste){
 void rechercheMotCleMenu()
 {
     tableDescript tbDesc = NULL;
-    pathIdDesc liste = init_listeDescripteur();
-
-    recharger_table_indexation("../BaseFichiersTexte/FichiersDeDescription/table_descripteur.csv",&tbDesc);
-    recharger_liste_indexation("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
-
+    pathIdDesc liste = initListeDescripteur();
+    baseDescripteur bd = initBaseDescripteur();
+    if(config("seuilmotsignificatif") <= 2)
+    {
+        suprimerBaseMenu();
+        indexationBase("../BaseFichiersTexte/", &bd, &liste, &tbDesc);
+    }
+    else
+    {
+        rechargerTableDescripteur("../BaseFichiersTexte/FichiersDeDescription/table_descripteur.csv",&tbDesc);
+        rechargerListeDescripteur("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
+    }
+    
     rechercheTexteMotCle(liste, tbDesc);
 }
 
 void comparaisonTexteMenu()
 {
-    baseDescripteur bd = init_baseDescripteur();
-    pathIdDesc liste = init_listeDescripteur();
-
-    recharger_base_indexation("../BaseFichiersTexte/FichiersDeDescription/base_descripteur.csv",&bd);
-    recharger_liste_indexation("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
+    tableDescript tbDesc = NULL;
+    pathIdDesc liste = initListeDescripteur();
+    baseDescripteur bd = initBaseDescripteur();
+    
+    if(config("seuilmotsignificatif") <= 2)
+    {
+        suprimerBaseMenu();
+        indexationBase("../BaseFichiersTexte/", &bd, &liste, &tbDesc);
+    }
+    else 
+    {
+        rechargerBaseDescripteur("../BaseFichiersTexte/FichiersDeDescription/base_descripteur.csv",&bd);
+        rechargerListeDescripteur("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
+    }
     
     rechercheTexteCompare(bd, liste);
 }

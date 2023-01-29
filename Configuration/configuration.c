@@ -191,7 +191,7 @@ void saisieConfig(){
         }
         break;
         
-        case 8: if (atoi(nouvVal)<3 || atoi(nouvVal)>= 10){
+        case 8: if (atoi(nouvVal)<2 || atoi(nouvVal)>= 10){
             
             printf("\n\r\t\e[1;31m| Erreur : Valeur incorrecte veuillez relancer la modification |\e[0m\n\r");// texte en gras rouge
             
