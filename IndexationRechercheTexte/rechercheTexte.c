@@ -6,7 +6,11 @@
 #include <unistd.h>
 
 #include "indexationTexte.h"
-
+/**
+ * @brief fonction permettant de receuillir les différentes entrée de chaine de caractères
+ * 
+ * @param mot paramètre d'entrée sortie permettant de stocker la chaine de caractère entrée par l'utilisateur 
+ */
 void saisie(char *mot)
 {
     getchar();
@@ -14,6 +18,12 @@ void saisie(char *mot)
     if(mot[strlen(mot)-1] == '\n')
         mot[strlen(mot)-1] = '\0';
 }       
+/**
+ * @brief fonction permettant de vérifier l'existance d'un fichier dont le chemin est fourni par l'utilisateur.
+ * 
+ * @param mot paramètre d'entrée sortie permettant de stocker la chaine de caractère entrée par l'utilisateur 
+ * @return int valeur de retour 1 ou 0
+ */
 int saisiePath(char *mot)
 {
     FILE *fp;
@@ -25,8 +35,18 @@ int saisiePath(char *mot)
     fclose(fp);
     return 1;
 }
+/**
+ * @brief fonction permettant de "supprimer" le contenu d'un tableau de caractères
+ * 
+ */
 void viderBuffer(){for(int c=0;c!='\n'&&c!=EOF;c=getchar());}
 
+/**
+ * @brief fonction permettant le traitement d'une chaine de caractère entrée par l'utilisateur
+ * 
+ * @param saisie paramètre d'entrée contenant la chaine de caractère à traiter.
+ * @return PILE pile d'élément de type ELEMENT contenant les différents mots recceuillis après traitement avec des un nombre d'occurence à -1 
+ */
 PILE traitementSaisie(char saisie[100]){
     PILE p=NULL;
     char* pc=strtok(saisie," \n\t");
@@ -36,6 +56,12 @@ PILE traitementSaisie(char saisie[100]){
     }
     return p;
 }
+/**
+ * @brief fonction permettant de trier un tableau d'éléments de type idDescOccu suivant un ordre décroissant basé sur l'attribut "occ" rendant compte sur le nombre d'occurence
+ * 
+ * @param tab adresse du tableau d'éléments de type idDescOccu à trier
+ * @param size taille du tableau
+ */
 void insertionSort(idDescOccu tab, int size) 
 {
     int i, j;
@@ -55,6 +81,14 @@ void insertionSort(idDescOccu tab, int size)
     }
 }
 
+/**
+ * @brief donction permettant de recceuillir un tableau d'élement de type idDescOccu correspondant à l'ensemble des id et nombre d'occurence du "mot" enntré par l'utilisateur dans le cadre de la recherche par mot clé
+ * 
+ * @param tb_desc structure contenant une pile d'élélement de type liste_descripteur* renseillant pour chaque mot significatif l'id du fichier dans lequel il est présent et et son nombre d'occurence dans ce fichier
+ * @param mot variable permettant de stocker une suite de caractères représentant le "mot clé" de la recherche
+ * @param count paramètre d'entrée sortie donnant le nombre de corespondance obtenu
+ * @return idDescOccu tableau d'élément de type idDescOccu
+ */
 idDescOccu rechercheTexteMot(tableDescript tb_desc, char *mot, int *count)
 {      //PROGRAMME PRINCIPAL DE RECHERCHE PAR MOT CLE
     idDescOccu idOcc = NULL;
@@ -94,6 +128,12 @@ idDescOccu rechercheTexteMot(tableDescript tb_desc, char *mot, int *count)
     return NULL;
 }
 
+/**
+ * @brief fonction générale de recherche par mot clé
+ * 
+ * @param liste_desc structure contenant le chemin vers de chaque fichier indexer suivi de son id
+ * @param tb_desc structure contenant les mot significatif, l'id des fichiers dont ils proviennent et leurs nombre d'occurence dans ces différents fichiers
+ */
 void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
 {
     setlocale(LC_ALL,"");
@@ -145,6 +185,12 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
         
 }
 
+/**
+ * @brief fonction permettant la comparaison de fichiers
+ * 
+ * @param b structure contenant la base de descripteurs
+ * @param liste structure contenant la structure contenant le chemin vers de chaque fichier indexer suivi de son id
+ */
 void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){     //PROGRAMME PRINCIPAL DE RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
     setlocale(LC_ALL,"");
     descripteur *d = calloc(1,sizeof(descripteur));
@@ -185,8 +231,12 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                     temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
                     //system("clear");
                     printf("Résultat(s) en %f secondes\n\n",temps);
-                    s = s->next;
                     afficheNbScore(s, nbListe,liste);
+                        if(s->next->score == 0)
+                        {
+                            sleep(5);
+                            return;
+                        }
                     ouvreFichier(choixFichier(s),liste);
                 }
                     sleep(12);    
@@ -210,7 +260,14 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     liberePILE(d->listeELMENT);
     free(d);
 }
-
+/**
+ * @brief fonction de calcul du score de correspondance chaque descripteur de la base par rapport au descripteur du fichier servant de base de comparaison 
+ * 
+ * @param descBase descripteur de la base
+ * @param descRequete descripteur du fichier servant de base de comparaison
+ * @param s liste des de type Score ayant pour champs id et score
+ * @return Score liste trié des scores après parcours de toute la base
+ */
 Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur* descRequete,Score s){
     float score=0;
 
@@ -220,7 +277,6 @@ Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripte
             score = 0;
         else
             score = ((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->nbToken);
-    
         if(score>=0)
         {
             s=empilerScore(s,score,descBase->idDesc);
@@ -229,10 +285,16 @@ Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripte
         descBase = descBase->next;
     }
     
-    
     return s;
 }
 
+/**
+ * @brief fonction de calcul du taux de ressemblance entre les éléments des deux liste de mots des deux différents descriptuers
+ * 
+ * @param descBase liste de mots du descripteur de la base
+ * @param descRequete liste de mots du descripteur servant de base de comparaison
+ * @return float resultat de calcul représentant le taux de similitude
+ */
 float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
     float score=0;
     while(descRequete != NULL)
@@ -243,7 +305,13 @@ float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
     
     return score;
 }
-
+/**
+ * @brief fonction permettant d'obtenir le taux de ressemblance pour chaque mot du descripteur servant de base de comparaison
+ * 
+ * @param descBase 
+ * @param elementDescRequete 
+ * @return float resultat correspondant au taux de ressemblance pour chaque mot du descripteur servant de base de comparaison
+ */
 float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     float score=0;
     ELEMENT elmDesc;    
@@ -265,10 +333,22 @@ float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     return score;
 }
 
+/**
+ * @brief fonction d'affichage du ressultat à l'issu de la comparaison
+ * 
+ * @param s liste de resultat
+ * @param nb nombre de resultat à afficher au minimum
+ * @param liste structure pathIdDesc
+ */
 void afficheNbScore(Score s,int nb,pathIdDesc liste){
     float ms=s->score;
     int i = 0;
-
+    s = s->next;
+    if(s == NULL || s->score == 0) 
+    {
+        printf("\e[1;35mResultat\e[0;35m : Aucun fichier ne correspond à ce fichiers\n Le taux de ressemblace le plus élévé est de 0.000%%.\n\e[0m\n");
+        return;
+    }
     if(ms != 0)
     {
         while(s != NULL)
