@@ -5,10 +5,17 @@ recherche : tst_rechercheTexte.c rechercheTexte.c indexationTexte.h
 	rm -rf *.o
 	./test1.out ../bin/data/
 
-menu : indexationTexte.c tst_indexationTexte.c indexationTexte.h
+indexation : indexationTexte.c tst_indexationTexte.c indexationTexte.h
 	gcc -c indexationTexte.c
 	gcc -c tst_indexationTexte.c
 	gcc -o test.out indexationTexte.o tst_indexationTexte.o -g
+	rm -rf *.o
+	./test.out ../bin/data/
+
+suppIndexation : indexationTexte.c tst_supIndexationTexte.c indexationTexte.h
+	gcc -c indexationTexte.c
+	gcc -c tst_supIndexationTexte.c
+	gcc -o test.out indexationTexte.o tst_supIndexationTexte.o -g
 	rm -rf *.o
 	./test.out ../bin/data/
 

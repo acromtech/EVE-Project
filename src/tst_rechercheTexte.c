@@ -69,6 +69,8 @@ int main(int argc, char *argv[]){
         pathIdDesc listeDesc = init_listeDescripteur();
         tableDescript tb_liste = NULL;
         int count = 0;
+        if(SEUIL_MOT_SIGNIFICATIF <= 2)
+            suprimerBaseMenu();
         recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv", &bd);
         recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &listeDesc);
         recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv", &tb_liste);
@@ -80,10 +82,12 @@ int main(int argc, char *argv[]){
         }
         printf("END : %d %d %d\n", bd->taille, listeDesc->taille, count);
 
+        
         //RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
+        printf("| RECHERCHE PAR COMPARAISON |\n");
         rechercheTexteCompare(bd,listeDesc);
         //RECHERCHE PAR MOT CLE (PAS ENCORE TOTALEMENT AU POINT)
+        printf("| RECHERCHE PAR MOT CLE |\n");
         rechercheTexteMotCle(listeDesc,tb_liste);
-    //}
     return 0;
 }
