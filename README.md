@@ -31,7 +31,7 @@ Pour vérifier que l'indexation à été bien réalisée il suffit de se rendre 
 > 3 table_indexation.csv : ce fichier quand a lui contient la liste des différents mot relevé comme étant signification et le numero d'identification des différents fichiers desquuelles ils ont été relevés
 > ```
 
-### Recherche Audio
+### Recherche et Comparaison texte
 
 Pour lancer la recherche par mot clé ou la comparaison de fichier il suffit de :
 
