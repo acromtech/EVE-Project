@@ -14,6 +14,7 @@ module : Informatique
 * Installer VLC
 
 ## Utilisation
+L'utilisateur a le choix entre aller dans le Menu Utilisateur en entrant le 1 pour faire des recherches soit aller dans le menu administrateur en tapant le 2 pour faire des modification ou indexer la base
 > ```
 > ========================================================
 >
@@ -33,6 +34,8 @@ module : Informatique
 > ```
 
 ### Menu Utilisateur
+
+Voici les trois choix que peux réaliser l'utilisateur soit une recherche texte en tapant le 2, soir une recherche image avec le 3 soit une recherche audio avec le 4. Il peut aussi à tout moment retrouner au menu principale en tapant le 1.
 
 > ```
 > ===========================================================
