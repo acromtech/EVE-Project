@@ -70,13 +70,20 @@ int main(int argc, char *argv[]){
         tableDescript tb_liste = NULL;
         int count = 0;
         if(SEUIL_MOT_SIGNIFICATIF <= 2)
+        {
             suprimerBaseMenu();
+            indexationBase(argv[1], &bd, &listeDesc, &tb_liste);
+        }
+            
+        else
+        {
+            rechargerBaseDescripteur("../bin/fichiersIndexation/base_descripteur.csv", &bd);
+            //affiche_baseDescripteur(bd);
+            rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &listeDesc);
+            //affiche_listedescripteur(listeDesc);
+            rechargerTableDescripteur("../bin/fichiersIndexation/table_descripteur.csv", &tb_liste);
+        }
         
-        rechargerBaseDescripteur("../bin/fichiersIndexation/base_descripteur.csv", &bd);
-        //affiche_baseDescripteur(bd);
-        rechargerListeDescripteur("../bin/fichiersIndexation/liste_descripteur.csv", &listeDesc);
-        //affiche_listedescripteur(listeDesc);
-        rechargerTableDescripteur("../bin/fichiersIndexation/table_descripteur.csv", &tb_liste);
         indexationBase(argv[1], &bd, &listeDesc, &tb_liste);
         tableDescript tmp = tb_liste;
         while(tmp != NULL){
