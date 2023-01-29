@@ -3,15 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
+#include <unistd.h>
 
-configuration *config;
+//Role : banque de fonction d'indexation
+//Auteur : Andy
+
 int taille_base_descripteur = 0;
 int taille_liste_descripteur = 0;
 int id_ = 0;
 
-void init_configuration(configuration *config){
-    config->seuil_mot_significatif = 1;
-}
 
 /***********************************************************/
 /*****************ELEMENT MOT DESCRIPTEUR*******************/
@@ -76,7 +76,38 @@ void affiche_DESCRIPTEUR(descripteur* d){
     printf(" ]\n");
 }
 
-void compare_DESCRIPTEUR(descripteur, descripteur);
+float compareDESCRIPTEUR(descripteur d1, descripteur d2)
+{
+    float egale = 0;
+    int count = 0;
+    PILE tmp = d1.listeELMENT;
+    if(d1.tailleListe == 0 || d2.tailleListe == 0)
+        return egale;
+    
+    if(d1.tailleListe == d2.tailleListe)
+    {
+        while(d2.listeELMENT != NULL)
+        {
+            
+            while(tmp != NULL)
+            {
+                if(strcmp(((ELEMENT*)tmp->element)->mot, ((ELEMENT*)d2.listeELMENT->element)->mot) == 0)
+                {
+                    egale = ((ELEMENT*)d2.listeELMENT->element)->nbOccurence - ((ELEMENT*)tmp->element)->nbOccurence;
+                    if(egale == 0) 
+                        count++;
+                }
+                tmp = tmp->next;
+            }
+            tmp = d1.listeELMENT;
+            d2.listeELMENT = d2.listeELMENT->next;
+        }
+        printf("%d %d\n",count, d1.tailleListe);
+        egale = (float)count/d1.tailleListe;
+        printf("%d %f\n", d1.idDesc, egale);
+    }
+    return egale;
+}
 void affect_DESCRIPTEUR(descripteur *desc_dest, descripteur desc){
     PILE tmp = desc.listeELMENT;
     while(tmp != NULL){
@@ -88,14 +119,14 @@ void affect_DESCRIPTEUR(descripteur *desc_dest, descripteur desc){
     desc_dest->idDesc = desc.idDesc;
 }
 
-char* descripteur_toString(descripteur* d){
+char* descripteur_toString(descripteur d){
     char* result = calloc(TAILLE_MALLOC, sizeof(char));
     if(result == NULL){
         fprintf(stderr, "Error : descripteur_toString : malloc failed\n");
         exit(0);
     }
     sprintf(result, "%d %d %d %s",
-            d->idDesc, d->tailleListe, d->nbToken, pile_toString(d->listeELMENT));
+            d.idDesc, d.tailleListe, d.nbToken, pile_toString(d.listeELMENT));
     return result;
 }
 
@@ -344,16 +375,18 @@ int contient_descripteur(baseDescripteur baseDesc, descripteur desc){
     return contient;
 }
 
-baseDescripteur empiler_baseDescripteur(baseDescripteur baseDesc, descripteur *d){
+baseDescripteur empiler_baseDescripteur(baseDescripteur baseDesc, descripteur d){
     descripteur *desc = (descripteur*)calloc(1, sizeof(descripteur));
     if(desc == NULL){
         fprintf(stderr, "Error : empiler descripteur failed\n");
         exit(0);
     }
-    desc->idDesc = d->idDesc;
-    desc->nbToken = d->nbToken;
-    desc->tailleListe = d->tailleListe;
-    desc->listeELMENT = d->listeELMENT;
+    //printf("%s\n", descripteur_toString(d));
+    desc->idDesc = d.idDesc;
+    desc->nbToken = d.nbToken;
+    desc->tailleListe = d.tailleListe;
+    desc->listeELMENT = d.listeELMENT;
+    //printf("%s\n\n", descripteur_toString(*desc));
     desc->next = baseDesc->tete;
     baseDesc->tete = desc; 
     baseDesc->taille++;
@@ -391,7 +424,7 @@ void finir_baseDescripteur(baseDescripteur baseDesc){
 char *baseDescripteur_toString(baseDescripteur bd){
     char * s = calloc(2048, sizeof(char));
     while(bd->tete != NULL){
-        strcat(s, descripteur_toString(bd->tete));
+        strcat(s, descripteur_toString(*(bd->tete)));
         strcat(s, "\n");
         bd->tete = bd->tete->next;
     }
@@ -549,7 +582,9 @@ void nettoyageToken(FILE *input,char *inputPath, char *outputPath){
     sprintf(command, "cat %s > %s.clean", inputPath, outputPath); // "cat nom_du_fichier.xml > nom_du_fichier_entrer_sans_son_extenxion.clean"
         // printf("la commande pour copier le contenu du fichier xml dans le fichier .clean  : %s\n", command);
     system(command); // appel system pour lancer la commande cat 
-    sprintf(command, "./script_clean.sh %s.clean", outputPath); // "./script_clean.sh nom_du_fichier_entrer_sans_son_extenxion.clean"
+    sprintf(command, "chmod u+x ./script/script_clean.sh");
+    system(command); // appel system pour autoriser l'exécution du script
+    sprintf(command, "./script/script_clean.sh %s.clean", outputPath); // "./script_clean.sh nom_du_fichier_entrer_sans_son_extenxion.clean"
         // printf("la commande pour lancer le script de génération du fichier .clean nettoyé : %s\n", command);
     system(command); // appel system pour lancer la commande pour le script shell
     free(command);
@@ -559,7 +594,7 @@ FILE *filtrageToken(FILE *input, char *outputPath){
     char token[TAILLE_TOKEN_MAX];
     char *stopwords[] = {"t'","lorsqu'", "ces", "ils","t", "sont" ,"n'", "s'", "m'","est", "une", "avec", "qui","à","ainsi","autre","aux", "au","avec", "d'","ce","ceci","cela","celle","celles","celui","ceux","chaque","ci","comme","comment","dans","de","des","du","elle","en","et","eu","eux","il","je","la","le","les","leur","lui","ma","mais","me","même","mes","moi","mon","ne","nos","notre","nous","on","ou","par","pas","pour","qu'","que","qui","sa","se","ses","son","sur","ta","te","tes","toi","ton","tu","un","une","vos","votre","vous","l'", "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "has", "he", "in", "is", "it", "its", "of", "on", "that", "the", "to", "was", "were", "will", "with"}; // Créer un tableau de stopwords
     int is_stopword = 0, i, buffer_smal = 0;
-    FILE *cpy = fopen("cpy.txt", "w");
+    FILE *cpy = fopen("../bin/temp/cpy.txt", "w");
     int stopwordsBufferSize = buffer_size(stopwords);
     char *mot, *tmp;
     FILE *output_TOK = fopen(outputPath, "w");
@@ -601,7 +636,10 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
     ELEMENT *e = calloc(1, sizeof(ELEMENT));
     PILE tmp;
     FILE *input, *cpy;
-    cpy = fopen("cpy.txt", "r");
+    cpy = fopen("../bin/temp/cpy.txt", "r");
+    
+    
+       
     if(cpy == NULL){
         fprintf(stderr, "cpy : impossible d'ouvrir cpy.\n");
         exit(0);
@@ -620,7 +658,7 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
             }
             count = countOccurence(input, token);
             fclose(input);
-            if(count >= SEUIL_MOT_SIGNIFICATIF ){
+            if(count >=  SEUIL_MOT_SIGNIFICATIF){
                 tmp = d->listeELMENT;
                 while(tmp != NULL){
                     if(strcmp(((ELEMENT*)tmp->element)->mot, token) == 0){
@@ -644,8 +682,8 @@ int saveDescripteur(char* inputPath, FILE* baseDesct, baseDescripteur* bd, int i
     d->tailleListe = PILE_taille_liste(d->listeELMENT);
     d->idDesc = idDesc;
     if(d->nbToken != 0){
-        *bd = empiler_baseDescripteur(*bd, d);
-        fprintf(baseDesct, "%s\n", descripteur_toString(d));
+        *bd = empiler_baseDescripteur(*bd, *d);
+        fprintf(baseDesct, "%s\n", descripteur_toString(*d));
     }    
     free(d);
     free(e);
@@ -681,7 +719,7 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     strcpy(output, outputPath); 
     FILE *output_TOK, *baseDescriptr, *listeDescripteur, *cpy, *tb;
     int is_stopword = 0, nbMotFichierTok = 0, id = id_;
-    printf("debut indexation ficher : %s. \n", inputpath);
+    //printf("debut indexation ficher : %s. \n", inputpath);
     nettoyageToken(input, inputpath, output);
     fclose(input);
     sprintf(outputPath, "%s.clean", output);
@@ -696,16 +734,17 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     fclose(input);
     fclose(output_TOK);
     sprintf(outputPath, "%s.tok", output);
-    baseDescriptr = fopen("base_descripteur.csv", "a");
-    listeDescripteur = fopen("liste_descripteur.csv", "a");
-    tb = fopen("table_descripteur.csv", "a");
+    baseDescriptr = fopen("../bin/fichiersIndexation/base_descripteur.csv", "a");
+    listeDescripteur = fopen("../bin/fichiersIndexation/liste_descripteur.csv", "a");
+    tb = fopen("../bin/fichiersIndexation/table_descripteur.csv", "a");
     if(baseDescriptr == NULL  || listeDescripteur == NULL || tb == NULL){
         fprintf(stderr,"Error : could not open files for writing.\n");
         exit(0);
     }
     saveDescripteur(outputPath, baseDescriptr, bd, (*bd)->taille, tb, tb_liste);
     lienDescripteur(listeDescripteur, id, inputpath, listeDesc);
-    printf("fin indexation : %s\n", inputpath);
+    //printf("fin indexation : %s\n", inputpath);
+    sprintf(outputPath, "rm cpy.txt");
     fclose(baseDescriptr);
     fclose(listeDescripteur);
     fclose(tb);
@@ -713,40 +752,70 @@ int indexation_texte(char *inputpath, int id_, baseDescripteur *bd, pathIdDesc *
     return (*bd)->tete->idDesc;
 }
 
-int isIndexer(pathIdDesc liste_desc, char *path){
+int isIndexer(char *path)
+{
     
-    char command[TAILLE_MALLOC];
+    char *command = calloc(TAILLE_MALLOC, sizeof(char));
+    FILE *fp = fopen("../bin/fichiersIndexation/liste_descripteur.csv", "r");
+
+    if(fp == NULL || command == NULL)
+    {
+        fprintf(stderr, "Error : out of memory\n");
+        exit(0);
+    }
+
     int is_indexed = 0;
-    liste_descripteur *tmp = liste_desc->tete; 
-    while(tmp != NULL){
-        if(strcmp(path, tmp->path) == 0){
+    while(fscanf(fp, "%s[^\n]", command) != EOF)
+    {
+        if(strcmp(command, path) == 0)
+        {
             is_indexed = 1;
             break;
         }
-        tmp = tmp->next;
     }
     return is_indexed;
+}
+void suprimerBaseMenu()
+{
+    system("echo > ../bin/fichiersIndexation/base_descripteur.csv");
+    system("echo > ../bin/fichiersIndexation/liste_descripteur.csv");
+    system("echo > ../bin/fichiersIndexation/table_descripteur.csv");
+    system("rm ../bin/data/*.clean ../bin/data/*.tok ../bin/data/files.txt");
+}
+void indexationBaseMenu()
+{
+    baseDescripteur bd = init_baseDescripteur();
+    pathIdDesc liste = init_listeDescripteur();
+    tableDescript tb_desc = NULL;
+
+    recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv",&bd);
+    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+    recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv", &tb_desc);
+
+    indexation_base("../bin/data/", &bd, &liste, &tb_desc);
+    sleep(10);
 }
 
 int indexation_base(char *base_fichiers, baseDescripteur *bd, pathIdDesc *listeDesc, tableDescript *tb_liste){
     char *command = calloc(1024, sizeof(char)), *path = calloc(1024, sizeof(char)), *mot; // Créer un tableau qui contiendra une commande pour les appels system
     FILE *deja_indexer, *files;
     int is_indexed = 0;
-    sprintf(command, "ls *.xml > files.txt");
+    sprintf(command, "ls %s*.xml > ../bin/temp/files.txt", base_fichiers);
     system(command);
-    files = fopen("files.txt", "r");
+
+    sprintf(command, "../bin/temp/files.txt");
+    files = fopen(command, "r");
     if(files == NULL || path == NULL || command == NULL){
         fprintf(stderr, "indexation_base_texte : ouveture impossible des fichiers.\n");
         exit(0);
     }
-    while(fscanf(files,"%s[^n]", command) != EOF){
-        //printf("candidat = %s\n", command);
-        is_indexed = isIndexer(*listeDesc,command);
+    while(fscanf(files,"%s[^n]", command) != EOF)
+    {        
+        is_indexed = isIndexer(command);
         if(is_indexed == 0){
             //printf("%s\n", command);
             indexation_texte(command, (*bd)->taille, bd, listeDesc, tb_liste);
         }
-        is_indexed = 0;
     }
     return 1;
 }
@@ -781,27 +850,34 @@ void recharger_base_indexation(char *path, baseDescripteur* bd){
     descripteur *d = calloc(1, sizeof(descripteur));
     ELEMENT *e = calloc(1, sizeof(ELEMENT));
     e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
+    
     if( d == NULL || fp == NULL || e == NULL || e->mot == NULL){
         fprintf(stderr, "Error : recharcher base indexation : failed memory allocation \n");
         exit(0);
     }
-    e->mot = calloc(TAILLE_TOKEN_MAX, sizeof(char));
+
     if(e->mot == NULL){
-        fprintf(stderr, "Error : recharcher base indexation : failed memory allocation \n");
+        fprintf(stderr, "Error : recharcher base indexation : failed memory allocation for e\n");
         exit(0);
     }
     int count = count_number_of_file_line(path);
-    for(int j = 1; j < count; j++){
+    
+    for(int j = 1; j < count; j++)
+    {
         fscanf(fp, "%d",&(d->idDesc));
         fscanf(fp, "%d",&(d->tailleListe));
         fscanf(fp, "%d",&(d->nbToken));
-        for(int i=0; i<d->tailleListe; i++){
+        for(int i=0; i<d->tailleListe; i++)
+        {
             fscanf(fp, "%s",e->mot);
             fscanf(fp, "%d[^\n]", &(e->nbOccurence));
             d->listeELMENT = emPILE(d->listeELMENT, e);
         }
-        if(d->nbToken != 0) *(bd) = empiler_baseDescripteur(*bd, d);
+        //printf("%s\n", descripteur_toString(*d));
+        if(d->nbToken != 0) *(bd) = empiler_baseDescripteur(*bd, *d);
+        d->listeELMENT = NULL;
     }
+    
    free(d);
    fclose(fp);
 }
@@ -826,7 +902,7 @@ void recharger_liste_indexation(char *path, pathIdDesc* tb_liste){
         //printf("%s, %d\n", p->path, p->id);
         *tb_liste = empiler_listedescripteur(*tb_liste, p);
     }
-    printf("%d\n", (*tb_liste)->taille); 
+    //printf("%d\n", (*tb_liste)->taille); 
     //affiche_listedescripteur(*tb_liste);
     free(p);
     fclose(fp);
@@ -858,7 +934,7 @@ void recharger_table_indexation(char *path, tableDescript* tb_desc){
         *tb_desc = empile_tableDescElement(*tb_desc, p->mot, p->idDescripteur->idDesc, p->idDescripteur->occ);
         j++;
     }
-    //affiche_table_descripteur(*tb_desc);
+    //printf("%d\n", j);
     fclose(fp);
     free(p);
 }

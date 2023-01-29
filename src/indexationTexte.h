@@ -5,14 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 
-#define TAILLE_TOKEN_MAX 90
-#define SEUIL_MOT_SIGNIFICATIF 5
+#define TAILLE_TOKEN_MAX 100
+#define SEUIL_MOT_SIGNIFICATIF 2
 #define TAILLE_MALLOC 1024
-#define NBLISTE 10  //PARAMETRE A METTRE DANS LE POINT CONFIG POUR FAIRE VARIER LE NOMBRE DE RESULATS
-extern int taille_base_descripteur;
-extern int taille_liste_descripteur;
+#define NB_LISTE 10  //PARAMETRE A METTRE DANS LE POINT CONFIG POUR FAIRE VARIER LE NOMBRE DE RESULATS
+
 
 struct conf{
     int taille_max_token;
@@ -20,9 +20,6 @@ struct conf{
 };
 extern int id_;
 
-typedef struct conf configuration;
-extern configuration *config;
-void init_configuration(configuration *config);
 /***********************************************************/
 /*****************ELEMENT MOT DESCRIPTEUR*******************/
 /***********************************************************/
@@ -107,10 +104,10 @@ typedef struct bDesc{
 
 int descripteur_NULL(descripteur);
 void affiche_DESCRIPTEUR(descripteur*);
-void compare_DESCRIPTEUR(descripteur, descripteur);
+float compareDESCRIPTEUR(descripteur, descripteur);
 void affect_DESCRIPTEUR(descripteur*, descripteur);
 void detruire_descripteur(descripteur*);
-char* descripteur_toString(descripteur*);
+char* descripteur_toString(descripteur);
 
 /***********************************************************/
 /******************BASE DESCRIPTEUR RELATED*****************/
@@ -119,7 +116,7 @@ char* descripteur_toString(descripteur*);
 baseDescripteur init_baseDescripteur();
 void affiche_baseDescripteur(baseDescripteur);
 int baseDescripteur_estVide(baseDescripteur);
-baseDescripteur empiler_baseDescripteur(baseDescripteur, descripteur*);
+baseDescripteur empiler_baseDescripteur(baseDescripteur, descripteur);
 baseDescripteur depilerbaseDescripteur(baseDescripteur, descripteur*);
 baseDescripteur saisir_baseDescripteur();
 char *baseDescripteur_toString(baseDescripteur);
@@ -172,18 +169,18 @@ int lienDescripteur(FILE*, int, char*, pathIdDesc*);
 void tableIndex(FILE*, baseDescripteur, tableDescript*);
 int indexation_texte(char *inputpath, int id_, baseDescripteur *, pathIdDesc *, tableDescript *);
 int indexation_base(char *base_fichiers, baseDescripteur *, pathIdDesc *, tableDescript *);
-
+void indexationBaseMenu();
 
 
 /***********************************************************/
 /****************RECHARCHER BASE LISTE TABLE****************/
 /***********************************************************/
 int count_number_of_file_line(char *);
-int isIndexer(pathIdDesc, char *);
+int isIndexer(char *);
 void recharger_base_indexation(char *path, baseDescripteur*);
 void recharger_liste_indexation(char *path, pathIdDesc*);
 void recharger_table_indexation(char *path, tableDescript*);
-
+void suprimerBaseMenu();
 
 /***********************************************************/
 /****************RECHERCHE BASE DE DONNEES******************/
@@ -207,9 +204,9 @@ idDescOccu rechercheTexteMot(tableDescript, char *, int *);
 void rechercheTexteMotCle(pathIdDesc, tableDescript);
 void rechercheTexteCompare(const volatile baseDescripteur,pathIdDesc);
 
-int descripteurExiste(int,const volatile descripteur*,descripteur*);
+int descripteurExiste(int, descripteur*,descripteur*);
 
-Score calculeScoreBaseDescripteur(const volatile descripteur*,descripteur,Score);
+Score calculeScoreBaseDescripteur(const volatile descripteur*,descripteur*,Score);
 float calculeScoreDescripteur(const volatile PILE,PILE);
 float calculeScoreUnitaire(const volatile PILE, ELEMENT);
 Score empilerScore(Score,float,int);
@@ -226,4 +223,8 @@ void libereScore(Score);
 
 int cheminExiste(char *);
 
+
+
+void rechercheMotCleMenu();
+void comparaisonTexteMenu();
 #endif // !INDEXATION_TEXTE_IN

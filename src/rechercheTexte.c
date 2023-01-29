@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
+#include <unistd.h>
 
 #include "indexationTexte.h"
 
@@ -43,7 +44,7 @@ void insertionSort(idDescOccu tab, int size)
     {
         for (j=0 ; j < size-i-1; j++)
         {
-            if (tab[j].occ > tab[j+1].occ) 
+            if (tab[j].occ < tab[j+1].occ) 
             {
                 tmp = tab[j];
                 tab[j] = tab[j+1];
@@ -133,9 +134,14 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
             }
             tmp = liste_desc->tete;
         }
+        sleep(15);
     }
     else
+    {
         printf("Aucun fichier ne contient \"%s\" comme mot significatif.\n", mot);
+        sleep(4);
+    }
+        
 }
 
 void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){     //PROGRAMME PRINCIPAL DE RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
@@ -150,45 +156,71 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     double temps=0.0;
     clock_t debut;
     clock_t fin;
-    Score s=NULL;
-    
+    Score s = NULL;
+
     //system("clear");
     printf("Veuillez saisir le chemin du fichier à comparer\n");
     int ok = saisiePath(chemin);
+    
 
     if(ok == 1)
     {
         int id=trouveIDDescripteur(chemin,liste->tete);
         if(id==-1){   perror("Descripteur inconnu");      exit(0);}
         if(descripteurExiste(id,b->tete,d) == 1){
-            debut=clock();
-            s=calculeScoreBaseDescripteur(b->tete,*d,s);
-            if(s==NULL) printf("Aucun document ne correspond au fichier spécifié a part lui meme : Essayez avec d'autres fichiers.\n");
-            else{
-                fin=clock();
-                temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
-                //system("clear");
-                printf("Résultat(s) en %f secondes\n\n",temps);
-                afficheNbScore(s,NBLISTE,liste);
-                ouvreFichier(choixFichier(s),liste);
+            if(d->tailleListe == 0)
+            {
+                printf("\e[1;35mResultat\e[0;35m : A l'issu traitement du fichier %s aucun mot n'apparaît plus de %d fois. \nCe fichier ne contient donc aucun mot significatif il est donc impossible de le comparer à la base de fichier.\n Veuillez changer le sueil de mot significatif et rééssayer. Merci.\n\e[0m\n", chemin, SEUIL_MOT_SIGNIFICATIF);
+                sleep(5);
+                return;
             }
+            else
+            {
+                debut=clock();
+                s = calculeScoreBaseDescripteur(b->tete, d, s);
+                if(s==NULL) printf("Aucun document ne correspond au fichier spécifié a part lui meme : Essayez avec d'autres fichiers.\n");
+                else{
+                    fin=clock();
+                    temps+=(double)(fin-debut)/CLOCKS_PER_SEC;
+                    //system("clear");
+                    printf("Résultat(s) en %f secondes\n\n",temps);
+                    s = s->next;
+                    afficheNbScore(s, NB_LISTE,liste);
+                    ouvreFichier(choixFichier(s),liste);
+                }
+                    sleep(12);    
+            }
+            
         }
-        else printf("\tIl semblerait que ce descripteur n'existe pas\n\tVeuillez vérifier le chemin saisie\n");
+        else 
+        {
+            printf("\tIl semblerait que ce fichier n'a pas été indexer\n\tVeuillez vérifier le chemin saisie\n");
+            sleep(4);
+        }
+        
     }
     else
+    {
         printf("Le fichier \"%s\" n'existe pas\n", chemin);
+        sleep(4);
+    }
+        
     libereScore(s);
     liberePILE(d->listeELMENT);
     free(d);
 }
 
-Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur descRequete,Score s){
+Score calculeScoreBaseDescripteur(const volatile descripteur* descBase,descripteur* descRequete,Score s){
     float score=0;
+
     while(descBase != NULL)
     {
-        if(descRequete.listeELMENT != NULL && descBase->listeELMENT != NULL)
-            score=((calculeScoreDescripteur(descBase->listeELMENT,descRequete.listeELMENT))/descRequete.tailleListe);
-        if(score>0)
+        if(descBase->tailleListe == 0)
+            score = 0;
+        else
+            score = ((calculeScoreDescripteur(descBase->listeELMENT,descRequete->listeELMENT))/descRequete->nbToken);
+    
+        if(score>=0)
         {
             s=empilerScore(s,score,descBase->idDesc);
             s=triScore(s);
@@ -213,14 +245,15 @@ float calculeScoreDescripteur(const volatile PILE descBase,PILE descRequete){
 
 float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
     float score=0;
-    ELEMENT elmDesc;    affect_ELEMENT(&elmDesc, elementDescRequete);
+    ELEMENT elmDesc;    
+    affect_ELEMENT(&elmDesc, elementDescRequete);
     while(descBase != NULL)
     {
         ELEMENT elmBase;    affect_ELEMENT(&elmBase,*(ELEMENT*)descBase->element);
     
         if(strcoll(elmBase.mot,elmDesc.mot)==0)
         {
-            if(elmDesc.nbOccurence==(-1)) score+=elmBase.nbOccurence;
+            if(elmDesc.nbOccurence==-1) score+=elmBase.nbOccurence;
             else if(elmBase.nbOccurence<elmDesc.nbOccurence) score+=(((float)elmBase.nbOccurence)/((float)elmDesc.nbOccurence))*100;
             else score+=(((float)elmDesc.nbOccurence)/((float)elmBase.nbOccurence))*100;
             return score;        
@@ -233,15 +266,45 @@ float calculeScoreUnitaire(PILE descBase,ELEMENT elementDescRequete){
 
 void afficheNbScore(Score s,int nb,pathIdDesc liste){
     float ms=s->score;
-    if(ms!=0) for(int i=0;i<nb&&s!=NULL;printf("(%d)\t%f%%\t%s\n",i+1,s->score/ms*100,trouveChemin(s->id,liste->tete)),i++,s=s->next);
-    printf("\n\r");
+    int i = 0;
+
+    if(ms != 0)
+    {
+        while(s != NULL)
+        {
+            printf("(%d)\t%f%%\t%s\n",i+1,s->score/ms*100,trouveChemin(s->id,liste->tete));
+            printf("\n\r");
+                if(nb == (i+1))
+                    break;
+            i++;
+            s = s->next;
+        }
+    }
+    else 
+    {
+        while(s != NULL)
+        {
+            printf("(%d)%f\t%s\n",i+1,s->score,trouveChemin(s->id,liste->tete));
+            printf("\n\r");
+                if(nb == (i+1))
+                    break;
+            i++;
+            s = s->next;
+        }
+    }
+    
 }
 
 Score empilerScore(Score s,float score,int idDesc){
-    Score tmp=(Score)calloc(1,sizeof(DescripteurScore));
-	tmp->id=idDesc;
-    tmp->score=score;
-	tmp->next=s;
+    Score tmp = calloc(1,sizeof(DescripteurScore));
+    if(tmp == NULL)
+    {   
+        fprintf(stderr,"Error \n");
+        exit(0);
+    }
+    tmp->id = idDesc;
+    tmp->score = score;
+    tmp->next = s;
     return tmp;
 }
 
@@ -283,9 +346,9 @@ DescripteurScore choixFichier(Score s){
         printf("Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\n");
         scanf("%c",&c);
         index = c - '0';
-        if(index>NBLISTE||index<0) 
-            printf("Le chiffre entrer est invalide. Veuillez rentrez un chiffre compris entre 1 et %d\n",NBLISTE);
-    }while(index>NBLISTE||index<0);
+        if(index>NB_LISTE||index<0) 
+            printf("Le chiffre entrer est invalide. Veuillez rentrez un chiffre compris entre 1 et %d\n",NB_LISTE);
+    }while(index>NB_LISTE||index<0);
 
     viderBuffer();
     return recupScore(s,index,1);
@@ -302,7 +365,7 @@ DescripteurScore recupScore(Score s,int index,int i){
     return ds;
 }
 
-int descripteurExiste(int idDesc,const volatile descripteur* b,descripteur* d){
+int descripteurExiste(int idDesc, descripteur* b,descripteur* d){
     int existe=0;
     while(b != NULL)
     {
@@ -322,7 +385,7 @@ int descripteurExiste(int idDesc,const volatile descripteur* b,descripteur* d){
 
 void ouvreFichier(DescripteurScore s,pathIdDesc liste){
     char* cmd=(char*)calloc(100,sizeof(char));
-    sprintf(cmd,"xdg-open %s",trouveChemin(s.id,liste->tete));
+    sprintf(cmd,"gedit %s",trouveChemin(s.id,liste->tete));
     if(system(cmd)!=0) printf("Impossible de lancer la commande, %s\n",cmd);
     free(cmd);
 }
@@ -339,4 +402,26 @@ int trouveIDDescripteur(char* chemin,liste_descripteur* liste){
     if(strcmp(chemin,liste->path)==0) return liste->id;
     if(liste->next!=NULL) test=trouveIDDescripteur(chemin,liste->next);
     return test;
+}
+
+void rechercheMotCleMenu()
+{
+    tableDescript tbDesc = NULL;
+    pathIdDesc liste = init_listeDescripteur();
+
+    recharger_table_indexation("../bin/fichiersIndexation/table_descripteur.csv",&tbDesc);
+    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+
+    rechercheTexteMotCle(liste, tbDesc);
+}
+
+void comparaisonTexteMenu()
+{
+    baseDescripteur bd = init_baseDescripteur();
+    pathIdDesc liste = init_listeDescripteur();
+
+    recharger_base_indexation("../bin/fichiersIndexation/base_descripteur.csv",&bd);
+    recharger_liste_indexation("../bin/fichiersIndexation/liste_descripteur.csv", &liste);
+    
+    rechercheTexteCompare(bd, liste);
 }
