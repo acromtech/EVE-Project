@@ -419,6 +419,7 @@ void rechercheMotCleMenu()
     {
         rechargerTableDescripteur("../BaseFichiersTexte/FichiersDeDescription/table_descripteur.csv",&tbDesc);
         rechargerListeDescripteur("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
+        indexationBase("../BaseFichiersTexte/", &bd, &liste, &tbDesc);
     }
     
     rechercheTexteMotCle(liste, tbDesc);
@@ -439,6 +440,7 @@ void comparaisonTexteMenu()
     {
         rechargerBaseDescripteur("../BaseFichiersTexte/FichiersDeDescription/base_descripteur.csv",&bd);
         rechargerListeDescripteur("../BaseFichiersTexte/FichiersDeDescription/liste_descripteur.csv", &liste);
+        indexationBase("../BaseFichiersTexte/", &bd, &liste, &tbDesc);
     }
     
     rechercheTexteCompare(bd, liste);
