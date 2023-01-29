@@ -14,6 +14,7 @@ module : Informatique
 * Installer VLC
 
 ## Utilisation
+Pour lancer l'application, il faut ouvrir un terminal  et se placer dans le dossier Menu 
 L'utilisateur a le choix entre aller dans le Menu Utilisateur en entrant le 1 pour faire des recherches soit aller dans le menu administrateur en tapant le 2 pour faire des modification ou indexer la base
 > ```
 > ========================================================
