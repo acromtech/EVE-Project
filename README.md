@@ -302,7 +302,7 @@ Image Noir et Blanc :
 
 ##### Recherche par couleur
 
-Si l'utilisateur choisi la recherche par couleur, le système va lui demander de saisir une couleur contenue dans la liste disponible (ex : violet), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un ID pour ouvrir le fichier, le pourcentage de ressemblance, le nom du fichier et si c'est une image en couleur ou une image en noir et blanc. L'application va ensuite demander l'ID entre parenthèses pour ouvrir le fichier que l'utilisateur souhaite voir.
+Si l'utilisateur choisi la recherche par couleur, le système va lui demander de saisir une couleur contenue dans la liste disponible (ex : violet), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un ID pour ouvrir le fichier, le pourcentage de couleur, le nom du fichier et si c'est une image en couleur ou une image en noir et blanc. L'application va ensuite demander l'ID entre parenthèses pour ouvrir le fichier que l'utilisateur souhaite voir.
 
 > ```
 > | Recherche Couleur |
