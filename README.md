@@ -7,7 +7,7 @@ Auteur : **Emilien VESIN, Bastien LALANNE, Flavie THIBAULT, Alexis GIBERT et Mou
 module : Informatique
 
 ## Information
-Le menu regroupe toute les fonctionnalités de l'application (branches).
+Le menu est une machine à état qui regroupe toutes les fonctionnalités du moteur de recherche.
 
 ## Prérequis
 * Système d'exploitation : Linux
@@ -16,11 +16,11 @@ Le menu regroupe toute les fonctionnalités de l'application (branches).
 
 ## Utilisation
 
-Pour lancer l'application, il faut ouvrir un terminal et ce placer dans le dossier Menu puis faire un make. L'application se lance et on arrive sur le menu principale.
+Pour lancer l'application, il faut ouvrir un terminal et se placer dans le dossier Menu puis faire un make. L'application se lance et on arrive sur le menu principal.
 
 ## Notice Utilisateur
 
-L'utilisateur a le choix entre aller dans le menu utilisateur en entrant le 1 pour faire des recherches texte, image ou audio soit aller dans le menu administrateur en tapant le 2 pour faire des modifications sur l'application soit fermer l'application en tapant le 3.
+L'utilisateur peut alors choisir de se diriger vers le menu utilisateur en entrant 1 pour faire des recherches texte, image ou audio ou de se diriger vers le menu administrateur en tapant 2 pour faire des modifications sur l'application. Il peut aussi fermer l'application en tapant 3.
 
 > ```
 > ========================================================
@@ -44,7 +44,7 @@ L'utilisateur a le choix entre aller dans le menu utilisateur en entrant le 1 po
 
 ### Menu Utilisateur
  
-Voici les trois choix que peux réaliser l'utilisateur dans le menu utilisateur, soit une recherche texte en tapant le 2, soir une recherche image en rentrant le 3 soit une recherche audio en saisissant le 4. Il peut aussi à tout moment retouner au menu principale en tapant le 1.
+Voici les trois choix que peux réaliser l'utilisateur dans le menu utilisateur, soit une recherche texte en tapant le 2, soir une recherche image en rentrant le 3 soit une recherche audio en saisissant le 4. Il peut aussi à tout moment retourner au menu principal en tapant le 1.
 
 > ```
 > ===========================================================
@@ -70,7 +70,7 @@ Voici les trois choix que peux réaliser l'utilisateur dans le menu utilisateur,
 
 #### Recherche Texte
 
-Dans la recherche texte, l'utilisateur a le choix entre une recherche par mot clé en saisissant le 2 ou soit une recherche par comparaison d'un fichier avec la base en rentrant le 3. Il peut aussi à tout moment retouner en arrière en tapant le 1 ou fermer l'application en entrant le 4.
+Dans la "recherche texte", l'utilisateur a 2 possibilités majeures : faire une recherche par mot-clé en saisissant 2, faire une recherche par comparaison d'un fichier avec la base en rentrant 3. Il peut aussi à tout moment retourner en arrière en tapant le 1 ou fermer l'application en entrant le 4.
 
 > ```
 > ===========================================================
@@ -92,7 +92,7 @@ Dans la recherche texte, l'utilisateur a le choix entre une recherche par mot cl
 
 ##### Recherche par mot clé
 
-Si l'utilisateur choisi la recherche par mot clé, le système va lui demander de saisir le mot qui servira à la comparaison (ex : stockage), il va ensuite afficher le temps de recherche et le(s) résultat(s). Dans le(s) résultat(s), on retrouve le nom du fichier et le nombre d'occurence du mot dans le fichier.
+Si l'utilisateur choisi la recherche par mot-clé, le système va lui demander de saisir le mot qui servira à la comparaison (ex : stockage), il va ensuite afficher le temps de recherche et le(s) résultat(s). Dans le(s) résultat(s), on retrouve le nom du fichier et le nombre d'occurences du mot dans le fichier.
 
 >```
 > | Rechercher des fichiers texte par mot clé |
@@ -114,7 +114,7 @@ Si l'utilisateur choisi la recherche par mot clé, le système va lui demander d
 
 ##### Recherche par comparaison d'un fichier avec la base
 
-Si l'utilisateur choisi la recherche par comparaison d'un fichier avec la base, le système va lui demander de saisir le chemin du fichier à comparer avec la base (ex : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml), il va ensuite afficher le temps de recherche et le(s) résultat(s). Dans le(s) résultat(s), on retrouve un Id pour ouvrir le fichier, le pourcentagee de ressemblance et le chemin du fichier. l'application va ensuite demander l'Id entre parenthèse pour ouvrir le fichier que l'utilisateur souhaite voir.
+Si l'utilisateur choisi la recherche par comparaison d'un fichier avec la base, le système va lui demander de saisir le chemin du fichier à comparer avec la base (ex : ../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml), il va ensuite afficher le temps de recherche et le(s) résultat(s). Dans le(s) résultat(s), on retrouve un ID pour ouvrir le fichier, le pourcentage de ressemblance et le chemin du fichier. L'application va ensuite demander l'ID entre parenthèses pour ouvrir le fichier que l'utilisateur souhaite voir.
 
 
 > ```
@@ -153,13 +153,13 @@ Si l'utilisateur choisi la recherche par comparaison d'un fichier avec la base, 
 > 2
 > ```
 
-Plus de détaille sur la recherche texte : [Recherche Texte Menu](https://github.com/acromtech/PFR/blob/menu/IndexationRechercheTexte/README.md),
+Plus de détails sur la recherche texte : [Recherche Texte Menu](https://github.com/acromtech/PFR/blob/menu/IndexationRechercheTexte/README.md),
 [Recherche Texte](https://github.com/acromtech/PFR/blob/texte/README.md)
 
 
 #### Recherche Image
 
-Dans la recherche image, l'utilisateur a le choix entre une recherche par hostogramme en saisissant le 2 ou soit une recherche par couleur en entrant le 3. Il peut aussi à tout moment retouner en arrière en tapant le 1 ou fermer l'application en entrant le 4.
+Dans la "recherche image", l'utilisateur peut choisir de faire une recherche par histogramme en saisissant 2 ou faire une recherche par couleur en entrant 3. Il peut aussi à tout moment retourner en arrière en tapant le 1 ou fermer l'application en entrant le 4.
 
 > ```
 > ===========================================================
@@ -182,7 +182,7 @@ Dans la recherche image, l'utilisateur a le choix entre une recherche par hostog
 
 ##### Recherche Histogramme
 
-Si l'utilisateur choisi la recherche par histogramme, le système va lui demander de saisir le chemin ou le nom du fichier à comparer (ex : 12 ou ../IndexationImage/TXT/51.txt), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un Id pour ouvrir le fichier, le pourcentagee de ressemblance, le nom du fichier et si c'est une image couleur ou une image noir et blanc. l'application va ensuite demander l'Id entre parenthèse pour ouvrir le fichier que l'utilisateur souhaite voir.
+Si l'utilisateur choisi la recherche par histogramme, le système va lui demander de saisir le chemin ou le nom du fichier à comparer (ex : 12 ou ../IndexationImage/TXT/51.txt), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un ID pour ouvrir le fichier, le pourcentage de ressemblance, le nom du fichier et si c'est une image en couleure ou une image en noir et blanc. L'application va ensuite demander l'ID entre parenthèses pour ouvrir le fichier que l'utilisateur souhaite voir.
 
 Image Couleur :
 
@@ -237,7 +237,7 @@ Image Couleur :
 > (10)	61,052631%	50.jpg	Image couleur
 >
 >
-> Veuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+> Veuillez rentrer le nombre entre parenthèses associé au fichier que vous souhaitez ouvrir
 >
 >2
 > ```
@@ -302,7 +302,7 @@ Image Noir et Blanc :
 
 ##### Recherche par couleur
 
-Si l'utilisateur choisi la recherche par couleur, le système va lui demander de saisir une couleur contenu dans la liste disponible (ex : violet), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un Id pour ouvrir le fichier, le pourcentagee de ressemblance, le nom du fichier et si c'est une image couleur ou une image noir et blanc. l'application va ensuite demander l'Id entre parenthèse pour ouvrir le fichier que l'utilisateur souhaite voir.
+Si l'utilisateur choisi la recherche par couleur, le système va lui demander de saisir une couleur contenue dans la liste disponible (ex : violet), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le chemin du fichier, un ID pour ouvrir le fichier, le pourcentage de ressemblance, le nom du fichier et si c'est une image en couleur ou une image en noir et blanc. L'application va ensuite demander l'ID entre parenthèses pour ouvrir le fichier que l'utilisateur souhaite voir.
 
 > ```
 > | Recherche Couleur |
@@ -328,17 +328,17 @@ Si l'utilisateur choisi la recherche par couleur, le système va lui demander de
 > (3)	1,000000%	28.jpg	Image couleur
 >
 >
-> Veuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+> Veuillez rentrer le nombre entre parenthèses associé au fichier que vous souhaitez ouvrir
 >
 > 1
 > ```
 
-Plus de détaille sur la recherche image : [Recherche Image](https://github.com/acromtech/PFR/blob/image/README.md)
+Plus de détails sur la recherche image : [Recherche Image](https://github.com/acromtech/PFR/blob/image/README.md)
 
 
 #### Recherche Audio
 
-Dans la recherche audio, l'utilisateur n'a que le choix d'une recherche jingle. Il peut aussi à tout moment retouner en arrière en tapant le 1 ou fermer l'application en entrant le 3.
+Dans la recherche audio, l'utilisateur peut faire une "recherche jingle" en tapant 2. Il peut aussi à tout moment retourner en arrière en tapant le 1 ou fermer l'application en entrant le 3.
 
 > ```
 > ===========================================================
@@ -358,7 +358,7 @@ Dans la recherche audio, l'utilisateur n'a que le choix d'une recherche jingle. 
 
 ##### Recherche jingle
 
-Si l'utilisateur choisi la recherche jingle, le système va lui demander de saisir le nom du fichier (ex : jingle_fi.wav), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le pourcentage de ressemblance, ainsi que la position temporelle de la correspondance. Le système vous demandera ensuite d'appuyer sur la touche "Entrer" afin de lancer la lecture du fichier à la position de la correspodance.
+Si l'utilisateur choisi la "recherche jingle", le système va lui demander de saisir le nom du fichier (ex : jingle_fi.wav), il va ensuite afficher le(s) résultat(s). Dans le(s) résultat(s), on retrouve le pourcentage de ressemblance, ainsi que la position temporelle de la correspondance. Le système vous demandera ensuite d'appuyer sur la touche "Entrer" afin de lancer la lecture du fichier à la position de la correspondance.
 
 > ```
 > | Recherche de la correspondance lancée ... |
@@ -382,13 +382,13 @@ Si l'utilisateur choisi la recherche jingle, le système va lui demander de sais
 > Appuyez sur entrée pour lancer l'audio... (3 sec avant) 
 > ```
 
-Plus de détaille sur la recherche audio : [Recherche Audio](https://github.com/acromtech/PFR/blob/audio/README.md)
+Plus de détails sur la recherche audio : [Recherche Audio](https://github.com/acromtech/PFR/blob/audio/README.md)
 
 
 
 ### Menu Administrateur
 
-Afin de rentrer dans le menu administrateur il faut posséder le mot de passe (Mdp : 1234), l'utilisateur a 3 essais pour rentrer le bon mot de passe, si le mot de passe n'est pas correcte l'application se ferme et sinon l'utilisateur a le choix entre modifier le mot de passe en tapant 2, supprimer les bases descripteurs et les listes descripteurs en entrant 3, indexer les bases de fichier en saisissant 4, modifier les paramètres d'indexation en rentrant 5 et aller dans le menu utilisateur avec 6. Il peut aussi à tout moment retouner dans le menu principale en tapant le 1.
+Afin de rentrer dans le menu administrateur, il faut posséder le mot de passe (Mdp : 1234), l'utilisateur a 3 essais pour rentrer le bon mot de passe, si le mot de passe n'est pas correct l'application se ferme et sinon l'utilisateur a le choix entre modifier le mot de passe en tapant 2, supprimer les bases descripteurs et les listes descripteurs en entrant 3, indexer les bases de fichier en saisissant 4, modifier les paramètres d'indexation en rentrant 5 et se diriger vers le menu utilisateur avec 6. Il peut aussi à tout moment retourner dans le menu principal en tapant le 1.
 
 > ```
 > ===========================================================
@@ -423,7 +423,7 @@ Afin de rentrer dans le menu administrateur il faut posséder le mot de passe (M
 
 #### Modification du mot de passe
 
-Dans la modiffication du mot de passe, l'utilisateur n'a que le choix de modifier le mot de passe. Il peut aussi à tout moment retouner en arrière en tapant le 1 mais il lui faudra le mot de passe pour revenir dans le menu administrateur ou fermer l'application en entrant le 3. Le mot de passe est contenu dans le .config.
+Dans la modification du mot de passe, l'utilisateur n'a que le choix de modifier le mot de passe. Il peut aussi à tout moment retourner en arrière en tapant le 1, mais il lui faudra le mot de passe pour revenir dans le menu administrateur ou fermer l'application en entrant le 3. Le mot de passe est contenu dans le .config.
 > ```
 > ===========================================================
 >
@@ -459,7 +459,7 @@ Si l'utilisateur choisi de modifier le mot de passe, le système va lui demander
 
 #### Suppresion des Bases et des Listes
 
-Dans la suppression des bases et des liste, l'utilisateur n'a que le choix de supprimer les bases et les listes. Il peut aussi à tout moment retouner en arrière en tapant le 1 mais il lui faudra le mot de passe pour revenir dans le menu administrateur ou fermer l'application en entrant le 3. 
+Dans la "suppression des bases et des listes", l'utilisateur n'a que le choix de supprimer les bases et les listes. Il peut aussi à tout moment retourner en arrière en tapant le 1 mais il lui faudra le mot de passe pour revenir vers le menu administrateur. Il peut aussi fermer l'application en entrant le 3. 
 
 > ```
 > ===========================================================
