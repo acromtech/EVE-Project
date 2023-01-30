@@ -587,7 +587,7 @@ Si l'utilisateur choisi de lancer la modification, le système va  afficher la c
 >
 > 6 dureeAudioCorpus 70
 >
-> 7 nbListe 5
+> 7 nbListe 10
 >
 > 8 seuilMotSignificatif 3
 >
