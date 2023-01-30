@@ -1,0 +1,51 @@
+Script started on 2023-01-23 15:00:20+01:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/PFR/IndexationImage[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/PFR/IndexationImage[00m$ make clean
+[?2004lrm -f *.o*
+echo > base_descripteur_image.csv
+echo > liste_descripteur_image.csv
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/PFR/IndexationImage[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/PFR/IndexationImage[00m$ make recherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+[01m[Kcomp_image.c:[m[K In function ‘[01m[KrechercheCouleur[m[K’:
+[01m[Kcomp_image.c:32:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KafficheNbScore[m[K’; did you mean ‘[01m[KafficheNbScoreImage[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   32 |         [01;35m[KafficheNbScore[m[K(pileScore,NBLISTE,nbScore);
+      |         [01;35m[K^~~~~~~~~~~~~~[m[K
+      |         [32m[KafficheNbScoreImage[m[K
+[01m[Kcomp_image.c:33:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KouvreFichier[m[K’; did you mean ‘[01m[KouvreFichierImage[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   33 |         [01;35m[KouvreFichier[m[K(choixFichier(pileScore,nbScore),liste);
+      |         [01;35m[K^~~~~~~~~~~~[m[K
+      |         [32m[KouvreFichierImage[m[K
+[01m[Kcomp_image.c:33:22:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KchoixFichier[m[K’; did you mean ‘[01m[KchoixFichierImage[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   33 |         ouvreFichier([01;35m[KchoixFichier[m[K(pileScore,nbScore),liste);
+      |                      [01;35m[K^~~~~~~~~~~~[m[K
+      |                      [32m[KchoixFichierImage[m[K
+[01m[Kcomp_image.c:[m[K In function ‘[01m[KrechercheHisto[m[K’:
+[01m[Kcomp_image.c:76:12:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KtrouveIDDescripteur[m[K’; did you mean ‘[01m[KtrouveIDDescripteurImage[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   76 |     int id=[01;35m[KtrouveIDDescripteur[m[K(requete,liste);
+      |            [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |            [32m[KtrouveIDDescripteurImage[m[K
+[01m[Kcomp_image.c:[m[K In function ‘[01m[KouvreFichierImage[m[K’:
+[01m[Kcomp_image.c:183:21:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KtrouveChemin[m[K’; did you mean ‘[01m[KtrouveCheminImage[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  183 |     char* cheminTXT=[01;35m[KtrouveChemin[m[K(s.id,liste);
+      |                     [01;35m[K^~~~~~~~~~~~[m[K
+      |                     [32m[KtrouveCheminImage[m[K
+[01m[Kcomp_image.c:183:21:[m[K [01;35m[Kwarning: [m[Kinitialization of ‘[01m[Kchar *[m[K’ from ‘[01m[Kint[m[K’ makes pointer from integer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+/usr/bin/ld : comp_image.o : dans la fonction « rechercheCouleur » :
+comp_image.c:(.text+0x184) : référence indéfinie vers « afficheNbScore »
+/usr/bin/ld : comp_image.c:(.text+0x19a) : référence indéfinie vers « choixFichier »
+/usr/bin/ld : comp_image.c:(.text+0x1af) : référence indéfinie vers « ouvreFichier »
+/usr/bin/ld : comp_image.o : dans la fonction « rechercheHisto » :
+comp_image.c:(.text+0x3a8) : référence indéfinie vers « trouveIDDescripteur »
+/usr/bin/ld : comp_image.c:(.text+0x4e9) : référence indéfinie vers « afficheNbScore »
+/usr/bin/ld : comp_image.c:(.text+0x4ff) : référence indéfinie vers « choixFichier »
+/usr/bin/ld : comp_image.c:(.text+0x517) : référence indéfinie vers « ouvreFichier »
+/usr/bin/ld : comp_image.o : dans la fonction « ouvreFichierImage » :
+comp_image.c:(.text+0xa99) : référence indéfinie vers « trouveChemin »
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:5 : recherche] Erreur 1
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/PFR/IndexationImage[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/PFR/IndexationImage[00m$ exit
+[?2004lexit
+
+Script done on 2023-01-23 15:01:46+01:00 [COMMAND_EXIT_CODE="2"]
