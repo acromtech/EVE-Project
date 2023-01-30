@@ -424,9 +424,9 @@ DescripteurScore choixFichier(Score s){
 
     do 
     {
-        printf("Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\n");
+        printf("Rentrez le nombre entre parenthèses associé au fichier que vous souhaitez ouvrir\n");
         scanf("%c",&c);
-        index = c - '0';
+        index = c - '0' +1;
         if(index>NBLISTE||index<0) 
             printf("Le chiffre entrer est invalide. Veuillez rentrez un chiffre compris entre 1 et %d\n",NBLISTE);
     }while(index>NBLISTE||index<0);
