@@ -4,7 +4,7 @@
 #include <time.h>
 #include <locale.h>
 #include <unistd.h>
-
+#include "../../Configuration/configuration.h"
 #include "indexationImage.h"
 
 const int tabVal[]={59,51,56,57,48,12,3,53,60,62,40,8,9,15,10,31,2,1,32,63,0,5};
@@ -111,13 +111,14 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
 
 ScoreImage choixFichierImage(Src pileScore,int tailleTabScore) {
     int index;
+    int nbListe = config("nbListe");
     ScoreImage scoreImage;
     printf("\e[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir\e[0m\n");
     do{
         scanf("%d",&index);
-        if(index>min(tailleTabScore,NBLISTE)||index<1) printf("\e[1;35mAttention\e[0;35m : Vous ne pouvez rentrer qu'un chiffre compris entre 1 et %d\e[0m\n",min(tailleTabScore,NBLISTE));
+        if(index>min(tailleTabScore,nbListe)||index<1) printf("\e[1;35mAttention\e[0;35m : Vous ne pouvez rentrer qu'un chiffre compris entre 1 et %d\e[0m\n",min(tailleTabScore,nbListe));
         else scoreImage=pileScore[index-1];
-    }while(index>min(tailleTabScore,NBLISTE)||index<1);
+    }while(index>min(tailleTabScore,nbListe)||index<1);
     return scoreImage;
 }
 
@@ -164,7 +165,8 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
 }
 
 int afficheResultatsRecherche(Src pileScore,int nbScore,listeDescripteurImage liste){
-    for(int i=0;i<min(nbScore,NBLISTE);i++){
+    int nbListe = config("nbListe");
+    for(int i=0;i<min(nbScore,nbListe);i++){
         char *chemin=trouveCheminImage(pileScore[i].id,liste);
         printf("hehe = %s\n",chemin);
         char *nomFichier=getNomFichierImage(chemin);
