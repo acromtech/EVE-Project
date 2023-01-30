@@ -1,0 +1,654 @@
+Script started on 2023-01-23 14:32:46+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ make clean*
+[?2004lmake: *** No rule to make target 'clean*'. Stop.
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ *make clean*[K
+[?2004lrm -f *.o*
+echo > base_descripteur_image.csv
+echo > liste_descripteur_image.csv
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ make clean[K[K[K[K[Krecherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+./test.out TXT
+Indexation de TXT/01.txt :
+4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 33 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 9 1 Fin de l'indexation de TXT/01.txt.
+Indexation de TXT/02.txt :
+21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 6 0 0 0 23 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 2 Fin de l'indexation de TXT/02.txt.
+Indexation de TXT/03.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 8 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 24 0 0 0 25 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 6 0 0 0 3 0 Fin de l'indexation de TXT/03.txt.
+Indexation de TXT/04.txt :
+32 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 4 Fin de l'indexation de TXT/04.txt.
+Indexation de TXT/05.txt :
+10 2 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 26 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 28 Fin de l'indexation de TXT/05.txt.
+Indexation de TXT/06.txt :
+20 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 27 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 Fin de l'indexation de TXT/06.txt.
+Indexation de TXT/07.txt :
+1 17 0 0 0 37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 2 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 Fin de l'indexation de TXT/07.txt.
+Indexation de TXT/08.txt :
+4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 15 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 45 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 3 0 0 0 0 0 Fin de l'indexation de TXT/08.txt.
+Indexation de TXT/09.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 12 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 38 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 0 Fin de l'indexation de TXT/09.txt.
+Indexation de TXT/10.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 6 0 0 0 20 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 3 0 0 0 8 2 Fin de l'indexation de TXT/10.txt.
+Indexation de TXT/11.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 8 0 0 0 19 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 4 0 0 0 7 2 Fin de l'indexation de TXT/11.txt.
+Indexation de TXT/12.txt :
+32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 3 1 Fin de l'indexation de TXT/12.txt.
+Indexation de TXT/13.txt :
+0 1 0 0 0 13 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 8 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 13 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 Fin de l'indexation de TXT/13.txt.
+Indexation de TXT/14.txt :
+34 4 0 0 0 5 0 0 0 0 0 0 0 0 0 0 6 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 5 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 0 2 5 Fin de l'indexation de TXT/14.txt.
+Indexation de TXT/15.txt :
+28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 2 0 0 0 4 2 Fin de l'indexation de TXT/15.txt.
+Indexation de TXT/16.txt :
+8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 27 0 0 0 12 0 0 0 0 0 0 0 Fin de l'indexation de TXT/16.txt.
+Indexation de TXT/17.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 9 0 0 0 0 7 9 0 0 0 2 0 0 4 8 1 0 0 0 0 0 5 15 0 0 5 3 0 0 6 10 0 0 0 0 0 0 Fin de l'indexation de TXT/17.txt.
+Indexation de TXT/18.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 15 45 Fin de l'indexation de TXT/18.txt.
+Indexation de TXT/19.txt :
+11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 31 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 29 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 Fin de l'indexation de TXT/19.txt.
+Indexation de TXT/20.txt :
+10 16 0 0 0 1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 17 13 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 Fin de l'indexation de TXT/20.txt.
+Indexation de TXT/21.txt :
+5 42 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 2 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 Fin de l'indexation de TXT/21.txt.
+Indexation de TXT/22.txt :
+16 2 0 0 0 2 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 5 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 12 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18 Fin de l'indexation de TXT/22.txt.
+Indexation de TXT/23.txt :
+39 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 19 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 8 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 3 Fin de l'indexation de TXT/23.txt.
+Indexation de TXT/24.txt :
+33 1 0 0 0 5 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 17 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 3 Fin de l'indexation de TXT/24.txt.
+Indexation de TXT/25.txt :
+8 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 15 4 0 0 0 4 0 0 0 0 0 0 0 0 0 0 2 0 0 0 4 25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 12 Fin de l'indexation de TXT/25.txt.
+Indexation de TXT/26.txt :
+14 1 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 12 3 0 0 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 10 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 Fin de l'indexation de TXT/26.txt.
+Indexation de TXT/27.txt :
+1 0 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 0 0 0 7 4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 10 Fin de l'indexation de TXT/27.txt.
+Indexation de TXT/28.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 7 0 0 0 5 7 0 0 0 0 0 0 0 0 0 2 0 0 0 0 5 20 1 0 0 0 0 0 0 0 0 1 0 0 0 1 5 1 0 0 2 4 1 0 0 0 0 Fin de l'indexation de TXT/28.txt.
+Indexation de TXT/29.txt :
+24 17 0 0 0 10 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 19 6 0 0 0 0 0 0 0 0 0 0 0 0 0 1 7 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 1 0 Fin de l'indexation de TXT/29.txt.
+Indexation de TXT/30.txt :
+19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 6 0 0 0 16 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 6 0 0 0 0 0 0 Fin de l'indexation de TXT/30.txt.
+Indexation de TXT/31.txt :
+19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 14 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 7 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 Fin de l'indexation de TXT/31.txt.
+Indexation de TXT/32.txt :
+19 0 0 0 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19 9 0 0 3 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 Fin de l'indexation de TXT/32.txt.
+Indexation de TXT/33.txt :
+29 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 25 0 0 0 8 0 0 0 0 0 0 4 0 0 0 0 3 0 0 0 2 7 0 0 0 1 0 3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 Fin de l'indexation de TXT/33.txt.
+Indexation de TXT/34.txt :
+18 0 0 0 28 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 1 0 0 8 4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 1 9 0 0 0 3 Fin de l'indexation de TXT/34.txt.
+Indexation de TXT/35.txt :
+13 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 22 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 1 4 Fin de l'indexation de TXT/35.txt.
+Indexation de TXT/36.txt :
+3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 12 0 0 0 0 3 0 0 0 0 0 0 22 0 0 0 6 1 0 0 0 1 0 0 0 0 0 0 Fin de l'indexation de TXT/36.txt.
+Indexation de TXT/37.txt :
+8 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 14 0 0 0 24 4 16 0 0 0 6 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 10 2 Fin de l'indexation de TXT/37.txt.
+Indexation de TXT/38.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 5 18 0 0 0 7 0 0 0 0 0 0 0 0 0 0 17 9 0 0 0 36 0 0 0 0 0 0 Fin de l'indexation de TXT/38.txt.
+Indexation de TXT/39.txt :
+12 1 0 0 3 12 0 0 0 0 0 0 0 0 0 0 1 0 0 0 8 27 2 0 0 6 6 0 0 1 0 0 0 0 0 0 1 1 0 0 0 5 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 Fin de l'indexation de TXT/39.txt.
+Indexation de TXT/40.txt :
+17 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 42 0 0 0 0 0 0 0 0 0 0 5 0 0 0 1 2 0 0 0 1 2 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 Fin de l'indexation de TXT/40.txt.
+Indexation de TXT/41.txt :
+26 0 0 0 4 11 0 0 0 0 0 0 0 0 0 0 4 0 0 0 8 30 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/41.txt.
+Indexation de TXT/42.txt :
+6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 1 5 5 0 0 0 12 0 0 0 0 0 14 0 0 0 2 2 0 0 0 0 4 0 0 0 0 0 1 0 0 0 5 3 0 0 1 5 2 0 0 0 1 11 Fin de l'indexation de TXT/42.txt.
+Indexation de TXT/43.txt :
+4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 8 0 0 0 1 12 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 7 0 0 0 0 10 0 0 0 0 0 8 0 0 0 12 3 0 0 0 0 1 0 0 0 0 8 Fin de l'indexation de TXT/43.txt.
+Indexation de TXT/44.txt :
+0 0 0 0 0 0 2 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 8 11 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 6 Fin de l'indexation de TXT/44.txt.
+Indexation de TXT/45.txt :
+0 0 0 0 0 10 3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 21 0 0 0 0 1 1 0 0 0 0 0 0 3 0 4 19 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 Fin de l'indexation de TXT/45.txt.
+Indexation de TXT/46.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 7 5 0 0 0 0 0 0 0 0 0 0 0 0 0 18 27 15 0 0 0 8 0 0 0 0 0 0 0 0 4 0 0 0 1 0 0 2 Fin de l'indexation de TXT/46.txt.
+Indexation de TXT/47.txt :
+0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 5 2 0 0 0 0 0 0 0 0 0 0 0 0 0 11 17 18 0 0 0 13 0 0 0 0 0 0 0 0 6 0 0 0 1 0 0 14 Fin de l'indexation de TXT/47.txt.
+Indexation de TXT/48.txt :
+41 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 2 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 1 12 0 0 0 0 4 Fin de l'indexation de TXT/48.txt.
+Indexation de TXT/49.txt :
+25 12 0 0 0 4 1 0 0 0 0 0 0 0 0 0 4 0 0 0 3 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 2 4 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 1 5 Fin de l'indexation de TXT/49.txt.
+Indexation de TXT/50.txt :
+15 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 4 0 0 0 4 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 8 0 0 0 0 0 0 0 0 0 0 1 0 0 0 4 1 0 0 0 1 2 Fin de l'indexation de TXT/50.txt.
+Indexation de TXT/51.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/51.txt.
+Indexation de TXT/52.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/52.txt.
+Indexation de TXT/53.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 59 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/53.txt.
+Indexation de TXT/54.txt :
+1 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 26 0 0 0 1 0 0 0 0 0 0 0 15 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/54.txt.
+Indexation de TXT/55.txt :
+2 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 22 0 0 0 1 0 0 0 0 0 0 0 20 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/55.txt.
+Indexation de TXT/56.txt :
+1 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/56.txt.
+Indexation de TXT/57.txt :
+0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 24 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/57.txt.
+Indexation de TXT/58.txt :
+0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 25 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/58.txt.
+Indexation de TXT/59.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/59.txt.
+Indexation de TXT/60.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/60.txt.
+Indexation de TXT/61.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/61.txt.
+Indexation de TXT/62.txt :
+1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/62.txt.
+Indexation de TXT/63.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 30 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/63.txt.
+[H[2J[3J
+Veuillez saisir le chemin du fichier à comparer
+/TXT/13.txt
+Veuillez rentrer un chemin de descripteur valide
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ make recherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+./test.out TXT
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+[H[2J[3J
+Veuillez saisir le chemin du fichier à comparer
+TXT/13.txt
+Veuillez rentrer un chemin de descripteur valide
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ ls txt[K[K[KTXT
+[?2004l01.txt  04.txt  07.txt  10.txt  13.txt  16.txt  19.txt  22.txt  25.txt  28.txt  31.txt  34.txt  37.txt  40.txt  43.txt  46.txt  49.txt  52.txt  55.txt  58.txt  61.txt
+02.txt  05.txt  08.txt  11.txt  14.txt  17.txt  20.txt  23.txt  26.txt  29.txt  32.txt  35.txt  38.txt  41.txt  44.txt  47.txt  50.txt  53.txt  56.txt  59.txt  62.txt
+03.txt  06.txt  09.txt  12.txt  15.txt  18.txt  21.txt  24.txt  27.txt  30.txt  33.txt  36.txt  39.txt  42.txt  45.txt  48.txt  51.txt  54.txt  57.txt  60.txt  63.txt
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ ls TXTmake recherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+./test.out TXT
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+[H[2J[3J
+Veuillez saisir le chemin du fichier à comparer
+TXT/    ^Cmake: *** [Makefile:6: recherche] Interrupt
+
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ cat < base_descripteur_image.csv 
+[?2004l
+0 C 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 33 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 9 1
+1 C 21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 6 0 0 0 23 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 2
+2 C 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 8 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 24 0 0 0 25 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 6 0 0 0 3 0
+3 C 32 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 4
+4 C 10 2 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 26 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 28
+5 C 20 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 27 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5
+6 C 1 17 0 0 0 37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 2 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10
+7 C 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 15 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 45 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 3 0 0 0 0 0
+8 C 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 12 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 38 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 0
+9 C 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 6 0 0 0 20 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 3 0 0 0 8 2
+10 C 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 8 0 0 0 19 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 4 0 0 0 7 2
+11 C 32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 3 1
+12 C 0 1 0 0 0 13 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 8 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 13 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7
+13 C 34 4 0 0 0 5 0 0 0 0 0 0 0 0 0 0 6 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 5 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 0 2 5
+14 C 28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 2 0 0 0 4 2
+15 C 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 27 0 0 0 12 0 0 0 0 0 0 0
+16 C 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 9 0 0 0 0 7 9 0 0 0 2 0 0 4 8 1 0 0 0 0 0 5 15 0 0 5 3 0 0 6 10 0 0 0 0 0 0
+17 C 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 15 45
+18 C 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 31 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 29 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9
+19 C 10 16 0 0 0 1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 17 13 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7
+20 C 5 42 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 2 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6
+21 C 16 2 0 0 0 2 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 5 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 12 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18
+22 C 39 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 19 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 8 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 3
+23 C 33 1 0 0 0 5 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 17 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 3
+24 C 8 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 15 4 0 0 0 4 0 0 0 0 0 0 0 0 0 0 2 0 0 0 4 25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 12
+25 C 14 1 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 12 3 0 0 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 10 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12
+26 C 1 0 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 0 0 0 7 4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 10
+27 C 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 7 0 0 0 5 7 0 0 0 0 0 0 0 0 0 2 0 0 0 0 5 20 1 0 0 0 0 0 0 0 0 1 0 0 0 1 5 1 0 0 2 4 1 0 0 0 0
+28 C 24 17 0 0 0 10 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 19 6 0 0 0 0 0 0 0 0 0 0 0 0 0 1 7 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 1 0
+29 C 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 6 0 0 0 16 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 6 0 0 0 0 0 0
+30 C 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 14 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 7 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0
+31 C 19 0 0 0 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19 9 0 0 3 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0
+32 C 29 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 25 0 0 0 8 0 0 0 0 0 0 4 0 0 0 0 3 0 0 0 2 7 0 0 0 1 0 3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2
+33 C 18 0 0 0 28 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 1 0 0 8 4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 1 9 0 0 0 3
+34 C 13 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 22 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 1 4
+35 C 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 12 0 0 0 0 3 0 0 0 0 0 0 22 0 0 0 6 1 0 0 0 1 0 0 0 0 0 0
+36 C 8 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 14 0 0 0 24 4 16 0 0 0 6 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 10 2
+37 C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 5 18 0 0 0 7 0 0 0 0 0 0 0 0 0 0 17 9 0 0 0 36 0 0 0 0 0 0
+38 C 12 1 0 0 3 12 0 0 0 0 0 0 0 0 0 0 1 0 0 0 8 27 2 0 0 6 6 0 0 1 0 0 0 0 0 0 1 1 0 0 0 5 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+39 C 17 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 42 0 0 0 0 0 0 0 0 0 0 5 0 0 0 1 2 0 0 0 1 2 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+40 C 26 0 0 0 4 11 0 0 0 0 0 0 0 0 0 0 4 0 0 0 8 30 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+41 C 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 1 5 5 0 0 0 12 0 0 0 0 0 14 0 0 0 2 2 0 0 0 0 4 0 0 0 0 0 1 0 0 0 5 3 0 0 1 5 2 0 0 0 1 11
+42 C 4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 8 0 0 0 1 12 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 7 0 0 0 0 10 0 0 0 0 0 8 0 0 0 12 3 0 0 0 0 1 0 0 0 0 8
+43 C 0 0 0 0 0 0 2 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 8 11 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 6
+44 C 0 0 0 0 0 10 3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 21 0 0 0 0 1 1 0 0 0 0 0 0 3 0 4 19 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+45 C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 7 5 0 0 0 0 0 0 0 0 0 0 0 0 0 18 27 15 0 0 0 8 0 0 0 0 0 0 0 0 4 0 0 0 1 0 0 2
+46 C 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 5 2 0 0 0 0 0 0 0 0 0 0 0 0 0 11 17 18 0 0 0 13 0 0 0 0 0 0 0 0 6 0 0 0 1 0 0 14
+47 C 41 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 2 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 1 12 0 0 0 0 4
+48 C 25 12 0 0 0 4 1 0 0 0 0 0 0 0 0 0 4 0 0 0 3 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 2 4 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 1 5
+49 C 15 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 4 0 0 0 4 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 8 0 0 0 0 0 0 0 0 0 0 1 0 0 0 4 1 0 0 0 1 2
+50 N 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0
+51 N 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0
+52 N 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 59 0 0 0 9 0 0 0 4 0 0 0
+53 N 1 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 26 0 0 0 1 0 0 0 0 0 0 0 15 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0
+54 N 2 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 22 0 0 0 1 0 0 0 0 0 0 0 20 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0
+55 N 1 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0
+56 N 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 24 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0
+57 N 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 25 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0
+58 N 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0
+59 N 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0
+60 N 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0
+61 N 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0
+62 N 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 30 0 0 0 0 0 0 0 0 0 0 0
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ cat >[K< liste_descripteur_image.csv 
+[?2004l
+TXT/01.txt 0
+TXT/02.txt 1
+TXT/03.txt 2
+TXT/04.txt 3
+TXT/05.txt 4
+TXT/06.txt 5
+TXT/07.txt 6
+TXT/08.txt 7
+TXT/09.txt 8
+TXT/10.txt 9
+TXT/11.txt 10
+TXT/12.txt 11
+TXT/13.txt 12
+TXT/14.txt 13
+TXT/15.txt 14
+TXT/16.txt 15
+TXT/17.txt 16
+TXT/18.txt 17
+TXT/19.txt 18
+TXT/20.txt 19
+TXT/21.txt 20
+TXT/22.txt 21
+TXT/23.txt 22
+TXT/24.txt 23
+TXT/25.txt 24
+TXT/26.txt 25
+TXT/27.txt 26
+TXT/28.txt 27
+TXT/29.txt 28
+TXT/30.txt 29
+TXT/31.txt 30
+TXT/32.txt 31
+TXT/33.txt 32
+TXT/34.txt 33
+TXT/35.txt 34
+TXT/36.txt 35
+TXT/37.txt 36
+TXT/38.txt 37
+TXT/39.txt 38
+TXT/40.txt 39
+TXT/41.txt 40
+TXT/42.txt 41
+TXT/43.txt 42
+TXT/44.txt 43
+TXT/45.txt 44
+TXT/46.txt 45
+TXT/47.txt 46
+TXT/48.txt 47
+TXT/49.txt 48
+TXT/50.txt 49
+TXT/51.txt 50
+TXT/52.txt 51
+TXT/53.txt 52
+TXT/54.txt 53
+TXT/55.txt 54
+TXT/56.txt 55
+TXT/57.txt 56
+TXT/58.txt 57
+TXT/59.txt 58
+TXT/60.txt 59
+TXT/61.txt 60
+TXT/62.txt 61
+TXT/63.txt 62
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ cat < liste_descripteur_image.csv [1Pbas[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pmake recherche[C[9Pls TXTmake recherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+./test.out TXT
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+Fichier déjà indexer.
+[H[2J[3J
+Veuillez saisir le chemin du fichier à comparer
+TXT/13.txt
+Veuillez rentrer un chemin de descripteur valide
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ make recherche [19@cat < liste_descripteur_image.csv[C[1Pbas[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pmake recherche[C[9Pls TXTmake recherche [5Pclean
+[?2004lrm -f *.o*
+echo > base_descripteur_image.csv
+echo > liste_descripteur_image.csv
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ make cleanrecherche 
+[?2004lgcc -c tst_RGB.c
+gcc -c indexationImage.c
+gcc -c comp_image.c
+gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
+./test.out TXT
+Indexation de TXT/01.txt :
+4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 33 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 9 1 Fin de l'indexation de TXT/01.txt.
+Indexation de TXT/02.txt :
+21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 6 0 0 0 23 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 2 Fin de l'indexation de TXT/02.txt.
+Indexation de TXT/03.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 8 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 24 0 0 0 25 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 6 0 0 0 3 0 Fin de l'indexation de TXT/03.txt.
+Indexation de TXT/04.txt :
+32 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 4 Fin de l'indexation de TXT/04.txt.
+Indexation de TXT/05.txt :
+10 2 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 26 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 28 Fin de l'indexation de TXT/05.txt.
+Indexation de TXT/06.txt :
+20 0 0 0 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 27 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 Fin de l'indexation de TXT/06.txt.
+Indexation de TXT/07.txt :
+1 17 0 0 0 37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 2 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 Fin de l'indexation de TXT/07.txt.
+Indexation de TXT/08.txt :
+4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 15 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 45 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 3 0 0 0 0 0 Fin de l'indexation de TXT/08.txt.
+Indexation de TXT/09.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 12 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 38 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 0 Fin de l'indexation de TXT/09.txt.
+Indexation de TXT/10.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 6 0 0 0 20 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 3 0 0 0 8 2 Fin de l'indexation de TXT/10.txt.
+Indexation de TXT/11.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 12 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 8 0 0 0 19 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 4 0 0 0 7 2 Fin de l'indexation de TXT/11.txt.
+Indexation de TXT/12.txt :
+32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 12 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 3 1 Fin de l'indexation de TXT/12.txt.
+Indexation de TXT/13.txt :
+0 1 0 0 0 13 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 8 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 13 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 Fin de l'indexation de TXT/13.txt.
+Indexation de TXT/14.txt :
+34 4 0 0 0 5 0 0 0 0 0 0 0 0 0 0 6 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 5 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 0 2 5 Fin de l'indexation de TXT/14.txt.
+Indexation de TXT/15.txt :
+28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 4 0 0 0 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 2 0 0 0 4 2 Fin de l'indexation de TXT/15.txt.
+Indexation de TXT/16.txt :
+8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 27 0 0 0 12 0 0 0 0 0 0 0 Fin de l'indexation de TXT/16.txt.
+Indexation de TXT/17.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 9 0 0 0 0 7 9 0 0 0 2 0 0 4 8 1 0 0 0 0 0 5 15 0 0 5 3 0 0 6 10 0 0 0 0 0 0 Fin de l'indexation de TXT/17.txt.
+Indexation de TXT/18.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 15 45 Fin de l'indexation de TXT/18.txt.
+Indexation de TXT/19.txt :
+11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 31 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 29 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 Fin de l'indexation de TXT/19.txt.
+Indexation de TXT/20.txt :
+10 16 0 0 0 1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 17 13 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 Fin de l'indexation de TXT/20.txt.
+Indexation de TXT/21.txt :
+5 42 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 2 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 Fin de l'indexation de TXT/21.txt.
+Indexation de TXT/22.txt :
+16 2 0 0 0 2 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 5 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 12 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18 Fin de l'indexation de TXT/22.txt.
+Indexation de TXT/23.txt :
+39 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 19 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 8 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 3 Fin de l'indexation de TXT/23.txt.
+Indexation de TXT/24.txt :
+33 1 0 0 0 5 0 0 0 0 0 0 0 0 0 0 3 0 0 0 4 17 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 3 Fin de l'indexation de TXT/24.txt.
+Indexation de TXT/25.txt :
+8 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 15 4 0 0 0 4 0 0 0 0 0 0 0 0 0 0 2 0 0 0 4 25 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 12 Fin de l'indexation de TXT/25.txt.
+Indexation de TXT/26.txt :
+14 1 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 12 3 0 0 0 7 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 10 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 Fin de l'indexation de TXT/26.txt.
+Indexation de TXT/27.txt :
+1 0 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 1 0 0 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 0 0 0 7 4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 20 10 Fin de l'indexation de TXT/27.txt.
+Indexation de TXT/28.txt :
+20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 7 0 0 0 5 7 0 0 0 0 0 0 0 0 0 2 0 0 0 0 5 20 1 0 0 0 0 0 0 0 0 1 0 0 0 1 5 1 0 0 2 4 1 0 0 0 0 Fin de l'indexation de TXT/28.txt.
+Indexation de TXT/29.txt :
+24 17 0 0 0 10 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 19 6 0 0 0 0 0 0 0 0 0 0 0 0 0 1 7 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 1 0 Fin de l'indexation de TXT/29.txt.
+Indexation de TXT/30.txt :
+19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 0 0 0 4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23 6 0 0 0 16 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 6 0 0 0 0 0 0 Fin de l'indexation de TXT/30.txt.
+Indexation de TXT/31.txt :
+19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 14 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 7 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 Fin de l'indexation de TXT/31.txt.
+Indexation de TXT/32.txt :
+19 0 0 0 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19 9 0 0 3 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 Fin de l'indexation de TXT/32.txt.
+Indexation de TXT/33.txt :
+29 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 2 25 0 0 0 8 0 0 0 0 0 0 4 0 0 0 0 3 0 0 0 2 7 0 0 0 1 0 3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 Fin de l'indexation de TXT/33.txt.
+Indexation de TXT/34.txt :
+18 0 0 0 28 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 1 0 0 8 4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 1 9 0 0 0 3 Fin de l'indexation de TXT/34.txt.
+Indexation de TXT/35.txt :
+13 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 22 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 1 4 Fin de l'indexation de TXT/35.txt.
+Indexation de TXT/36.txt :
+3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 12 0 0 0 0 3 0 0 0 0 0 0 22 0 0 0 6 1 0 0 0 1 0 0 0 0 0 0 Fin de l'indexation de TXT/36.txt.
+Indexation de TXT/37.txt :
+8 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 14 0 0 0 24 4 16 0 0 0 6 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 10 2 Fin de l'indexation de TXT/37.txt.
+Indexation de TXT/38.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 5 18 0 0 0 7 0 0 0 0 0 0 0 0 0 0 17 9 0 0 0 36 0 0 0 0 0 0 Fin de l'indexation de TXT/38.txt.
+Indexation de TXT/39.txt :
+12 1 0 0 3 12 0 0 0 0 0 0 0 0 0 0 1 0 0 0 8 27 2 0 0 6 6 0 0 1 0 0 0 0 0 0 1 1 0 0 0 5 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 Fin de l'indexation de TXT/39.txt.
+Indexation de TXT/40.txt :
+17 0 0 0 2 2 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 42 0 0 0 0 0 0 0 0 0 0 5 0 0 0 1 2 0 0 0 1 2 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 Fin de l'indexation de TXT/40.txt.
+Indexation de TXT/41.txt :
+26 0 0 0 4 11 0 0 0 0 0 0 0 0 0 0 4 0 0 0 8 30 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/41.txt.
+Indexation de TXT/42.txt :
+6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 1 5 5 0 0 0 12 0 0 0 0 0 14 0 0 0 2 2 0 0 0 0 4 0 0 0 0 0 1 0 0 0 5 3 0 0 1 5 2 0 0 0 1 11 Fin de l'indexation de TXT/42.txt.
+Indexation de TXT/43.txt :
+4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 8 0 0 0 1 12 0 0 0 0 0 0 0 0 0 0 5 0 0 0 5 7 0 0 0 0 10 0 0 0 0 0 8 0 0 0 12 3 0 0 0 0 1 0 0 0 0 8 Fin de l'indexation de TXT/43.txt.
+Indexation de TXT/44.txt :
+0 0 0 0 0 0 2 0 0 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 8 11 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 6 Fin de l'indexation de TXT/44.txt.
+Indexation de TXT/45.txt :
+0 0 0 0 0 10 3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 21 0 0 0 0 1 1 0 0 0 0 0 0 3 0 4 19 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 Fin de l'indexation de TXT/45.txt.
+Indexation de TXT/46.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 7 5 0 0 0 0 0 0 0 0 0 0 0 0 0 18 27 15 0 0 0 8 0 0 0 0 0 0 0 0 4 0 0 0 1 0 0 2 Fin de l'indexation de TXT/46.txt.
+Indexation de TXT/47.txt :
+0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 5 2 0 0 0 0 0 0 0 0 0 0 0 0 0 11 17 18 0 0 0 13 0 0 0 0 0 0 0 0 6 0 0 0 1 0 0 14 Fin de l'indexation de TXT/47.txt.
+Indexation de TXT/48.txt :
+41 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 0 2 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 4 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 3 0 0 0 1 12 0 0 0 0 4 Fin de l'indexation de TXT/48.txt.
+Indexation de TXT/49.txt :
+25 12 0 0 0 4 1 0 0 0 0 0 0 0 0 0 4 0 0 0 3 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 2 4 0 0 0 0 0 0 0 0 0 0 3 0 0 0 3 9 0 0 0 1 5 Fin de l'indexation de TXT/49.txt.
+Indexation de TXT/50.txt :
+15 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 4 0 0 0 4 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 12 0 0 0 4 8 0 0 0 0 0 0 0 0 0 0 1 0 0 0 4 1 0 0 0 1 2 Fin de l'indexation de TXT/50.txt.
+Indexation de TXT/51.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/51.txt.
+Indexation de TXT/52.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 60 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/52.txt.
+Indexation de TXT/53.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 59 0 0 0 9 0 0 0 4 0 0 0 Fin de l'indexation de TXT/53.txt.
+Indexation de TXT/54.txt :
+1 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 26 0 0 0 1 0 0 0 0 0 0 0 15 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/54.txt.
+Indexation de TXT/55.txt :
+2 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 22 0 0 0 1 0 0 0 0 0 0 0 20 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/55.txt.
+Indexation de TXT/56.txt :
+1 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 18 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 20 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/56.txt.
+Indexation de TXT/57.txt :
+0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 24 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/57.txt.
+Indexation de TXT/58.txt :
+0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 10 0 0 0 25 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/58.txt.
+Indexation de TXT/59.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 23 0 0 0 0 0 0 0 0 0 0 0 32 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/59.txt.
+Indexation de TXT/60.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/60.txt.
+Indexation de TXT/61.txt :
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 24 0 0 0 22 0 0 0 0 0 0 0 0 0 0 0 31 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/61.txt.
+Indexation de TXT/62.txt :
+1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 13 0 0 0 0 0 0 0 0 0 0 0 8 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 14 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/62.txt.
+Indexation de TXT/63.txt :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 44 0 0 0 30 0 0 0 0 0 0 0 0 0 0 0 Fin de l'indexation de TXT/63.txt.
+[H[2J[3J
+Couleurs disponibles :	violet fushia orange saumon rouge vert bleu corail jaune kaki olive vertForet bleuMer eau cyan turquoise bleuMarine bleuNuit marron blanc noir ardoise 
+
+Formulez une requete de couleur
+violet
+[H[2J[3J
+Résultat(s) en 0,000025 secondes
+
+(1)	33	9,000000%
+(2)	34	3,000000%
+(3)	27	1,000000%
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+1
+
+
+^Cmake: *** [Makefile:6: recherche] Interrupt
+
+[?2004h]0;alexis@alexis-VirtualBox: ~/Downloads/DATABASE/Image[01;32malexis@alexis-VirtualBox[00m:[01;34m~/Downloads/DATABASE/Image[00m$ exit
+[?2004lexit
+
+Script done on 2023-01-23 14:39:25+01:00 [COMMAND_EXIT_CODE="130"]

@@ -1,0 +1,1254 @@
+Script started on 2023-01-30 13:00:34+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="108" LINES="61"]
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ exitmake
+[?2004l
+gcc -c menu_mae.c
+gcc -c main.c
+gcc -c ../Configuration/configuration.c
+gcc -c ../RechercheAudio/recherche_Audio.c
+gcc -c ../IndexationAudio/indexation_Audio.c
+gcc -c ../IndexationRechercheTexte/indexationTexte.c
+gcc -c ../IndexationRechercheTexte/rechercheTexte.c
+gcc -c ../IndexationImage/IndexationRechercheImage/indexationImage.c
+gcc -c ../IndexationImage/IndexationRechercheImage/compImage.c
+gcc -o menu_mae.out menu_mae.o main.o configuration.o recherche_Audio.o indexation_Audio.o indexationTexte.o rechercheTexte.o indexationImage.o compImage.o -g
+./menu_mae.out
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1507
+	Mot de passe invalide. 
+	Veuillez rééssayer (Nombre uniquement, nombre d'essais restant 2) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Suppression de la base Indexée |
+
+
+| Suppression terminée ! |
+[H[2J[3J===========================================================
+============   SUPPRIMER LA BASE D'INDEXATION   ===========
+===========================================================
+
+
+		2.  Supprimer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+=============   INDEXER LA BASE DE FICHIERS   =============
+===========================================================
+
+
+		2.  Indexer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+
+
+
+| Affichage du fichier de configuration |
+
+
+2 motdePasse 1234
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1234
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+
+| Changement de mot de passe |
+
+	Entrez le nouveau mot de passe (Nombre uniquement): 1505
+
+
+
+
+Mot de passe a été modifié !
+
+
+
+Le nouveau mot de passe est : 1505
+
+[H[2J[3J===========================================================
+==============   MODIFICATION MOT DE PASSE   ==============
+===========================================================
+
+
+		2.  Modifer.
+		3.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+3
+
+
+
+| Affichage du fichier de configuration |
+
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Rechercher des fichiers texte par mot clé |
+
+Veuillez saisir le mot qui servira à la comparaison : 
+stockage
+Résultat(s) en 0,000044 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "stockage" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO2,.xml : 5
+	../BaseFichiersTexte/15-Capturer_et_emprisonner_le_CO.xml : 5
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+Résultat(s) en 0,000340 secondes
+
+(1)	22,638891%	../BaseFichiersTexte/17-Une_Θquipe_franτaise_a_rΘussi.xml
+
+
+(2)	13,888888%	../BaseFichiersTexte/08-Sous_l_effet_du_rΘchauffement,_les.xml
+
+
+(3)	0,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+
+
+(4)	0,000000%	../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+
+
+(5)	0,000000%	../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+
+
+(6)	0,000000%	../BaseFichiersTexte/05-Edition___les_mots_et.xml
+
+
+(7)	0,000000%	../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+
+
+(8)	0,000000%	../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+
+
+(9)	0,000000%	../BaseFichiersTexte/05-L_apnΘiste_franτais_Guillaume_NΘry_plonge.xml
+
+
+(10)	0,000000%	../BaseFichiersTexte/05-Le_Colombien_Juan_Pablo_Montoya.xml
+
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml
+[1;35mResultat[0;35m : A l'issu traitement du fichier ../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml aucun mot n'apparaît plus de 5 fois. 
+Ce fichier ne contient donc aucun mot significatif il est donc impossible de le comparer à la base de fichier.
+ Veuillez changer le sueil de mot significatif et rééssayer. Merci.
+[0m
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 5
+
+
+Entrez le numéro du paramètre qui doit être modifié : 8
+Entrez la nouvelle valeur pour le paramètre n° 8 : 3
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : 0 0 O
+
+
+| Suppression de la base Indexée |
+
+
+| Suppression terminée ! |
+
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+
+| Comparer un fichier texte à la base |
+
+Veuillez saisir le chemin du fichier à comparer
+../BaseFichiersTexte/29-Ligue_des_champions___Lyon.xml                                                      ../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml
+Résultat(s) en 0,000702 secondes
+
+(1)	45,000000%	../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml
+
+
+(2)	32,857140%	../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml
+
+
+(3)	29,513889%	../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml
+
+
+(4)	0,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+
+
+(5)	0,000000%	../BaseFichiersTexte/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml
+
+
+(6)	0,000000%	../BaseFichiersTexte/03-Mimer_un_signal_nerveux_pour.xml
+
+
+(7)	0,000000%	../BaseFichiersTexte/05-Au_stade_d_Abidjan,_la_dΘfaite.xml
+
+
+(8)	0,000000%	../BaseFichiersTexte/05-Edition___les_mots_et.xml
+
+
+(9)	0,000000%	../BaseFichiersTexte/05-Jean-Christophe_Bette_a_d√_attendre.xml
+
+
+(10)	0,000000%	../BaseFichiersTexte/05-La_circoncision_pourrait_rΘduire_le.xml
+
+
+Rentrez le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir
+2
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Rechercher des fichiers texte par mot clé |
+
+Veuillez saisir le mot qui servira à la comparaison : 
+musique
+Résultat(s) en 0,000086 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "musique" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/05-Musique_Θlectronique___l_Θlan_collectif.xml : 5
+	../BaseFichiersTexte/17-La_voix_envo√tante_de_Girija.xml : 5
+	../BaseFichiersTexte/28-Festival___OsosphΦre,_un_week-end.xml : 4
+	../BaseFichiersTexte/12-Musique_classique___un__Oberon_.xml : 3
+	../BaseFichiersTexte/12-Musiques_du_monde___les.xml : 3
+	../BaseFichiersTexte/22-Danse___quarante_jeunes_de.xml : 3
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Rechercher des fichiers texte par mot clé |
+
+gVeuillez saisir le mot qui servira à la comparaison : 
+rippe
+Résultat(s) en 0,000084 secondes
+
+Le(s) fichier(s) dans lequel(lesquels) le mot "grippe" est significatif est(sont): (Nom_du_fichier : nombre_d'occurence de mot)
+	../BaseFichiersTexte/06-Sensibiliser_α_la_vaccination_grippale.xml : 9
+	../BaseFichiersTexte/14-Grippe_aviaire___l_OMS_exhorte.xml : 7
+	../BaseFichiersTexte/22-Grippe_aviaire___la_course.xml : 5
+	../BaseFichiersTexte/26-Grippe_aviaire___une_sixiΦme.xml : 5
+[H[2J[3J===========================================================
+======================     TEXTE     ======================
+===========================================================
+
+
+		2.  Recherche par mot clé.
+		3.  Comparaison d'un fichier à la base.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Recherche par comparaison |
+
+
+[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer (numero_fichier ou chemin_vers_le_fichier)[0m
+12
+../IndexationImage/TXT/12.txt
+hehe = ../IndexationImage/TXT/12.txt
+(1)	100,000000%	12.jpg	Image couleur
+hehe = ../IndexationImage/TXT/04.txt
+(2)	77,894737%	04.jpg	Image couleur
+hehe = ../IndexationImage/TXT/24.txt
+(3)	76,842102%	24.jpg	Image couleur
+hehe = ../IndexationImage/TXT/02.txt
+(4)	74,736839%	02.jpg	Image couleur
+hehe = ../IndexationImage/TXT/23.txt
+(5)	73,684212%	23.jpg	Image couleur
+hehe = ../IndexationImage/TXT/10.txt
+(6)	73,684212%	10.jpg	Image couleur
+hehe = ../IndexationImage/TXT/11.txt
+(7)	72,631577%	11.jpg	Image couleur
+hehe = ../IndexationImage/TXT/33.txt
+(8)	66,315788%	33.jpg	Image couleur
+hehe = ../IndexationImage/TXT/41.txt
+(9)	62,105263%	41.jpg	Image couleur
+hehe = ../IndexationImage/TXT/50.txt
+(10)	61,052631%	50.jpg	Image couleur
+
+
+[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir[0m
+2
+
+[1;32m-----------Recherche réalisée avec succès------------[0m
+
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Recherche par comparaison |
+
+
+[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer (numero_fichier ou chemin_vers_le_fichier)[0m
+../IndexationImage/TXT/12.txt^[[D^[[D        ^[[D          51.txt
+../IndexationImage/TXT/51.txt
+hehe = ../IndexationImage/TXT/52.txt
+(1)	100,000000%	52.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/51.txt
+(2)	100,000000%	51.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/53.txt
+(3)	98,958328%	53.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/16.txt
+(4)	58,333332%	16.jpg	Image couleur
+hehe = ../IndexationImage/TXT/63.txt
+(5)	54,166668%	63.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/58.txt
+(6)	43,750000%	58.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/57.txt
+(7)	41,666664%	57.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/62.txt
+(8)	38,541664%	62.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/61.txt
+(9)	38,541664%	61.bmp	Image noir et blanc
+hehe = ../IndexationImage/TXT/60.txt
+(10)	38,541664%	60.bmp	Image noir et blanc
+
+
+[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir[0m
+2
+
+[1;32m-----------Recherche réalisée avec succès------------[0m
+
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+
+| Recherche Couleur |
+
+
+Couleurs disponibles :	violet fushia orange saumon rouge vert bleu corail jaune kaki olive vertForet bleuMer eau cyan turquoise bleuMarine bleuNuit marron blanc noir ardoise 
+
+[1;37mFormulez une requete de couleur[0m
+violet
+hehe = ../IndexationImage/TXT/34.txt
+(1)	9,000000%	34.jpg	Image couleur
+hehe = ../IndexationImage/TXT/35.txt
+(2)	3,000000%	35.jpg	Image couleur
+hehe = ../IndexationImage/TXT/28.txt
+(3)	1,000000%	28.jpg	Image couleur
+
+
+[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir[0m
+1
+
+[1;32m-----------Recherche réalisée avec succès------------[0m
+
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+4
+[H[2J[3J===========================================================
+======================     AUDIO     ======================
+===========================================================
+
+
+		2.  Recherche Jingle.
+		3.  Fermer l'application.
+
+		1.  Retour.
+2
+
+
+
+| Recherche de la correspondance lancée ... |
+
+| Entrez le nom de votre fichier : jingle_fi.wav
+
+
+| Veuillez patienter | 
+
+
+| Correspondance trouvé à 90,32% ... | 
+
+
+| Voici le résultat | 
+
+Le jingle demarre à environ 29 sec du corpus
+
+
+Appuyez sur entrée pour lancer l'audio... (3 sec avant) 
+vlc --play-and-exit --start-time 26 ../TestSon/corpus_fi.wav 
+
+
+VLC media player 3.0.18 Vetinari (revision 3.0.18-0-ge9eceaed4d)
+[[32;1m000055d53e499a00[0m] main libvlc: [0;1mLancement de vlc avec l'interface par défaut. Utiliser « cvlc » pour démarrer VLC sans interface.[0m
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+Qt: Session management error: Could not open network socket
+[[32;1m000055d53e543b10[0m] main playlist: [0;1mend of playlist, exiting[0m
+QObject::~QObject: Timers cannot be stopped from another thread
+[H[2J[3J===========================================================
+======================     AUDIO     ======================
+===========================================================
+
+
+		2.  Recherche Jingle.
+		3.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+2
+
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 10
+
+8 seuilMotSignificatif 3
+
+
+Entrez le numéro du paramètre qui doit être modifié : 7
+Entrez la nouvelle valeur pour le paramètre n° 7 : 2
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 2
+
+8 seuilMotSignificatif 3
+
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : n
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+6
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+3
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+3
+
+
+
+| Recherche Couleur |
+
+
+Couleurs disponibles :	violet fushia orange saumon rouge vert bleu corail jaune kaki olive vertForet bleuMer eau cyan turquoise bleuMarine bleuNuit marron blanc noir ardoise 
+
+[1;37mFormulez une requete de couleur[0m
+violet
+hehe = ../IndexationImage/TXT/34.txt
+(1)	9,000000%	34.jpg	Image couleur
+hehe = ../IndexationImage/TXT/35.txt
+(2)	3,000000%	35.jpg	Image couleur
+
+
+[1;37mVeuillez rentrer le nombre entre parenthèse associé au fichier que vous souhaitez ouvrir[0m
+1
+
+[1;32m-----------Recherche réalisée avec succès------------[0m
+
+[H[2J[3J===========================================================
+======================     IMAGE     ======================
+===========================================================
+
+
+		2.  Recherche Histo.
+		3.  Recherche Couleur.
+		4.  Fermer l'application.
+
+		1.  Retour.
+1
+[H[2J[3J===========================================================
+================   MENU UTILISATEUR   =====================
+===========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  TEXTE.
+		3.  IMAGE.
+		4.  AUDIO.
+
+		1.  Retour.
+1
+[H[2J[3J========================================================
+==============   MENU PRINCIPAL   ======================
+========================================================
+
+
+	Selectionez l'opération à réaliser.
+
+		1.  Menu utilisateur.
+		2.  Menu d'Administration.
+		3.  Fermer l'application.
+2 3 <<<<<<<<<<<<            2
+[H[2J[3J===========================================================
+=================   ADMINISTRATION   ======================
+===========================================================
+	Veuillez vous authentifier 
+	Entrez votre mot de passe (Nombre uniquement, nombre d'essais restant 3) 
+	: 1505
+
+
+	Selectionez l'opération à réaliser.
+
+		2.  Modifier le mot de passe.
+		3.  Supprimer la base d'indexation (TEXTE, IMAGE et AUDIO).
+		4.  Indexer la base de fichiers (TEXTE, IMAGE et AUDIO).
+		5.  Modifer les paramètres d'indexation.
+		6.  Vue utilisateur.
+
+		1.  Retour.
+5
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+1 2
+
+
+
+| Lancement de la modification du fichier config ... |
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 100
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 2
+
+8 seuilMotSignificatif 3
+
+
+Entrez le numéro du paramètre qui doit être modifié : 4
+Entrez la nouvelle valeur pour le paramètre n° 4 : 50
+
+2 motdePasse 1505
+
+3 indexationAudioN 1024
+
+4 indexationAudioM 50
+
+5 seuil 89
+
+6 dureeAudioCorpus 70
+
+7 nbListe 2
+
+8 seuilMotSignificatif 3
+
+
+
+| Voulez-vous reindexer avec la nouvelle modification ? [O/n] : 0 O
+
+
+| Suppression de la base Indexée |
+
+
+| Suppression terminée ! |
+
+
+| Indexation lancée. Veuillez patienter ... (20 sec)|
+
+
+| Indexation terminée ! |
+[H[2J[3J===========================================================
+===============   MODIFICATION PARAMETRES   ===============
+===========================================================
+
+
+		2.  Lancer la modification.
+		3.  Affichage du fichier de configuration.
+		4.  Fermer l'application.
+
+		1.  Retour (Vous demandera de vous identifier à nouveau).
+4
+[H[2J[3J
+
+[1;31m| Fermeture de l'application ... |[0m
+
+[?2004h]0;bast4722@bast4722-VirtualBox: ~/Bureau/PFR/Menu[01;32mbast4722@bast4722-VirtualBox[00m:[01;34m~/Bureau/PFR/Menu[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-01-30 13:16:55+01:00 [COMMAND_EXIT_CODE="0"]
