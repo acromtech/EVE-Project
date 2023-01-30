@@ -488,7 +488,7 @@ Dans la "suppression des bases et des listes", l'utilisateur n'a que le choix de
 
 
 #### Indexation
-Dans l'indexation, l'utilisateur n'a que le choix d'indexer les bases de fichier. Il peut aussi à tout moment retouner en arrière en tapant le 1 mais il lui faudra le mot de passe pour revenir dans le menu administrateur ou fermer l'application en entrant le 3. 
+Dans l'indexation, l'utilisateur n'a que le choix d'indexer les bases de fichier. Il peut aussi à tout moment retourner en arrière en tapant le 1 mais il lui faudra le mot de passe pour revenir dans le menu administrateur ou fermer l'application en entrant le 3. 
 > ```
 > ===========================================================
 >
@@ -516,20 +516,20 @@ Dans l'indexation, l'utilisateur n'a que le choix d'indexer les bases de fichier
 
 ###### Indexation Texte
 
-Plus de détaille sur l'indexation texte : [Indexation Texte Menu](https://github.com/acromtech/PFR/blob/menu/IndexationRechercheTexte/README.md), [Indexation Texte](https://github.com/acromtech/PFR/blob/texte/README.md)
+Plus de détails sur l'indexation texte : [Indexation Texte Menu](https://github.com/acromtech/PFR/blob/menu/IndexationRechercheTexte/README.md), [Indexation Texte](https://github.com/acromtech/PFR/blob/texte/README.md)
 
 ###### Indexation Image
 
-Plus de détaille sur l'indexation image : [Indexation Image](https://github.com/acromtech/PFR/blob/image/README.md)
+Plus de détails sur l'indexation image : [Indexation Image](https://github.com/acromtech/PFR/blob/image/README.md)
 
 ###### Indexation Audio
 
-Plus de détaille sur l'indexation AUdio : [Indexation Audio](https://github.com/acromtech/PFR/blob/audio/README.md)
+Plus de détails sur l'indexation audio : [Indexation Audio](https://github.com/acromtech/PFR/blob/audio/README.md)
 
 
 #### Configuration
 
-Dans la rconfiguration, l'utilisateur a le choix entre lancer la modification en saisissant le 2 ou soit afficher le fichier de configuration en rentrant le 3. Il peut aussi à tout moment retouner en arrière en tapant le 1 ou fermer l'application en entrant le 4.
+Dans la configuration, l'utilisateur peut choisir de lancer la modification en tapant 2 ou d'afficher le fichier de configuration en rentrant 3. Il peut aussi à tout moment retourner en arrière en tapant 1 ou fermer l'application en entrant 4.
 
 > ```
 > ===========================================================
@@ -551,7 +551,7 @@ Dans la rconfiguration, l'utilisateur a le choix entre lancer la modification en
 
 ##### Lancer la modification
 
-Si l'utilisateur choisi de lancer la modification, le système va  afficher la configuration actuelle et va ensuite demander la ligne à modifier puis la valeur. il va ensuite afficher la nouveau configuration. Il va aussi demander si on veut réindexer les base de fichier avec la nouvelle configuration. Les valeurs ont des seuils  limites pour ne pas mettre de valeur négative ou par exemple mettre plus de 100 % au seuil  
+Si l'utilisateur choisi de lancer la modification, le système va  afficher la configuration actuelle et va ensuite demander la ligne à modifier puis la valeur. Ensuite, il affichera la nouvelle configuration. Il va aussi demander si on veut re-indexer les bases de fichier avec la nouvelle configuration. Les valeurs ont des seuils limites pour ne pas mettre de valeur négative par exemple ou mettre plus de 100 % aux seuils.  
 
 > ```
 > | Lancement de la modification du fichier config ... |
@@ -597,4 +597,5 @@ Si l'utilisateur choisi de lancer la modification, le système va  afficher la c
 
 ###### Indication
 
-Le seuil correspond au seuil de correspondance pour la comparaison de fichier pour la partie recherche audio et le nbListe correspond au nombre de résultat afficher pour la partie texte et image. 
+Le seuil correspond au seuil de correspondance pour la comparaison de fichier pour la partie "recherche audio".
+"nbListe" correspond au nombre de résultat affiché pour la partie texte et image. 
