@@ -1,5 +1,32 @@
 # Partie Image
 
+Auteur : **Flavie THIBAULT, Alexis GIBERT et Mouléro DEGBEGNI**
+
+module : Informatique
+
+## Information
+
+Cette partie a consisté à réaliser l'indexation d'une base de fichiers texte au format XML, realiser la recherche par mot clé des fichiers contenant ce mot en quantité "significative" et faire la comparaison de fichiers texte à la base de fichiers texte. Cette partie a été réalisé de façon collaborative par Alexis GIBERT et Mouléro DEGBEGNI.
+
+## Prérequis
+* Système d'exploitation : Linux
+* Lecteur d'image : eog (Eye of Gnome)
+## Utilisation
+### Indexation texte
+
+Pour lancer l'indexation texte, il faut :
+> ```
+> 1 . Ouvrir un terminal depuis le repertoire de base
+> 2 . Se placer dans le dossier **Image** ( cd src)
+> 3 . Faire un **make indexation**. Cela va lancer le fichier **test_indexationImage**, supprimer la base d'indexation puis indexer les de la base en utilisant les fichiers .TXT.
+> ```
+
+Pour vérifier que l'indexation à été bien réalisée depuis le répertoire **Image** vérifier le contenu des fichiers :
+
+> ```
+> 1 base_indexation.csv : ce fichiers contient ligne par ligne les différents decripteurs obtenus après traitement des différents fichiers textes
+> 2 liste_indexation.csv : celui ci contient ligne par ligne le chemin vers les différents fichiers indexer et leur
+> ```
 ## Fonctions de recherches
 Deux fonctions de recherches sont présentes
 * Une recherche par couleurs

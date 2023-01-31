@@ -224,7 +224,7 @@ void indexationImage(char* path, baseDescripteurImage* bd, listeDescripteurImage
             printf("%d ", d.histogramme[i]);
         saveDescripteurImage(bd, baseDescripteur, d);
         savelisteDescripteurImage(liste, listeDescripteur, path, id);
-        printf("Fin de l'indexation de %s.\n",path);
+        printf("\nFin de l'indexation de %s.\n",path);
     }
     else
         printf("Fichier déjà indexer.\n");

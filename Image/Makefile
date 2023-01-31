@@ -5,7 +5,11 @@ recherche : tst_RGB.c indexationImage.c indexationImage.h
 	gcc -o test.out tst_RGB.o comp_image.o indexationImage.o -g
 	./test.out TXT
 
-
+indexation : indexationImage.c indexationImage.h test_indexationImage.c
+	gcc -c test_indexationImage.c
+	gcc -c indexationImage.c
+	gcc -o test.out test_indexationImage.o indexationImage.o -g
+	./test.out TXT
 clean :
 	rm -f *.o*
 	echo > base_descripteur_image.csv
