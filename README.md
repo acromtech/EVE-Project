@@ -12,13 +12,14 @@ Cette partie a consisté à réaliser l'indexation d'une base de fichiers image 
 * Système d'exploitation : Linux
 * Lecteur d'image : eog (Eye of Gnome)
 ## Utilisation
-### Indexation texte
+
+### Indexation image
 
 Pour lancer l'indexation image, il faut :
 > ```
 > 1 . Ouvrir un terminal depuis le repertoire de base
 > 2 . Se placer dans le dossier **Image** ( cd src)
-> 3 . Faire un **make indexation**. Cela va lancer le fichier **test_indexationImage**, supprimer la base d'indexation puis indexer les de la base en utilisant les fichiers .TXT.
+> 3 . Faire un **make indexation**. Cela va lancer le fichier **test_indexationImage**, supprimer la base d'indexation puis indexer les fichiers de la base en utilisant les fichiers .TXT.
 > ```
 
 Pour vérifier que l'indexation à été bien réalisée depuis le répertoire **Image** vérifier le contenu des fichiers :
