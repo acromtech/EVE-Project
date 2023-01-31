@@ -6,7 +6,7 @@ module : Informatique
 
 ## Information
 
-Cette partie a consisté à réaliser l'indexation d'une base de fichiers texte au format XML, realiser la recherche par mot clé des fichiers contenant ce mot en quantité "significative" et faire la comparaison de fichiers texte à la base de fichiers texte. Cette partie a été réalisé de façon collaborative par Alexis GIBERT et Mouléro DEGBEGNI.
+Cette partie a consisté à réaliser l'indexation d'une base de fichiers image au format TXT, realiser la recherche par couleurs de fichiers contenant une couleurs particulière en quantité "significative" du point de vue quantifictaion et faire la comparaison de fichiers image à la base de fichiers texte. Cette partie a été réalisé de façon collaborative par Flavie THIBAULT, Alexis GIBERT et Mouléro DEGBEGNI.
 
 ## Prérequis
 * Système d'exploitation : Linux
@@ -14,7 +14,7 @@ Cette partie a consisté à réaliser l'indexation d'une base de fichiers texte 
 ## Utilisation
 ### Indexation texte
 
-Pour lancer l'indexation texte, il faut :
+Pour lancer l'indexation image, il faut :
 > ```
 > 1 . Ouvrir un terminal depuis le repertoire de base
 > 2 . Se placer dans le dossier **Image** ( cd src)
