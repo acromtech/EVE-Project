@@ -15,6 +15,8 @@ void afficheBase(baseDescripteurImage pileImage){
 }
 
 int main(){
+    system("echo > base_descripteur_image.csv");
+    system("echo > liste_descripteur_image.csv");
     baseDescripteurImage bd = initBaseDescripteurImage();
     listeDescripteurImage liste = initListeDescripteurImage();
     indexerBaseImage(&bd,&liste);
