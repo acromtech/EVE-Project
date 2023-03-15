@@ -97,7 +97,7 @@ int main(int argc, char *argv[]){
         printf("| RECHERCHE PAR COMPARAISON |\n");
         rechercheTexteCompare(bd,listeDesc);
         //RECHERCHE PAR MOT CLE (PAS ENCORE TOTALEMENT AU POINT)
-        printf("| RECHERCHE PAR MOT CLE |\n");
-        rechercheTexteMotCle(listeDesc,tb_liste);
+        //printf("| RECHERCHE PAR MOT CLE |\n");
+        //rechercheTexteMotCle(listeDesc,tb_liste);
     return 0;
 }

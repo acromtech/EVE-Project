@@ -1,3 +1,4 @@
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,6 +6,7 @@
 #include <locale.h>
 #include <unistd.h>
 
+#include "cJSON.h"
 #include "indexationTexte.h"
 
 void saisie(char *mot)
@@ -24,7 +26,9 @@ int saisiePath(char *mot)
     fclose(fp);
     return 1;
 }
-void viderBuffer(){for(int c=0;c!='\n'&&c!=EOF;c=getchar());}
+void viderBuffer(){
+    for(int c=0;c!='\n'&&c!=EOF;c=getchar());
+}
 
 PILE traitementSaisie(char saisie[100]){
     PILE p=NULL;
@@ -102,6 +106,7 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
     double temps=0.0;
     clock_t debut;
     clock_t fin;
+    descripteurEtScoreListe liste_resultat = NULL;
 
     char *mot = calloc(TAILLE_MALLOC, sizeof(char));
     if(mot == NULL) 
@@ -127,28 +132,36 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
             {
                 if(tmp->id == resultat[i].idDesc)
                 {
-                    printf("\t%s : %d\n",tmp->path, resultat[i].occ);
+                    liste_resultat = empilerDescriipteurEtScore(liste_resultat, tmp->path,tmp->id, resultat[i].occ);
                     break;
                 }   
                 tmp = tmp->next;
             }
             tmp = liste_desc->tete;
         }
-        sleep(15);
+        //sleep(15);
     }
     else
     {
         printf("Aucun fichier ne contient \"%s\" comme mot significatif.\n", mot);
         sleep(4);
     }
-        
+    if(liste_resultat != NULL){
+        strcat(mot, ".json");
+        createJson(liste_resultat, mot);
+    }
 }
 
 void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){     //PROGRAMME PRINCIPAL DE RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
     setlocale(LC_ALL,"");
     descripteur *d = calloc(1,sizeof(descripteur));
+    liste_descripteur *ld = calloc(1, sizeof(liste_descripteur));
+    ld->path = calloc(TAILLE_MALLOC, sizeof(char));
+    descripteurEtScoreListe liste_resultat = NULL;
     char *chemin = calloc(TAILLE_MALLOC, sizeof(char));
-    if(chemin == NULL || d == NULL)
+    char *jsonPath = calloc(TAILLE_MALLOC, sizeof(char));
+
+    if(chemin == NULL || d == NULL || jsonPath == NULL || ld == NULL || ld->path == NULL )
     {
         fprintf(stderr,"Error : rechercheTexteCompare : out of memory\n");
         exit(0);
@@ -156,7 +169,7 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
     double temps=0.0;
     clock_t debut;
     clock_t fin;
-    Score s = NULL;
+    Score s = NULL, tmp = NULL;
 
     //system("clear");
     printf("Veuillez saisir le chemin du fichier à comparer\n");
@@ -185,10 +198,26 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                     //system("clear");
                     printf("Résultat(s) en %f secondes\n\n",temps);
                     s = s->next;
+                    tmp = s;
+                    while(tmp != NULL){
+                        if((tmp->score) != 0){
+                            jsonPath = trouverChemin(tmp->id, liste);
+                            printf("%d %s\n", tmp->id, jsonPath);
+                            liste_resultat = empilerDescriipteurEtScore(liste_resultat, jsonPath,tmp->id, (int)((tmp->score*100.0)/s->score));
+                        }
+                        tmp = tmp->next;
+                    }
+                    
+                    if(liste_resultat != NULL){
+                        cleanPath(jsonPath, chemin);
+                        strcat(jsonPath, ".json");
+                        printf("%s\n", jsonPath);
+                        createJson(liste_resultat, jsonPath);
+                    }
                     afficheNbScore(s, NB_LISTE,liste);
                     ouvreFichier(choixFichier(s),liste);
                 }
-                    sleep(12);    
+                    //sleep(12);    
             }
             
         }
@@ -425,3 +454,115 @@ void comparaisonTexteMenu()
     
     rechercheTexteCompare(bd, liste);
 }
+// Partie JAVA
+
+void createJson(descripteurEtScoreListe liste, char *jsonName){
+    char *string;
+    char *idToString = calloc(10, sizeof(char));
+    int id_ = 1;
+    FILE *json = fopen(jsonName, "w");
+
+    cJSON *jsonFile = NULL;
+    cJSON *descripteur = NULL;
+    cJSON *id = NULL;
+    cJSON *path = NULL;    
+    
+    jsonFile = cJSON_CreateObject();
+    if(jsonFile == NULL){
+        fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+        exit(0);
+    }
+
+    while(liste != NULL){
+        
+        descripteur = cJSON_CreateObject();
+        if(descripteur == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        sprintf(idToString, "%d", liste->score);
+        cJSON_AddItemToObject(jsonFile, idToString, descripteur);
+
+        id = cJSON_CreateNumber(liste->descripteur->id);
+        if(id == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "id", id);
+
+        path = cJSON_CreateString(liste->descripteur->path);
+        if(path == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "path", path);
+        liste = liste->next;
+    }
+
+    string = cJSON_Print(jsonFile);
+    if(string == NULL){
+        fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+        exit(0);
+    }
+
+    fprintf(json,"%s", string);
+    
+    cJSON_Delete(jsonFile);
+    free(idToString);
+    fclose(json);
+}
+
+descripteurEtScoreListe initListeDescripteurEtScore(){
+    descripteurEtScoreListe d = calloc(1, sizeof(struct descripteurEtScore));
+    if(d == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'initialiser");
+        exit(0);
+    }
+    return d;
+}
+
+descripteurEtScoreListe empilerDescriipteurEtScore(descripteurEtScoreListe d, char* path, int id, int score){
+    descripteurEtScoreListe tmp = initListeDescripteurEtScore();
+
+    if(tmp == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : tmp null");
+        exit(0);
+    }
+
+    tmp->descripteur = calloc(1, sizeof(liste_descripteur));
+    if(tmp->descripteur == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : descripteur null");
+        exit(0);
+    }
+
+    tmp->descripteur->path = calloc(TAILLE_TOKEN_MAX, sizeof(char));
+    if(tmp->descripteur->path == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : path null");
+        exit(0);
+    }
+
+    tmp->score = score;
+    strcpy(tmp->descripteur->path, path);
+    tmp->descripteur->id = id;
+
+    tmp->next = d;
+
+
+    return tmp;
+}
+
+char* trouverChemin(int id, pathIdDesc liste){
+    char* chemin = NULL;
+    liste_descripteur* tmp = liste->tete;
+
+    while(tmp != NULL){
+        if(id == tmp->id){
+            chemin = tmp->path;
+            break;
+        }
+        tmp = tmp->next;
+    }
+    printf("%s %s %d\n", chemin, tmp->path, tmp->id);
+    return chemin;
+}
+    

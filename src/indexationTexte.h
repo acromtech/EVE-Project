@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "cJSON.h"
 
 
 #define TAILLE_TOKEN_MAX 100
@@ -217,4 +218,18 @@ int cheminExiste(char *);
 
 void rechercheMotCleMenu();
 void comparaisonTexteMenu();
+
+// Partie JAVA
+
+typedef struct descripteurEtScore{
+    liste_descripteur *descripteur;
+    int score;
+    struct descripteurEtScore* next;
+}*descripteurEtScoreListe;
+
+descripteurEtScoreListe initListeDescripteurEtScore();
+descripteurEtScoreListe empilerDescriipteurEtScore(descripteurEtScoreListe, char *, int, int);
+void createJson(descripteurEtScoreListe, char *);
+char *trouverChemin(int, pathIdDesc);
+
 #endif // !INDEXATION_TEXTE_IN
