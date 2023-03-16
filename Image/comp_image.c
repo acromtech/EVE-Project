@@ -20,7 +20,6 @@ void rechercheCouleur(const volatile baseDescripteurImage pileImage, listeDescri
     for(int i=0;i<sizeof(tabVal)/sizeof(int);i++) printf("%s ",tabCouleur[i]);
     do{
         printf("\n\n\e[1;37mFormulez une requete de couleur\e[0m\n");
-        scanf("%s",requete);
         pileScore=calculeScoreCouleur(pileImage,requete,&nbScore);
         if(nbScore==0) printf("\n\e[1;35mAttention\e[0;35m : Aucune image ne correspond à la couleur spécifiée : Essayez d'autres couleurs\e[0m\n");
     }while(nbScore==0);
@@ -54,7 +53,6 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
         printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer\e[0m\n");
         scanf("%s",requete);
         snprintf(requeteTraite,100,"TXT/%s.txt",getNomFichierImage(requete));
-        printf("%s \n", requeteTraite);
         while(tmp1 != NULL){
             if(strcmp(tmp1->path, requeteTraite) == 0){
                 id = tmp1->id;
@@ -62,7 +60,6 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
             }
             tmp1 = tmp1->next;
         }
-        printf("%d\n", id);
         if(id==-1)printf("\e[1;35mAttention\e[0;35m : Aucune image ne correspond au chemin spécifiée\e[0m\n");
     }while(id==-1);
     descImage *tmp=pileImage->tete;
@@ -71,7 +68,7 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
             break;
         tmp = tmp->next;
     }
-    printf("%d %d\n", id, tmp->id);
+
     if(tmp!=NULL){
         Src pileScore=calculeScoreComparaison(pileImage,*tmp,&nbScore);
         if(nbScore>0){
@@ -86,8 +83,6 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
                     strcat(jsonPath, ".json");
                     createJson(liste_resultat, jsonPath);
                 }
-                printf("Jusque là");
-                fflush(stdout);
                 if(ouvreFichierImage(choixFichier(pileScore,nbScore),liste)) printf("\n\e[1;32m-----------Recherche réalisée avec succès------------\e[0m\n\n");
                 else printf("\e[1;31mErreur\e[0;31m : Impossible de lancer l'ouverture du résultat sélectionné\e[0m\n"); return;
             }else printf("\e[1;31mErreur\e[0;31m : Type d'image inconnu\e[0m\n"); return;
@@ -204,42 +199,57 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
     char *idToString = calloc(10, sizeof(char));
     int id_ = 1;
     FILE *json = fopen(jsonName, "w");
-
+    descripteurEtScoreListe tmp = NULL;
     cJSON *jsonFile = NULL;
     cJSON *descripteur = NULL;
     cJSON *id = NULL;
+    cJSON *score = NULL;
     cJSON *path = NULL;    
     
+    while(liste != NULL){
+        tmp = empilerDescriipteurEtScore(tmp, liste->descripteur->path, liste->descripteur->id, liste->score);
+        liste = liste->next;
+    }
+
+
     jsonFile = cJSON_CreateObject();
     if(jsonFile == NULL){
         fprintf(stderr, "Error : createJson : impossible de creer le JSON");
         exit(0);
     }
-
-    while(liste != NULL){
+    int i = 0;
+    while(tmp != NULL){
         
         descripteur = cJSON_CreateObject();
         if(descripteur == NULL){
             fprintf(stderr, "Error : createJson : impossible de creer le JSON");
             exit(0);
         }
-        sprintf(idToString, "%d", liste->score);
+        sprintf(idToString, "%d", i);
         cJSON_AddItemToObject(jsonFile, idToString, descripteur);
 
-        id = cJSON_CreateNumber(liste->descripteur->id);
+        id = cJSON_CreateNumber(tmp->descripteur->id);
         if(id == NULL){
             fprintf(stderr, "Error : createJson : impossible de creer le JSON");
             exit(0);
         }
-        cJSON_AddItemToObject(descripteur, "id", id);
+        cJSON_AddItemToObject(descripteur,"id" , id);
 
-        path = cJSON_CreateString(liste->descripteur->path);
+        score = cJSON_CreateNumber(tmp->score);
+        if(id == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "score", score);
+
+        path = cJSON_CreateString(tmp->descripteur->path);
         if(path == NULL){
             fprintf(stderr, "Error : createJson : impossible de creer le JSON");
             exit(0);
         }
         cJSON_AddItemToObject(descripteur, "path", path);
-        liste = liste->next;
+        tmp = tmp->next;
+        i++;
     }
 
     string = cJSON_Print(jsonFile);

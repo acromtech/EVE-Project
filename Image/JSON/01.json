@@ -1,250 +1,312 @@
 {
-	"1":	{
-		"id":	50,
-		"path":	"TXT/51.txt"
+	"0":	{
+		"id":	8,
+		"score":	73,
+		"path":	"TXT/09"
 	},
 	"1":	{
-		"id":	51,
-		"path":	"TXT/52.txt"
-	},
-	"1":	{
-		"id":	52,
-		"path":	"TXT/53.txt"
-	},
-	"1":	{
-		"id":	58,
-		"path":	"TXT/59.txt"
-	},
-	"1":	{
-		"id":	59,
-		"path":	"TXT/60.txt"
+		"id":	7,
+		"score":	64,
+		"path":	"TXT/08"
 	},
 	"2":	{
-		"id":	60,
-		"path":	"TXT/61.txt"
+		"id":	24,
+		"score":	62,
+		"path":	"TXT/25"
+	},
+	"3":	{
+		"id":	9,
+		"score":	60,
+		"path":	"TXT/10"
 	},
 	"4":	{
-		"id":	15,
-		"path":	"TXT/16.txt"
+		"id":	1,
+		"score":	60,
+		"path":	"TXT/02"
 	},
 	"5":	{
-		"id":	44,
-		"path":	"TXT/45.txt"
-	},
-	"5":	{
-		"id":	56,
-		"path":	"TXT/57.txt"
-	},
-	"5":	{
-		"id":	57,
-		"path":	"TXT/58.txt"
-	},
-	"5":	{
-		"id":	62,
-		"path":	"TXT/63.txt"
+		"id":	2,
+		"score":	59,
+		"path":	"TXT/03"
 	},
 	"6":	{
-		"id":	53,
-		"path":	"TXT/54.txt"
-	},
-	"6":	{
-		"id":	55,
-		"path":	"TXT/56.txt"
-	},
-	"6":	{
-		"id":	61,
-		"path":	"TXT/62.txt"
+		"id":	10,
+		"score":	58,
+		"path":	"TXT/11"
 	},
 	"7":	{
-		"id":	19,
-		"path":	"TXT/20.txt"
+		"id":	3,
+		"score":	56,
+		"path":	"TXT/04"
 	},
-	"7":	{
-		"id":	54,
-		"path":	"TXT/55.txt"
+	"8":	{
+		"id":	11,
+		"score":	55,
+		"path":	"TXT/12"
+	},
+	"9":	{
+		"id":	17,
+		"score":	48,
+		"path":	"TXT/18.txt"
 	},
 	"10":	{
-		"id":	37,
-		"path":	"TXT/38.txt"
-	},
-	"10":	{
-		"id":	43,
-		"path":	"TXT/44.txt"
+		"id":	18,
+		"score":	47,
+		"path":	"TXT/19.txt"
 	},
 	"11":	{
-		"id":	35,
-		"path":	"TXT/36.txt"
+		"id":	4,
+		"score":	44,
+		"path":	"TXT/05.txt"
+	},
+	"12":	{
+		"id":	45,
+		"score":	43,
+		"path":	"TXT/46.txt"
 	},
 	"13":	{
-		"id":	16,
-		"path":	"TXT/17.txt"
+		"id":	49,
+		"score":	41,
+		"path":	"TXT/50.txt"
 	},
-	"13":	{
-		"id":	34,
-		"path":	"TXT/35.txt"
+	"14":	{
+		"id":	23,
+		"score":	41,
+		"path":	"TXT/24.txt"
+	},
+	"15":	{
+		"id":	5,
+		"score":	41,
+		"path":	"TXT/06.txt"
 	},
 	"16":	{
-		"id":	33,
-		"path":	"TXT/34.txt"
+		"id":	26,
+		"score":	38,
+		"path":	"TXT/27.txt"
 	},
 	"17":	{
-		"id":	27,
-		"path":	"TXT/28.txt"
+		"id":	22,
+		"score":	38,
+		"path":	"TXT/23.txt"
 	},
 	"18":	{
-		"id":	12,
-		"path":	"TXT/13.txt"
+		"id":	20,
+		"score":	35,
+		"path":	"TXT/21.txt"
+	},
+	"19":	{
+		"id":	48,
+		"score":	34,
+		"path":	"TXT/49.txt"
+	},
+	"20":	{
+		"id":	42,
+		"score":	34,
+		"path":	"TXT/43.txt"
 	},
 	"21":	{
-		"id":	41,
-		"path":	"TXT/42.txt"
+		"id":	32,
+		"score":	34,
+		"path":	"TXT/33.txt"
+	},
+	"22":	{
+		"id":	30,
+		"score":	33,
+		"path":	"TXT/31.txt"
+	},
+	"23":	{
+		"id":	46,
+		"score":	32,
+		"path":	"TXT/47.txt"
 	},
 	"24":	{
-		"id":	6,
-		"path":	"TXT/07.txt"
+		"id":	38,
+		"score":	31,
+		"path":	"TXT/39.txt"
 	},
 	"25":	{
-		"id":	21,
-		"path":	"TXT/22.txt"
-	},
-	"25":	{
-		"id":	47,
-		"path":	"TXT/48.txt"
+		"id":	29,
+		"score":	31,
+		"path":	"TXT/30.txt"
 	},
 	"26":	{
-		"id":	13,
-		"path":	"TXT/14.txt"
-	},
-	"26":	{
-		"id":	28,
-		"path":	"TXT/29.txt"
-	},
-	"26":	{
-		"id":	36,
-		"path":	"TXT/37.txt"
+		"id":	39,
+		"score":	30,
+		"path":	"TXT/40.txt"
 	},
 	"27":	{
-		"id":	25,
-		"path":	"TXT/26.txt"
+		"id":	40,
+		"score":	29,
+		"path":	"TXT/41.txt"
 	},
-	"29":	{
-		"id":	14,
-		"path":	"TXT/15.txt"
-	},
-	"29":	{
+	"28":	{
 		"id":	31,
+		"score":	29,
 		"path":	"TXT/32.txt"
 	},
 	"29":	{
-		"id":	40,
-		"path":	"TXT/41.txt"
+		"id":	14,
+		"score":	29,
+		"path":	"TXT/15.txt"
 	},
 	"30":	{
-		"id":	39,
-		"path":	"TXT/40.txt"
+		"id":	25,
+		"score":	27,
+		"path":	"TXT/26.txt"
 	},
 	"31":	{
-		"id":	29,
-		"path":	"TXT/30.txt"
-	},
-	"31":	{
-		"id":	38,
-		"path":	"TXT/39.txt"
+		"id":	36,
+		"score":	26,
+		"path":	"TXT/37.txt"
 	},
 	"32":	{
-		"id":	46,
-		"path":	"TXT/47.txt"
+		"id":	28,
+		"score":	26,
+		"path":	"TXT/29.txt"
 	},
 	"33":	{
-		"id":	30,
-		"path":	"TXT/31.txt"
+		"id":	13,
+		"score":	26,
+		"path":	"TXT/14.txt"
 	},
 	"34":	{
-		"id":	32,
-		"path":	"TXT/33.txt"
-	},
-	"34":	{
-		"id":	42,
-		"path":	"TXT/43.txt"
-	},
-	"34":	{
-		"id":	48,
-		"path":	"TXT/49.txt"
+		"id":	47,
+		"score":	25,
+		"path":	"TXT/48.txt"
 	},
 	"35":	{
-		"id":	20,
-		"path":	"TXT/21.txt"
+		"id":	21,
+		"score":	25,
+		"path":	"TXT/22.txt"
+	},
+	"36":	{
+		"id":	6,
+		"score":	24,
+		"path":	"TXT/07.txt"
+	},
+	"37":	{
+		"id":	41,
+		"score":	21,
+		"path":	"TXT/42.txt"
 	},
 	"38":	{
-		"id":	22,
-		"path":	"TXT/23.txt"
+		"id":	12,
+		"score":	18,
+		"path":	"TXT/13.txt"
 	},
-	"38":	{
-		"id":	26,
-		"path":	"TXT/27.txt"
+	"39":	{
+		"id":	27,
+		"score":	17,
+		"path":	"TXT/28.txt"
+	},
+	"40":	{
+		"id":	33,
+		"score":	16,
+		"path":	"TXT/34.txt"
 	},
 	"41":	{
-		"id":	5,
-		"path":	"TXT/06.txt"
+		"id":	34,
+		"score":	13,
+		"path":	"TXT/35.txt"
 	},
-	"41":	{
-		"id":	23,
-		"path":	"TXT/24.txt"
-	},
-	"41":	{
-		"id":	49,
-		"path":	"TXT/50.txt"
+	"42":	{
+		"id":	16,
+		"score":	13,
+		"path":	"TXT/17.txt"
 	},
 	"43":	{
-		"id":	45,
-		"path":	"TXT/46.txt"
+		"id":	35,
+		"score":	11,
+		"path":	"TXT/36.txt"
 	},
 	"44":	{
-		"id":	4,
-		"path":	"TXT/05.txt"
+		"id":	43,
+		"score":	10,
+		"path":	"TXT/44.txt"
+	},
+	"45":	{
+		"id":	37,
+		"score":	10,
+		"path":	"TXT/38.txt"
+	},
+	"46":	{
+		"id":	54,
+		"score":	7,
+		"path":	"TXT/55.txt"
 	},
 	"47":	{
-		"id":	18,
-		"path":	"TXT/19.txt"
+		"id":	19,
+		"score":	7,
+		"path":	"TXT/20.txt"
 	},
 	"48":	{
-		"id":	17,
-		"path":	"TXT/18.txt"
+		"id":	61,
+		"score":	6,
+		"path":	"TXT/62.txt"
+	},
+	"49":	{
+		"id":	55,
+		"score":	6,
+		"path":	"TXT/56.txt"
+	},
+	"50":	{
+		"id":	53,
+		"score":	6,
+		"path":	"TXT/54.txt"
+	},
+	"51":	{
+		"id":	62,
+		"score":	5,
+		"path":	"TXT/63.txt"
+	},
+	"52":	{
+		"id":	57,
+		"score":	5,
+		"path":	"TXT/58.txt"
+	},
+	"53":	{
+		"id":	56,
+		"score":	5,
+		"path":	"TXT/57.txt"
+	},
+	"54":	{
+		"id":	44,
+		"score":	5,
+		"path":	"TXT/45.txt"
 	},
 	"55":	{
-		"id":	11,
-		"path":	"TXT/12"
+		"id":	15,
+		"score":	4,
+		"path":	"TXT/16.txt"
 	},
 	"56":	{
-		"id":	3,
-		"path":	"TXT/04"
+		"id":	60,
+		"score":	2,
+		"path":	"TXT/61.txt"
+	},
+	"57":	{
+		"id":	59,
+		"score":	1,
+		"path":	"TXT/60.txt"
 	},
 	"58":	{
-		"id":	10,
-		"path":	"TXT/11"
+		"id":	58,
+		"score":	1,
+		"path":	"TXT/59.txt"
 	},
 	"59":	{
-		"id":	2,
-		"path":	"TXT/03"
+		"id":	52,
+		"score":	1,
+		"path":	"TXT/53.txt"
 	},
 	"60":	{
-		"id":	1,
-		"path":	"TXT/02"
+		"id":	51,
+		"score":	1,
+		"path":	"TXT/52.txt"
 	},
-	"60":	{
-		"id":	9,
-		"path":	"TXT/10"
-	},
-	"62":	{
-		"id":	24,
-		"path":	"TXT/25"
-	},
-	"64":	{
-		"id":	7,
-		"path":	"TXT/08"
-	},
-	"73":	{
-		"id":	8,
-		"path":	"TXT/09"
+	"61":	{
+		"id":	50,
+		"score":	1,
+		"path":	"TXT/51.txt"
 	}
 }
