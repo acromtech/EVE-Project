@@ -1,0 +1,277 @@
+{
+	"0":	{
+		"id":	15,
+		"score":	100,
+		"path":	"../bin/data/06-Les_mauvais_comptes_d_une_Θlimination.xml"
+	},
+	"1":	{
+		"id":	52,
+		"score":	95,
+		"path":	"../bin/data/17-La_voix_envo√tante_de_Girija.xml"
+	},
+	"2":	{
+		"id":	64,
+		"score":	72,
+		"path":	"../bin/data/22-Grippe_aviaire___la_course.xml"
+	},
+	"3":	{
+		"id":	65,
+		"score":	66,
+		"path":	"../bin/data/22-Les_clubs_de_football_anglais.xml"
+	},
+	"4":	{
+		"id":	66,
+		"score":	66,
+		"path":	"../bin/data/22-Sursaut_des_MonΘgasques_aprΦs_le.xml"
+	},
+	"5":	{
+		"id":	77,
+		"score":	66,
+		"path":	"../bin/data/27-Voyager_1_s_aventure_dans_l_au-delα.xml"
+	},
+	"6":	{
+		"id":	23,
+		"score":	60,
+		"path":	"../bin/data/08-Sous_l_effet_du_rΘchauffement,_les.xml"
+	},
+	"7":	{
+		"id":	31,
+		"score":	58,
+		"path":	"../bin/data/12-Fernando_Alonso_n_est_plus_qu_α.xml"
+	},
+	"8":	{
+		"id":	16,
+		"score":	55,
+		"path":	"../bin/data/06-Sensibiliser_α_la_vaccination_grippale.xml"
+	},
+	"9":	{
+		"id":	32,
+		"score":	55,
+		"path":	"../bin/data/12-Jean-Marie_Sevestre,_libraire_et_PDG.xml"
+	},
+	"10":	{
+		"id":	35,
+		"score":	55,
+		"path":	"../bin/data/12-SuccΦs_sur_les_tatamis,_polΘmique.xml"
+	},
+	"11":	{
+		"id":	61,
+		"score":	55,
+		"path":	"../bin/data/22-Des_laboureurs,_des_OGM..._et.xml"
+	},
+	"12":	{
+		"id":	74,
+		"score":	55,
+		"path":	"../bin/data/27-A_Lens,_le_Louvre_sera.xml"
+	},
+	"13":	{
+		"id":	78,
+		"score":	55,
+		"path":	"../bin/data/28-A_Hossegor,_Kelly_Slater_peut.xml"
+	},
+	"14":	{
+		"id":	59,
+		"score":	50,
+		"path":	"../bin/data/21-MatiΦres_plastiques_et_pesticides_pourraient.xml"
+	},
+	"15":	{
+		"id":	80,
+		"score":	47,
+		"path":	"../bin/data/28-Festival___OsosphΦre,_un_week-end.xml"
+	},
+	"16":	{
+		"id":	30,
+		"score":	44,
+		"path":	"../bin/data/12-Agassi_plie_face_au_meilleur.xml"
+	},
+	"17":	{
+		"id":	14,
+		"score":	38,
+		"path":	"../bin/data/06-La_contamination_du_ma∩s_par.xml"
+	},
+	"18":	{
+		"id":	3,
+		"score":	33,
+		"path":	"../bin/data/05-Edition___les_mots_et.xml"
+	},
+	"19":	{
+		"id":	7,
+		"score":	33,
+		"path":	"../bin/data/05-Le_Colombien_Juan_Pablo_Montoya.xml"
+	},
+	"20":	{
+		"id":	10,
+		"score":	33,
+		"path":	"../bin/data/05-Photographie___Philip_Blenkinsop_a.xml"
+	},
+	"21":	{
+		"id":	13,
+		"score":	33,
+		"path":	"../bin/data/05-Tours_d_honneur_pour_les_athlΦtes.xml"
+	},
+	"22":	{
+		"id":	18,
+		"score":	33,
+		"path":	"../bin/data/07-Un_dΘputΘ_UMP_lance_une.xml"
+	},
+	"23":	{
+		"id":	44,
+		"score":	33,
+		"path":	"../bin/data/15-La_mort_de_Robert_Wise,.xml"
+	},
+	"24":	{
+		"id":	51,
+		"score":	33,
+		"path":	"../bin/data/17-De_la_difficultΘ_d_anticiper_les.xml"
+	},
+	"25":	{
+		"id":	55,
+		"score":	33,
+		"path":	"../bin/data/18-Les_22e_JournΘes_du_Patrimoine.xml"
+	},
+	"26":	{
+		"id":	58,
+		"score":	33,
+		"path":	"../bin/data/21-La_France_se_rΘveille_pour.xml"
+	},
+	"27":	{
+		"id":	67,
+		"score":	33,
+		"path":	"../bin/data/22-Ted_Stanger,_l_AmΘricain_de_service.xml"
+	},
+	"28":	{
+		"id":	60,
+		"score":	31,
+		"path":	"../bin/data/22-Danse___quarante_jeunes_de.xml"
+	},
+	"29":	{
+		"id":	0,
+		"score":	25,
+		"path":	"../bin/data/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml"
+	},
+	"30":	{
+		"id":	36,
+		"score":	25,
+		"path":	"../bin/data/13-Des_astronomes_dΘtectent_l_explosion_cosmique.xml"
+	},
+	"31":	{
+		"id":	75,
+		"score":	25,
+		"path":	"../bin/data/27-Le_Stade_de_France_s_ouvre.xml"
+	},
+	"32":	{
+		"id":	20,
+		"score":	22,
+		"path":	"../bin/data/08-La_mission_Deep_Impact_permet.xml"
+	},
+	"33":	{
+		"id":	21,
+		"score":	22,
+		"path":	"../bin/data/08-L_Θquipe_de_France_victime_d_un.xml"
+	},
+	"34":	{
+		"id":	22,
+		"score":	22,
+		"path":	"../bin/data/08-PavΘ,_tour_ou_silo,_cinq.xml"
+	},
+	"35":	{
+		"id":	27,
+		"score":	22,
+		"path":	"../bin/data/10-La_rΘalitΘ_virtuelle_et_l_informatique.xml"
+	},
+	"36":	{
+		"id":	28,
+		"score":	22,
+		"path":	"../bin/data/10-Le_cyclone_Katrina_complique_le.xml"
+	},
+	"37":	{
+		"id":	33,
+		"score":	22,
+		"path":	"../bin/data/12-Musique_classique___un__Oberon_.xml"
+	},
+	"38":	{
+		"id":	41,
+		"score":	22,
+		"path":	"../bin/data/15-Capturer_et_emprisonner_le_CO2,.xml"
+	},
+	"39":	{
+		"id":	42,
+		"score":	22,
+		"path":	"../bin/data/15-Capturer_et_emprisonner_le_CO.xml"
+	},
+	"40":	{
+		"id":	46,
+		"score":	22,
+		"path":	"../bin/data/15-Lille_s_incline_dans_les.xml"
+	},
+	"41":	{
+		"id":	47,
+		"score":	22,
+		"path":	"../bin/data/15-_Si_on_veut_aller_trop.xml"
+	},
+	"42":	{
+		"id":	69,
+		"score":	22,
+		"path":	"../bin/data/24-Canicules_et_sΘcheresses_menacent_de.xml"
+	},
+	"43":	{
+		"id":	72,
+		"score":	22,
+		"path":	"../bin/data/26-Lyon_prend_ses_aises_en.xml"
+	},
+	"44":	{
+		"id":	76,
+		"score":	22,
+		"path":	"../bin/data/27-Martin_Scorsese_inaugure_la_CinΘmathΦque.xml"
+	},
+	"45":	{
+		"id":	82,
+		"score":	20,
+		"path":	"../bin/data/29-Forte_rΘduction_de_la_calotte.xml"
+	},
+	"46":	{
+		"id":	11,
+		"score":	16,
+		"path":	"../bin/data/05-Prague_inaugure_les_JournΘes_europΘennes.xml"
+	},
+	"47":	{
+		"id":	29,
+		"score":	16,
+		"path":	"../bin/data/11-La_troposphΦre_paie,_au_prix.xml"
+	},
+	"48":	{
+		"id":	53,
+		"score":	16,
+		"path":	"../bin/data/17-Une_Θquipe_franτaise_a_rΘussi.xml"
+	},
+	"49":	{
+		"id":	24,
+		"score":	14,
+		"path":	"../bin/data/08-ThΘΓtre___l_ΘchappΘe_belle,_peu.xml"
+	},
+	"50":	{
+		"id":	79,
+		"score":	14,
+		"path":	"../bin/data/28-Danse___Robyn_Orlin_et.xml"
+	},
+	"51":	{
+		"id":	5,
+		"score":	13,
+		"path":	"../bin/data/05-La_circoncision_pourrait_rΘduire_le.xml"
+	},
+	"52":	{
+		"id":	50,
+		"score":	9,
+		"path":	"../bin/data/17-Anouk_AimΘe_et_Philippe_Noiret.xml"
+	},
+	"53":	{
+		"id":	81,
+		"score":	9,
+		"path":	"../bin/data/28-_îdipe_α_Colone_,_la_rage.xml"
+	},
+	"54":	{
+		"id":	8,
+		"score":	7,
+		"path":	"../bin/data/05-Le_thΘΓtre_de_texte_confrontΘ.xml"
+	}
+}
