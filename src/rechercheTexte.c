@@ -465,6 +465,7 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
     cJSON *jsonFile = NULL;
     cJSON *descripteur = NULL;
     cJSON *id = NULL;
+    cJSON *score = NULL;
     cJSON *path = NULL;    
     
     jsonFile = cJSON_CreateObject();
@@ -472,7 +473,7 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
         fprintf(stderr, "Error : createJson : impossible de creer le JSON");
         exit(0);
     }
-
+    int i = 0;
     while(liste != NULL){
         
         descripteur = cJSON_CreateObject();
@@ -480,7 +481,7 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
             fprintf(stderr, "Error : createJson : impossible de creer le JSON");
             exit(0);
         }
-        sprintf(idToString, "%d", liste->score);
+        sprintf(idToString, "%d", i);
         cJSON_AddItemToObject(jsonFile, idToString, descripteur);
 
         id = cJSON_CreateNumber(liste->descripteur->id);
@@ -488,7 +489,14 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
             fprintf(stderr, "Error : createJson : impossible de creer le JSON");
             exit(0);
         }
-        cJSON_AddItemToObject(descripteur, "id", id);
+        cJSON_AddItemToObject(descripteur,"id" , id);
+
+        score = cJSON_CreateNumber(liste->score);
+        if(id == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "score", score);
 
         path = cJSON_CreateString(liste->descripteur->path);
         if(path == NULL){
@@ -497,6 +505,7 @@ void createJson(descripteurEtScoreListe liste, char *jsonName){
         }
         cJSON_AddItemToObject(descripteur, "path", path);
         liste = liste->next;
+        i++;
     }
 
     string = cJSON_Print(jsonFile);
