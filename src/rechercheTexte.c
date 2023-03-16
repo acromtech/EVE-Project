@@ -147,8 +147,11 @@ void rechercheTexteMotCle(pathIdDesc liste_desc, tableDescript tb_desc)
         sleep(4);
     }
     if(liste_resultat != NULL){
+        char *cleaned = calloc(TAILLE_MALLOC, sizeof(char));
+        sprintf(cleaned, "../bin/JSON/");
         strcat(mot, ".json");
-        createJson(liste_resultat, mot);
+        strcat(cleaned, mot);
+        createJson(liste_resultat, cleaned);
     }
 }
 
@@ -215,8 +218,8 @@ void rechercheTexteCompare(const volatile baseDescripteur b, pathIdDesc liste){ 
                         cleaned+=12;
                         strcat(jsonPath, cleaned);
                         strcat(jsonPath, ".json");
-                        printf("%s\n", jsonPath);
                         createJson(liste_resultat, jsonPath);
+                        free(cleaned);
                     }
                     afficheNbScore(s, NB_LISTE,liste);
                     ouvreFichier(choixFichier(s),liste);

@@ -94,10 +94,10 @@ int main(int argc, char *argv[]){
 
         
         //RECHERCHE PAR COMPARAISON DE DESCRIPTEUR
-        printf("| RECHERCHE PAR COMPARAISON |\n");
-        rechercheTexteCompare(bd,listeDesc);
+        //printf("| RECHERCHE PAR COMPARAISON |\n");
+        //rechercheTexteCompare(bd,listeDesc);
         //RECHERCHE PAR MOT CLE (PAS ENCORE TOTALEMENT AU POINT)
-        //printf("| RECHERCHE PAR MOT CLE |\n");
-        //rechercheTexteMotCle(listeDesc,tb_liste);
+        printf("| RECHERCHE PAR MOT CLE |\n");
+        rechercheTexteMotCle(listeDesc,tb_liste);
     return 0;
 }
