@@ -20,7 +20,7 @@ int main(){
     baseDescripteurImage bd = initBaseDescripteurImage();
     listeDescripteurImage liste = initListeDescripteurImage();
     indexerBaseImage(&bd,&liste);
-    rechercheCouleur(bd,liste);
-    //rechercheHisto(bd,liste);
+    //rechercheCouleur(bd,liste);
+    rechercheHisto(bd,liste);
     return 0;
 }

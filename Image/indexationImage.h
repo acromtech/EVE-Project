@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-
+#include "cJSON.h"
+#define TAILLE_MALLOC 1024 
 #define NB_BITS 2
 #define NBLISTE 10
 
@@ -79,5 +80,20 @@ int ouvreFichierImage(Score,listeDescripteurImage);
 
 char* getNomFichierImage(char*);
 int compareScore(const void*,const void*);
+
+
+// Partie JAVA
+
+typedef struct descripteurEtScore{
+    struct elementlistedescripteurimage *descripteur;
+    int score;
+    struct descripteurEtScore* next;
+}*descripteurEtScoreListe;
+
+descripteurEtScoreListe initListeDescripteurEtScore();
+descripteurEtScoreListe empilerDescriipteurEtScore(descripteurEtScoreListe, char *, int, int);
+void createJson(descripteurEtScoreListe, char *);
+char *trouverChemin(int, listeDescripteurImage);
+void cleanPath(char* new_path, char *path);
 
 #endif // !INDEXATION_IMAGE_IN

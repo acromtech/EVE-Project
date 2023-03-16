@@ -341,3 +341,13 @@ void recharger_liste_indexation(char *path, listeDescripteurImage* tb_liste){
     free(p);
     fclose(fp);
 }
+
+void cleanPath(char *new_path, char *path){
+    int i, len = strlen(path);
+    strncpy(new_path, path, len);
+    for(i = len-1; i >= 0; i--)
+        if(new_path[i] == '.'){
+            new_path[i] = '\0';
+            break;
+        }
+}

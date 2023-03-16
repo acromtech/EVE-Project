@@ -13,7 +13,9 @@ void rechercheCouleur(const volatile baseDescripteurImage pileImage, listeDescri
     setlocale(LC_ALL,"");
     char* requete=calloc(1,sizeof(char));
     int nbScore=0;
-    Src pileScore;
+    Src pileScore = NULL, tmp;
+    descripteurEtScoreListe liste_resultat = NULL;
+    char *jsonPath = calloc(TAILLE_MALLOC, sizeof(char));
     printf("\nCouleurs disponibles :\t");
     for(int i=0;i<sizeof(tabVal)/sizeof(int);i++) printf("%s ",tabCouleur[i]);
     do{
@@ -22,8 +24,17 @@ void rechercheCouleur(const volatile baseDescripteurImage pileImage, listeDescri
         pileScore=calculeScoreCouleur(pileImage,requete,&nbScore);
         if(nbScore==0) printf("\n\e[1;35mAttention\e[0;35m : Aucune image ne correspond à la couleur spécifiée : Essayez d'autres couleurs\e[0m\n");
     }while(nbScore==0);
-    free(requete);
     if(afficheResultatsRecherche(pileScore,nbScore,liste)){
+        for(int i = 0; i<nbScore; i++){
+            jsonPath = trouverChemin(pileScore[i].id, liste);
+            liste_resultat = empilerDescriipteurEtScore(liste_resultat, jsonPath,pileScore[i].id, (int)(pileScore[i].score));
+        }
+        if(liste_resultat != NULL){
+            strcpy(jsonPath, "JSON/");
+            strcat(jsonPath, getNomFichierImage(requete));
+            strcat(jsonPath, ".json");
+            createJson(liste_resultat, jsonPath);
+        }
         if(ouvreFichierImage(choixFichier(pileScore,nbScore),liste)) printf("\n\e[1;32m-----------Recherche réalisée avec succès------------\e[0m\n\n");
         else printf("\e[1;31mErreur\e[0;31m : Impossible de lancer l'ouverture du résultat sélectionné\e[0m\n"); return;
     }else printf("\e[1;31mErreur\e[0;31m : Type d'image inconnu\e[0m\n"); return;
@@ -35,22 +46,48 @@ void rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescript
     char* requeteTraite=calloc(1,sizeof(char));
     int nbScore=0;
     elementlitsetDescripteurImage tmp1;
+    descripteurEtScoreListe liste_resultat = NULL;
+    char *jsonPath = calloc(TAILLE_MALLOC, sizeof(char));
     int id=-1;
     do{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         tmp1=liste->tete;
         printf("\n\e[1;37mVeuillez saisir le chemin ou le nom du fichier à comparer\e[0m\n");
         scanf("%s",requete);
         snprintf(requeteTraite,100,"TXT/%s.txt",getNomFichierImage(requete));
-        for(;tmp1->next!=NULL;tmp1=tmp1->next) if(strcoll(requeteTraite,tmp1->path)==0) id=tmp1->id;
+        printf("%s \n", requeteTraite);
+        while(tmp1 != NULL){
+            if(strcmp(tmp1->path, requeteTraite) == 0){
+                id = tmp1->id;
+                break;
+            }
+            tmp1 = tmp1->next;
+        }
+        printf("%d\n", id);
         if(id==-1)printf("\e[1;35mAttention\e[0;35m : Aucune image ne correspond au chemin spécifiée\e[0m\n");
     }while(id==-1);
-    free(requete);
     descImage *tmp=pileImage->tete;
-    while(tmp!=NULL&&tmp->id!=id) tmp=tmp->next;
+    while(tmp != NULL){
+        if(tmp->id == id)
+            break;
+        tmp = tmp->next;
+    }
+    printf("%d %d\n", id, tmp->id);
     if(tmp!=NULL){
         Src pileScore=calculeScoreComparaison(pileImage,*tmp,&nbScore);
         if(nbScore>0){
             if(afficheResultatsRecherche(pileScore,nbScore,liste)){
+                for(int i = 1; i<nbScore; i++){
+                    jsonPath = trouverChemin(pileScore[i].id, liste);
+                    liste_resultat = empilerDescriipteurEtScore(liste_resultat, jsonPath,pileScore[i].id, (int)(pileScore[i].score));
+                }
+                if(liste_resultat != NULL){
+                    strcpy(jsonPath, "JSON/");
+                    strcat(jsonPath, getNomFichierImage(requeteTraite));
+                    strcat(jsonPath, ".json");
+                    createJson(liste_resultat, jsonPath);
+                }
+                printf("Jusque là");
+                fflush(stdout);
                 if(ouvreFichierImage(choixFichier(pileScore,nbScore),liste)) printf("\n\e[1;32m-----------Recherche réalisée avec succès------------\e[0m\n\n");
                 else printf("\e[1;31mErreur\e[0;31m : Impossible de lancer l'ouverture du résultat sélectionné\e[0m\n"); return;
             }else printf("\e[1;31mErreur\e[0;31m : Type d'image inconnu\e[0m\n"); return;
@@ -65,7 +102,7 @@ Score choixFichier(Src pileScore,int tailleTabScore) {
     do{
         scanf("%d",&index);
         if(index>min(tailleTabScore,NBLISTE)||index<1) printf("\e[1;35mAttention\e[0;35m : Vous ne pouvez rentrer qu'un chiffre compris entre 1 et %d\e[0m\n",min(tailleTabScore,NBLISTE));
-        else scoreImage=pileScore[index-1];
+        else scoreImage=pileScore[index];
     }while(index>min(tailleTabScore,NBLISTE)||index<1);
     return scoreImage;
 }
@@ -82,7 +119,7 @@ Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage, descI
             sommeMinimum+=min(tmp->histogramme[i],image.histogramme[i]);
         }
         score=sommeMinimum/(float)nbTotalVal*100;
-        if(score>0){
+        if((int)score>0){
             pileScore[*nbScore]=(Score){score,tmp->type,tmp->id};
             (*nbScore)++;
         }
@@ -113,11 +150,12 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
 }
 
 int afficheResultatsRecherche(Src pileScore,int nbScore,listeDescripteurImage liste){
-    for(int i=0;i<min(nbScore,NBLISTE);i++){
+    int min = min(nbScore,NBLISTE);
+    for(int i=1;i<min;i++){
         char *chemin=trouveChemin(pileScore[i].id,liste);
         char *nomFichier=getNomFichierImage(chemin);
-        if(pileScore[i].type=='N') printf("(%d)\t%f%%\t%s.bmp\tImage noir et blanc\n",i+1,pileScore[i].score,nomFichier);
-        else if(pileScore[i].type=='C') printf("(%d)\t%f%%\t%s.jpg\tImage couleur\n",i+1,pileScore[i].score,nomFichier);
+        if(pileScore[i].type=='N') printf("(%d)\t%f%%\t%s.bmp\tImage noir et blanc\n",i,pileScore[i].score,nomFichier);
+        else if(pileScore[i].type=='C') printf("(%d)\t%f%%\t%s.jpg\tImage couleur\n",i,pileScore[i].score,nomFichier);
         else return 0;
     }
     printf("\n\r");
@@ -140,11 +178,133 @@ char* trouveChemin(int idDesc,listeDescripteurImage liste){
 }   
 
 char* getNomFichierImage(char* filename){
-    char* new_filename;
-    char* token=strrchr(filename,'/');
-    if(token!=NULL)new_filename=token+1;
-    else new_filename=filename;
-    token=strrchr(new_filename,'.');
-    if(token!=NULL)*token='\0';
+    int indice = -1;
+
+    if(atoi(filename)>0 && atoi(filename)<64)
+        return filename;
+
+    for(int i = strlen(filename)-1; i>=0;i--){
+        if(filename[i] == '/'){
+            indice = i;
+            break;
+        }
+    }
+            
+    char *new_filename = filename+indice+1;
+    new_filename = strtok(new_filename, ".");
     return new_filename;
 }
+
+
+
+// Partie JAVA
+
+void createJson(descripteurEtScoreListe liste, char *jsonName){
+    char *string;
+    char *idToString = calloc(10, sizeof(char));
+    int id_ = 1;
+    FILE *json = fopen(jsonName, "w");
+
+    cJSON *jsonFile = NULL;
+    cJSON *descripteur = NULL;
+    cJSON *id = NULL;
+    cJSON *path = NULL;    
+    
+    jsonFile = cJSON_CreateObject();
+    if(jsonFile == NULL){
+        fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+        exit(0);
+    }
+
+    while(liste != NULL){
+        
+        descripteur = cJSON_CreateObject();
+        if(descripteur == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        sprintf(idToString, "%d", liste->score);
+        cJSON_AddItemToObject(jsonFile, idToString, descripteur);
+
+        id = cJSON_CreateNumber(liste->descripteur->id);
+        if(id == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "id", id);
+
+        path = cJSON_CreateString(liste->descripteur->path);
+        if(path == NULL){
+            fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+            exit(0);
+        }
+        cJSON_AddItemToObject(descripteur, "path", path);
+        liste = liste->next;
+    }
+
+    string = cJSON_Print(jsonFile);
+    if(string == NULL){
+        fprintf(stderr, "Error : createJson : impossible de creer le JSON");
+        exit(0);
+    }
+
+    fprintf(json,"%s", string);
+    
+    cJSON_Delete(jsonFile);
+    free(idToString);
+    fclose(json);
+}
+
+descripteurEtScoreListe initListeDescripteurEtScore(){
+    descripteurEtScoreListe d = calloc(1, sizeof(struct descripteurEtScore));
+    if(d == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'initialiser");
+        exit(0);
+    }
+    return d;
+}
+
+descripteurEtScoreListe empilerDescriipteurEtScore(descripteurEtScoreListe d, char* path, int id, int score){
+    descripteurEtScoreListe tmp = initListeDescripteurEtScore();
+
+    if(tmp == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : tmp null");
+        exit(0);
+    }
+
+    tmp->descripteur = calloc(1, sizeof(listeDescripteurImage));
+    if(tmp->descripteur == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : descripteur null");
+        exit(0);
+    }
+
+    tmp->descripteur->path = calloc(TAILLE_MALLOC, sizeof(char));
+    if(tmp->descripteur->path == NULL){
+        fprintf(stderr, "Error : initListeDescripteurEtScore : impossible d'empiler : path null");
+        exit(0);
+    }
+
+    tmp->score = score;
+    strcpy(tmp->descripteur->path, path);
+    tmp->descripteur->id = id;
+
+    tmp->next = d;
+
+
+    return tmp;
+}
+
+char* trouverChemin(int id, listeDescripteurImage liste){
+    char* chemin = NULL;
+    struct elementlistedescripteurimage* tmp = liste->tete;
+
+    while(tmp != NULL){
+        if(id == tmp->id){
+            chemin = tmp->path;
+            break;
+        }
+        tmp = tmp->next;
+    }
+    return chemin;
+}
+    
