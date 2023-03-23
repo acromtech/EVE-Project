@@ -14,7 +14,7 @@ public class testWrapperIvyPfr{
         wrapperIvyPfr wrapper = new wrapperIvyPfr();
 
         //Déclaration d'une liste ScorePath et envoi de la requete pour un traitement via le moteur de recherche textuel "T"
-        List<ScorePath> scoreRequete1=wrapper.sendRequete("T","Football americain");
+        List<ScorePath> scoreRequete1=wrapper.sendRequete("T","mot");
         
         //Affiche le résultat de la requete
         for (ScorePath scorePath : scoreRequete1)
@@ -35,8 +35,7 @@ void stopBus();
 ```
 ### En JAVA
 ```
-List<ScorePath> sendRequete(String type_traitement,String requete); 
-//type de traitement = "T" : Texte / "I" : Image / "S" : Son
+List<ScorePath> sendRequete(String type_traitement,String requete); //type de traitement = "T" : Texte / "I" : Image / "S" : Son
 void stopBus();
 ```
 > Notez que la connection au bus se fait directement dans le constructeur
