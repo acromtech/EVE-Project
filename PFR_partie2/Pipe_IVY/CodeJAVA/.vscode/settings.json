@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ivy.h": "c",
+        "ivyloop.h": "c"
+    }
+}
