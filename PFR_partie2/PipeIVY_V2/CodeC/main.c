@@ -36,7 +36,6 @@ int main(int argc, char**argv){
 
 	while(boucle){
 		switch(etat){
-
 		case ATTENTE_REQUETE:
 			sleep(1);
 			if(typeTraitement!=-1) etat=TRAITEMENT;
@@ -67,6 +66,9 @@ int main(int argc, char**argv){
 				sendAllResBus(resListToSend);
 				traitementEffectue();
 				break;
+			case STOP_BUS:
+				stopBus();
+				return 0;
 			default:
 				printf("\nC\tErreur : Traitement non effectué %x",typeTraitement);
 				return 0;

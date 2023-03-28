@@ -149,15 +149,22 @@ public class wrapperIvyPfr{
         return scorePathList;
     }
 
-    public void stopBus(){
-        try {
-            bus.sendMsg(Id.C.getValue()+" "+FrameType.TX_FRAME.getValue()+" "+Address.STOP_BUS.getValue());
-            ack=false;
-            synchronized (bus) { while(!ack) bus.wait(); }
-            if(affConsole) System.out.println("C\tDéconnecté");
-        } catch (IvyException | InterruptedException e) {
-            e.printStackTrace();
+    public void stopBus() {
+        if(cConnected) {
+            try {
+                // Envoie un message de fin de traitement au C
+                bus.sendMsg(Id.C.getValue() + " " + FrameType.TX_FRAME.getValue() + " " + Address.STOP_BUS.getValue() + " " + 0 + " " + 0);
+                // Attend l'aquittement du C
+                ack = false;
+                synchronized (bus) { while(!ack) bus.wait(); }
+                if(affConsole) System.out.println("JAVA\tDéconnexion du C dans quelques secondes");
+            } catch (IvyException | InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+        // Arrête le bus côté JAVA
         bus.stop();
+        if(affConsole) System.out.println("JAVA\tBus arrêté avec succès");
     }
+    
 }

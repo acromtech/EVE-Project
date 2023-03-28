@@ -41,11 +41,6 @@ void RX_Callback (IvyClientPtr app, void *data, int argc, char **argv){
 	autorisation_envoie_trame=1;
 }
 
-void Stop_Callback (IvyClientPtr app, void *data, int argc, char **argv){
-	IvySendMsg("%d %d %d %d",JAVA,TX_FRAME,0,0);
-	IvyStop();
-}
-
 //WRAPPER
 /**
  * @brief Démarre le bus
@@ -62,7 +57,6 @@ void startBus(){
 	//Abonnement aux différents messages TX ou RX
 	IvyBindMsg(TX_Callback,0,"^%d %d (.*) (.*) (.*)",C,TX_FRAME);
 	IvyBindMsg(RX_Callback,0,"^%d %d (.*)",C,RX_FRAME);
-	IvyBindMsg(Stop_Callback,0,"^%d %d",C,STOP_BUS);
 
 	//Lancement du bus espion dans un thread séparé
 	IvyStart ("127.255.255.255:2010");
@@ -103,5 +97,7 @@ void sendAllResBus(ResListToSend resListToSend){
 }
 
 void stopBus(){
+	IvySendMsg("%d %d %d %d",JAVA,TX_FRAME,0,0);
 	IvyStop();
+	typeTraitement=-1;
 }
