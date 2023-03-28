@@ -42,6 +42,10 @@ A titre d'exemple (tous les cas ne sont pas présents), la forme du programme ma
 #include "unistd.h"
 #include "wrapperPFR.h"
 
+#define ATTENTE_REQUETE 	0x01
+#define TRAITEMENT 		0x02
+#define ENVOI_RESULTATS 	0x03
+
 int main(int argc, char**argv){
 	ResListToSend resListToSend;
 	char etat=ATTENTE_REQUETE;
@@ -51,7 +55,6 @@ int main(int argc, char**argv){
 
 	while(boucle){
 		switch(etat){
-
 		case ATTENTE_REQUETE:
 			sleep(1);
 			if(typeTraitement!=-1) etat=TRAITEMENT;
@@ -82,6 +85,9 @@ int main(int argc, char**argv){
 				sendAllResBus(resListToSend);
 				traitementEffectue();
 				break;
+			case STOP_BUS:
+				stopBus();
+				return 0;
 			default:
 				printf("\nC\tErreur : Traitement non effectué %x",typeTraitement);
 				return 0;
