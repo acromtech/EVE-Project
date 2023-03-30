@@ -1,0 +1,48 @@
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
+
+Recherche = - + -
+Résultats = {Texte XY=3.0, 89=-0.5, 45=-1.5, Texte 21=-2.0, Texte KL=-3.0, Texte UV=-6.5}
+
+Recherche = + + -
+Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
