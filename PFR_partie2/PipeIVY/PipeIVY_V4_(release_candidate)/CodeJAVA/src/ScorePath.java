@@ -1,3 +1,4 @@
+//Structure ScorePath
 public class ScorePath {
     private int score;
     private String path;
