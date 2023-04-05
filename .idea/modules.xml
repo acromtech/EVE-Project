@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PFR_partie2/PipeIVY_V3/CodeJAVA/CodeJAVA.iml" filepath="$PROJECT_DIR$/PFR_partie2/PipeIVY_V3/CodeJAVA/CodeJAVA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PFR.iml" filepath="$PROJECT_DIR$/.idea/PFR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PFR_partie2/PipeIVY_V1/PipeIVY_V1.iml" filepath="$PROJECT_DIR$/PFR_partie2/PipeIVY_V1/PipeIVY_V1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PFR_partie2/PipeIVY_V2/PipeIVY_V2.iml" filepath="$PROJECT_DIR$/PFR_partie2/PipeIVY_V2/PipeIVY_V2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PFR_partie2/PipeIVY_V3/exempleWrapper/exempleWrapper.iml" filepath="$PROJECT_DIR$/PFR_partie2/PipeIVY_V3/exempleWrapper/exempleWrapper.iml" />
+    </modules>
+  </component>
+</project>

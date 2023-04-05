@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/exempleWrapper/lib/wrapperIvyPfr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/exempleWrapper/lib/ivy-java-1.2.18.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
