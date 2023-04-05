@@ -23,7 +23,7 @@ public class RechercheComplexe {
         return RechercheComplexeHolder.instance;
     }
 
-    public static Map<String, Integer> negateMapValues(Map<String, Integer> originalMap) {
+    private static Map<String, Integer> negateMapValues(Map<String, Integer> originalMap) {
         Map<String, Integer> negatedMap = new HashMap<String, Integer>();
         for (Map.Entry<String, Integer> entry : originalMap.entrySet()) {
             String key = entry.getKey();
@@ -33,7 +33,7 @@ public class RechercheComplexe {
         return negatedMap;
     }
 
-    public static ArrayList<Map<String, Integer>> generateMaps(ArrayList<List<ScorePath>> scorePaths) {
+    private static ArrayList<Map<String, Integer>> generateMaps(ArrayList<List<ScorePath>> scorePaths) {
         ArrayList<Map<String, Integer>> maps = new ArrayList<>();
 
         for (List<ScorePath> paths : scorePaths) {
@@ -130,7 +130,7 @@ public class RechercheComplexe {
         return sortedMap;
     }
 
-    public Map<String, Double> calculateTotalScores(ArrayList<Map<String, Integer>> maps) {
+    private Map<String, Double> calculateTotalScores(ArrayList<Map<String, Integer>> maps) {
         Map<String, Double> totalScores = new HashMap<>();
         for (Map<String, Integer> map : maps) {
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
