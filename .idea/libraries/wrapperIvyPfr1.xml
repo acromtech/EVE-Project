@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="wrapperIvyPfr1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/PFR_partie2/PipeIVY_V4_(release_candidate)/exempleWrapper/lib/wrapperIvyPfr.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

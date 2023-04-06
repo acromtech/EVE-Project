@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="ivy-java-1.2.18">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/PFR_partie2/PipeIVY_V1/CodeJAVA/lib/ivy-java-1.2.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PFR_partie2/Merge/lib/ivy-java-1.2.18.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/PFR_partie2/Merge/lib/ivy-java-1.2.18.jar!/" />
+    </SOURCES>
   </library>
 </component>
