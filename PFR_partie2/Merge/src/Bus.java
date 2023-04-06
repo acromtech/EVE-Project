@@ -218,7 +218,6 @@ public class Bus {
 
     public Map<String, Double> sendRechercheComplexe(Motor motor, int typeTraitement, String recherche, int nbResultMax) {
         System.out.println(recherche);
-
         //Découpe tout les mots de la requete et les range dans un tableau
         tabRecherche = recherche.trim().split(" ");
 
@@ -237,9 +236,8 @@ public class Bus {
             arrayMapsRes = Tools.generateMaps(arrayOfArrayOfScorePath);
             for (ScorePath score : arrayOfArrayOfScorePath.get(0)) {
                 mapTotalScore.put(score.getPath(), (double) score.getScore());
-
             }
-            return mapTotalScore;
+            return Tools.trieMapOrdreDecroiss(mapTotalScore);
         }
 
         int i = 0;
