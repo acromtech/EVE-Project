@@ -104,7 +104,7 @@ void resumeThread()     //Relance le thread de l'OpenMode
 ```
 
 #### Méthode de la classe Tools
-``
+```
 String DateDuJour()                                         //Donne la date du jour au format : year + "-" + month + "-" + day + " " + hour + ":" + minute
 printScorePathList(List<ScorePath> ScorePathList)           //Affiche le contenu de la Liste de ScorePath
 ```
