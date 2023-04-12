@@ -1,55 +1,135 @@
-# Wrapper IVY V1
-Ce wrapper permet de renvoyer les résultats obtenu par le programme C au controlleur JAVA.
+# Pipe IVY
+Ce pipe permet de renvoyer les résultats obtenu par le programme C au controlleur JAVA.
 
-**Pour lancer le programme de test ouvrez le répertoire CodeJAVA/src/testWrapperIvyPfr.java**
+**Pour lancer le programme de test ouvrez le répertoire PipeJAVAC/src/Main.java**
 ```
 //PROGRAMME DE TEST
-
 import java.util.List;
+//import java.util.Map;
 
-public class testWrapperIvyPfr{
+public class Main{
     public static void main(String[] args) {
-        
-        //Déclaration du wrapper (Démarre directement la liaison JAVA-C)
-        wrapperIvyPfr wrapper = new wrapperIvyPfr();
+        //Déclaration du Bus (Démarre directement la liaison JAVA-C)
+        Bus bus = new Bus("127.255.255.255:2010");
 
-        //Déclaration d'une liste ScorePath et envoi de la requete pour un traitement via le moteur de recherche textuel "T"
-        List<ScorePath> scoreRequete1=wrapper.sendRequete("T","mot");
-        
-        //Affiche le résultat de la requete
-        for (ScorePath scorePath : scoreRequete1)
-          System.out.println("JAVA\tScore : " + scorePath.getScore() + " - Path : " + scorePath.getPath());
+        //Désactive les affichages du terminal
+        bus.setAffConsole(false);
 
-        //Deconnection du bus
-        wrapper.stopBus();
+        //Instantie un nouveau moteur et le monte sur le bus (ATTENTION ID DIFFERENT DE 0 -> 0 = MASTER (JAVA))
+        Motor motor1=new Motor(1,"/Moteur1/CodeC/","main",".config1");   //1 étant l'id souhaité, "main" la cible du makefile et .config le fichier de configuration associé au moteur
+        Motor motor3=new Motor(2,"/Moteur3/CodeC/","main",".config3");    //2 étant l'id souhaité, "main" la cible du makefile et .config le fichier de configuration associé au moteur
+        bus.addMotor(motor1);
+        bus.addMotor(motor3);
+        
+        //Lance l'OpenMode
+        ThreadOuvertFerme threadOuvertFerme = new ThreadOuvertFerme("texte", "BaseFichier/Texte", true, motor1, bus);
+        threadOuvertFerme.start();
+        
+        //Indexe toute la base de données
+        bus.launchIndexation(motor1,Bus.ADDR_INDEXATION_ALL);
+        //threadOuvertFerme.pauseThread();
+        //threadOuvertFerme.resumeThread();
+        
+        //Lance une requete (constitué d'un seul mot) sur le motor1 pour un traitement TEXTE_MOT_CLE et retourne une liste contenant les 3 meilleurs résultats
+        List<ScorePath> scoreRequete1=bus.sendWord(motor1,Bus.ADDR_TEXTE_MOTCLE,"mot",3);
+        //Affiche les résultats sur la console
+        Tools.printScorePathList(scoreRequete2);
+        
+        //Déclare et envoi la requete COMPLEXE pour un traitement texte par mot clé
+        List<ScorePath> scoreRequete2=bus.sendRechercheComplexe(motor1,Bus.ADDR_TEXTE_MOTCLE, "stockage",10);
+        //Affiche les résultats sur la console
+        Tools.printScorePathList(scoreRequete2);
+
+        //Lance une requete sur le motor1 pour un traitement TEXTE_FICHIER et retourne une liste contenant les 10 meilleurs résultats
+        List<ScorePath> scoreRequete3=bus.sendWord(motor1,Bus.ADDR_TEXTE_FICHIER,"../../BaseFichier/Texte/06-La_contamination_du_ma∩s_par.xml",10);
+        //Affiche les résultats sur la console
+        Tools.printScorePathList(scoreRequete3);
+        
+        //Lance une requete sur le motor1 pour un traitement IMAGE_MOTCLE et retourne une liste contenant les 10 meilleurs résultats
+        List<ScorePath> scoreRequete1=bus.sendWord(motor1,Bus.ADDR_IMAGE_MOTCLE,"violet",10);
+        //Affiche les résultats sur la console
+        Tools.printScorePathList(scoreRequete1);
+        
+        //Déconnecte les moteurs du bus
+        bus.removeMotor(motor1);
+        bus.removeMotor(motor3);
+
+        //Déconnecte le JAVA (master) du bus
+        bus.stopBus();
     }
 }
 ```
 
-## Fonctions utilisable
-### En C
+## Les adresses des trames (Communication C-JAVA)
 ```
-void startBus();
-void sendAllResBus(IvyFrameBuffer descScore);
-void stopBus();
+CONNECTED                                   0x01 
+INDEXATION_TEXTEIVY                         0x10    //(TX_FRAME) Demande l'indexation des données textuelles (+ ACK)
+INDEXATION_IMAGEIVY                         0x11    //(TX_FRAME) Demande l'indexation des données photographique (+ ACK)
+INDEXATION_SONIVY                           0x12    //(TX_FRAME) Demande l'indexation des données sonores (+ ACK)
+INDEXATION_ALL                              0x13    //(TX_FRAME) Demande l'indexation de toutes les données (+ ACK)
+TEXTE_MOTCLE                                0x20    //(TX_FRAME) Demande de réaliser une recherche textuelle par mot clé (+ ACK)
+TEXTE_FICHIER                               0x21    //(TX_FRAME) Demande de réaliser une recherche textuelle par fichier (+ ACK)
+IMAGE_MOTCLE                                0x30    //(TX_FRAME) Demande de réaliser une recherche photographique par mot clé (+ ACK)
+IMAGE_FICHIER                               0x31    //(TX_FRAME) Demande de réaliser une recherche photographique par fichier (+ ACK) 
+SON_FICHIER                                 0x40    //(TX_FRAME) Demande de réaliser une recherche sonore par fichier (+ ACK)
+SCORE_CHEMIN                                0x50    //(RX_FRAME) Récupère les données de résulats
+STOP_BUS                                    0x60    //(TX_FRAME) Ordonne l'arret de la connection au bus virtuel (+ ACK)
+ADDR_OPEN_MODE                              0x70    //(TX_FRAME) Demande l'ouverture ou non de l'indexation (+ ACK)
+SUPPRIMER_DESCRIPTEUR                       0x23    //(TX_FRAME) SUPPRESSION descripteur (+ ACK)
 ```
+
+## Méthodes utilisables
 ### En JAVA
+#### Méthodes liées au bus virtuel
 ```
-List<ScorePath> sendRequete(String type_traitement,String requete); //type de traitement = "T" : Texte / "I" : Image / "S" : Son
+Bus(String port)                                                //Constructeur JAVA (lance le bus virtuel sur le port spécifié)
+void addMotor(Motor motor)                                      //Ajoute un moteur sur le bus virtuel
+void removeMotor(Motor motor)                                   //Retire un moteur sur le bus virtuel
+void launchIndexation(Motor motor,final int addrTypeTraitement) //Démarre un processus d'indexation spécidique
+List<ScorePath> sendWord(Motor motor, final int addrTypeTraitement,String requete,int nombreResultatMax) //Envoie un mot au moteur C
+List<ScorePath> sendRechercheComplexe(Motor motor, int typeTraitement, String recherche, int nbResultMax) //lance une recherche complexe (plusieurs mots) sur le moteur de recherche C
+void stopBus()                                                  //Se déconnecte du bus virtuel
+void setAffConsole(boolean affConsole)                          //Active ou désactive les affichages console
+boolean getAffConsole()                                         //Donne l'état de l'affichage console
+boolean getOpenMode(Motor motor)                                //Donne l'état de l'OpenMode
+void setOpenMode(Motor motor, boolean openMode)                 //Met a jour l'état de l'OpenMode
+```
+
+#### Méthodes liées a l'OpenMode (Thread)
+```
+ThreadOuvertFerme(String name, String path, boolean condition, Motor motor, Bus bus) //Constructeur du thread de l'OpenMode
+void arret()            //Arrete le thread de l'OpenMode
+void pauseThread()      //Met en pause le thread de l'OpenMode
+void resumeThread()     //Relance le thread de l'OpenMode
+```
+
+#### Méthode de la classe Tools
+``
+String DateDuJour()                                         //Donne la date du jour au format : year + "-" + month + "-" + day + " " + hour + ":" + minute
+printScorePathList(List<ScorePath> ScorePathList)           //Affiche le contenu de la Liste de ScorePath
+```
+
+#### Méthode liées au moteur
+```
+Motor(int id, String pathMakefile, String makeTarget, String configPath) //Constructeur d'un moteur
+```
+*Le moteur dispose de tout un tas de setteur et de getteurs pour mettre a jour les données critiques et les paramètres de configuration d'un moteur*
+
+### En C
+#### Les variables globales
+```
+extern int autorisation_envoie_trame;
+extern char typeTraitement;     //Adresse du traitement en cours
+extern char* requete;           //Requete en cours de traitement
+extern char masterId;           //ID du controlleur JAVA (envoyé au lancement du programme C)
+extern char motorId;            //ID du moteur C (Défini par l'utilisateur lors de l'instanciation JAVA et mis a jour au lancement du programme)
+```
+
+#### Les fonctions
+```
+void startBus(char*);
+void traitementEffectue();
+void attenteRequete();
+void sendAllResBus(ResListToSend* resListToSend);
 void stopBus();
 ```
-> Notez que la connection au bus se fait directement dans le constructeur
-> ```
-> wrapperIvyPfr wrapper = new wrapperIvyPfr();
-> ```
-
-## Paramètres modifiables
-Actuellement le fichier `wrapperPFR.h`dispose d'un paramètre réglable afin de renvoyer un nombre maximal de résulats (bien entendu si le nombre de résultats est inférieur ce paramètre ne sera pas pris en compte).
-```
-#define NBLISTE 10
-```
-## Version futures
-Dans la prochaine version :
-1. Le paramètre `NBLISTE` sera directement envoyé par le JAVA (puisque c'est le controlleur) afin de limiter les déclarations
-2. Les trames seront structurés de manière à pouvoir aussi lancer l'indexation
-
