@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="815.0" prefWidth="1212.0" styleClass="bodybg" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pfr2.choixRechercheImageController">
+   <children>
+      <ImageView fitHeight="316.0" fitWidth="353.0" layoutX="448.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/UPSSIWEB.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="retour" cancelButton="true" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRetourButtonClick" prefHeight="44.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #CA58F1;" text="Retour" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icones/bouton-retour.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <VBox alignment="CENTER" layoutX="122.0" layoutY="374.0" prefHeight="337.0" prefWidth="968.0" spacing="40.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="56.0" prefWidth="166.0" style="-fx-background-color: #B386EE; -fx-background-radius: 30;" text="Image" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Veuillez selectionner un type de recherche" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="681.0" spacing="120.0">
+               <children>
+                  <Button fx:id="couleur" mnemonicParsing="false" onAction="#onCouleurButtonClick" prefHeight="76.0" prefWidth="186.0" style="-fx-background-radius: 30; -fx-background-color: #CA58F1;" text="Couleur" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="similitude" mnemonicParsing="false" onAction="#onSimilitudeButtonClick" prefHeight="76.0" prefWidth="186.0" style="-fx-background-radius: 30; -fx-background-color: #CA58F1;" text="Similitude" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

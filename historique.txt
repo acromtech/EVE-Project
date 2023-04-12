@@ -1,5 +1,0 @@
-
-2023-4-4 15:14
-Recherche = +eff +ezfzef -zfeefz
-Résultats = {Texte XY=9.0, Texte UV=8.5, 45=2.5, 89=0.5, Texte KL=-1.0, Texte 21=-2.0}
-

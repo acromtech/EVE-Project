@@ -1,0 +1,24 @@
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .filter {
+    -fx-background-color: transparent;
+    -fx-size: 50px;
+    -fx-font-size: 24px;
+}
+
+.table-view .column-header{
+    -fx-alignment: CENTER;
+
+}
+
+.table-view .column-header,.label{
+    -fx-text-fill: #FFF;
+    -fx-font-family: arial;
+}
+
