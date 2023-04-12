@@ -22,4 +22,4 @@ __Alexis GIBERT__ : Coordinateur projet en charge de la gestion de projet, Déve
 > *Issue d’une double formation de BTS CPI et DUT GEII, je suis capable d’intervenir sur des points techniques en mécanique, électronique et informatique. Je possède de solides compétences en développement embarqué (C), en développement orienté objet (Python) et en gestion de projet.*
 
 __Elio GENSON__ : Développeur backend JAVA en charge de la [recherche complexe](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/srcLib/src)
-> *A faire*
+> *Après avoir obtenu mon BAC STL, j'ai décidé de poursuivre mes études en obtenant un BTS CIRA (Contrôle Industriel et Régulation Automatique), ce qui m'a permis de développer des compétences en régulation, asservissement et automatisation des procédés. Par la suite, j'ai intégré la classe préparatoire ATS option sciences de l'ingénieur de Déodat de Séverac, ce qui m'a permis d'acquérir une solide capacité de travail ainsi que d'autres compétences essentielles pour le métier d'ingénieur.*
