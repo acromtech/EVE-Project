@@ -6,17 +6,20 @@ Il permet également de mettre en pratique différentes compétences de gestion 
 ## L'équipe UPSSIWEB
 UPSSIWEB est une équipe de 5 membres dont la vision commune est de parfaire les moteurs de recherche de demain pour les rendre plus ergonomiques et plus intuitifs afin de les intégrer aux futurs équipements domotiques et robotiques.
 
-__Emilien VESIN__ : Développeur en charge du [menu général](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio).
+__Emilien VESIN__ : Responsable de l’intégration, développeur backend en charge du [menu général](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio).
 > *En 2020 j’ai obtenu mon bac S option sciences de l’ingénieur spécialité physique chimie. Puis j’ai poursuivi ma formation en DUT GEII à Toulouse ou j’ai pu approfondir mes compétences en langage C ainsi qu’en organisation au travers de différents projets. Mon stage de fin d’année en entreprise m’a également permis de développer mon travail en autonomie et en équipe.*
 
-__Bastien LALANNE__ : Développeur en charge du [menu adminitrateur](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio).
+__Bastien LALANNE__ : Développeur backend en charge du [menu adminitrateur](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio) et frontend JAVA en charge de l'[IHM](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
 > *Grâce à mon DUT GEII, j’ai pu acquérir des compétences techniques dans les domaines de l’électronique et de l’informatique, mais aussi des compétences plus transversales telles que le travail d’équipe, l’organisation ou encore dans de la gestion de projet. Je possède également de solides connaissances en langage C. Durant mon stage j’ai pu acquérir de l’autonomie, mais aussi du relationnel.*
 
-__Flavie THIBAULT__ : Coordinatrice client & Développeur logiciel en charge de la conception de l’[indexation et la recherche de données photographiques](https://github.com/acromtech/PFR/tree/image).
+__Flavie THIBAULT__ : Coordinatrice client & Développeuse backend en charge de la conception de l’[indexation et la recherche de données photographiques](https://github.com/acromtech/PFR/tree/image) et frontend JAVA en charge de l'[IHM](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
 > *Après l’obtention d’un bac STL spécialité physique chimie je suis rentrée en classe préparatoire aux grandes écoles TSI. Ces deux ans en CPGE m’ont permis d’acquérir une grande capacité de travail. Je possède des compétences en mathématiques, en physique, en algorithmique et en gestion de projet.*
 
-__Andy DEGBEGNI__ : Développeur en charge de la conception de l’[indexation de données textuelles](https://github.com/acromtech/PFR/tree/texte) et l'[indexation de données photographiques](https://github.com/acromtech/PFR/tree/image).
+__Andy DEGBEGNI__ : Développeur backend C pour l’amélioration du [moteur de recherche](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/PipeJAVAC/Moteur1), de l’[indexation de données textuelles](https://github.com/acromtech/PFR/tree/texte) et l'[indexation de données photographiques](https://github.com/acromtech/PFR/tree/image).
 > *J'ai suivi une CPGE MPSI et je suis titulaire d’une licence en informatique. Je suis donc en mesure d’intervenir aussi bien sur les questions relatives à l’analyse et la modélisation de problèmes, que sur des points techniques en informatique. Je possède des compétences en programmation procédurale (langage C) et en programmation orientée objet (Python, Java, C++).*
 
-__Alexis GIBERT__ : Développeur en charge de la conception de la [recherche de données textuelles](https://github.com/acromtech/PFR/tree/texte) et la [recherche de données photographiques](https://github.com/acromtech/PFR/tree/image).
+__Alexis GIBERT__ : Coordinateur projet en charge de la gestion de projet, Développeur backend JAVA-C en charge du [bus virtuel](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C), de la conception de la [recherche de données textuelles](https://github.com/acromtech/PFR/tree/texte) et la [recherche de données photographiques](https://github.com/acromtech/PFR/tree/image).
 > *Issue d’une double formation de BTS CPI et DUT GEII, je suis capable d’intervenir sur des points techniques en mécanique, électronique et informatique. Je possède de solides compétences en développement embarqué (C), en développement orienté objet (Python) et en gestion de projet.*
+
+__Elio GENSON__ : Développeur backend JAVA
+> *A faire*
