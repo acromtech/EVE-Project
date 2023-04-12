@@ -21,5 +21,5 @@ __Andy DEGBEGNI__ : Développeur backend C pour l’amélioration du [moteur de 
 __Alexis GIBERT__ : Coordinateur projet en charge de la gestion de projet, Développeur backend JAVA-C en charge du [bus virtuel](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C), de la conception de la [recherche de données textuelles](https://github.com/acromtech/PFR/tree/texte) et la [recherche de données photographiques](https://github.com/acromtech/PFR/tree/image).
 > *Issue d’une double formation de BTS CPI et DUT GEII, je suis capable d’intervenir sur des points techniques en mécanique, électronique et informatique. Je possède de solides compétences en développement embarqué (C), en développement orienté objet (Python) et en gestion de projet.*
 
-__Elio GENSON__ : Développeur backend JAVA
+__Elio GENSON__ : Développeur backend JAVA en charge de la [recherche complexe](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/srcLib/src)
 > *A faire*
