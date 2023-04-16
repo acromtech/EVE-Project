@@ -4,6 +4,8 @@ module com.example.pfr2 {
     requires java.desktop;
 
 
-    opens com.example.pfr2 to javafx.fxml;
-    exports com.example.pfr2;
+    opens controleur to javafx.fxml;
+    exports controleur;
+    exports Entite;
+    opens Entite to javafx.fxml;
 }
