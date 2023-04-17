@@ -5,21 +5,7 @@ Ce pipe permet de renvoyer les résultats obtenu par le programme C au controlle
 ```
 bash launchApp.bash
 ```
-
-## Prérequis
-**GCC**
-```
-sudo apt install gcc
-```
-**Make**
-```
-sudo apt install make
-```
-**jdk 19**
-```
-sudo apt install openjdk-19-jdk
-```
-
+**Programme exécuté**
 ```
 //PROGRAMME DE TEST
 public class Main{
@@ -81,6 +67,20 @@ public class Main{
         bus.stopBus();
     }
 }
+```
+
+## Prérequis
+**GCC**
+```
+sudo apt install gcc
+```
+**Make**
+```
+sudo apt install make
+```
+**jdk 19**
+```
+sudo apt install openjdk-19-jdk
 ```
 
 ## Les adresses des trames (Communication C-JAVA)
