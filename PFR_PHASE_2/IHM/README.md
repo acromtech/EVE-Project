@@ -3,10 +3,6 @@
 ```
 bash launchApp.bash
 ```
-* **Vous pouvez également lancer le bash JavaToJar.bash pour regénérer le .jar du projet avec la commande suivante**
-```
-bash JavaToJar.bash
-```
 
 ## Prérequis
 **GCC**
