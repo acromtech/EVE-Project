@@ -1,5 +1,6 @@
 package controleur;
 //choix recherche audio: similitude
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,19 +10,19 @@ import javafx.stage.Stage;
 
 public class ChoixRechercheAudioController {
     @FXML
-    Button retour, similitude;
-//renvoie au menu
-    public void onRetourButtonClick() throws Exception {
+    private Button retour,similitude;
 
+    //renvoie au menu
+    public void onRetourButtonClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//amène à la recherche audio
-    public void onSimilitudeButtonClick() throws Exception {
 
+    //amène à la recherche audio
+    public void onSimilitudeButtonClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("rechercheAudio.fxml"));
-        Stage stage = (Stage) retour.getScene().getWindow();
+        Stage stage = (Stage) similitude.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
 }

@@ -1,5 +1,6 @@
 package controleur;
 //permet de rediriger les utilisateurs sur les différents moteurs choisis
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +12,6 @@ import java.io.IOException;
 
 public class MenuMultiMoteurController {
     private static int choixMoteur = 0;
-
     @FXML
     Button moteurCreatif, multiMoteur, moteurPrecision;
 
@@ -20,7 +20,6 @@ public class MenuMultiMoteurController {
     }
 
     public void onMoteurCreatifButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         Stage stage = (Stage) moteurCreatif.getScene().getWindow();
         choixMoteur = 1;
@@ -28,7 +27,6 @@ public class MenuMultiMoteurController {
     }
 
     public void onMultiMoteurButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         Stage stage = (Stage) multiMoteur.getScene().getWindow();
         choixMoteur = 2;

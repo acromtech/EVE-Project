@@ -1,5 +1,6 @@
 package controleur;
 //permet de visualiser le temps d'attente correspondant à l'indexation
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,9 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoadingController {
-
-    @FXML
-    private ProgressBar load;
 
     @FXML
     private Label index;

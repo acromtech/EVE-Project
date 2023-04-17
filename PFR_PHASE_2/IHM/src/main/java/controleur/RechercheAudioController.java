@@ -1,5 +1,5 @@
 package controleur;
-
+//rechercher un son à l'aide de son chemin
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,6 @@ public class RechercheAudioController {
 
     @FXML
     private TextField cheminAudio;
-
     @FXML
     private Button retour, search;
 

@@ -1,4 +1,4 @@
-package Entite;
+package entite;
 
 public class Historique {
         private String date;

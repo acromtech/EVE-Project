@@ -1,7 +1,8 @@
 package controleur;
 //affiche les résultats de la recherche texte
-import Entite.OpenFile;
-import Entite.Resultat;
+
+import entite.OpenFile;
+import entite.Resultat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,33 +18,26 @@ import java.io.IOException;
 
 public class AffichageResultatRechercheTexteController {
 
-
     @FXML
     private Button retour;
-
-
     @FXML
     private TableColumn<Resultat, Integer> numero;
-
     @FXML
     private TableColumn<Resultat, String> chemin;
-
     @FXML
     private TableColumn<Resultat, String> resultat;
-
     @FXML
     private TableColumn<Resultat, String> titre;
-
     @FXML
     private TableView<Resultat> resultatTexte;
-//renvoie à la recherche
+
+    //renvoie à la recherche
     @FXML
     public void onRetourButtonClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("rechercheTexte.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-
 
     public void initialize() {
         numero.setCellValueFactory(new PropertyValueFactory<Resultat, Integer>("numero"));
@@ -52,7 +46,6 @@ public class AffichageResultatRechercheTexteController {
         chemin.setCellValueFactory(new PropertyValueFactory<Resultat, String>("chemin"));
         setupTable();
     }
-
 
     @FXML
     public void rowClicked(MouseEvent event) throws IOException {
@@ -83,7 +76,7 @@ public class AffichageResultatRechercheTexteController {
         }
     }
 
-
+    //résultats qui vont être affichés
     private void setupTable() {
         Resultat histos0 = new Resultat(1, "06-Les_mauvais_comptes_d_une_Θlimination.xml", "16,333332%", "src/main/resources/texte/06-Les_mauvais_comptes_d_une_Θlimination.xml");
         Resultat histos2 = new Resultat(2, "22-Les_clubs_de_football_anglais.xml", "11,309524%", "src/main/resources/texte/22-Les_clubs_de_football_anglais.xml");

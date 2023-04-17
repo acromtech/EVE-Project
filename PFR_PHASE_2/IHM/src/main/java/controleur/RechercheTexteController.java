@@ -16,12 +16,14 @@ import java.io.File;
 import java.io.IOException;
 
 public class RechercheTexteController {
-//Un TexteField permet à l'utilisateur de rentrer sa recherche
+
+    //Un TexteField permet à l'utilisateur de rentrer sa recherche
     @FXML
     private TextField cheminTexte;
-//Déclaration des boutons
+    //Déclaration des boutons
     @FXML
-    private Button retour, search, browse;
+    private Button retour, search;
+
     //Lorsque le bouton search est activé cela lance la rechecrhe
     @FXML
     public void onSearchButtonClick() throws IOException {
@@ -29,6 +31,7 @@ public class RechercheTexteController {
         Stage stage = (Stage) search.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
+
     //Lorsque le bouton retour est activé cela affiche la fenêtre juste d'avant
     @FXML
     public void onRetourButtonClick() throws IOException {
@@ -36,6 +39,7 @@ public class RechercheTexteController {
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
+
     //On peut également activer la recherche avec la touche "entrée" du clavier
     @FXML
     public void onEnterAction(KeyEvent keyEvent) throws IOException {
@@ -45,7 +49,8 @@ public class RechercheTexteController {
             stage.setScene(new Scene(root));
         }
     }
-//Ici on permet à l'utilisateur de chercher directement le texte recherché dans les fichiers de l'ordinateur
+
+    //Ici on permet à l'utilisateur de chercher directement le texte recherché dans les fichiers de l'ordinateur
     public void onBrowseBoutonClick() {
         // Crée un FileChooser
         FileChooser fileChooser = new FileChooser();
@@ -66,6 +71,4 @@ public class RechercheTexteController {
             cheminTexte.setText(filePath);
         }
     }
-
-
 }

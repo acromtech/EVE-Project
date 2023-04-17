@@ -1,7 +1,7 @@
 package controleur;
 //résultats de la recherche audio qui se lance au moment recherché par l'utilisateur
 
-import Entite.Resultat;
+import entite.Resultat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,23 +22,16 @@ public class AffichageResultatRechercheAudioController {
 
     @FXML
     private Button retour;
-
-
     @FXML
     private TableColumn<Resultat, Integer> numero;
-
     @FXML
     private TableColumn<Resultat, String> chemin;
-
     @FXML
     private TableColumn<Resultat, String> resultat;
-
     @FXML
     private TableColumn<Resultat, String> titre;
-
     @FXML
     private TableView<Resultat> resultatAudio;
-
     private Clip clip;
 
     @FXML
@@ -48,8 +41,7 @@ public class AffichageResultatRechercheAudioController {
         stage.setScene(new Scene(root));
     }
 
-
-    public void onMetPause() throws IOException {
+    public void onMetPause(){
         clip.stop();
     }
 
@@ -61,9 +53,8 @@ public class AffichageResultatRechercheAudioController {
         setupTable();
     }
 
-
     @FXML
-    public void rowClicked(MouseEvent event) throws IOException {
+    public void rowClicked(MouseEvent event){
         if (event.getClickCount() != 1 && event.getTarget() instanceof TableCell) {
             // Ne rien faire si l'utilisateur a cliqué sur le bandeau de la TableView
 
@@ -95,10 +86,9 @@ public class AffichageResultatRechercheAudioController {
             } catch (IOException | UnsupportedAudioFileException | LineUnavailableException ex) {
                 System.err.println("Erreur lors de la lecture du fichier audio : " + ex.getMessage());
             }
-
         }
-
     }
+
     //résultats qui vont être affichés
     private void setupTable() {
         Resultat histos0 = new Resultat(1, "Corpus_fi.wav", "29", "src/main/resources/son/corpus_fi.wav");
@@ -106,5 +96,4 @@ public class AffichageResultatRechercheAudioController {
         Resultat histos2 = new Resultat(3, "Corpus_fi.wav", "33", "src/main/resources/son/corpus_fi.wav");
         resultatAudio.getItems().addAll(histos0, histos1, histos2);
     }
-
 }

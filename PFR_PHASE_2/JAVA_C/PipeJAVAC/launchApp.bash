@@ -1,4 +1,9 @@
 #!/bin/bash
+# Auteur : Alexis GIBERT
+
+sudo apt install gcc
+sudo apt install make
+sudo apt install openjdk-19-jdk
 
 # Compilation du code source
 javac -cp "lib/*" -d bin src/Main.java
@@ -17,3 +22,6 @@ mv Main.jar .
 
 # Donner les droits d'exécution au fichier JAR
 chmod +x Main.jar
+
+sudo java -jar Main.jar
+

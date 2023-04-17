@@ -6,6 +6,6 @@ module com.example.pfr2 {
 
     opens controleur to javafx.fxml;
     exports controleur;
-    exports Entite;
-    opens Entite to javafx.fxml;
+    exports entite;
+    opens entite to javafx.fxml;
 }

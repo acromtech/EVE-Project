@@ -1,4 +1,4 @@
-package Entite;
+package entite;
 
 public class Resultat {
     private String titre;

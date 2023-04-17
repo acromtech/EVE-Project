@@ -1,9 +1,9 @@
 package controleur;
-//enregistrer les recheches effectuées dans l'historique pour permettre à l'utilisateur de
+//enregistrer les recherches effectuées dans l'historique pour permettre à l'utilisateur de
 //les visualiser
-
 //l'historique est composé de la date de la recherche, ses résultats et son titre
-import Entite.Historique;
+
+import entite.Historique;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -15,13 +15,10 @@ public class HistoriqueController {
 
     @FXML
     private TableColumn<Historique, String> date;
-
     @FXML
     private TableColumn<Historique, String> resultat;
-
     @FXML
     private TableColumn<Historique, String> titre;
-
     @FXML
     private TableView<Historique> histo;
 
@@ -32,10 +29,8 @@ public class HistoriqueController {
         setupTable();
     }
 
-
     @FXML
     public void rowClicked(MouseEvent event) {
-
         if (event.getClickCount() != 1 && event.getTarget() instanceof TableCell) {
             // Ne rien faire si l'utilisateur a cliqué sur le bandeau de la TableView
             Historique clicked = histo.getSelectionModel().getSelectedItem();

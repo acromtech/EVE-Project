@@ -49,16 +49,16 @@
                   </Label>
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="44.0" prefWidth="964.0" text="Entrez la couleur recherchée" textFill="WHITE">
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="964.0" text="Entrez ou sélectionnez la couleur recherchée" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
             <Label prefHeight="75.0" prefWidth="508.0" style="-fx-background-radius: 30;">
                <graphic>
-                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="508.0" style="-fx-background-color: White; -fx-background-radius: 100;">
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="612.0" style="-fx-background-color: White; -fx-background-radius: 100;">
                      <children>
-                        <TextField fx:id="cheminCouleur" alignment="CENTER" onKeyPressed="#onEnterAction" prefHeight="62.0" prefWidth="326.0" promptText="Tapez ici votre couleur, ex : violet" style="-fx-background-color: transparent; -fx-background-radius: 100;">
+                        <TextField fx:id="couleur" alignment="CENTER" onKeyPressed="#onEnterAction" prefHeight="62.0" prefWidth="326.0" promptText="Tapez votre couleur, ex : violet" style="-fx-background-color: transparent; -fx-background-radius: 100;">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -80,10 +80,37 @@
             </Label>
          </children>
       </VBox>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="726.0" prefHeight="44.0" prefWidth="1047.0" style="-fx-background-color: White; -fx-background-radius: 30;" text="Aide : Voici les couleurs que pouvez chercher: violet, orange, ardoise, corail, cyan, kaki, jaune" textAlignment="CENTER" textFill="#ca58f1">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
+      <HBox alignment="CENTER" layoutX="164.0" layoutY="701.0" prefHeight="89.0" prefWidth="886.0" spacing="40.0">
+         <children>
+            <Button fx:id="orange" mnemonicParsing="false" onAction="#onOrangeButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #ff8800;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="corail" mnemonicParsing="false" onAction="#onCorailButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #FF7F50;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="jaune" mnemonicParsing="false" onAction="#onJauneButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: F7FF3C;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="kaki" mnemonicParsing="false" onAction="#onKakiButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #94812b;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="cyan" mnemonicParsing="false" onAction="#onCyanButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #2bfafa;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="violet" mnemonicParsing="false" onAction="#onVioletButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #8806ce;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="ardoise" mnemonicParsing="false" onAction="#onArdoiseButtonClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-radius: 360; -fx-background-color: #5a5e6b;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

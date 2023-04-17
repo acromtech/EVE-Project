@@ -21,16 +21,15 @@ public class MenuController {
     @FXML
     Button texte, image, audio, admin, retour;
 
-//envoie sur les différents moyens de recherche texte: mot clés ou texte
+    //envoie sur les différents moyens de recherche texte: mot clés ou texte
     public void onTexteButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("choixRechercheTexte.fxml"));
         Stage stage = (Stage) texte.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//cette fonction permet à l'utilisateur d'ouvrir l'historique de ses recherches sur une nouvelle fenêtre
-//il peut alors effectuer ses recherches en voyant les anciens résultats
 
+    //cette fonction permet à l'utilisateur d'ouvrir l'historique de ses recherches sur une nouvelle fenêtre
+    //il peut alors effectuer ses recherches en voyant les anciens résultats
     public void onHistoriqueButtonClick() throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("historique.fxml"));
@@ -39,12 +38,10 @@ public class MenuController {
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-
     }
 
-//cette fonction permet d'amener l'utilisateur sur la page modification administrateur lorsque l'on clique sur le bouton
-//admin
-
+    //cette fonction permet d'amener l'utilisateur sur la page modification administrateur lorsque l'on clique sur le bouton
+    //admin
     @FXML
     private void onAdminButtonClick() throws IOException {
         if (MenuMultiMoteurController.getChoixMoteur() != 2) {
@@ -55,12 +52,10 @@ public class MenuController {
             attention.setVisible(true);
             error.setText("Configuration indisponible en mode Multimoteur, Retournez en arrière et selectionnez un moteur à configurer");
         }
-
     }
-//envoie sur les différents moyens de recherche image: couleur ou chemin image
 
+    //envoie sur les différents moyens de recherche image: couleur ou chemin image
     public void onImageButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("choixRechercheImage.fxml"));
         Stage stage = (Stage) image.getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -68,18 +63,16 @@ public class MenuController {
 
     //envoie sur la recherche audio
     public void onAudioButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("choixRechercheAudio.fxml"));
         Stage stage = (Stage) audio.getScene().getWindow();
         stage.setScene(new Scene(root));
-
     }
-//renvoie à la fenêtre précédente, au choix di moteur de recherche
+
+    //renvoie à la fenêtre précédente, au choix du moteur de recherche
     @FXML
     public void onRetourButtonClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("menuMultiMoteur.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-
 }

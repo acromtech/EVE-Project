@@ -1,6 +1,7 @@
 package controleur;
 //permet de modifer les paramètres accessibles par l'administrateur
-import Entite.BDconfig;
+
+import entite.BDconfig;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,78 +14,61 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-
 public class ModificationAdminController {
-
-    @FXML
-    private Label error;
-
-    @FXML
-    private ImageView attention;
-    @FXML
-    private Button VueUtilisateur;
-
-    @FXML
-    private CheckBox ferme;
-
-    @FXML
-    private TextField indexM;
-
-    @FXML
-    private TextField indexN;
-
-    @FXML
-    private Button indexerBase;
-
-    @FXML
-    private PasswordField mdp;
-
-
-    @FXML
-    private TextField nbListe;
-
-    @FXML
-    private CheckBox ouvert;
-
-    @FXML
-    private Button retour;
-
-    @FXML
-    private Button sauvegarde;
-
-    @FXML
-    private TextField seuilAudio;
-
-    @FXML
-    private TextField seuilTexte;
-
-    @FXML
-    private ComboBox combo;
 
     private final BDconfig bDconfig = BDconfig.getInstance();
     private final File pathConfigMoteur1 = new File("PFR_partie1/Configuration/.config");
     private final File pathConfigMoteur2 = new File("PFR_partie1/Configuration/.config2");
     private final File pathmdp = new File("motdePasse/.mdp");
-    private String index1;
-    private String index2;
-    private String seuilA;
-    private String nbL;
-    private String seuilT;
-    private String motdePasse, savmdp;
-
     private final HashMap<String, String> maHashMap = new HashMap<>();
     @FXML
-    private Button suprimerBase;
+    private Label error;
+    @FXML
+    private ImageView attention;
+    @FXML
+    private CheckBox ferme;
+    @FXML
+    private TextField indexM;
+    @FXML
+    private TextField indexN;
+    @FXML
+    private Button indexerBase;
+    @FXML
+    private PasswordField mdp;
+    @FXML
+    private TextField nbListe;
+    @FXML
+    private CheckBox ouvert;
+    @FXML
+    private Button retour;
+    @FXML
+    private TextField seuilAudio;
+    @FXML
+    private TextField seuilTexte;
+    @FXML
+    private String index1;
+    @FXML
+    private String index2;
+    @FXML
+    private String seuilA;
+    @FXML
+    private String nbL;
+    @FXML
+    private String seuilT;
+    @FXML
+    private String motdePasse, savmdp;
 
     public void onRetourButtonClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//permet de sauvegarder les paramètres modififiés
-    public void onSauvegardeButtonClick() throws Exception {
+
+    //permet de sauvegarder les paramètres modififiés
+    public void onSauvegardeButtonClick(){
 
         switch (MenuMultiMoteurController.getChoixMoteur()) {
+            //choix moteur créatif TODO
             case 1:
                 maHashMap.put("indexationAudioN", index1);
                 maHashMap.put("indexationAudioM", index2);
@@ -92,11 +76,9 @@ public class ModificationAdminController {
                 maHashMap.put("nbListe", nbL);
                 maHashMap.put("seuilMotSignificatif", seuilT);
                 bDconfig.multiUpdateConfig(maHashMap, pathConfigMoteur1);
-                //choix moteur créatif TODO
                 break;
+            //choix moteur précision TODO
             case 3:
-                //choix meteur précision TODO
-
                 maHashMap.put("indexationAudioN", index1);
                 maHashMap.put("indexationAudioM", index2);
                 maHashMap.put("seuil", seuilA);
@@ -111,27 +93,28 @@ public class ModificationAdminController {
             bDconfig.updateConfig("motdePasse", motdePasse, pathmdp);
         }
         error.setText("Sauvegarde effectué");
-
-
     }
-//cette fonction permet de lancer l'indexation
+
+    //cette fonction permet de lancer l'indexation
     public void onIndexationButtonClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("loading.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//cette fonction permet de supprimer les
+
+    //cette fonction permet de supprimer les bases descripteurs
     public void onSupprimeButtonClick() throws Exception {
         attention.setVisible(true);
         error.setText("La base a bien été suprimmé");
     }
 
-//permet de rentrer que des chiffres dans la case mdp
+    //permet de rentrer que des chiffres dans la case mdp
     public void onBlockLetterPassWordField() throws IOException {
         blockLetters(mdp);
 
     }
-//permet de pouvoir rentrer que des chiffres
+
+    //permet de pouvoir rentrer que des chiffres
     public void onBlockLetterTexteField() throws IOException {
         blockLetters2(seuilAudio);
         blockLetters2(seuilTexte);
@@ -168,9 +151,9 @@ public class ModificationAdminController {
                 error.setText(" La valeur n'est pas positive !!!");
             }
         }
-
     }
-//Rentrer le seuil voulu pour l'audio, un message d'erreur apparaît si la valeur n'est pas comprise entre 0 et 100
+
+    //Rentrer le seuil voulu pour l'audio, un message d'erreur apparaît si la valeur n'est pas comprise entre 0 et 100
     public void seuilAudioValeur() throws IOException {
         seuilA = seuilAudio.getText().trim();
         if (!seuilA.equals("")) {
@@ -183,7 +166,8 @@ public class ModificationAdminController {
         }
 
     }
-//Rentrer le nombre de valeur désiré, un message d'erreur apparaît si la valeur n'est pas positive
+
+    //Rentrer le nombre de valeur désiré, un message d'erreur apparaît si la valeur n'est pas positive
     public void nbListeValeur() throws IOException {
         nbL = nbListe.getText().trim();
         if (!nbL.equals(""))
@@ -195,7 +179,8 @@ public class ModificationAdminController {
             }
 
     }
-//Rentrer le seuil voulu pour le texte, un message d'erreur apparaît si la valeur n'est pas comprise entre 2 et 10
+
+    //Rentrer le seuil voulu pour le texte, un message d'erreur apparaît si la valeur n'est pas comprise entre 2 et 10
     public void seuilTexteValeur() throws IOException {
         seuilT = seuilTexte.getText().trim();
         if (!seuilT.equals("")) {
@@ -211,7 +196,6 @@ public class ModificationAdminController {
     public void handleOuvertBox() {
         if (ouvert.isSelected()) {
             ferme.setSelected(false);
-
         }
     }
 
@@ -220,7 +204,8 @@ public class ModificationAdminController {
             ouvert.setSelected(false);
         }
     }
-//Possibilité de rentrer que des chiffres
+
+    //Possibilité de rentrer que des chiffres
     public void blockLetters2(TextField texteWordField) {
         texteWordField.setOnKeyTyped(event -> {
             String character = event.getCharacter();
@@ -252,9 +237,11 @@ public class ModificationAdminController {
             }
         });
     }
-//A ce niveau là l'utilisateur pourra choisir quel type de moteur il souhaite utiliser
-    public void choixMoteur() {
+
+    //Permet de rentrer les valeurs selon le moteur sélectionné
+    public void setValeur() {
         switch (MenuMultiMoteurController.getChoixMoteur()) {
+            //choix moteur créatif TODO
             case 1:
 
                 index1 = bDconfig.getParametre("indexationAudioN", pathConfigMoteur1);
@@ -263,10 +250,9 @@ public class ModificationAdminController {
                 nbL = bDconfig.getParametre("nbListe", pathConfigMoteur1);
                 seuilT = bDconfig.getParametre("seuilMotSignificatif", pathConfigMoteur1);
                 motdePasse = bDconfig.getmdp();
-                //choix moteur créatif TODO
                 break;
+            //choix moteur précision TODO
             case 3:
-                //choix meteur précision TODO
 
                 index1 = bDconfig.getParametre("indexationAudioN", pathConfigMoteur2);
                 index2 = bDconfig.getParametre("indexationAudioM", pathConfigMoteur2);
@@ -274,10 +260,7 @@ public class ModificationAdminController {
                 nbL = bDconfig.getParametre("nbListe", pathConfigMoteur2);
                 seuilT = bDconfig.getParametre("seuilMotSignificatif", pathConfigMoteur2);
                 motdePasse = bDconfig.getmdp();
-
                 break;
-
-
         }
         mdp.setPromptText(motdePasse);
         indexN.setPromptText(index1);
@@ -285,7 +268,5 @@ public class ModificationAdminController {
         seuilAudio.setPromptText(seuilA);
         seuilTexte.setPromptText(seuilT);
         nbListe.setPromptText(nbL);
-
     }
-
 }

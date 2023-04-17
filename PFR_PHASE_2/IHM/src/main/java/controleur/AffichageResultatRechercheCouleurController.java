@@ -2,6 +2,7 @@ package controleur;
 //affiche les résultats de la recherche image en permettant à l'utilisateur d'agrandir les images qui l'intéresse parmis
 //les résultats
 //affiche le score et le nom de l'image
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,7 +22,6 @@ public class AffichageResultatRechercheCouleurController {
     private VBox VboxPremierPlan;
     @FXML
     private ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
-
     @FXML
     private Label score1, score2, score3, score4, score5, score6, score7, score8;
     @FXML
@@ -40,26 +39,21 @@ public class AffichageResultatRechercheCouleurController {
     private final String filename8 = "";
 
     @FXML
-    private AnchorPane zoomImage;
-
-    @FXML
     public void onRetourButtonClick() throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("rechercheCouleur.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
 
     @FXML
-    public void onChangeTexteAide() throws IOException {
+    public void onChangeTexteAide(){
         texteAide.setText("(Aide cliquez sur l'image pour la fermer)");
     }
 
     @FXML
-    public void onBaseTexteAide() throws IOException {
+    public void onBaseTexteAide(){
         texteAide.setText("(Aide cliquez sur l'image pour l'afficher en grand)");
     }
-
     //résultats qui vont être affichés
     @FXML
     public void onAfficheImage() throws IOException {
@@ -71,8 +65,7 @@ public class AffichageResultatRechercheCouleurController {
         File dir6 = new File("src/main/resources/images/JPG/" + filename6);
         File dir7 = new File("src/main/resources/images/JPG/" + filename7);
         File dir8 = new File("src/main/resources/images/JPG/" + filename8);
-        //System.out.println(dir.getAbsolutePath());
-        //Image slt =new Image(getClass().getResourceAsStream(dir.getAbsolutePath()));
+
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         Image img2 = new Image(dir2.toURI().toURL().toExternalForm());
         Image img3 = new Image(dir3.toURI().toURL().toExternalForm());
@@ -81,6 +74,7 @@ public class AffichageResultatRechercheCouleurController {
         Image img6 = new Image(dir6.toURI().toURL().toExternalForm());
         Image img7 = new Image(dir7.toURI().toURL().toExternalForm());
         Image img8 = new Image(dir8.toURI().toURL().toExternalForm());
+
         image1.setImage(img1);
         image2.setImage(img2);
         image3.setImage(img3);
@@ -99,9 +93,9 @@ public class AffichageResultatRechercheCouleurController {
         score3.setText("1%");
     }
 
+    //agrandissement de l'image lorsque l'on "clique" dessus
     @FXML
     void onOuvreImage1() throws IOException {
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename1);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -112,8 +106,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage2() throws IOException {
-
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename2);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -124,7 +116,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage3() throws IOException {
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename3);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -136,7 +127,6 @@ public class AffichageResultatRechercheCouleurController {
     @FXML
     void onOuvreImage4() throws IOException {
 
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename4);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -147,8 +137,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage5() throws IOException {
-
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename5);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -159,8 +147,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage6() throws IOException {
-
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename6);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -171,8 +157,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage7() throws IOException {
-
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename7);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -183,8 +167,6 @@ public class AffichageResultatRechercheCouleurController {
 
     @FXML
     void onOuvreImage8() throws IOException {
-
-
         File dir1 = new File("src/main/resources/images/JPG/" + filename8);
         Image img1 = new Image(dir1.toURI().toURL().toExternalForm());
         VboxPremierPlan.toBack();
@@ -194,11 +176,10 @@ public class AffichageResultatRechercheCouleurController {
     }
 
     @FXML
-    void onFermeImage() throws IOException {
+    void onFermeImage(){
         image9.setVisible(false);
         image9.toBack();
         VboxPremierPlan.toFront();
-        //image1.setDisable(false);
     }
 
 }

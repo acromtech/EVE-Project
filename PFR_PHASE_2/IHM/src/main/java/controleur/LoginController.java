@@ -1,6 +1,7 @@
 package controleur;
 //controler la connexion administrateur: identifianr et mot de passe
-import Entite.BDconfig;
+
+import entite.BDconfig;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,23 +25,18 @@ public class LoginController {
     private final File pathmdp = new File("motdePasse/.mdp");
     @FXML
     private TextField id;
-
     @FXML
     private PasswordField mdp;
-
     @FXML
     private Button retour;
-
     @FXML
     private Button valider;
-
     @FXML
     private Label error;
-
     @FXML
     private ImageView attention;
 
-//renvoie au menu
+    //renvoie au menu
     @FXML
     public void onRetourButtonClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
@@ -49,7 +45,7 @@ public class LoginController {
         cpt = 3;
     }
 
-//permet de valider la saisie du mdp avec la touche "entrée" du clavier
+    //permet de valider la saisie du mdp avec la touche "entrée" du clavier
     @FXML
     public void onEnterAction(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -63,7 +59,8 @@ public class LoginController {
             }
         }
     }
-//valider le mdp
+
+    //valider le mdp
     public void onClickButtonValid() throws IOException {
         cpt--;
         loginAdmin(cpt);
@@ -74,7 +71,8 @@ public class LoginController {
             cpt = 3;
         }
     }
-//vérification de la validité de l'identifiant et du mdp
+
+    //vérification de la validité de l'identifiant et du mdp
     @FXML
     public void loginAdmin(int cpt) throws IOException {
         String identifiant;
@@ -96,9 +94,6 @@ public class LoginController {
     }
 
     private boolean isValidAdmin(String identifiant, String motDePasse) {
-
         return identifiant.equals("Admin") && motDePasse.equals(bDconfig.getmdp());
     }
-
-
 }

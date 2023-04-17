@@ -1,7 +1,24 @@
 # Pipe IVY
 Ce pipe permet de renvoyer les résultats obtenu par le programme C au controlleur JAVA.
 
-**Pour lancer le programme de test déplacez-vous dans le répertoire PipeJava et lancer la commande suivante : `sudo java -jar Main.jar`**
+**Placez vous dans le répertoire PipeJAVAC et utilisez le bash launchApp.bash pour lancer l'application sans echec (vérification / installation des dépendances, reconstruction des bibliothèques logicielles, génération et lancement de l'executable) ou suivre les prérequis détaillés plus bas**
+```
+bash launchApp.bash
+```
+
+## Prérequis
+**GCC**
+```
+sudo apt install gcc
+```
+**Make**
+```
+sudo apt install make
+```
+**jdk 19**
+```
+sudo apt install openjdk-19-jdk
+```
 
 ```
 //PROGRAMME DE TEST

@@ -1,7 +1,8 @@
 package controleur;
 //affiche les résultats de la recherche mot clés du texte
-import Entite.OpenFile;
-import Entite.Resultat;
+
+import entite.OpenFile;
+import entite.Resultat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,22 +18,16 @@ import java.io.IOException;
 
 public class AffichageResultatRechercheMotClesController {
 
-
     @FXML
     private Button retour;
-
     @FXML
     private TableColumn<Resultat, Integer> numero;
-
     @FXML
     private TableColumn<Resultat, String> chemin;
-
     @FXML
     private TableColumn<Resultat, String> resultat;
-
     @FXML
     private TableColumn<Resultat, String> titre;
-
     @FXML
     private TableView<Resultat> resultatMotCles;
 
@@ -43,7 +38,6 @@ public class AffichageResultatRechercheMotClesController {
         stage.setScene(new Scene(root));
     }
 
-
     public void initialize() {
         numero.setCellValueFactory(new PropertyValueFactory<Resultat, Integer>("numero"));
         titre.setCellValueFactory(new PropertyValueFactory<Resultat, String>("titre"));
@@ -51,7 +45,6 @@ public class AffichageResultatRechercheMotClesController {
         chemin.setCellValueFactory(new PropertyValueFactory<Resultat, String>("chemin"));
         setupTable();
     }
-
 
     @FXML
     public void rowClicked(MouseEvent event) {
@@ -82,7 +75,8 @@ public class AffichageResultatRechercheMotClesController {
             }
         }
     }
-//résultats qui vont être affichés
+
+    //résultats qui vont être affichés
     private void setupTable() {
         Resultat histos0 = new Resultat(1, "06-Les_mauvais_comptes_d_une_Θlimination.xml", "20", "src/main/resources/texte/06-Les_mauvais_comptes_d_une_Θlimination.xml");
         Resultat histos1 = new Resultat(2, "22-Ted_Stanger,_l_AmΘricain_de_service.xml", "13", "src/main/resources/texte/22-Ted_Stanger,_l_AmΘricain_de_service.xml");

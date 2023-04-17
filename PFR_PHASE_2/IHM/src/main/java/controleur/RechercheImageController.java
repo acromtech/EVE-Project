@@ -1,4 +1,5 @@
 package controleur;
+//recherche d'image avec le chemin d'une autre image
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,28 +14,31 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-//recherche d'image avec le chemin d'une autre image
+
 public class RechercheImageController {
-    @FXML
-    private TextField cheminImage;
 
     @FXML
+    private TextField cheminImage;
+    @FXML
     private Button retour, search;
-//lance la recherche
+
+    //lance la recherche
     @FXML
     public void onSearchButtonClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("affichageResultatRechercheImage.fxml"));
         Stage stage = (Stage) search.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//renvoie à la page précédente
+
+    //renvoie à la page précédente
     @FXML
     public void onRetourButtonClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("choixRechercheImage.fxml"));
         Stage stage = (Stage) retour.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-//lance la recherche grâce à la touche clavier "entrée"
+
+    //lance la recherche grâce à la touche clavier "entrée"
     @FXML
     public void onEnterAction(KeyEvent keyEvent) throws IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -43,7 +47,8 @@ public class RechercheImageController {
             stage.setScene(new Scene(root));
         }
     }
-//premet de sélectionner l'image recherchée directement dans l'ordinateur
+
+    //premet de sélectionner l'image recherchée directement dans l'ordinateur
     public void onBrowseBoutonClick() {
         // Crée un FileChooser
         FileChooser fileChooser = new FileChooser();
@@ -66,5 +71,4 @@ public class RechercheImageController {
             cheminImage.setText(filePath);
         }
     }
-
 }

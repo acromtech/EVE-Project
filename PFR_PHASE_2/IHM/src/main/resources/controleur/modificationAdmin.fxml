@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#choixMoteur" prefHeight="815.0" prefWidth="1212.0" styleClass="bodybg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.ModificationAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#setValeur" prefHeight="815.0" prefWidth="1212.0" styleClass="bodybg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.ModificationAdminController">
    <children>
       <Button fx:id="retour" cancelButton="true" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRetourButtonClick" prefHeight="44.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #CA58F1;" text="Retour" textFill="WHITE">
          <cursor>
@@ -133,7 +133,7 @@
             </HBox>
          </children></VBox>
       <Line endX="-100.0" endY="525.0" fill="WHITE" layoutX="838.0" layoutY="131.0" startX="-100.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <VBox alignment="CENTER" layoutX="761.0" layoutY="126.0" onMouseDragEntered="#choixMoteur" prefHeight="535.0" prefWidth="388.0" spacing="180.0">
+      <VBox alignment="CENTER" layoutX="761.0" layoutY="126.0" onMouseDragEntered="#setValeur" prefHeight="535.0" prefWidth="388.0" spacing="180.0">
          <children>
             <Button fx:id="indexerBase" mnemonicParsing="false" onAction="#onIndexationButtonClick" prefHeight="61.0" prefWidth="330.0" style="-fx-background-radius: 30; -fx-background-color: #CA58F1;" text="Indexer la base de fichier" textFill="WHITE">
                <font>
