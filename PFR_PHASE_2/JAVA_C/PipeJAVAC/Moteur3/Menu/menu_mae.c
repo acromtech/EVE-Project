@@ -59,7 +59,7 @@ int modifMotDePasse()
 
 void supprimerDescripteur()
 {
-    
+    supprimerBaseImage();
     //printf("\r\n| Suppression de la base Indexée |\n");
     // supprime les descripteurs audios
     rmDescripteurs("../FichierIndexation/Son/BaseDescripteursAudios/");

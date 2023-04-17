@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Auteur : Emilien VESIN
+ */
 public class BDconfig {
     private Map<String, String> configMap = new HashMap<String, String>();
 
@@ -14,11 +16,19 @@ public class BDconfig {
         private static final BDconfig instance = new BDconfig();
     }
 
+    /**
+     * Recupère l'instance
+     * @return
+     */
     public static BDconfig getInstance() {
         return BDconfigHolder.instance;
     }
 
-
+    /**
+     * Récupère un paramètre dans le .config
+     * @param key
+     * @return
+     */
     public String getParametre(String key){
         return configMap.get(key);
     }
@@ -49,6 +59,12 @@ public class BDconfig {
 
     }
 
+    /**
+     * Met a jour UN paramètre du .config
+     * @param key
+     * @param value
+     * @param path
+     */
     public void updateConfig(String key, String value, File path) {
         try {
             // Ouvre le fichier .config en mode lecture
@@ -84,6 +100,11 @@ public class BDconfig {
         }
     }
 
+    /**
+     * Met a jour PLUSIEURS paramètres du .config
+     * @param updates
+     * @param path
+     */
     public void multiUpdateConfig(Map<String, String> updates, File path) {
         try {
             // Lit chaque ligne du fichier .config et stocke les résultats dans une liste
@@ -119,7 +140,9 @@ public class BDconfig {
         }
     }
 
-
+    /**
+     * Affiche le contenu du .config
+     */
     public String toString() {
         return "Valeur " + configMap;
     }

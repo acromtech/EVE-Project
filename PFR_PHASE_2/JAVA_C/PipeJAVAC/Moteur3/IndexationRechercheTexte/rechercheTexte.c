@@ -130,14 +130,10 @@ descripteurEtScoreListe rechercheTexteCompare(const volatile baseDescripteur b, 
     while(tmp != NULL){
         if((tmp->score) != 0){
             jsonPath = trouverChemin(tmp->id, liste);
-            printf("%d %s\n", tmp->id, jsonPath);
             liste_resultat = empilerDescriipteurEtScore(liste_resultat, jsonPath,tmp->id, (int)((tmp->score*100.0)/s->score));
         }
         tmp = tmp->next;
     }
-       
-    libereScore(s);
-    liberePILE(d->listeELMENT);
 
     free(jsonPath);
     free(d);
@@ -412,6 +408,5 @@ char* trouverChemin(int id, pathIdDesc liste){
         }
         tmp = tmp->next;
     }
-    printf("%s %s %d\n", chemin, tmp->path, tmp->id);
     return chemin;
 }

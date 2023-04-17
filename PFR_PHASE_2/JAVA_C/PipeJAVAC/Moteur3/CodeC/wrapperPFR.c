@@ -35,8 +35,8 @@ void callback (IvyClientPtr app, void *data, int argc, char **argv){
 	if(typeTraitement==SCORE_CHEMIN){
 		autorisation_envoie_trame=1;
 	} else if(typeTraitement==TEXTE_FICHIER||typeTraitement==TEXTE_MOTCLE||typeTraitement==IMAGE_FICHIER||typeTraitement==IMAGE_MOTCLE||typeTraitement==SON_FICHIER){
-		requete=calloc(50,sizeof(char));
-		requete=argv[1];
+		requete=calloc(100,sizeof(char));
+		strcpy(requete, argv[1]);
 		nombreResultatMax=atoi(argv[2]);
 	}
 }
@@ -44,7 +44,7 @@ void callback (IvyClientPtr app, void *data, int argc, char **argv){
 void startBus(char* port){
 	//Initialisation du bus
 	char* connected = calloc(50,sizeof(char));
-	char* hote = calloc(1,sizeof(char));
+	char* hote = calloc(100,sizeof(char));
 	sprintf(connected,"%d %d %d %d %d",masterId,motorId,CONNECTED,0x00,0x00);
 	sprintf(hote,"%d",motorId);
 	IvyInit (hote,connected,0x00,0x00,0x00,0x00);

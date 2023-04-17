@@ -7,6 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Auteur : Elio GENSON
+ */
 public class Tools {
     public static Map<String, Integer> negateMapValues(Map<String, Integer> originalMap) {
         Map<String, Integer> negatedMap = new HashMap<String, Integer>();

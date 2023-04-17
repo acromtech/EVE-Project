@@ -104,12 +104,15 @@ int main(int argc, char **argv){
 				break;
 			
 			case TEXTE_FICHIER:
-				liste_resListToSendTexte = rechercheTexteCompare(bd, listeDescripteur, requete);
-				
+				char *requeteComplete = (char*) calloc(strlen("../../BaseFichier/Texte/") + strlen(requete) + 1, sizeof(char)); // alloue de la mémoire pour la chaîne concaténée
+    			sprintf(requeteComplete, "%s%s", "../../BaseFichier/Texte/", requete); // concatène les deux chaînes de caractères
+				liste_resListToSendTexte = rechercheTexteCompare(bd, listeDescripteur, requeteComplete);
+				free(requeteComplete);
 				while(liste_resListToSendTexte != NULL){
                     pileRes = empilerResultatListe(pileRes, liste_resListToSendTexte->descripteur->path, liste_resListToSendTexte->score);
 					liste_resListToSendTexte = liste_resListToSendTexte->next;
                 }
+
 				break;
 			
 			case IMAGE_MOTCLE:

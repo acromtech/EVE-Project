@@ -78,7 +78,7 @@ int main(int argc, char **argv){
 	
 	startBus("127.255.255.255:2010");
 	//etat = TRAITEMENT;
-	//typeTraitement = SON_FICHIER;
+	//typeTraitement = INDEXATION_ALL;
 	while(boucle){
 		switch(etat){
 		case ATTENTE_REQUETE:
@@ -88,12 +88,11 @@ int main(int argc, char **argv){
 
 		case TRAITEMENT:
 			switch (typeTraitement){
-			case INDEXATION_ALL:printf("Début initialisation\n");
+			case INDEXATION_ALL:
 				supprimerDescripteur();
     			indexerBaseImage(&bdImage, &listeImage);
     			indexationBase("../../BaseFichier/Texte/", &bd, &listeDescripteur, &tableDescripteur);
 				autoIndexationAudio();
-				traitementEffectue();
 				break;
 
 			case TEXTE_MOTCLE:
@@ -102,60 +101,51 @@ int main(int argc, char **argv){
                     pileRes = empilerResultatListe(pileRes, liste_resListToSendTexte->descripteur->path, liste_resListToSendTexte->score);
 					liste_resListToSendTexte = liste_resListToSendTexte->next;
                 }
-				traitementEffectue();
 				break;
 			
 			case TEXTE_FICHIER:
-				liste_resListToSendTexte = rechercheTexteCompare(bd, listeDescripteur, requete);
+				char *requeteComplete = (char*) calloc(strlen("../../BaseFichier/Texte/") + strlen(requete) + 1, sizeof(char)); // alloue de la mémoire pour la chaîne concaténée
+    			sprintf(requeteComplete, "%s%s", "../../BaseFichier/Texte/", requete); // concatène les deux chaînes de caractères
+				liste_resListToSendTexte = rechercheTexteCompare(bd, listeDescripteur, requeteComplete);
+				
 				while(liste_resListToSendTexte != NULL){
                     pileRes = empilerResultatListe(pileRes, liste_resListToSendTexte->descripteur->path, liste_resListToSendTexte->score);
 					liste_resListToSendTexte = liste_resListToSendTexte->next;
                 }
-				traitementEffectue();
 				break;
 			
 			case IMAGE_MOTCLE:
 				liste_resListToSendImage = rechercheCouleur(bdImage, listeImage, requete);
-				if(liste_resListToSendTexte == NULL)
-					printf("Error\n");
-				while(liste_resListToSendTexte != NULL){
+				while(liste_resListToSendImage != NULL){
                     pileRes = empilerResultatListe(pileRes, liste_resListToSendImage->descripteur->path, liste_resListToSendImage->score);
-					liste_resListToSendTexte = liste_resListToSendTexte->next;
+					liste_resListToSendImage = liste_resListToSendImage->next;
                 }
-				traitementEffectue();
 				break;
 
 			case IMAGE_FICHIER:
-				liste_resListToSendImage = rechercheHisto(bdImage, listeImage, requete);
-				if(liste_resListToSendTexte == NULL)
-					printf("Error\n");
-				while(liste_resListToSendTexte != NULL){
+				liste_resListToSendImage = rechercheHisto(bdImage, listeImage, "01");
+				while(liste_resListToSendImage != NULL){
                     pileRes = empilerResultatListe(pileRes, liste_resListToSendImage->descripteur->path, liste_resListToSendImage->score);
-					liste_resListToSendTexte = liste_resListToSendTexte->next;
+					liste_resListToSendImage = liste_resListToSendImage->next;
                 }
-				traitementEffectue();
 				break;
 
 			case SON_FICHIER:
 				resAudio = saisieRechercheAudio("jingle_fi.wav");
-				traitementEffectue();
 				break;
 
 			case SUPPRIMER_DESCRIPTEUR:
 				supprimer(requete, &bd, &listeDescripteur, &tableDescripteur, &bdImage, &listeImage);
-				traitementEffectue();
 				break;
 			case INDEXATION_IMAGEIVY:
 				indexationImage(requete, &bdImage, &listeImage, bd->taille, NB_LISTE);
-				traitementEffectue();
 				break;
 			case INDEXATION_TEXTEIVY:
 				indexationTexte(requete, bd->taille, &bd, &listeDescripteur, &tableDescripteur);
-				traitementEffectue();
 				break;
 			case SCORE_CHEMIN:
 				sendAllResBus(pileRes);
-				traitementEffectue();
+				pileRes = NULL;
 				break;
 			case STOP_BUS:
 				stopBus();
@@ -164,6 +154,7 @@ int main(int argc, char **argv){
 				printf("\nC\tErreur : Traitement non effectué %x",typeTraitement);
 				return 0;
 			}
+			traitementEffectue();
 			etat=ATTENTE_REQUETE;
 			break;
 

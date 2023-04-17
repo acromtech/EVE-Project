@@ -95,5 +95,6 @@ int compareScore(const void*,const void*);
 
 char *trouverCheminImage(int, listeDescripteurImage);
 void cleanPath(char* new_path, char *path);
+void insertionSortImage(Src tab, int size);
 
 #endif // !INDEXATION_IMAGE_IN

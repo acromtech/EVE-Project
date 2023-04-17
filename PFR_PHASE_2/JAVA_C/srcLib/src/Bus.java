@@ -13,8 +13,7 @@ import fr.dgac.ivy.IvyException;
 import fr.dgac.ivy.IvyMessageListener;
 
 /**
- * Le wrapper utilise un protocole CAN SDO
- * Trames de la forme ID - ADDR - DATA1 - DATA2
+ * Auteur : Alexis GIBERT / Elio GENSON (Recherche complexe)
 */
 public class Bus{
 
@@ -37,10 +36,10 @@ public class Bus{
     public static final int ADDR_STOP_BUS                           = 0x60;     //(TX_FRAME) Ordonne l'arret de la connection au bus virtuel (+ ACK)
     public static final int ADDR_OPEN_MODE                          = 0x70;     //(TX_FRAME) Demande l'ouverture ou non de l'indexation (+ ACK)
     public static final int ADDR_SUPPRIMER_DESCRIPTEUR              = 0x23;     //(TX_FRAME) Demande l'ouverture ou non de l'indexation (+ ACK)
-   //Attributs
+   
+    //Attributs
    private Ivy bus;
    private boolean affConsole=false;       //Active ou désactive les affichage console
-
 
    //Constructeur
    public Bus(String port){
@@ -106,7 +105,7 @@ public class Bus{
     * @param motor
     * @throws IvyException
     */
-   protected void subscribers(Motor motor) throws IvyException{
+   private void subscribers(Motor motor) throws IvyException{
        bus.bindMsg("^"+MASTER_ID+" "+motor.getId()+" (.*) (.*) (.*)",new IvyMessageListener(){
            public void receive(IvyClient client, String[] args){
                if(Integer.parseInt(args[1])==0xFF && Integer.parseInt(args[2])==0xFF){
@@ -174,7 +173,7 @@ public class Bus{
     * @param nombreResultatMax
     * @return
     */
-   protected List<ScorePath> sendWord(Motor motor, final int addrTypeTraitement,String requete,int nombreResultatMax){
+   private List<ScorePath> sendWord(Motor motor, final int addrTypeTraitement,String requete,int nombreResultatMax){
        motor.clearScorePaths();
        motor.setScorePath();
        System.out.println(motor.getScorePaths().isEmpty());
@@ -196,7 +195,7 @@ public class Bus{
     * @param nbResultMax
     * @return
     */
-    public List<ScorePath> sendRechercheComplexe(Motor motor, int typeTraitement, String recherche, int nbResultMax) {
+    protected List<ScorePath> sendRequest(Motor motor, int typeTraitement, String recherche, int nbResultMax) {
         motor.clearScorePaths();
         ArrayList<List<ScorePath>> arrayOfArrayOfScorePath = new ArrayList<>();
         ArrayList<Map<String, Integer>>arrayMapsRes = null;
@@ -286,24 +285,5 @@ public class Bus{
     */
     protected boolean getAffConsole(){
         return affConsole;
-    }
-
-    /**
-     * Renvoi l'état de OpenMode
-    * @param motor
-    * @return
-    */
-    protected boolean getOpenMode(Motor motor) {
-        return motor.getOpenMode();
-    }
-
-    /**
-     * Active (true) ou désactive (false) l'OpenMode
-    * @param motor
-    * @param openMode
-    */
-    protected void setOpenMode(Motor motor, boolean openMode) {
-        sendFrame(motor, ADDR_OPEN_MODE, ""+openMode, 0x00);
-        motor.setOpenMode(openMode);
     }
 }

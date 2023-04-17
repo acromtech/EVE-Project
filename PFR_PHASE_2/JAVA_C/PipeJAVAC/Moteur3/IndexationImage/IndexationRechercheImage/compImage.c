@@ -19,7 +19,8 @@ descripteurEtScoreListeImage rechercheCouleur(const volatile baseDescripteurImag
     setlocale(LC_ALL,"");
     char* requete=calloc(1,sizeof(char));
     int nbScore=0;
-    Src pileScore = NULL, tmp;
+    baseDescripteurImage tmp = pileImage;
+    Src pileScore = NULL;
     descripteurEtScoreListeImage liste_resultat = NULL;
     char *jsonPath = calloc(TAILLE_MALLOC, sizeof(char));
     
@@ -33,16 +34,16 @@ descripteurEtScoreListeImage rechercheCouleur(const volatile baseDescripteurImag
 }
 
 descripteurEtScoreListeImage rechercheHisto(const volatile baseDescripteurImage pileImage, listeDescripteurImage liste, char *requete) {
-    char* requeteTraite=calloc(1,sizeof(char));
+    char* requeteTraite=calloc(100 ,sizeof(char));
     int nbScore=0;
     elementlitsetDescripteurImage tmp1 = liste->tete;
     descImage *tmp = pileImage->tete;
     descripteurEtScoreListeImage liste_resultat = NULL;
     char *jsonPath = calloc(TAILLE_MALLOC, sizeof(char));
-    int id=-1;                                                                                                                                                                                                                                                                                                                                                            
+    int id=-1;                                                                                                                                                                                                                                                                                                                                         
     
-    snprintf(requeteTraite,100,"../IndexationImage/TXT/%s.txt",getNomFichierImage(requete));
-    printf("%s %s\n", requeteTraite, tmp1->path);
+    snprintf(requeteTraite,100,"../../BaseFichier/Image/TXT/%s.txt",getNomFichierImage(requete));
+    
 
     while(tmp1 != NULL){
         if(strcmp(tmp1->path, requeteTraite) == 0){
@@ -51,8 +52,6 @@ descripteurEtScoreListeImage rechercheHisto(const volatile baseDescripteurImage 
         }
         tmp1 = tmp1->next;
     }
-    printf("%d\n", id);
-    fflush(stdout);
      
     if(id != -1){ 
         while(tmp != NULL){
@@ -60,14 +59,17 @@ descripteurEtScoreListeImage rechercheHisto(const volatile baseDescripteurImage 
                 break;
             tmp = tmp->next;
         }
-        
+    
         Src pileScore=calculeScoreComparaison(pileImage,*tmp,&nbScore);
-        
+        //printf("%s %d %d %d\n",requeteTraite, id, tmp->id, nbScore);   
+
         for(int i = 1; i<nbScore; i++){
             jsonPath = trouverCheminImage(pileScore[i].id, liste);
+            //printf("%s %f\n", jsonPath, pileScore[i].score);
             liste_resultat = empilerDescripteurEtScoreImage(liste_resultat, jsonPath,pileScore[i].id, (int)(pileScore[i].score));
         }
     }
+    
     return liste_resultat;
 }
 
@@ -84,7 +86,24 @@ ScoreImage choixFichierImage(Src pileScore,int tailleTabScore) {
     }while(index>min(tailleTabScore,nbListe)||index<1);
     return scoreImage;
 }
+void insertionSortImage(Src tab, int size) 
+{
+    int i, j;
+    ScoreImage tmp;
 
+    for (i=0 ; i < size-1; i++)
+    {
+        for (j=0 ; j < size-i-1; j++)
+        {
+            if (tab[j].score < tab[j+1].score) 
+            {
+                tmp = tab[j];
+                tab[j] = tab[j+1];
+                tab[j+1] = tmp;
+            }
+        }
+    }
+}
 
 Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage, descImage image, int* nbScore) {
     float score;
@@ -103,7 +122,8 @@ Src calculeScoreComparaison(const volatile baseDescripteurImage pileImage, descI
             (*nbScore)++;
         }
     }
-    qsort(pileScore,*nbScore,sizeof(ScoreImage),compareScore);
+    insertionSortImage(pileScore, *nbScore);
+
     return pileScore;
 }
 
@@ -123,8 +143,9 @@ Src calculeScoreCouleur(const volatile baseDescripteurImage pileImage,char reque
                 (*nbScore)++;
             }
         }
-        qsort(pileScore,*nbScore,sizeof(ScoreImage),compareScore);
+        
     }
+    insertionSortImage(pileScore, *nbScore);
     return pileScore;
 }
 /*
@@ -151,12 +172,19 @@ int ouvreFichierImage(ScoreImage s,listeDescripteurImage liste){
 }
 */
 char* trouverCheminImage(int id, listeDescripteurImage liste){
-    char* chemin = NULL;
+    char* chemin = calloc(100, sizeof(char));
     struct elementlistedescripteurimage* tmp = liste->tete;
 
     while(tmp != NULL){
         if(id == tmp->id){
-            chemin = tmp->path;
+            if(id > 49){
+                sprintf(chemin, "../../BaseFichier/Image/BMP/%s",getNomFichierImage(tmp->path));
+                strcat(chemin, ".bmp");
+            }
+            else{
+                sprintf(chemin, "../../BaseFichier/Image/JPG/%s",getNomFichierImage(tmp->path));
+                strcat(chemin, ".jpg");
+            }
             break;
         }
         tmp = tmp->next;
@@ -208,6 +236,7 @@ descripteurEtScoreListeImage empilerDescripteurEtScoreImage(descripteurEtScoreLi
     tmp->descripteur->id = id;
 
     tmp->next = d;
+    //printf("%d %s\n", tmp->descripteur->id, tmp->descripteur->path);
 
 
     return tmp;

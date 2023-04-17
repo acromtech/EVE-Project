@@ -1,6 +1,8 @@
 import java.io.File;
 import java.util.Arrays;
-
+/**
+ * Auteur : Andy DEGBEGNI
+ */
 public class ThreadOuvertFerme extends Thread{
     private boolean condition;
     private String path;
@@ -8,6 +10,14 @@ public class ThreadOuvertFerme extends Thread{
     private Motor motor;
     private Bus bus;
 
+    /**
+     * Constructeur du thread (OpenMode)
+     * @param name
+     * @param path
+     * @param condition
+     * @param motor
+     * @param bus
+     */
     public ThreadOuvertFerme(String name, String path, boolean condition, Motor motor, Bus bus) {
         super(name);
         this.path = path;
@@ -18,6 +28,9 @@ public class ThreadOuvertFerme extends Thread{
         this.bus = bus;
     }
 
+    /**
+     * Démarre le thread
+     */
     @Override
     public void run() {
         System.out.println("Thread starté");
@@ -66,16 +79,25 @@ public class ThreadOuvertFerme extends Thread{
         }
     }
 
+    /**
+     * Arrete le thread
+     */
     public void arret(){
         this.condition = false;
         System.out.println("Thread arreté");
     }
     
+    /**
+     * Met le thread en pause
+     */
     public synchronized void pauseThread() {
         System.out.println("Thread paused");
         this.condition = false;
     }
     
+    /**
+     * Relance le thread
+     */
     public synchronized void resumeThread() {
         System.out.println("Thread resumed");
         this.condition = true;

@@ -142,7 +142,7 @@ int* quantification(char *path, int nbBits, int *nbComposante)
 			}
 		}
 	}
-    /*
+    
 	for(int i=0;i<li;i++) for(int j=0;j<co;j++) binary_pix[i][j]=R[i][j]|G[i][j]|B[i][j];
 	for(int i=0;i<li;i++){
 		for(int j=0;j<co;j++){
@@ -154,7 +154,7 @@ int* quantification(char *path, int nbBits, int *nbComposante)
     float somme=0;
 	for(int i=0;i<64;i++)somme+=histogramme[i];
 	for(int i=0;i<64;i++)histogramme[i]=(histogramme[i]/somme)*100;
-    */
+    
     return histogramme;
 }
 
