@@ -1,25 +1,44 @@
-# EVE : Le nouveau moteur de recherche polyvalent
+# EVE : A new search engine
 
-*EVE est un moteur de recherche capable de traiter des données textuelles, photographiques et sonores réalisé dans le cadre du Projet Fil Rouge (PFR) de 1ère année de formation à l’UPSSITECH de Toulouse. Fédéré par Isabelle FERRANE, Julien PINQUIER et Julien VANDERSTRAETEN. Celui-ci permet aux étudiants d’aborder de nombreux aspects techniques, organisationnels et professionnels à travers un projet transversal pour mettre en œuvre les différentes compétences scientifiques et techniques de la spécialité SRI telles que l’informatique, l’analyse de contenu (audio, image et texte), l’interaction, et enfin, la robotique.
-Il permet également de mettre en pratique différentes compétences de gestion de projet en mettant en relation un client (ici Julien PINQUIER) et notre équipe projet.*
+## What's EVE ?
+EVE is a search engine able to processing textual, photographic and sound data. 
 
-## L'équipe UPSSIWEB
-UPSSIWEB est une équipe de 5 membres dont la vision commune est de parfaire les moteurs de recherche de demain pour les rendre plus ergonomiques et plus intuitifs afin de les intégrer aux futurs équipements domotiques et robotiques.
+## How this project ?
+This project has produced as part of the "Projet Fil Rouge (PFR)" during the 1st year of training at the UPSSITECH engineering school in Toulouse. Federated by Isabelle FERRANE, Julien PINQUIER and Julien VANDERSTRAETEN. It allows students to address many technical, organizational and professional aspects through a transversal project to implement severals scientific and technical skills of the SRI specialty such as computer science, content analysis (audio, image and text), interaction, and robotics.
+It also allows to put into practice different project management skills by connecting a client (here Julien PINQUIER) and our project team.
 
-__Emilien VESIN__ : Responsable de l’intégration, développeur backend en charge du [menu général](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio).
-> *En 2020 j’ai obtenu mon bac S option sciences de l’ingénieur spécialité physique chimie. Puis j’ai poursuivi ma formation en DUT GEII à Toulouse ou j’ai pu approfondir mes compétences en langage C ainsi qu’en organisation au travers de différents projets. Mon stage de fin d’année en entreprise m’a également permis de développer mon travail en autonomie et en équipe.*
+## Our vision
+Perfect search engines of tomorrow to make them more ergonomic and intuitive in order to integrate them into future home automation and robotics equipment.
 
-__Bastien LALANNE__ : Développeur backend en charge du [menu adminitrateur](https://github.com/acromtech/PFR/tree/menu) et de la conception de l’[indexation et la recherche de données sonores](https://github.com/acromtech/PFR/tree/audio) et frontend JAVA en charge de l'[IHM](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
-> *Grâce à mon DUT GEII, j’ai pu acquérir des compétences techniques dans les domaines de l’électronique et de l’informatique, mais aussi des compétences plus transversales telles que le travail d’équipe, l’organisation ou encore dans de la gestion de projet. Je possède également de solides connaissances en langage C. Durant mon stage j’ai pu acquérir de l’autonomie, mais aussi du relationnel.*
+## Our Team
+UPSSIWEB is a french 5 members team :
 
-__Flavie THIBAULT__ : Coordinatrice client & Développeuse backend en charge de la conception de l’[indexation et la recherche de données photographiques](https://github.com/acromtech/PFR/tree/image) et frontend JAVA en charge de l'[IHM](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
-> *Après l’obtention d’un bac STL spécialité physique chimie je suis rentrée en classe préparatoire aux grandes écoles TSI. Ces deux ans en CPGE m’ont permis d’acquérir une grande capacité de travail. Je possède des compétences en mathématiques, en physique, en algorithmique et en gestion de projet.*
+* __Emilien VESIN__ :
+  * **Role** : Integrator, backend developer
+  * **Work on** : [general menu](https://github.com/acromtech/PFR/tree/menu) and [indexing and search for sound data](https://github.com/acromtech/PFR/tree/audio).
+  * **Who am I ?** : In 2020 I obtained my scientific baccalaureate option sciences of engineering specialty physics chemistry. Then I continued my training in DUT GEII in Toulouse where I could deepen my skills in C language as well as in organization through different projects. My end-of-year internship in a company also allowed me to develop my work independently and as a team.
 
-__Andy DEGBEGNI__ : Développeur backend C pour l’amélioration du [moteur de recherche](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/PipeJAVAC/Moteur1), de l’[indexation de données textuelles](https://github.com/acromtech/PFR/tree/texte) et l'[indexation de données photographiques](https://github.com/acromtech/PFR/tree/image).
-> *J'ai suivi une CPGE MPSI et je suis titulaire d’une licence en informatique. Je suis donc en mesure d’intervenir aussi bien sur les questions relatives à l’analyse et la modélisation de problèmes, que sur des points techniques en informatique. Je possède des compétences en programmation procédurale (langage C) et en programmation orientée objet (Python, Java, C++).*
+* __Bastien LALANNE__ :
+  * **Role** : Backend developer
+  * **Work on** : [admin menu](https://github.com/acromtech/PFR/tree/menu), [indexing and search for sound data](https://github.com/acromtech/PFR/tree/audio), [HMI](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
+  * **Who am I ?** : Thanks to my DUT GEII, I was able to acquire technical skills in the fields of electronics and computer science, but also more transversal skills such as teamwork, organization or project management. I also have a solid knowledge of C. During my internship I was able to acquire autonomy, but also relational skills.
 
-__Alexis GIBERT__ : Coordinateur projet en charge de la gestion de projet, Développeur backend JAVA-C en charge du [bus virtuel](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C), de la conception de la [recherche de données textuelles](https://github.com/acromtech/PFR/tree/texte) et la [recherche de données photographiques](https://github.com/acromtech/PFR/tree/image).
-> *Issue d’une double formation de BTS CPI et DUT GEII, je suis capable d’intervenir sur des points techniques en mécanique, électronique et informatique. Je possède de solides compétences en développement embarqué (C), en développement orienté objet (Python) et en gestion de projet.*
+* __Flavie THIBAULT__ :
+  * **Role** : Client Coordinator & Backend Developer
+  * **Work on** : [indexing and searching for photographic data](https://github.com/acromtech/PFR/tree/image), [HMI](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/IHM).
+  * **Who am I ?** : After obtaining a baccalaureate STL specialty physics chemistry I returned to preparatory class at the TSI grandes écoles. These two years in CPGE allowed me to acquire a great work capacity. I have skills in mathematics, physics, algorithms and project management.
 
-__Elio GENSON__ : Développeur backend JAVA en charge de la [recherche complexe](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/srcLib/src)
-> *Après avoir obtenu mon BAC STL, j'ai décidé de poursuivre mes études en obtenant un BTS CIRA (Contrôle Industriel et Régulation Automatique), ce qui m'a permis de développer des compétences en régulation, asservissement et automatisation des procédés. Par la suite, j'ai intégré la classe préparatoire ATS option sciences de l'ingénieur de Déodat de Séverac, ce qui m'a permis d'acquérir une solide capacité de travail ainsi que d'autres compétences essentielles pour le métier d'ingénieur.*
+* __Andy DEGBEGNI__ :
+  * **Role** : Backend Developer C
+  * **Work on** : [search engine](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/PipeJAVAC/Moteur1), [indexing text data](https://github.com/acromtech/PFR/tree/texte) and [indexing photographic data](https://github.com/acromtech/PFR/tree/image).
+  * **Who am I ?** : I followed a CPGE MPSI and I hold a license in computer science. I am therefore able to intervene on issues related to the analysis and modeling of problems, as well as on technical points in computer science. I have skills in procedural programming (C language) and object oriented programming (Python, Java, C++).
+
+* __Alexis GIBERT__
+  * **Role** : Project Manager and project Coordinator, JAVA-C Backend Developer
+  * **Work on** : [virtual bus](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C), [text data search](https://github.com/acromtech/PFR/tree/texte) and [photo data search](https://github.com/acromtech/PFR/tree/image) 
+  * **Who am I ?** : Coming from a double training of BTS CPI and DUT GEII, I am able to work on technical points in mechanics, electronics and computer science. I have strong skills in embedded development (C), object-oriented development (Python) and project management.
+
+* __Elio GENSON__ : 
+  * **Role** : JAVA backend developer
+  * **Work on** : [complex search](https://github.com/acromtech/PFR/tree/main/PFR_PHASE_2/JAVA_C/srcLib/src)
+  * **Who am I ?** : After my STL baccalaureate, I decided to continue my studies with a BTS CIRA (Industrial Control and Automatic Regulation), which allowed me to develop skills in regulation, control and automation of processes. Subsequently, I joined the preparatory class ATS science option of the engineer of Déodat de Séverac, which allowed me to acquire a solid working capacity as well as other essential skills for the profession of engineer.
